@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ワンライフ・ナビ | 愛犬の悩み解決と健康を守る総合ガイド</title>
-    <meta name="description" content="犬を飼うすべての人の悩みを1サイトで解決。健康、食事、しつけ、保険まで、専門家視点で詳しく解説。愛犬との暮らしをより豊かに。">
+    <meta name="description" content="犬を飼うすべての人の悩みを1サイトで解決。健康、食事、しつけ、保険、旅行まで、専門家視点で詳しく解説。愛犬との暮らしをより豊かに。">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #f39c12; /* 温かみのあるオレンジ */
+            --primary-color: #f39c12;
             --secondary-color: #2c3e50;
             --bg-color: #f9f9f9;
             --text-color: #333;
@@ -23,7 +23,6 @@
             background-color: var(--bg-color);
         }
 
-        /* ヘッダー */
         header {
             background: #fff;
             padding: 1rem;
@@ -34,13 +33,8 @@
             z-index: 1000;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 1.5rem;
-            color: var(--primary-color);
-        }
+        header h1 { margin: 0; font-size: 1.5rem; color: var(--primary-color); }
 
-        /* ヒーローセクション */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
@@ -50,75 +44,74 @@
             text-align: center;
         }
 
-        .hero h2 { font-size: 2rem; margin-bottom: 1rem; }
-
-        /* カテゴリーグリッド */
         .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
         
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
         }
 
         .card {
             background: #fff;
-            padding: 1.5rem;
-            border-radius: 10px;
+            padding: 2rem;
+            border-radius: 15px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             text-decoration: none;
             color: var(--secondary-color);
-            transition: transform 0.2s;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
         }
 
-        .card:hover { transform: translateY(-5px); }
-        .card i { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem; }
-        .card span { display: block; font-weight: bold; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); border-color: var(--primary-color); }
+        .card i { font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem; }
+        .card span { display: block; font-weight: bold; font-size: 1.2rem; }
 
-        /* 収益セクション（アフィリエイト用） */
+        .section-title {
+            text-align: center;
+            margin: 3rem 0 1.5rem;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 10px auto;
+        }
+
         .affiliate-section {
             background: #fff;
-            margin: 2rem 0;
-            padding: 1.5rem;
-            border-radius: 10px;
-            border-left: 5px solid var(--primary-color);
-        }
-
-        .affiliate-item {
+            margin: 1.5rem 0;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             display: flex;
             align-items: center;
-            background: #fdf2e9;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-top: 1rem;
-            text-decoration: none;
-            color: var(--text-color);
+            gap: 1.5rem;
         }
 
         .btn-link {
             display: inline-block;
             background: var(--primary-color);
             color: #fff;
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
-            margin-top: 1rem;
+            flex-shrink: 0;
         }
 
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background: var(--secondary-color);
-            color: #fff;
-            margin-top: 3rem;
-        }
+        footer { text-align: center; padding: 3rem; background: var(--secondary-color); color: #fff; margin-top: 5rem; }
 
-        /* レスポンシブ調整 */
         @media (max-width: 600px) {
-            .hero h2 { font-size: 1.5rem; }
-            .grid { grid-template-columns: repeat(2, 1fr); }
+            .affiliate-section { flex-direction: column; text-align: center; }
+            .grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+            .card { padding: 1rem; }
+            .card span { font-size: 1rem; }
         }
     </style>
 </head>
@@ -130,68 +123,60 @@
 
 <section class="hero">
     <h2>愛犬との時間を、もっと最高に。</h2>
-    <p>健康管理からしつけまで、飼い主の「困った」を解決します</p>
+    <p>飼い主さんの「知りたい」「困った」を一撃で解決します</p>
 </section>
 
 <div class="container">
+    <h2 class="section-title">カテゴリーから探す</h2>
     <div class="grid">
-        <a href="#health" class="card">
-            <i class="fas fa-stethoscopes"></i>
+        <a href="health/toxic-foods.html" class="card">
+            <i class="fas fa-pills"></i>
             <span>健康・食事</span>
         </a>
-        <a href="#training" class="card">
+        <a href="training/barking-solutions.html" class="card">
             <i class="fas fa-graduation-cap"></i>
             <span>しつけ・行動</span>
         </a>
-        <a href="#insurance" class="card">
+        <a href="insurance/comparison.html" class="card">
             <i class="fas fa-shield-dog"></i>
             <span>ペット保険</span>
         </a>
-        <a href="#goods" class="card">
-            <i class="fas fa-bone"></i>
-            <span>おすすめグッズ</span>
+        <a href="lifestyle/travel-tips.html" class="card">
+            <i class="fas fa-suitcase-rolling"></i>
+            <span>お出かけ</span>
         </a>
     </div>
 
-    <h3 id="health"><i class="fas fa-check-circle"></i> 人気の悩み解決記事</h3>
+    <h2 class="section-title">今すぐ読まれている人気記事</h2>
+
     <div class="affiliate-section">
-        <h4>【保存版】犬が食べてはいけないものリスト</h4>
-        <p>チョコや玉ねぎだけじゃない！意外と知らない危険な食べ物をチェックしましょう。</p>
-        <a href="#" class="btn-link">記事を読む</a>
+        <div style="flex-grow: 1;">
+            <h3>【警告】その食べ物、愛犬には毒かもしれません</h3>
+            <p>チョコや玉ねぎ以外にも危険なものはたくさんあります。全リストをチェック。</p>
+        </div>
+        <a href="health/toxic-foods.html" class="btn-link">詳しく見る</a>
     </div>
 
-    <h3 id="insurance"><i class="fas fa-star"></i> 飼い主さんに選ばれているサービス</h3>
-    <div class="affiliate-section" style="background: #fffef0;">
-        <p><strong>迷ったらここ！プロが選ぶペット保険比較</strong></p>
-        <p>急な病気やケガに備えて、月々数百円から始められる安心を。</p>
-        
-        <a href="https://example.com/affiliate-link" class="affiliate-item">
-            <div style="flex-grow: 1;">
-                <strong>1. 安心ペット保険（一括見積もり）</strong><br>
-                <small>最大10社からあなたにぴったりの保険を診断</small>
-            </div>
-            <i class="fas fa-external-link-alt"></i>
-        </a>
-
-        <a href="https://example.com/affiliate-link-food" class="affiliate-item">
-            <div style="flex-grow: 1;">
-                <strong>2. プレミアムドッグフード「〇〇」</strong><br>
-                <small>食いつき改善・毛並みケアに特化した無添加フード</small>
-            </div>
-            <i class="fas fa-external-link-alt"></i>
-        </a>
+    <div class="affiliate-section">
+        <div style="flex-grow: 1;">
+            <h3>無駄吠えは「無視」が正解？プロのしつけ術</h3>
+            <p>叱っても直らないのは、やり方が間違っているからかも。正しい3ステップを解説。</p>
+        </div>
+        <a href="training/barking-solutions.html" class="btn-link">解決策を読む</a>
     </div>
 
-    <h3 id="training"><i class="fas fa-lightbulb"></i> 今すぐ役立つヒント</h3>
-    <ul>
-        <li>夜泣きがひどい時の対処法</li>
-        <li>雨の日でも楽しめる室内遊び5選</li>
-        <li>老犬がご飯を食べない時の工夫</li>
-    </ul>
+    <div class="affiliate-section" style="border: 2px solid #f1c40f; background: #fffdf0;">
+        <div style="flex-grow: 1;">
+            <h3>【特選】プロが選ぶペット保険比較ランキング</h3>
+            <p>高額な治療費で後悔しないために。2026年最新の補償内容を徹底比較しました。</p>
+        </div>
+        <a href="insurance/comparison.html" class="btn-link" style="background: #e67e22;">ランキングを見る</a>
+    </div>
 </div>
 
 <footer>
-    <p>&copy; 2026 ワンライフ・ナビ - 愛犬と飼い主の笑顔のために</p>
+    <p>&copy; 2026 ワンライフ・ナビ - 星 友和 プロデュース</p>
+    <p style="font-size: 0.8rem; opacity: 0.7;">愛犬との素晴らしい日々をサポートします</p>
 </footer>
 
 </body>
