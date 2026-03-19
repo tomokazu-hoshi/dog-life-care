@@ -6,22 +6,57 @@
     <title>トイプードルの悩み解決ガイド｜涙やけ・関節・毛並みケア - ワンライフ・ナビ</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --primary-color: #f39c12; --secondary-color: #2c3e50; --bg-color: #f9f9f9; }
+        :root { --primary-color: #f39c12; --secondary-color: #2c3e50; --bg-color: #f9f9f9; --accent-color: #d35400; }
         body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; line-height: 1.8; color: #333; background: var(--bg-color); }
-        header { background: #fff; padding: 1rem; border-bottom: 2px solid var(--primary-color); }
-        header a { text-decoration: none; color: var(--primary-color); font-weight: bold; }
+        header { background: #fff; padding: 1rem; border-bottom: 2px solid var(--primary-color); position: sticky; top: 0; z-index: 1000; }
+        header .nav-container { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+        header a { text-decoration: none; color: var(--primary-color); font-weight: bold; display: flex; align-items: center; gap: 0.5rem; }
         .container { max-width: 800px; margin: 2rem auto; padding: 0 1.5rem; }
-        .article { background: #fff; padding: 2.5rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        h1 { font-size: 1.8rem; color: var(--secondary-color); border-bottom: 3px solid var(--primary-color); padding-bottom: 0.5rem; }
-        h2 { font-size: 1.4rem; color: #d35400; background: #fff5eb; padding: 0.5rem 1rem; border-left: 5px solid #d35400; margin-top: 2.5rem; }
+        .article { background: #fff; padding: 2.5rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 3rem; }
+        h1 { font-size: 1.8rem; color: var(--secondary-color); border-bottom: 3px solid var(--primary-color); padding-bottom: 0.5rem; margin-top: 0; }
+        h2 { font-size: 1.4rem; color: var(--accent-color); background: #fff5eb; padding: 0.5rem 1rem; border-left: 5px solid var(--accent-color); margin-top: 2.5rem; border-radius: 0 5px 5px 0; }
         .point-box { background: #f0f7f4; border: 1px solid #27ae60; padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0; }
-        .monetize-card { background: #fff9e6; border: 1px solid #ffeaa7; padding: 1.5rem; border-radius: 10px; margin-top: 2rem; text-align: center; }
-        .btn-affiliate { display: inline-block; background: #e67e22; color: #fff; padding: 0.8rem 2rem; text-decoration: none; font-weight: bold; border-radius: 30px; margin-top: 1rem; }
-        footer { text-align: center; padding: 3rem; color: #888; }
+        .point-box strong { color: #27ae60; }
+        .point-box ul { margin: 0; padding-left: 1.2rem; }
+
+        /* 特化型アフィリエイトバナーCSS */
+        .breed-affiliate-banner {
+            background: #fff;
+            border: 2px solid #eee;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 2rem 0;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: border-color 0.3s;
+        }
+        .breed-affiliate-banner:hover { border-color: var(--primary-color); }
+        .banner-img-container { width: 30%; height: auto; flex-shrink: 0; }
+        .banner-img-container img { width: 100%; height: auto; object-fit: cover; display: block; }
+        .banner-text-container { padding: 1.5rem; flex-grow: 1; text-align: left; }
+        .banner-cat-tag { font-size: 0.75rem; color: var(--primary-color); background: #fdf2e9; padding: 0.2rem 0.5rem; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem; }
+        .banner-text-container h3 { margin: 0 0 0.5rem; color: var(--secondary-color); font-size: 1.1rem; line-height: 1.3; }
+        .banner-text-container p { margin: 0 0 1rem; color: #666; font-size: 0.9rem; line-height: 1.4; }
+        .btn-banner-link { display: inline-block; background: var(--primary-color); color: #fff; padding: 0.7rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: bold; font-size: 0.9rem; }
+        .btn-banner-link:hover { background: var(--accent-color); }
+        
+        @media (max-width: 600px) {
+            .breed-affiliate-banner { flex-direction: column; text-align: center; }
+            .banner-img-container { width: 100%; height: 120px; }
+            .banner-text-container { padding: 1rem; }
+            .banner-text-container h3 { font-size: 1rem; }
+        }
+
+        footer { text-align: center; padding: 3rem; color: #888; border-top: 1px solid #eee; font-size: 0.9rem; }
     </style>
 </head>
 <body>
-<header><div class="container" style="margin:0 auto;"><a href="index.html"><i class="fas fa-chevron-left"></i> 犬種一覧へ戻る</a></div></header>
+<header>
+    <div class="nav-container">
+        <a href="index.html"><i class="fas fa-chevron-left"></i> 犬種一覧へ戻る</a>
+    </div>
+</header>
 <div class="container">
     <article class="article">
         <h1>トイプードル特有の悩みと解決策</h1>
@@ -29,6 +64,19 @@
 
         <h2>1. 涙やけの原因とケア方法</h2>
         <p>トイプードルは鼻涙管が細く、涙やけになりやすい犬種です。放置すると雑菌が繁殖し、臭いや皮膚炎の原因に。</p>
+
+        <div class="breed-affiliate-banner">
+            <div class="banner-img-container">
+                <img src="https://images.unsplash.com/photo-1591160690555-5debfba289f0?q=80&w=600&auto=format&fit=crop" alt="トイプードルの涙やけケアプレミアムドッグフード">
+            </div>
+            <div class="banner-text-container">
+                <span class="banner-cat-tag">涙やけ・食いつき改善</span>
+                <h3>愛犬の涙やけ、食事で根本解決しませんか？</h3>
+                <p>トイプードルの繊細な消化器に配慮。無添加・国産生肉を贅沢に使用し、老廃物の蓄積を防いで澄んだ瞳へ。食いつきも劇的に変わります。</p>
+                <a href="https://example.com/affiliate-poodle-food" class="btn-banner-link">公式サイトで特別価格を見る <i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+
         <div class="point-box">
             <strong>✨ 解決のコツ：</strong>
             <ul>
@@ -39,22 +87,11 @@
         </div>
 
         <h2>2. 膝蓋骨脱臼（パテラ）への備え</h2>
-        <p>小型犬に多い関節のトラブルです。フローリングで滑る、高いところから飛び降りるなどの動作が負担になります。</p>
-        <div class="monetize-card">
-            <h3>愛犬の足腰を守るために</h3>
-            <p>滑り止めマットの設置と、関節をサポートする栄養補給が大切です。</p>
-            <a href="https://example.com/joint-support" class="btn-affiliate">獣医師推奨の関節サプリを見る</a>
-        </div>
+        <p>小型犬に多い関節のトラブルです。フローリングで滑る、高いところから飛び降りるなどの動作が負担になります。滑り止めマットの設置と、関節をサポートするサプリメントでの栄養補給が大切です。</p>
 
         <h2>3. 美しいカールを保つ「ブラッシング」</h2>
-        <p>シングルコートで毛は抜けにくいですが、放置するとすぐに毛玉になり、皮膚の通気性が悪くなります。</p>
-        <p><strong>解決策：</strong> 毎日5分のスリッカーブラシでのブラッシングを習慣にしましょう。</p>
+        <p>シングルコートで毛は抜けにくいですが、放置するとすぐに毛玉になり、皮膚の通気性が悪くなります。毎日5分のスリッカーブラシでのブラッシングを習慣にしましょう。トイプードル専用シャンプーを使うと、ふわふわの質感を維持できます。</p>
 
-        <div class="monetize-card" style="background: #eef7ff; border-color: #3498db;">
-            <h3>トイプードル専用シャンプー</h3>
-            <p>ふわふわの質感を維持しつつ、デリケートな皮膚を優しく洗い上げます。</p>
-            <a href="https://example.com/poodle-shampoo" class="btn-affiliate" style="background: #3498db;">おすすめシャンプーをチェック</a>
-        </div>
     </article>
 </div>
 <footer><p>&copy; 2026 ワンライフ・ナビ</p></footer>
