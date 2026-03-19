@@ -14,7 +14,7 @@
         }
 
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.8;
@@ -26,9 +26,25 @@
             background: #fff;
             padding: 1rem;
             border-bottom: 2px solid var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        header a { text-decoration: none; color: var(--primary-color); font-weight: bold; }
+        header .nav-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        header a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
         .container { max-width: 700px; margin: 2rem auto; padding: 0 1.5rem; }
 
@@ -55,6 +71,7 @@
             border-radius: 8px;
             box-sizing: border-box;
             font-size: 1rem;
+            font-family: inherit;
         }
 
         textarea { height: 150px; resize: vertical; }
@@ -85,13 +102,20 @@
             border-left: 4px solid var(--primary-color);
         }
 
-        footer { text-align: center; padding: 3rem; color: #888; }
+        footer { text-align: center; padding: 3rem; color: #888; font-size: 0.9rem; }
+
+        @media (max-width: 600px) {
+            .form-card { padding: 1.5rem; }
+            h1 { font-size: 1.5rem; }
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <a href="index.html"><i class="fas fa-chevron-left"></i> ホームへ戻る</a>
+    <div class="nav-container">
+        <a href="index.html"><i class="fas fa-chevron-left"></i> ホームへ戻る</a>
+    </div>
 </header>
 
 <div class="container">
@@ -99,11 +123,14 @@
         <h1>🐾 愛犬のお悩み相談室</h1>
         
         <div class="info-box">
-            ご投稿いただいた内容は、サイト内の記事で回答させていただく場合がございます。
+            ご投稿いただいた内容は、サイト内の記事で回答させていただく場合がございます。<br>
             ※緊急を要する健康状態については、すぐにかかりつけの動物病院へご相談ください。
         </div>
 
-        <form action="https://formspree.io/f/sample" method="POST">
+        <form action="https://formspree.io/f/mpqybjjw" method="POST">
+            
+            <input type="text" name="_gotcha" style="display:none">
+
             <div class="form-group">
                 <label>お名前（ニックネーム可）</label>
                 <input type="text" name="name" placeholder="例：ハチのパパ" required>
@@ -140,7 +167,7 @@
 </div>
 
 <footer>
-    <p>&copy; 2026 ワンライフ・ナビ</p>
+    <p>&copy; 2026 ワンライフ・ナビ - 愛犬と飼い主の笑顔のために</p>
 </footer>
 
 </body>
