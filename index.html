@@ -48,14 +48,14 @@
         
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
             margin-bottom: 3rem;
         }
 
         .card {
             background: #fff;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 15px;
             text-align: center;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -65,9 +65,9 @@
             border: 1px solid #eee;
         }
 
-        .card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); border-color: var(--primary-color); }
-        .card i { font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem; }
-        .card span { display: block; font-weight: bold; font-size: 1.2rem; }
+        .card:hover { transform: translateY(-5px); border-color: var(--primary-color); }
+        .card i { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 0.8rem; }
+        .card span { display: block; font-weight: bold; font-size: 1.1rem; }
 
         .section-title {
             text-align: center;
@@ -86,7 +86,7 @@
         .affiliate-section {
             background: #fff;
             margin: 1.5rem 0;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 15px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             display: flex;
@@ -98,20 +98,39 @@
             display: inline-block;
             background: var(--primary-color);
             color: #fff;
-            padding: 0.8rem 2rem;
+            padding: 0.8rem 1.5rem;
             border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
             flex-shrink: 0;
         }
 
+        /* 相談室バナー */
+        .consultation-banner {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: #fff;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .btn-consult {
+            display: inline-block;
+            background: #fff;
+            color: var(--secondary-color);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1.5rem;
+        }
+
         footer { text-align: center; padding: 3rem; background: var(--secondary-color); color: #fff; margin-top: 5rem; }
 
         @media (max-width: 600px) {
             .affiliate-section { flex-direction: column; text-align: center; }
-            .grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-            .card { padding: 1rem; }
-            .card span { font-size: 1rem; }
+            .grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
@@ -145,6 +164,10 @@
             <i class="fas fa-suitcase-rolling"></i>
             <span>お出かけ</span>
         </a>
+        <a href="faq.html" class="card" style="background: #fff9e6;">
+            <i class="fas fa-question-circle"></i>
+            <span>よくある質問</span>
+        </a>
     </div>
 
     <h2 class="section-title">今すぐ読まれている人気記事</h2>
@@ -157,26 +180,30 @@
         <a href="health/toxic-foods.html" class="btn-link">詳しく見る</a>
     </div>
 
-    <div class="affiliate-section">
-        <div style="flex-grow: 1;">
-            <h3>無駄吠えは「無視」が正解？プロのしつけ術</h3>
-            <p>叱っても直らないのは、やり方が間違っているからかも。正しい3ステップを解説。</p>
-        </div>
-        <a href="training/barking-solutions.html" class="btn-link">解決策を読む</a>
-    </div>
-
     <div class="affiliate-section" style="border: 2px solid #f1c40f; background: #fffdf0;">
         <div style="flex-grow: 1;">
-            <h3>【特選】プロが選ぶペット保険比較ランキング</h3>
-            <p>高額な治療費で後悔しないために。2026年最新の補償内容を徹底比較しました。</p>
+            <h3>【2026年最新】ペット保険比較ランキング</h3>
+            <p>高額な治療費で後悔しないために。補償内容を徹底比較しました。</p>
         </div>
         <a href="insurance/comparison.html" class="btn-link" style="background: #e67e22;">ランキングを見る</a>
+    </div>
+
+    <div class="consultation-banner">
+        <h2>🐾 1人で悩んでいませんか？</h2>
+        <p>解決のヒントはここにあるかもしれません。</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="faq.html" class="btn-consult" style="background: #f39c12; color: #fff;">
+                <i class="fas fa-search"></i> FAQから探す
+            </a>
+            <a href="contact.html" class="btn-consult">
+                <i class="fas fa-comments"></i> 無料でお悩みを相談する
+            </a>
+        </div>
     </div>
 </div>
 
 <footer>
     <p>&copy; 2026 ワンライフ・ナビ - 星 友和 プロデュース</p>
-    <p style="font-size: 0.8rem; opacity: 0.7;">愛犬との素晴らしい日々をサポートします</p>
 </footer>
 
 </body>
