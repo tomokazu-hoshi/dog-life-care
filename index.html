@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ワンライフ・ナビ | 愛犬の悩み解決と健康を守る総合ガイド</title>
+    <meta name="description" content="犬を飼うすべての人の悩みを1サイトで解決。健康、食事、しつけ、保険まで、専門家視点で詳しく解説。愛犬との暮らしをより豊かに。">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #f39c12; /* 温かみのあるオレンジ */
+            --secondary-color: #2c3e50;
+            --bg-color: #f9f9f9;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        /* ヘッダー */
+        header {
+            background: #fff;
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 3px solid var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        /* ヒーローセクション */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .hero h2 { font-size: 2rem; margin-bottom: 1rem; }
+
+        /* カテゴリーグリッド */
+        .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-decoration: none;
+            color: var(--secondary-color);
+            transition: transform 0.2s;
+        }
+
+        .card:hover { transform: translateY(-5px); }
+        .card i { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem; }
+        .card span { display: block; font-weight: bold; }
+
+        /* 収益セクション（アフィリエイト用） */
+        .affiliate-section {
+            background: #fff;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .affiliate-item {
+            display: flex;
+            align-items: center;
+            background: #fdf2e9;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .btn-link {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--secondary-color);
+            color: #fff;
+            margin-top: 3rem;
+        }
+
+        /* レスポンシブ調整 */
+        @media (max-width: 600px) {
+            .hero h2 { font-size: 1.5rem; }
+            .grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1><i class="fas fa-dog"></i> ワンライフ・ナビ</h1>
+</header>
+
+<section class="hero">
+    <h2>愛犬との時間を、もっと最高に。</h2>
+    <p>健康管理からしつけまで、飼い主の「困った」を解決します</p>
+</section>
+
+<div class="container">
+    <div class="grid">
+        <a href="#health" class="card">
+            <i class="fas fa-stethoscopes"></i>
+            <span>健康・食事</span>
+        </a>
+        <a href="#training" class="card">
+            <i class="fas fa-graduation-cap"></i>
+            <span>しつけ・行動</span>
+        </a>
+        <a href="#insurance" class="card">
+            <i class="fas fa-shield-dog"></i>
+            <span>ペット保険</span>
+        </a>
+        <a href="#goods" class="card">
+            <i class="fas fa-bone"></i>
+            <span>おすすめグッズ</span>
+        </a>
+    </div>
+
+    <h3 id="health"><i class="fas fa-check-circle"></i> 人気の悩み解決記事</h3>
+    <div class="affiliate-section">
+        <h4>【保存版】犬が食べてはいけないものリスト</h4>
+        <p>チョコや玉ねぎだけじゃない！意外と知らない危険な食べ物をチェックしましょう。</p>
+        <a href="#" class="btn-link">記事を読む</a>
+    </div>
+
+    <h3 id="insurance"><i class="fas fa-star"></i> 飼い主さんに選ばれているサービス</h3>
+    <div class="affiliate-section" style="background: #fffef0;">
+        <p><strong>迷ったらここ！プロが選ぶペット保険比較</strong></p>
+        <p>急な病気やケガに備えて、月々数百円から始められる安心を。</p>
+        
+        <a href="https://example.com/affiliate-link" class="affiliate-item">
+            <div style="flex-grow: 1;">
+                <strong>1. 安心ペット保険（一括見積もり）</strong><br>
+                <small>最大10社からあなたにぴったりの保険を診断</small>
+            </div>
+            <i class="fas fa-external-link-alt"></i>
+        </a>
+
+        <a href="https://example.com/affiliate-link-food" class="affiliate-item">
+            <div style="flex-grow: 1;">
+                <strong>2. プレミアムドッグフード「〇〇」</strong><br>
+                <small>食いつき改善・毛並みケアに特化した無添加フード</small>
+            </div>
+            <i class="fas fa-external-link-alt"></i>
+        </a>
+    </div>
+
+    <h3 id="training"><i class="fas fa-lightbulb"></i> 今すぐ役立つヒント</h3>
+    <ul>
+        <li>夜泣きがひどい時の対処法</li>
+        <li>雨の日でも楽しめる室内遊び5選</li>
+        <li>老犬がご飯を食べない時の工夫</li>
+    </ul>
+</div>
+
+<footer>
+    <p>&copy; 2026 ワンライフ・ナビ - 愛犬と飼い主の笑顔のために</p>
+</footer>
+
+</body>
+</html>
