@@ -12,13 +12,13 @@
         header a { text-decoration: none; color: var(--primary-color); font-weight: bold; }
         .container { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem; }
         h1 { text-align: center; color: var(--secondary-color); margin-bottom: 2rem; }
-        .breed-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+        .breed-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
         .breed-card { background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-decoration: none; color: inherit; transition: transform 0.3s; border: 1px solid #eee; }
         .breed-card:hover { transform: translateY(-5px); border-color: var(--primary-color); }
-        .breed-img { height: 150px; background: #eee; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #ccc; }
-        .breed-info { padding: 1.5rem; }
-        .breed-info h3 { margin: 0 0 0.5rem; color: var(--secondary-color); }
-        .breed-tag { font-size: 0.8rem; background: #fdf2e9; color: var(--primary-color); padding: 0.2rem 0.5rem; border-radius: 5px; }
+        .breed-img { height: 120px; background: #eee; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: #ccc; }
+        .breed-info { padding: 1.2rem; }
+        .breed-info h3 { margin: 0 0 0.5rem; color: var(--secondary-color); font-size: 1.1rem; }
+        .breed-tag { font-size: 0.7rem; background: #fdf2e9; color: var(--primary-color); padding: 0.2rem 0.5rem; border-radius: 5px; }
         footer { text-align: center; padding: 3rem; color: #888; }
     </style>
 </head>
@@ -34,7 +34,6 @@
             <div class="breed-info">
                 <span class="breed-tag">人気 No.1</span>
                 <h3>トイプードル</h3>
-                <p>涙やけ、毛並みの維持、膝のトラブル対策など。</p>
             </div>
         </a>
 
@@ -43,7 +42,6 @@
             <div class="breed-info">
                 <span class="breed-tag">超小型犬</span>
                 <h3>チワワ</h3>
-                <p>震えの原因、骨折予防、肥満対策など。</p>
             </div>
         </a>
 
@@ -52,7 +50,14 @@
             <div class="breed-info">
                 <span class="breed-tag">日本犬</span>
                 <h3>柴犬</h3>
-                <p>皮膚トラブル、認知症予防、しつけのコツなど。</p>
+            </div>
+        </a>
+
+        <a href="golden-retriever.html" class="breed-card">
+            <div class="breed-img" style="background-color: #ebf5fb;"><i class="fas fa-dog" style="color: #2980b9;"></i></div>
+            <div class="breed-info">
+                <span class="breed-tag">大型犬</span>
+                <h3>ゴールデン</h3>
             </div>
         </a>
     </div>
