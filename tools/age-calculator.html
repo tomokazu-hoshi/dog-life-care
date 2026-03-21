@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>愛犬の人間換算年齢シミュレーター｜ワンライフ・ナビ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary: #f39c12; --secondary: #2c3e50; }
+        body { font-family: sans-serif; line-height: 1.6; background: #fffcf5; color: #333; margin: 0; padding: 20px; }
+        .container { max-width: 500px; margin: auto; background: #fff; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        h1 { font-size: 1.5rem; color: var(--secondary); text-align: center; margin-bottom: 2rem; }
+        .form-group { margin-bottom: 1.5rem; }
+        label { display: block; font-weight: bold; margin-bottom: 0.5rem; }
+        select, input { width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 10px; font-size: 1rem; }
+        .btn-calc { width: 100%; background: var(--primary); color: #fff; border: none; padding: 15px; border-radius: 30px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        #result { margin-top: 2rem; padding: 20px; border-radius: 15px; background: #fff9e6; display: none; text-align: center; }
+        .age-output { font-size: 2.5rem; font-weight: bold; color: var(--primary); display: block; }
+    </style>
+</head>
+<body>
+    <header style="margin-bottom:20px;"><a href="../index.html" style="text-decoration:none;color:var(--primary);font-weight:bold;">← HOMEへ戻る</a></header>
+    <div class="container">
+        <h1>🐾 年齢シミュレーター</h1>
+        <div class="form-group">
+            <label>愛犬の大きさ</label>
+            <select id="size">
+                <option value="small">小型犬（10kg未満）</option>
+                <option value="medium">中型犬（10kg〜25kg）</option>
+                <option value="large">大型犬（25kg以上）</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>現在の年齢（歳）</label>
+            <input type="number" id="dogAge" placeholder="例：5" min="0" max="30">
+        </div>
+        <button class="btn-calc" onclick="calculateAge()">人間なら何歳？を計算する</button>
+
+        <div id="result">
+            <p>あなたの愛犬は人間なら...</p>
+            <span class="age-output" id="humanAge">--</span>
+            <p>くらいです！</p>
+            <p id="advice" style="font-size: 0.9rem; color: #666;"></p>
+        </div>
+    </div>
+
+    <script>
+        function calculateAge() {
+            const size = document.getElementById('size').value;
+            const age = parseFloat(document.getElementById('dogAge').value);
+            let humanAge = 0;
+
+            if (isNaN(age) || age < 0) return alert("正しい年齢を入れてね！");
+
+            if (age === 0) humanAge = 0;
+            else if (age === 1) humanAge = 15;
+            else if (age === 2) humanAge = 24;
+            else {
+                const multiplier = (size === 'large') ? 7 : (size === 'medium' ? 6 : 4);
+                humanAge = 24 + (age - 2) * multiplier;
+            }
+
+            document.getElementById('humanAge').innerText = Math.round(humanAge) + "歳";
+            document.getElementById('result').style.display = 'block';
+            
+            let advice = "";
+            if (humanAge >= 60) advice = "そろそろシニア期。健康診断の回数を増やしてあげましょう。";
+            else if (humanAge >= 20) advice = "元気いっぱいの成犬期！たくさん遊んで思い出作りを。";
+            else advice = "まだまだ育ち盛り。好奇心を大切に育ててあげてください。";
+            document.getElementById('advice').innerText = advice;
+        }
+    </script>
+</body>
+</html>
