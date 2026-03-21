@@ -3,41 +3,34 @@
 <head>
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>愛犬の人間年齢換算シミュレーター | ワンライフ・ナビ</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CV6GN80DZ2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CV6GN80DZ2');
+    </script>
     <style>
         body { font-family: sans-serif; line-height: 1.8; max-width: 600px; margin: auto; padding: 20px; background: #f0f8ff; text-align: center; }
         .calc-card { background: #fff; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        select, input { width: 100%; padding: 15px; margin: 10px 0; border: 2px solid #ddd; border-radius: 10px; font-size: 1.1rem; }
-        button { background: #f39c12; color: #fff; border: none; padding: 15px; border-radius: 30px; font-weight: bold; width: 100%; font-size: 1.2rem; cursor: pointer; margin-top: 10px; }
-        #result { margin-top: 25px; font-size: 1.5rem; font-weight: bold; color: #2c3e50; min-height: 1.5em; }
+        button { background: #f39c12; color: #fff; border: none; padding: 15px; border-radius: 30px; font-weight: bold; width: 100%; cursor: pointer; }
     </style>
 </head>
 <body>
     <header><a href="../index.html" style="text-decoration:none;color:#f39c12;font-weight:bold;">← HOME</a></header>
     <h1>🐶 年齢シミュレーター</h1>
     <div class="calc-card">
-        <p>あなたの愛犬、人間なら何歳？</p>
-        <select id="size">
-            <option value="small">小型犬・中型犬</option>
-            <option value="large">大型犬</option>
-        </select>
-        <input type="number" id="age" placeholder="愛犬の年齢を入力" min="0" max="25">
-        <button onclick="calculate()">年齢を計算する</button>
+        <select id="size"><option value="small">小型・中型犬</option><option value="large">大型犬</option></select>
+        <input type="number" id="age" placeholder="年齢を入力">
+        <button onclick="calculate()">計算する</button>
         <div id="result"></div>
     </div>
     <script>
         function calculate() {
-            const size = document.getElementById('size').value;
             const age = parseInt(document.getElementById('age').value);
-            let humanAge = 0;
-            if (isNaN(age) || age < 0) { document.getElementById('result').innerText = "正しい年齢を入れてね"; return; }
-            if (age === 0) { humanAge = 0; }
-            else if (age === 1) { humanAge = 15; }
-            else if (age === 2) { humanAge = 24; }
-            else {
-                if (size === 'small') { humanAge = 24 + (age - 2) * 4; }
-                else { humanAge = 24 + (age - 2) * 7; }
-            }
-            document.getElementById('result').innerHTML = `人間なら約 <span style="color:#e67e22;font-size:2rem;">${humanAge}</span> 歳です！`;
+            const size = document.getElementById('size').value;
+            let res = age === 1 ? 15 : (age === 2 ? 24 : (size === 'small' ? 24 + (age-2)*4 : 24 + (age-2)*7));
+            document.getElementById('result').innerText = `人間なら約 ${res} 歳です！`;
         }
     </script>
 </body>
