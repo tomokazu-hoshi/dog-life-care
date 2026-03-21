@@ -1,176 +1,26 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>愛犬のお悩み相談室 | ワンライフ・ナビ</title>
-    <meta name="description" content="愛犬のしつけ、健康、食事など、飼い主さんのリアルな悩みをお聞かせください。専門家や経験者がアドバイスのヒントを提案します。">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お悩み相談室 | ワンライフ・ナビ</title>
     <style>
-        :root {
-            --primary-color: #f39c12;
-            --secondary-color: #2c3e50;
-            --bg-color: #f9f9f9;
-        }
-
-        body {
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.8;
-            color: #333;
-            background-color: var(--bg-color);
-        }
-
-        header {
-            background: #fff;
-            padding: 1rem;
-            border-bottom: 2px solid var(--primary-color);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        header .nav-container {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        header a {
-            text-decoration: none;
-            color: var(--primary-color);
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .container { max-width: 700px; margin: 2rem auto; padding: 0 1.5rem; }
-
-        .form-card {
-            background: #fff;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-
-        h1 { font-size: 1.8rem; color: var(--secondary-color); text-align: center; margin-bottom: 1.5rem; }
-        
-        .form-group { margin-bottom: 1.5rem; }
-        
-        label { display: block; font-weight: bold; margin-bottom: 0.5rem; color: var(--secondary-color); }
-        
-        input[type="text"],
-        input[type="email"],
-        select,
-        textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-sizing: border-box;
-            font-size: 1rem;
-            font-family: inherit;
-        }
-
-        textarea { height: 150px; resize: vertical; }
-
-        .btn-submit {
-            display: block;
-            width: 100%;
-            background: var(--primary-color);
-            color: #fff;
-            border: none;
-            padding: 1rem;
-            font-size: 1.1rem;
-            font-weight: bold;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: background 0.3s;
-            margin-top: 1rem;
-        }
-
-        .btn-submit:hover { background: #e67e22; }
-
-        .info-box {
-            background: #fff9e6;
-            padding: 1rem;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
-            border-left: 4px solid var(--primary-color);
-        }
-
-        footer { text-align: center; padding: 3rem; color: #888; font-size: 0.9rem; }
-
-        @media (max-width: 600px) {
-            .form-card { padding: 1.5rem; }
-            h1 { font-size: 1.5rem; }
-        }
+        body { font-family: sans-serif; line-height: 1.8; max-width: 600px; margin: auto; padding: 20px; background: #f9f9f9; }
+        .form-card { background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        input, textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+        button { background: #f39c12; color: #fff; border: none; padding: 15px 30px; border-radius: 30px; font-weight: bold; cursor: pointer; width: 100%; }
     </style>
 </head>
 <body>
-
-<header>
-    <div class="nav-container">
-        <a href="index.html"><i class="fas fa-chevron-left"></i> ホームへ戻る</a>
-    </div>
-</header>
-
-<div class="container">
+    <header><a href="index.html" style="text-decoration:none;color:#f39c12;">← 戻る</a></header>
+    <h1>🐾 お悩み相談室</h1>
     <div class="form-card">
-        <h1>🐾 愛犬のお悩み相談室</h1>
-        
-        <div class="info-box">
-            ご投稿いただいた内容は、サイト内の記事で回答させていただく場合がございます。<br>
-            ※緊急を要する健康状態については、すぐにかかりつけの動物病院へご相談ください。
-        </div>
-
-        <form action="https://formspree.io/f/mpqybjjw" method="POST">
-            
-            <input type="hidden" name="_next" value="https://hoshitomokazu.github.io/dog-life-care/thanks.html">
-            
-            <input type="text" name="_gotcha" style="display:none">
-
-            <div class="form-group">
-                <label>お名前（ニックネーム可）</label>
-                <input type="text" name="name" placeholder="例：ハチのパパ" required>
-            </div>
-
-            <div class="form-group">
-                <label>返信用メールアドレス</label>
-                <input type="email" name="_replyto" placeholder="example@mail.com" required>
-            </div>
-
-            <div class="form-group">
-                <label>お悩みのカテゴリー</label>
-                <select name="category">
-                    <option value="しつけ">しつけ・行動</option>
-                    <option value="健康・食事">健康・食事</option>
-                    <option value="お出かけ">お出かけ・旅行</option>
-                    <option value="その他">その他</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>愛犬の種類・年齢</label>
-                <input type="text" name="dog_info" placeholder="例：トイプードル 3歳">
-            </div>
-
-            <div class="form-group">
-                <label>相談内容（できるだけ詳しく）</label>
-                <textarea name="message" placeholder="例：散歩中に他の犬を見ると吠えてしまい困っています…" required></textarea>
-            </div>
-
-            <button type="submit" class="btn-submit">この内容で相談する</button>
+        <p>愛犬のしつけ、健康、元野犬特有の悩みなど、何でもお寄せください。星 友和が直接拝見いたします。</p>
+        <form action="https://formspree.io/f/mqakeven" method="POST">
+            <label>お名前<input type="text" name="name" required></label>
+            <label>メールアドレス<input type="email" name="email" required></label>
+            <label>相談内容<textarea name="message" rows="5" required></textarea></label>
+            <button type="submit">相談を送信する</button>
         </form>
     </div>
-</div>
-
-<footer>
-    <p>&copy; 2026 ワンライフ・ナビ - 愛犬と飼い主の笑顔のために</p>
-</footer>
-
 </body>
 </html>
