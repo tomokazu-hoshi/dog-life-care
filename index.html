@@ -4,93 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ワンライフ・ナビ | 愛犬の悩み解決と健康を守る総合ガイド</title>
-    
-    <meta name="google-site-verification" content="mX7N64dCjMcZOG9D_h6eSa4m2yR1p5ApB6xp8iO3xZE" />
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5LTEGQ8HW5"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-5LTEGQ8HW5');
-    </script>
-
-    <meta name="description" content="犬を飼うすべての人の悩みを1サイトで解決。健康、食事、しつけ、保険、犬種別ガイドまで。愛犬との暮らしをより豊かに。">
+    <meta name="description" content="元野犬・雑種を愛する飼い主のための、AIと経験が融合した専門メディア。">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --primary-color: #f39c12; --secondary-color: #2c3e50; --bg-color: #f9f9f9; --text-color: #333; --success-color: #27ae60; }
-        body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', sans-serif; margin: 0; padding: 0; line-height: 1.6; color: var(--text-color); background-color: var(--bg-color); }
+        :root { --primary-color: #f39c12; --secondary-color: #2c3e50; --bg-color: #f9f9f9; --text-color: #333; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; color: var(--text-color); background-color: var(--bg-color); }
         header { background: #fff; padding: 1rem; text-align: center; border-bottom: 3px solid var(--primary-color); position: sticky; top: 0; z-index: 1000; }
         header h1 { margin: 0; font-size: 1.5rem; color: var(--primary-color); }
-        .hero { 
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('IMG_0645.png'); 
-            background-size: cover; 
-            background-position: center; 
-            color: #fff; 
-            padding: 6rem 1rem; 
-            text-align: center; 
-        }
+        .hero { background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('IMG_0645.png'); background-size: cover; background-position: center; color: #fff; padding: 6rem 1rem; text-align: center; }
         .hero h2 { font-size: 2rem; margin-bottom: 0.5rem; }
-        .hero p { font-size: 1.1rem; opacity: 0.9; }
-
         .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
-        .card { background: #fff; padding: 1.5rem; border-radius: 15px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-decoration: none; color: var(--secondary-color); transition: all 0.3s ease; border: 1px solid #eee; }
-        .card:hover { transform: translateY(-5px); border-color: var(--primary-color); box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
-        .card i { font-size: 2rem; color: var(--primary-color); margin-bottom: 0.5rem; }
-        .card span { display: block; font-weight: bold; font-size: 1rem; }
-        
-        .section-title { text-align: center; margin: 3rem 0 1.5rem; }
-        .section-title::after { content: ''; display: block; width: 50px; height: 3px; background: var(--primary-color); margin: 10px auto; }
-        
-        .affiliate-section { background: #fff; margin: 1.2rem 0; padding: 1.5rem; border-radius: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 1.5rem; }
-        .btn-link { display: inline-block; background: var(--primary-color); color: #fff; padding: 0.7rem 1.5rem; border-radius: 30px; text-decoration: none; font-weight: bold; flex-shrink: 0; }
-        .btn-shop { background: var(--success-color); }
-        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
+        .card { background: #fff; padding: 1.2rem; border-radius: 15px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-decoration: none; color: var(--secondary-color); transition: 0.3s; border: 1px solid #eee; }
+        .card:hover { transform: translateY(-5px); border-color: var(--primary-color); }
+        .card i { font-size: 1.8rem; color: var(--primary-color); margin-bottom: 0.5rem; }
+        .card span { display: block; font-weight: bold; font-size: 0.9rem; }
+        .section-title { text-align: center; margin: 3rem 0 1.5rem; position: relative; }
+        .section-title::after { content: ''; display: block; width: 40px; height: 3px; background: var(--primary-color); margin: 10px auto; }
+        .featured-article { background: #fff; margin: 1.5rem 0; padding: 2rem; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 2rem; border-left: 8px solid var(--primary-color); }
+        .btn-main { display: inline-block; background: var(--primary-color); color: #fff; padding: 0.8rem 2rem; border-radius: 30px; text-decoration: none; font-weight: bold; }
         .consultation-banner { background: linear-gradient(135deg, #2c3e50, #34495e); color: #fff; padding: 3rem 2rem; border-radius: 20px; text-align: center; margin-top: 4rem; }
-        .btn-consult { display: inline-block; background: #fff; color: var(--secondary-color); padding: 0.8rem 2rem; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 1rem; }
-        
         footer { text-align: center; padding: 3rem; background: var(--secondary-color); color: #fff; margin-top: 5rem; }
-        @media (max-width: 600px) { .affiliate-section { flex-direction: column; text-align: center; } .grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .featured-article { flex-direction: column; text-align: center; } .grid { grid-template-columns: repeat(2, 1fr); } }
     </style>
 </head>
 <body>
 <header><h1><i class="fas fa-dog"></i> ワンライフ・ナビ</h1></header>
 <section class="hero">
     <h2>愛犬との時間を、もっと最高に。</h2>
-    <p>飼い主さんの「知りたい」「困った」を一撃で解決します</p>
+    <p>元野犬・雑種と向き合うあなたへ、一撃の知恵を。</p>
 </section>
 <div class="container">
-    <h2 class="section-title">カテゴリーから探す</h2>
+    <h2 class="section-title">カテゴリー</h2>
     <div class="grid">
         <a href="health/toxic-foods.html" class="card"><i class="fas fa-pills"></i><span>健康・食事</span></a>
-        <a href="training/barking-solutions.html" class="card"><i class="fas fa-graduation-cap"></i><span>しつけ・行動</span></a>
-        <a href="insurance/comparison.html" class="card"><i class="fas fa-shield-dog"></i><span>ペット保険</span></a>
+        <a href="training/barking-solutions.html" class="card"><i class="fas fa-graduation-cap"></i><span>しつけ</span></a>
         <a href="lifestyle/travel-tips.html" class="card"><i class="fas fa-suitcase-rolling"></i><span>お出かけ</span></a>
-        <a href="tools/age-calculator.html" class="card" style="background:#e3f2fd; border-color:#2196f3;"><i class="fas fa-calculator" style="color:#2196f3;"></i><span>年齢診断ツール</span></a>
-        <a href="breeds/index.html" class="card" style="background:#fff9e6;"><i class="fas fa-paw"></i><span>犬種別ガイド</span></a>
+        <a href="tools/age-calculator.html" class="card"><i class="fas fa-calculator"></i><span>年齢診断</span></a>
         <a href="faq.html" class="card"><i class="fas fa-question-circle"></i><span>FAQ</span></a>
+        <a href="contact.html" class="card"><i class="fas fa-envelope"></i><span>お悩み相談</span></a>
     </div>
 
-    <h2 class="section-title">注目の犬種別ケア</h2>
-    <div class="affiliate-section">
-        <div style="flex-grow:1;">
-            <h3>【フレブル】命を守る夏の温度管理</h3>
-            <p>短頭種特有の呼吸器の悩みと、絶対に避けるべき暑さ対策。</p>
+    <h2 class="section-title">注目の独自ガイド</h2>
+    <div class="featured-article">
+        <div style="flex:1;">
+            <span style="color:var(--primary-color); font-weight:bold; font-size:0.8rem;">SPECIAL GUIDE</span>
+            <h3>元野犬・雑種と心を通わせるために</h3>
+            <p>「懐かない」という誤解を解き、彼ら特有の知恵と絆の深さを知る。実体験に基づく、最初の一歩の踏み出し方。</p>
+            <a href="lifestyle/former-stray-guide.html" class="btn-main">記事を詳しく読む</a>
         </div>
-        <div style="display:flex; flex-direction:column; gap:10px;">
-            <a href="breeds/french-bulldog.html" class="btn-link">解説を見る</a>
-            <a href="#" target="_blank" class="btn-link btn-shop"><i class="fas fa-shopping-cart"></i> クールマット</a>
-        </div>
+        <img src="IMG_0645.png" style="width:200px; height:200px; object-fit:cover; border-radius:15px;" alt="ナビゲーター">
     </div>
-    
+
     <div class="consultation-banner">
-        <h2>🐾 1人で悩んでいませんか？</h2>
-        <p>愛犬の性格や環境に合わせた、あなただけの解決策を一緒に見つけましょう。</p>
-        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-            <a href="faq.html" class="btn-consult" style="background:#f39c12;color:#fff;"><i class="fas fa-search"></i> FAQから探す</a>
-            <a href="contact.html" class="btn-consult"><i class="fas fa-comments"></i> 無料でお悩みを相談する</a>
-        </div>
+        <h2>🐾 1人で悩まないでください</h2>
+        <p>元野犬や雑種の性格は千差万別。専門家と経験者の視点でサポートします。</p>
+        <a href="contact.html" class="btn-main" style="background:#fff; color:var(--secondary-color);">無料でお悩みを相談する</a>
     </div>
 </div>
 <footer><p>&copy; 2026 ワンライフ・ナビ - 星 友和 プロデュース</p></footer>
