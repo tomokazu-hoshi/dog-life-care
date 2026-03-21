@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tomokazu-hoshi.github.io/dog-life-care/sitemap.xml
