@@ -3,19 +3,46 @@
 <head>
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>犬が食べてはいけない物リスト | ワンライフ・ナビ</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CV6GN80DZ2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CV6GN80DZ2');
+    </script>
     <style>
-        body { font-family: sans-serif; line-height: 1.8; max-width: 800px; margin: auto; padding: 20px; }
-        .toxic-item { border-bottom: 1px solid #eee; padding: 15px 0; display: flex; align-items: center; }
-        .danger { color: #e74c3c; font-weight: bold; margin-right: 15px; }
+        body { font-family: sans-serif; line-height: 1.8; max-width: 800px; margin: auto; padding: 20px; color: #333; }
+        header { padding-bottom: 20px; border-bottom: 2px solid #f39c12; margin-bottom: 30px; }
+        .toxic-item { border-bottom: 1px solid #eee; padding: 20px 0; display: flex; align-items: flex-start; }
+        .danger-label { background: #e74c3c; color: #fff; padding: 2px 8px; border-radius: 4px; font-weight: bold; margin-right: 15px; font-size: 0.8rem; flex-shrink: 0; }
+        .info-box { background: #fff4e6; border: 1px dashed #f39c12; padding: 20px; border-radius: 10px; margin-top: 40px; }
     </style>
 </head>
 <body>
-    <header><a href="../index.html" style="text-decoration:none;color:#f39c12;">← HOME</a></header>
-    <h1>🚫 犬が食べてはいけない物リスト</h1>
-    <div class="toxic-item"><span class="danger">【命の危険】</span><div><strong>タマネギ・ネギ類：</strong> 赤血球を破壊し、溶血性貧血を起こします。</div></div>
-    <div class="toxic-item"><span class="danger">【命の危険】</span><div><strong>チョコレート：</strong> テオブロミンが心臓や神経に悪影響を与えます。</div></div>
-    <div class="toxic-item"><span class="danger">【要注意】</span><div><strong>ブドウ・レーズン：</strong> 急性腎不全を起こす可能性があります。</div></div>
-    <div class="toxic-item"><span class="danger">【要注意】</span><div><strong>キシリトール：</strong> 急激な低血糖や肝不全を招きます。</div></div>
-    <p style="margin-top:20px; padding:15px; background:#fff4e6;">※万が一食べてしまった場合は、すぐに動物病院へ連絡してください。</p>
+    <header><a href="../index.html" style="text-decoration:none;color:#f39c12;font-weight:bold;">← HOME</a></header>
+    <h1>🚫 犬が食べてはいけない物：一撃リスト</h1>
+    <p>愛犬の命を守るために、身近にある危険な食品を把握しておきましょう。雑種や野犬出身の子は食欲旺盛なことも多いため、特に注意が必要です。</p>
+
+    <div class="toxic-item">
+        <span class="danger-label">即病院へ</span>
+        <div><strong>タマネギ・ネギ類</strong><p>ネギ属に含まれる成分が赤血球を破壊。加熱しても毒性は消えません。</p></div>
+    </div>
+    <div class="toxic-item">
+        <span class="danger-label">即病院へ</span>
+        <div><strong>チョコレート・ココア</strong><p>テオブロミンが心臓や神経に作用。少量でも中毒症状（震え、痙攣）が出ます。</p></div>
+    </div>
+    <div class="toxic-item">
+        <span class="danger-label">重症化の恐れ</span>
+        <div><strong>ブドウ・レーズン</strong><p>急性腎不全の原因。原因物質は特定されていませんが、非常に危険です。</p></div>
+    </div>
+    <div class="toxic-item">
+        <span class="danger-label">重症化の恐れ</span>
+        <div><strong>キシリトール（ガム等）</strong><p>急激な低血糖と肝不全を招きます。お菓子類の誤飲に注意。</p></div>
+    </div>
+
+    <div class="info-box">
+        <h3>🚨 もし食べてしまったら</h3>
+        <p>「何を」「いつ」「どのくらい」食べたかを確認し、すぐに動物病院へ連絡してください。無理に吐かせるのは喉を傷める可能性があるため、獣医師の指示に従いましょう。</p>
+    </div>
 </body>
 </html>
