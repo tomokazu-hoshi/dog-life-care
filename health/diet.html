@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>犬の食事ガイド | ワンライフ・ナビ</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CV6GN80DZ2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CV6GN80DZ2');
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary-color: #e67e22; --secondary-color: #2c3e50; --bg-color: #fdfaf0; }
+        body { font-family: sans-serif; margin: 0; padding: 0; background: var(--bg-color); line-height: 1.8; }
+        header { background: #fff; padding: 1rem; border-bottom: 3px solid var(--primary-color); display: flex; align-items: center; }
+        header a { text-decoration: none; color: var(--primary-color); font-weight: bold; }
+        .container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        h1 { color: var(--secondary-color); text-align: center; font-size: 1.5rem; }
+        
+        .menu-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 1rem; 
+            margin-top: 2rem; 
+        }
+        
+        .menu-card { 
+            background: #fff; 
+            padding: 1.5rem 0.5rem; 
+            border-radius: 15px; 
+            text-align: center; 
+            text-decoration: none; 
+            color: var(--secondary-color); 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+            border: 1px solid #eee; 
+            transition: 0.3s; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .menu-card:hover { transform: translateY(-3px); border-color: var(--primary-color); }
+        .menu-card i { font-size: 2rem; color: var(--primary-color); margin-bottom: 0.8rem; }
+        .menu-card h3 { margin: 0; font-size: 1rem; }
+        .menu-card p { font-size: 0.75rem; margin: 0.5rem 0 0; color: #666; }
+
+        footer { text-align: center; padding: 3rem; color: #888; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+<header><a href="../index.html"><i class="fas fa-chevron-left"></i> HOME</a></header>
+<div class="container">
+    <h1>🥣 犬の食事ガイド</h1>
+    <p style="text-align:center; font-size: 0.9rem;">健康な体は、毎日の食事から。<br>愛犬の「食べる」を支える知識をまとめました。</p>
+    
+    <div class="menu-grid">
+        <a href="diet/nutritional-basics.html" class="menu-card">
+            <i class="fas fa-microscope"></i>
+            <h3>栄養学の基礎</h3>
+            <p>5大栄養素とカロリー</p>
+        </a>
+        <a href="diet/toxic-foods.html" class="menu-card">
+            <i class="fas fa-skull-crossbones"></i>
+            <h3>中毒・NG食材</h3>
+            <p>食べてはいけない物</p>
+        </a>
+        <a href="diet/homemade-toppings.html" class="menu-card">
+            <i class="fas fa-mortar-pestle"></i>
+            <h3>手作り・トッピング</h3>
+            <p>手軽に栄養をプラス</p>
+        </a>
+        <a href="diet/allergy-selection.html" class="menu-card">
+            <i class="fas fa-search"></i>
+            <h3>アレルギーと選定</h3>
+            <p>体質に合うフード選び</p>
+        </a>
+    </div>
+</div>
+<footer>&copy; 2026 ワンライフ・ナビ</footer>
+</body>
+</html>
