@@ -13,26 +13,26 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --primary-color: #e67e22; --text-color: #333; --bg-light: #fdf2e9; }
+        :root { --primary-color: #e67e22; --text-color: #333; --bg-light: #fdf2e9; --secondary-color: #2c3e50; }
         body { font-family: sans-serif; line-height: 1.8; color: var(--text-color); margin: 0; background: #fff; }
-        header { padding: 1rem; border-bottom: 1px solid #eee; }
-        header a { text-decoration: none; color: var(--primary-color); }
+        header { padding: 1rem; border-bottom: 1px solid #eee; background: #fff; }
+        header a { text-decoration: none; color: var(--primary-color); font-weight: bold; }
         .article-body { max-width: 650px; margin: 3rem auto; padding: 0 1.2rem; }
-        h1 { font-size: 1.8rem; border-bottom: 4px solid var(--primary-color); padding-bottom: 0.5rem; margin-bottom: 2rem; }
-        h2 { background: #fef5e7; padding: 0.8rem; border-left: 8px solid var(--primary-color); margin-top: 3rem; }
+        h1 { font-size: 1.8rem; border-bottom: 4px solid var(--primary-color); padding-bottom: 0.5rem; margin-bottom: 2rem; color: var(--secondary-color); }
+        h2 { background: #fef5e7; padding: 0.8rem; border-left: 8px solid var(--primary-color); margin-top: 3rem; font-size: 1.3rem; }
         .alert-box { background: #fdedec; border: 1px solid #f5b7b1; padding: 1.5rem; border-radius: 10px; margin: 2rem 0; }
         .check-list { background: #f4f6f7; padding: 1.5rem; border-radius: 10px; list-style: none; }
         .check-list li::before { content: "✅"; margin-right: 10px; }
 
-        /* 関連記事セクション */
+        /* 関連記事セクション：トイレトレーニングの他の記事へ誘導 */
         .related-section { margin-top: 5rem; border-top: 2px solid #eee; padding-top: 2rem; }
         .related-title { font-weight: bold; font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--secondary-color); text-align: center; }
         .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-        .related-card { background: var(--bg-light); padding: 1rem; border-radius: 12px; text-decoration: none; color: var(--text-color); font-size: 0.85rem; font-weight: bold; transition: 0.3s; border: 1px solid transparent; text-align: center; display: flex; flex-direction: column; justify-content: center; min-height: 80px; }
-        .related-card:hover { border-color: var(--primary-color); background: #fff; }
-        .related-card i { font-size: 1.2rem; color: var(--primary-color); margin-bottom: 0.5rem; }
+        .related-card { background: var(--bg-light); padding: 1rem; border-radius: 12px; text-decoration: none; color: var(--text-color); font-size: 0.85rem; font-weight: bold; transition: 0.3s; border: 1px solid transparent; text-align: center; display: flex; flex-direction: column; justify-content: center; min-height: 100px; }
+        .related-card:hover { border-color: var(--primary-color); background: #fff; transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .related-card i { font-size: 1.5rem; color: var(--primary-color); margin-bottom: 0.5rem; }
 
-        @media (max-width: 480px) { .related-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 480px) { .related-grid { grid-template-columns: 1fr; } h1 { font-size: 1.5rem; } }
     </style>
 </head>
 <body>
