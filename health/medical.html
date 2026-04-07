@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>健康と医療ガイド | ワンライフ・ナビ</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CV6GN80DZ2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CV6GN80DZ2');
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary-color: #3498db; --secondary-color: #2c3e50; --bg-color: #f4f7f6; }
+        body { font-family: sans-serif; margin: 0; padding: 0; background: var(--bg-color); line-height: 1.6; }
+        header { background: #fff; padding: 1rem; border-bottom: 3px solid var(--primary-color); display: flex; align-items: center; }
+        header a { text-decoration: none; color: var(--primary-color); font-weight: bold; }
+        .container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        h1 { color: var(--secondary-color); text-align: center; font-size: 1.5rem; }
+        
+        /* 常に2×2のグリッドを維持 */
+        .menu-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 1rem; 
+            margin-top: 2rem; 
+        }
+        
+        .menu-card { 
+            background: #fff; 
+            padding: 1.5rem 0.5rem; 
+            border-radius: 15px; 
+            text-align: center; 
+            text-decoration: none; 
+            color: var(--secondary-color); 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+            border: 1px solid #eee; 
+            transition: 0.3s; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 150px;
+        }
+        .menu-card:hover { transform: translateY(-3px); border-color: var(--primary-color); }
+        .menu-card i { font-size: 2rem; color: var(--primary-color); margin-bottom: 0.8rem; }
+        .menu-card h3 { margin: 0; font-size: 1rem; }
+        .menu-card p { font-size: 0.75rem; margin: 0.5rem 0 0; color: #666; display: block; }
+
+        footer { text-align: center; padding: 3rem; color: #888; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+<header><a href="../index.html"><i class="fas fa-chevron-left"></i> HOME</a></header>
+<div class="container">
+    <h1>🏥 健康と医療</h1>
+    <p style="text-align:center; font-size: 0.9rem;">愛犬と一日でも長く一緒に。予防からシニアケアまで、守るための知識です。</p>
+    
+    <div class="menu-grid">
+        <a href="medical/prevention.html" class="menu-card">
+            <i class="fas fa-shield-virus"></i>
+            <h3>病気の予防</h3>
+            <p>ワクチン・フィラリア</p>
+        </a>
+        <a href="medical/emergency.html" class="menu-card">
+            <i class="fas fa-stretcher"></i>
+            <h3>緊急の見極め</h3>
+            <p>病院へ行くべきサイン</p>
+        </a>
+        <a href="medical/senior-care.html" class="menu-card">
+            <i class="fas fa-heart-pulse"></i>
+            <h3>シニア犬のケア</h3>
+            <p>老後を健やかに支える</p>
+        </a>
+        <a href="medical/spay-neuter.html" class="menu-card">
+            <i class="fas fa-notes-medical"></i>
+            <h3>避妊・去勢</h3>
+            <p>メリットと注意点</p>
+        </a>
+    </div>
+</div>
+<footer>&copy; 2026 ワンライフ・ナビ</footer>
+</body>
+</html>
