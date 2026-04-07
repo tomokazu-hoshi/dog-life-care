@@ -17,7 +17,7 @@
         body { font-family: sans-serif; margin: 0; padding: 0; background: var(--bg-color); line-height: 1.6; }
         header { background: #fff; padding: 1rem; border-bottom: 3px solid var(--primary-color); display: flex; align-items: center; }
         header a { text-decoration: none; color: var(--primary-color); font-weight: bold; }
-        .container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .container { max-width: 800px; margin: 2rem auto; padding: 0 1.2rem; }
         h1 { color: var(--secondary-color); text-align: center; }
         .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
         .menu-card { background: #fff; padding: 2rem; border-radius: 15px; text-align: center; text-decoration: none; color: var(--secondary-color); box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #eee; transition: 0.3s; }
@@ -25,34 +25,35 @@
         .menu-card i { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem; }
         .menu-card h3 { margin: 0.5rem 0; }
         footer { text-align: center; padding: 3rem; color: #888; }
+        @media (max-width: 480px) { .menu-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 <header><a href="../index.html"><i class="fas fa-chevron-left"></i> HOME</a></header>
 <div class="container">
     <h1>🐕 犬のしつけガイド</h1>
-    <p style="text-align:center;">「困った」を「絆」に変える。愛犬の行動心理に基づいた、具体的で優しいしつけ方をカテゴリー別に解説します。</p>
+    <p style="text-align:center;">愛犬との絆を深めるための「しつけ」の知識。各カテゴリーから詳細な解決策を見つけることができます。</p>
     
     <div class="menu-grid">
         <a href="potty-training.html" class="menu-card">
             <i class="fas fa-toilet"></i>
             <h3>トイレ</h3>
-            <p>基本の手順から、失敗への対策まで。</p>
+            <p>失敗への対策と基本手順。</p>
         </a>
         <a href="barking-solutions.html" class="menu-card">
             <i class="fas fa-bullhorn"></i>
             <h3>無駄吠え</h3>
-            <p>吠える理由を理解し、安心を与える。</p>
+            <p>吠える理由と安心の与え方。</p>
         </a>
-        <a href="#" class="menu-card" style="opacity:0.6;">
-            <i class="fas fa-bone"></i>
+        <a href="biting-habits.html" class="menu-card">
+            <i class="fas fa-tooth"></i>
             <h3>噛み癖</h3>
-            <p>準備中</p>
+            <p>甘噛みから本気噛みの予防。</p>
         </a>
-        <a href="#" class="menu-card" style="opacity:0.6;">
+        <a href="socialization.html" class="menu-card">
             <i class="fas fa-walking"></i>
             <h3>社会化</h3>
-            <p>準備中</p>
+            <p>外の世界に慣れるための方法。</p>
         </a>
     </div>
 </div>
