@@ -3,64 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>愛犬のよくある質問（FAQ）｜お悩み解決ガイド - ワンライフ・ナビ</title>
-    <meta name="description" content="犬のしつけ、食事、健康、保険など、飼い主さんが直面する切実な悩みをAI専門家が解説します。">
+    <title>よくあるご質問（FAQ）｜愛犬との暮らし - ワンライフ・ナビ</title>
+    <meta name="description" content="犬のしつけ、食事、健康など、日々の暮らしで気になる疑問に簡潔にお答えします。">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "留守番中の無駄吠えやイタズラがひどいです。分離不安でしょうか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "一人の不安から来る『分離不安』の可能性があります。正しい知識を身につけることが解決への近道です。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "涙やけが治りません。フードで改善できますか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "添加物の少ない『プレミアムフード』への切り替えで、改善が期待できる場合があります。"
-          }
-        }
-      ]
-    }
-    </script>
-
     <style>
-        :root { --primary-color: #f39c12; --secondary-color: #2c3e50; --bg-color: #fffcf5; --accent-color: #e67e22; --link-color: #3498db; }
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.8; max-width: 800px; margin: auto; padding: 20px; background: var(--bg-color); color: #333; }
+        :root { --primary-color: #f39c12; --secondary-color: #2c3e50; --bg-color: #fffcf5; --text-main: #333; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.8; max-width: 800px; margin: auto; padding: 20px; background: var(--bg-color); color: var(--text-main); }
         header { padding: 1rem 0; }
-        h1 { border-bottom: 3px solid var(--primary-color); padding-bottom: 10px; color: var(--secondary-color); font-size: 1.4rem; margin-bottom: 30px; }
-        h2 { font-size: 1.1rem; color: #7f8c8d; margin-top: 40px; border-left: 5px solid var(--primary-color); padding-left: 10px; }
+        h1 { border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; color: var(--secondary-color); font-size: 1.3rem; margin-bottom: 30px; }
         
-        .faq-item { background: #fff; padding: 20px; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .q { font-weight: bold; color: #d35400; font-size: 1.05rem; display: block; margin-bottom: 10px; }
-        .a { padding-left: 12px; border-left: 3px solid var(--primary-color); font-size: 0.95rem; margin-bottom: 10px; }
+        .faq-item { background: #fff; padding: 25px; border-radius: 15px; margin-bottom: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .q { font-weight: bold; color: #d35400; font-size: 1.1rem; display: block; margin-bottom: 12px; }
+        .a { padding-left: 15px; border-left: 4px solid var(--primary-color); font-size: 1rem; color: #444; margin-bottom: 20px; }
         
-        /* 用語解説リンク（クリックを促す） */
-        .term-link { color: var(--link-color); text-decoration: underline; cursor: pointer; font-weight: bold; }
-        
-        .btn-inner-link { display: inline-block; background: #eee; color: #666; padding: 6px 15px; border-radius: 20px; text-decoration: none; font-size: 0.85rem; font-weight: bold; transition: 0.3s; margin-top: 5px; }
-        .btn-inner-link:hover { background: #ddd; }
+        /* ボタンリンク（クリックを促す唯一の出口） */
+        .solve-btn { 
+            display: inline-block; 
+            background: var(--secondary-color); 
+            color: #fff; 
+            padding: 12px 25px; 
+            border-radius: 30px; 
+            text-decoration: none; 
+            font-size: 0.9rem; 
+            font-weight: bold; 
+            transition: 0.3s; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .solve-btn:hover { 
+            background: var(--primary-color); 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+        .solve-btn i { margin-left: 8px; }
 
-        /* モーダル（広告色を消したシンプルデザイン） */
-        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); align-items: center; justify-content: center; }
-        .modal-content { background-color: #fff; padding: 30px; border-radius: 15px; width: 85%; max-width: 450px; position: relative; text-align: left; }
-        .close-btn { position: absolute; top: 10px; right: 15px; font-size: 24px; cursor: pointer; color: #bbb; }
-        .modal-title { color: var(--secondary-color); font-size: 1.2rem; margin-bottom: 15px; font-weight: bold; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        .modal-body { margin-bottom: 25px; font-size: 0.95rem; color: #555; line-height: 1.7; }
-        
-        /* 次のステップへ導くボタン */
-        .guide-btn { display: block; background: var(--secondary-color); color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; text-align: center; transition: 0.3s; }
-        .guide-btn:hover { background: #34495e; transform: translateY(-2px); }
-
-        footer { text-align: center; padding: 2rem; color: #888; font-size: 0.8rem; }
+        footer { text-align: center; padding: 3rem; color: #aaa; font-size: 0.8rem; }
     </style>
 </head>
 <body>
@@ -69,95 +46,37 @@
 
 <h1>🐾 よくあるご質問（FAQ）</h1>
 
-<h2>しつけ・行動のお悩み</h2>
 <div class="faq-item">
     <span class="q">Q. 留守番中の無駄吠えやイタズラがひどいです。</span>
     <div class="a">
-        A. 飼い主さんと離れる強い不安を感じる<span class="term-link" onclick="openModal('separation')">「分離不安」</span>の症状が出ている可能性があります。
+        A. 飼い主さんと離れる事で強い不安を感じている可能性があります。
     </div>
-    <a href="training/separation-anxiety.html" class="btn-inner-link">解決ガイドを見る</a>
+    <a href="training/separation-anxiety.html" class="solve-btn">解決ページを見る <i class="fas fa-chevron-right"></i></a>
 </div>
 
 <div class="faq-item">
     <span class="q">Q. 散歩で他の犬に吠えたり、強く引っ張ります。</span>
     <div class="a">
-        A. 興奮のコントロール不足や、散歩用具が合っていない可能性があります。まずは<span class="term-link" onclick="openModal('harness')">「適切な道具選び」</span>から見直しましょう。
+        A. 興奮のコントロール不足や、散歩用具が合っていない可能性があります。
     </div>
-    <a href="training/walk-manners.html" class="btn-inner-link">解決ガイドを見る</a>
+    <a href="training/walk-manners.html" class="solve-btn">解決ページを見る <i class="fas fa-chevron-right"></i></a>
 </div>
 
-<h2>食事・栄養のお悩み</h2>
 <div class="faq-item">
-    <span class="q">Q. 涙やけが治りません。フードで改善できますか？</span>
+    <span class="q">Q. 涙やけが治りません。病院に行かずに改善できますか？</span>
     <div class="a">
-        A. はい、可能性があります。消化に負担をかけない<span class="term-link" onclick="openModal('premium_food')">「プレミアムフード」</span>の基準を知ることが大切です。
+        A. はい、可能性はあります。フードなどで解決する場合があります。
     </div>
-    <a href="food/allergy-care.html" class="btn-inner-link">解決ガイドを見る</a>
+    <a href="food/allergy-care.html" class="solve-btn">解決ページを見る <i class="fas fa-chevron-right"></i></a>
 </div>
 
-<h2>健康・将来の備え</h2>
 <div class="faq-item">
-    <span class="q">Q. もしもの時、治療費がいくらかかるか不安です。</span>
+    <span class="q">Q. もしもしの時、治療費がいくらかかるか不安です。</span>
     <div class="a">
-        A. 一度の入院で高額な費用が発生する場合もあります。<span class="term-link" onclick="openModal('insurance')">「ペット保険」</span>の仕組みを正しく理解しておきましょう。
+        A. 一度の入院で高額な費用が発生する場合もあります。「ペット保険」の仕組みを正しく理解しておきましょう。
     </div>
-    <a href="others/insurance-compare.html" class="btn-inner-link">解決ガイドを見る</a>
+    <a href="others/insurance-compare.html" class="solve-btn">ペット保険の仕組みを見てみる <i class="fas fa-chevron-right"></i></a>
 </div>
-
-<div id="myModal" class="modal" onclick="closeModalOutside(event)">
-    <div class="modal-content" onclick="event.stopPropagation()">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-        <div id="modal-data"></div>
-    </div>
-</div>
-
-<script>
-    const modalData = {
-        'separation': {
-            title: '分離不安（ぶんりふあん）とは？',
-            body: '飼い主がいなくなると、破壊行動や不適切な排泄、吠え続けなどの問題行動を起こす精神的な状態です。しつけだけでなく、環境の改善が非常に重要になります。',
-            detailLink: 'training/separation-anxiety.html',
-            btnText: '分離不安の克服ガイドへ'
-        },
-        'harness': {
-            title: '散歩道具の見直し',
-            body: '首輪は気管への負担が大きく、興奮を高める原因になることも。引っ張り癖がある場合は、前胸で制御するタイプのハーネスが有効です。',
-            detailLink: 'training/walk-manners.html',
-            btnText: '道具選びのポイント解説へ'
-        },
-        'premium_food': {
-            title: 'プレミアムフードの基準',
-            body: '一般的に、人工添加物を使わず、人間が食べられる品質（ヒューマングレード）の食材を主原料としたフードを指します。涙やけ改善の第一歩です。',
-            detailLink: 'food/allergy-care.html',
-            btnText: 'フード選びの教科書へ'
-        },
-        'insurance': {
-            title: 'ペット保険の仕組み',
-            body: '人間の健康保険とは異なり、全額自己負担となる動物の治療費を一定割合（50〜70%など）補償する制度です。若いうちの加入が一般的です。',
-            detailLink: 'others/insurance-compare.html',
-            btnText: '保険の基礎知識ガイドへ'
-        }
-    };
-
-    function openModal(key) {
-        const data = modalData[key];
-        const container = document.getElementById('modal-data');
-        container.innerHTML = `
-            <div class="modal-title">${data.title}</div>
-            <div class="modal-body">${data.body}</div>
-            <a href="${data.detailLink}" class="guide-btn">${data.btnText} <i class="fas fa-arrow-right"></i></a>
-        `;
-        document.getElementById('myModal').style.display = 'flex';
-    }
-
-    function closeModal() {
-        document.getElementById('myModal').style.display = 'none';
-    }
-
-    function closeModalOutside(event) {
-        if (event.target.id === 'myModal') closeModal();
-    }
-</script>
 
 <footer><p>&copy; 2026 ワンライフ・ナビ</p></footer>
 
