@@ -13,22 +13,27 @@
         h2 { border-left: 6px solid var(--primary-color); padding-left: 18px; margin-top: 4rem; color: var(--secondary-color); font-size: 1.4rem; background: #fff; padding-top: 10px; padding-bottom: 10px; }
         h3 { color: #d35400; font-size: 1.15rem; margin-top: 2.5rem; border-bottom: 1px dashed #d35400; display: inline-block; }
         p { margin-bottom: 1.8rem; }
-        ul { margin-bottom: 2rem; background: #fff; padding: 20px 20px 20px 40px; border-radius: 10px; box-shadow: inset 0 0 10px rgba(0,0,0,0.02); }
+        ul { margin-bottom: 2rem; background: #fff; padding: 20px 20px 20px 40px; border-radius: 10px; }
         li { margin-bottom: 10px; }
         
-        .term-tag { color: #2980b9; text-decoration: none; border-bottom: 2px solid #2980b9; cursor: pointer; font-weight: bold; transition: 0.2s; }
-        .term-tag:hover { background: #eef7ff; }
+        .term-tag { color: #2980b9; text-decoration: none; border-bottom: 2px solid #2980b9; cursor: pointer; font-weight: bold; }
 
         .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); align-items: center; justify-content: center; }
-        .modal-content { background-color: #fff; padding: 30px; border-radius: 12px; width: 90%; max-width: 400px; text-align: left; position: relative; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .modal-content { background-color: #fff; padding: 30px; border-radius: 12px; width: 90%; max-width: 400px; text-align: left; position: relative; }
         .close-modal { position: absolute; top: 10px; right: 15px; font-size: 24px; cursor: pointer; color: #bbb; }
         .modal-title { font-weight: bold; font-size: 1.1rem; margin-bottom: 15px; color: var(--secondary-color); border-bottom: 1px solid #eee; padding-bottom: 8px; }
         .modal-body { font-size: 0.95rem; color: #555; line-height: 1.7; }
 
-        .affiliate-section { margin-top: 6rem; padding: 40px; border: 3px double #ddd; border-radius: 20px; background: #fff; text-align: center; }
-        .affiliate-text { font-size: 1rem; color: #444; margin-bottom: 25px; line-height: 1.8; }
-        .affiliate-btn { display: inline-block; background: var(--secondary-color); color: #fff; padding: 18px 40px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .affiliate-btn:hover { background: #34495e; transform: translateY(-3px); }
+        /* さりげない文字リンク */
+        .text-link { color: #2980b9; text-decoration: underline; font-weight: bold; }
+
+        /* 控えめなボタンリンク */
+        .subtle-btn { display: inline-block; border: 1px solid #ccc; color: #666; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-size: 0.9rem; margin-top: 10px; transition: 0.3s; }
+        .subtle-btn:hover { background: #f5f5f5; border-color: #888; color: #333; }
+
+        /* 右下の固定FAQ戻るボタン */
+        .fixed-back-btn { position: fixed; bottom: 20px; right: 20px; background: var(--secondary-color); color: #fff; padding: 12px 20px; border-radius: 50px; text-decoration: none; font-size: 0.85rem; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 100; opacity: 0.9; transition: 0.3s; }
+        .fixed-back-btn:hover { opacity: 1; transform: translateY(-3px); }
 
         footer { text-align: center; padding: 5rem 0; color: #aaa; font-size: 0.8rem; border-top: 1px solid #eee; }
     </style>
@@ -45,54 +50,32 @@
     <p>仕事から帰宅した瞬間に広がる荒らされたリビング。深夜まで続くチャイムへの吠え。近隣からの苦情への不安……。こうした悩みは、多くの飼い主さんが経験することです。しかし、力任せに叱っても解決には至りません。まずは愛犬が何を伝えようとしているのか、その「原因の特定」から始めましょう。</p>
 
     <h2>1. なぜ愛犬は吠え、イタズラをするのか？【原因の特定】</h2>
-    <p>犬が行動を起こすときには、必ず理由があります。大きく分けて3つのタイプを理解しましょう。</p>
-
-    <h3>吠える理由の分類</h3>
-    <ul>
-        <li><strong>チャイム・物音への反応</strong>：家を守ろうとする「警戒」や、外の刺激に対する「不安」です。</li>
-        <li><strong>飼い主さんの外出時</strong>：離れることにパニックを起こす<span class="term-tag" onclick="showWord('separation')">分離不安</span>が考えられます。</li>
-        <li><strong>要求吠え</strong>：吠えれば構ってもらえる、おやつがもらえるという学習の結果です。</li>
-    </ul>
-
-    <h3>イタズラの心理</h3>
-    <p>家具を噛んだりゴミ箱を漁ったりするのは、単なる遊びだけではありません。<span class="term-tag" onclick="showWord('stress')">ストレス</span>や圧倒的な「運動不足」が原因である場合が多いのです。また、退屈を紛らわせるための「暇つぶし」として、最も反応が良い（飼い主さんが驚いて構ってくれる）行動を選んでいることもあります。</p>
+    <p>犬が行動を起こすときには、必ず理由があります。吠える理由（チャイム、分離不安、警戒）やイタズラの理由（ストレス、運動不足、暇つぶし）を正しく理解しましょう。</p>
 
     <h2>2. 今日からできる具体的な対策</h2>
-    <p>原因がわかったら、具体的な行動修正に取り組みます。ここでは「無視」と「落ち着かせる練習」を紹介します。</p>
-
-    <h3>「無視」の正しいやり方</h3>
-    <p>要求吠えに対しては、徹底的な「無視」が有効です。目を合わせない、声をかけない、部屋を出る。一貫した態度が、犬に「吠えても何も起きない」という学習を促します。</p>
-
-    <h3>落ち着きを教えるトレーニング</h3>
-    <p>興奮しやすい子には、<span class="term-tag" onclick="showWord('matte')">「待て」のトレーニング</span>が非常に重要です。静かにしていれば良いことが起きる、という成功体験を積み重ねます。同時に、犬にとっての安心できる居場所を作る<span class="term-tag" onclick="showWord('crate')">クレートトレーニング</span>も、精神的な安定に大きく貢献します。</p>
+    <p>原因がわかったら、具体的な行動修正に取り組みます。吠えた時の正しい「無視」のやり方や、「待て」を使った落ち着かせ方を徹底しましょう。また、安心できる居場所を作る<span class="term-tag" onclick="showWord('crate')">クレートトレーニング</span>の手順を覚えることも大切です。</p>
 
     <h2>3. 暮らしやすい環境の改善術</h2>
-    <p>犬の行動を制限するのではなく、犬が「失敗しにくい環境」を作ってあげることが解決への近道です。</p>
-    <ul>
-        <li><strong>視覚の遮断</strong>：外の人影に反応するなら、窓にカーテンや目隠しシートを貼りましょう。</li>
-        <li><strong>物理的な制限</strong>：キッチンなど危険な場所やイタズラされたくない場所には、侵入防止ゲートを設置します。</li>
-        <li><strong>代替案の提示</strong>：家具を噛む代わりに、噛んで遊べる<span class="term-tag" onclick="showWord('toy')">知育玩具</span>を与え、エネルギーをそちらに向けさせます。</li>
-    </ul>
+    <p>犬が失敗しにくい環境を整えます。外に反応するなら窓にカーテンをつけたり、侵入防止ゲートを設置します。また、退屈を紛らわせるための<span class="term-tag" onclick="showWord('toy')">知育玩具</span>を与え、エネルギーをそちらに向けさせます。</p>
 
     <h2>4. ストレス発散で「満足」させる</h2>
-    <p>多くの問題行動は、十分なエネルギーの発散で解決します。散歩はただ歩くだけでなく、犬種に合わせた量と質が必要です。また、雨の日や室内でもできる<span class="term-tag" onclick="showWord('nose')">ノーズワーク</span>などの遊びを取り入れ、脳を使わせることで、犬は心地よい疲労感と共に深い眠りにつくことができます。</p>
+    <p>多くの問題行動はエネルギーの発散で解決します。犬種別の適切な散歩量を確保し、室内では鼻を使う<span class="term-tag" onclick="showWord('nose')">ノーズワーク</span>などの遊びを取り入れ、脳を疲れさせてあげましょう。</p>
 
-    <h2>5. 専門家への相談という選択肢</h2>
-    <p>飼い主さん一人で抱え込む必要はありません。どうしても改善が見られない場合は、プロのドッグトレーナーや、動物病院での「行動診療」を受けることも検討してください。しつけ教室は、犬を教育する場所であると同時に、飼い主さんが愛犬とのコミュニケーション術を学ぶ場所でもあります。</p>
+    <h2>5. しつけの結果を「答え合わせ」する</h2>
+    <p>トレーニングを始めたら、飼い主さんがいない時に「本当に静かにできているか」を確認することが成功への近道です。最近では、外出先から愛犬の様子をスマホで確認できる<span class="term-tag" onclick="showWord('camera')">ペットカメラ</span>を活用する方が増えています。吠えた時にスマホへ通知が来る機能を使えば、トレーニングの効果を客観的に判断できます。興味のある方は、<a href="https://example.com/camera-official" class="text-link" target="_blank">公式ホームページはこちら</a>から詳細を確認してみてください。</p>
 
-    <div class="affiliate-section">
-        <p class="affiliate-text">
-            愛犬との関係を見直し、より豊かな暮らしを送るために。<br>
-            もし、専門的な知識をもっと深めたい、あるいは信頼できるプロの指導を自宅で受けたいとお考えの方は、以下の公式サイトから詳細を確認してみてください。
-        </p>
-        <a href="https://example.com/professional-training" class="affiliate-btn" target="_blank">
-            専門のしつけガイド・推奨ツールを確認する
+    <h2>6. 専門家への相談という選択肢</h2>
+    <p>どうしても自分一人での解決が難しい場合は、プロのドッグトレーナーや動物病院での「行動診療」を検討してください。しつけ教室は、愛犬とのコミュニケーション術を学び直す良い機会になります。今の状況に限界を感じている方は、一度専門のアドバイスを受けてみるのも一つの手です。</p>
+    
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="https://example.com/trainer-link" class="subtle-btn" target="_blank">
+            専門のしつけガイドを確認してみる
         </a>
-        <p style="font-size:0.75rem; color:#999; margin-top:15px;">
-            ※解決のヒントが必要な方、一歩踏み出したい方のみご覧ください。
-        </p>
     </div>
+
 </article>
+
+<a href="../faq.html" class="fixed-back-btn">FAQ一覧へ戻る <i class="fas fa-arrow-right"></i></a>
 
 <div id="wordModal" class="modal" onclick="hideWord()">
     <div class="modal-content" onclick="event.stopPropagation()">
@@ -104,12 +87,10 @@
 
 <script>
     const dictionary = {
-        'separation': { title: '分離不安とは？', body: '飼い主が離れる際にパニックを起こし、吠えや破壊、不適切な排泄などを行う精神的な状態です。' },
-        'stress': { title: 'ストレス反応', body: '過剰な足舐め、尾追い、あくびの連発、落ち着きなく歩き回るなどのサインが含まれます。' },
-        'matte': { title: '待てトレーニング', body: '衝動を抑える力を養う基本。小さな我慢の積み重ねが、日常生活での落ち着きに直結します。' },
-        'crate': { title: 'クレートトレーニング', body: '箱型のハウスを「自分だけの安心できる寝床」として教え、リラックスさせる訓練です。' },
-        'toy': { title: '知育玩具とは？', body: '中にフードを詰め、工夫しないと食べられないようにしたおもちゃ。集中力を使い、退屈を解消します。' },
-        'nose': { title: 'ノーズワーク', body: '鼻を使って隠したおやつを探す遊び。本能を満たし、短時間で高い満足感と疲労感を与えます。' }
+        'crate': { title: 'クレートトレーニング', body: '箱型のハウスを安心できる寝床として教える訓練。災害時や移動時のストレス軽減にも役立ちます。' },
+        'toy': { title: '知育玩具とは？', body: '中にフードを詰め、工夫しないと食べられないおもちゃ。集中力を使い、退屈を解消します。' },
+        'nose': { title: 'ノーズワーク', body: '鼻を使っておやつを探す遊び。本能を満たし、短時間で高い満足感を与えます。' },
+        'camera': { title: 'ペットカメラの役割', body: '留守番中の吠えやイタズラの「引き金」を特定し、トレーニングが成功しているかを確認するためのツールです。' }
     };
 
     function showWord(key) {
