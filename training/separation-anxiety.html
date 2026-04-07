@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>留守番中の無駄吠え・イタズラ対策ガイド｜ワンライフ・ナビ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary-color: #f39c12; --secondary-color: #2c3e50; --bg-color: #fffcf5; --text-main: #333; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.9; max-width: 800px; margin: auto; padding: 20px; background: var(--bg-color); color: var(--text-main); }
+        header { padding: 1rem 0; border-bottom: 1px solid #ddd; margin-bottom: 2rem; }
+        h1 { color: var(--secondary-color); font-size: 1.5rem; line-height: 1.4; }
+        h2 { border-left: 5px solid var(--primary-color); padding-left: 15px; margin-top: 3rem; color: var(--secondary-color); font-size: 1.25rem; }
+        p { margin-bottom: 1.5rem; }
+        
+        /* 用語解説クリック箇所（癖をつけさせる仕掛け） */
+        .term-tag { color: #2980b9; text-decoration: none; border-bottom: 1px dashed #2980b9; cursor: pointer; font-weight: bold; }
+
+        /* モーダル：言葉の意味だけを簡潔に */
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); align-items: center; justify-content: center; }
+        .modal-content { background-color: #fff; padding: 20px; border-radius: 8px; width: 85%; max-width: 350px; text-align: center; position: relative; }
+        .close-modal { position: absolute; top: 5px; right: 10px; font-size: 20px; cursor: pointer; color: #aaa; }
+        .modal-title { font-weight: bold; font-size: 1rem; margin-bottom: 10px; color: var(--secondary-color); }
+        .modal-body { font-size: 0.85rem; color: #666; line-height: 1.6; }
+
+        /* 最後の最後だけのアフィリエイト枠 */
+        .affiliate-section { margin-top: 5rem; padding: 30px; border: 2px solid #eee; border-radius: 15px; background: #fff; text-align: center; }
+        .affiliate-text { font-size: 0.9rem; color: #666; margin-bottom: 20px; }
+        .affiliate-btn { display: inline-block; background: #e74c3c; color: #fff; padding: 15px 30px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .affiliate-btn:hover { background: #c0392b; }
+
+        footer { text-align: center; padding: 4rem 0; color: #aaa; font-size: 0.8rem; border-top: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="../faq.html" style="text-decoration:none;color:var(--primary-color);font-weight:bold;"><i class="fas fa-chevron-left"></i> FAQへ戻る</a>
+</header>
+
+<article>
+    <h1>愛犬が留守番中に吠える・荒らす…それは「心のサイン」かもしれません</h1>
+    
+    <p>「仕事から帰ってくると部屋がボロボロ」「近所から無駄吠えの苦情が来た」……。そんな経験はありませんか？愛犬を叱りたくなる気持ちも分かりますが、実はその行動、犬がパニックに陥っている証拠かもしれません。</p>
+
+    <p>こうした状態を専門用語で<span class="term-tag" onclick="showWord('separation')">分離不安（ぶんりふあん）</span>と呼びます。単なるイタズラではなく、飼い主さんと離れることへの強い恐怖心が原因です。</p>
+
+    <h2>なぜ、お留守番が苦手になるのか？</h2>
+    <p>原因は一概には言えませんが、多くは「飼い主さんへの過度な依存」や「過去の寂しい経験」が背景にあります。特に保護犬や元野犬の場合、新しい環境への不安から<span class="term-tag" onclick="showWord('stress')">ストレス反応</span>が強く出やすい傾向にあります。</p>
+
+    <p>また、飼い主さんが出かける前の「準備の動作（鍵を持つ、上着を着る）」を見るだけで、犬の不安スイッチが入ってしまうことも少なくありません。</p>
+
+    <h2>家庭でできる「安心」のトレーニング</h2>
+    <p>まずは「飼い主はいなくなっても必ず戻ってくる」という信頼を再構築することから始めましょう。</p>
+    
+    <p>1. **短い時間から練習する**：数秒間だけ部屋を出て、すぐに戻る。これを繰り返します。<br>
+       2. **出かけるフリをする**：鍵を鳴らしても出かけない、靴を履いてもソファに座るなど、出かける合図と不安を切り離します。<br>
+       3. **一人の時間を楽しませる**：夢中になれる知育玩具などを与え、「一人は楽しい時間だ」と上書きします。</p>
+
+    <h2>客観的な「見守り」が改善を早める</h2>
+    <p>トレーニング中、飼い主さんがいない時に愛犬がどう過ごしているかを知ることは非常に重要です。吠え始めるタイミングや、何に反応しているかを知ることで、より的確な対策が打てるようになります。</p>
+    
+    <p>最近では、外出先から声をかけたり、おやつをあげたりできる<span class="term-tag" onclick="showWord('camera')">見守りツール</span>を活用する飼い主さんも増えています。これらは単なる防犯ではなく、愛犬の「安心」を支えるための補助手段として注目されています。</p>
+
+    <div class="affiliate-section">
+        <p class="affiliate-text">もし、どうしても不安が解消されない、あるいは愛犬の様子をリアルタイムで確認して安心したいという方は、専門のツールを検討してみるのも一つの選択肢です。</p>
+        <a href="https://example.com/affiliate-link" class="affiliate-btn" target="_blank">
+            専門の見守りツール（Furbo等）を詳しく見てみる
+        </a>
+        <p style="font-size:0.7rem; color:#999; margin-top:10px;">※公式サイトの情報を確認したい方のみクリックしてください</p>
+    </div>
+</article>
+
+<div id="wordModal" class="modal" onclick="hideWord()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="hideWord()">&times;</span>
+        <div id="modalTitle" class="modal-title"></div>
+        <div id="modalBody" class="modal-body"></div>
+    </div>
+</div>
+
+<script>
+    const dictionary = {
+        'separation': { title: '分離不安とは？', body: '飼い主がいなくなると、パニックに近い不安を感じ、破壊行動や無駄吠えをしてしまう状態のこと。' },
+        'stress': { title: 'ストレス反応とは？', body: '不安や恐怖を感じた際に出る、過剰なヨダレ、足舐め、震え、鳴き続けなどの反応。' },
+        'camera': { title: '見守りツールとは？', body: 'スマホで外出先から愛犬の様子を見たり、声をかけたりできるカメラ。双方向のコミュニケーションが可能なものもあります。' }
+    };
+
+    function showWord(key) {
+        document.getElementById('modalTitle').innerText = dictionary[key].title;
+        document.getElementById('modalBody').innerText = dictionary[key].body;
+        document.getElementById('wordModal').style.display = 'flex';
+    }
+
+    function hideWord() {
+        document.getElementById('wordModal').style.display = 'none';
+    }
+</script>
+
+<footer><p>&copy; 2026 ワンライフ・ナビ</p></footer>
+
+</body>
+</html>
