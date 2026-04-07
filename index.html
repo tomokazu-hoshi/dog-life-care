@@ -16,13 +16,12 @@
         :root { --main-color: #f39c12; --secondary-color: #2c3e50; --bg-gray: #f9f9f9; }
         body { font-family: sans-serif; margin: 0; padding: 0; background: var(--bg-gray); color: var(--secondary-color); line-height: 1.6; }
         
-        /* ヒーローセクション：星さんのワンちゃん2匹の写真を表示する場所 */
-        /* background-imageのパスはご自身のファイル名に合わせて修正してください */
+        /* ヒーローセクション：星さんの愛犬（IMG_0645.png）を表示 */
         .hero { 
             position: relative; 
             height: 50vh; 
             min-height: 350px; 
-            background: url('img/top-dogs.jpg') center/cover no-repeat; 
+            background: url('img/IMG_0645.png') center/cover no-repeat; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
@@ -36,7 +35,7 @@
 
         .container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
 
-        /* 8カテゴリーを常に2×2（あるいはスマホで2列）で表示するグリッド */
+        /* 8カテゴリーを2列のグリッドで表示 */
         .menu-grid { 
             display: grid; 
             grid-template-columns: 1fr 1fr; 
