@@ -2,43 +2,51 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>おもちゃ選びと遊び方 | ワンライフ・ナビ</title>
+    <title>欲求を満たすおもちゃの選び方 | ワンライフ・ナビ</title>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CV6GN80DZ2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-CV6GN80DZ2');
-    </script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config', 'G-CV6GN80DZ2');</script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --primary-color: #f39c12; --secondary-color: #2c3e50; --text-color: #333; --bg-light: #fff9e6; }
+        :root { --primary-color: #f39c12; --secondary-color: #2c3e50; --text-color: #333; --bg-light: #fef9f5; }
         body { font-family: sans-serif; line-height: 1.8; color: var(--text-color); margin: 0; background: #fff; }
-        header { padding: 1rem; border-bottom: 1px solid #eee; }
+        header { padding: 1rem; border-bottom: 1px solid #eee; background: #fff; }
         header a { text-decoration: none; color: var(--primary-color); font-weight: bold; }
         .article-body { max-width: 650px; margin: 3rem auto; padding: 0 1.2rem; }
         h1 { font-size: 1.8rem; border-bottom: 4px solid var(--primary-color); padding-bottom: 0.5rem; margin-bottom: 2rem; color: var(--secondary-color); }
         h2 { background: #fef5e7; padding: 0.8rem; border-left: 8px solid var(--primary-color); margin-top: 3rem; font-size: 1.3rem; }
-        .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 3rem; }
-        .related-card { background: var(--bg-light); padding: 1rem; border-radius: 12px; text-decoration: none; color: var(--text-color); font-size: 0.85rem; font-weight: bold; text-align: center; display: flex; flex-direction: column; justify-content: center; min-height: 100px; }
-        .btn-back-category { display: inline-block; background: var(--secondary-color); color: #fff; padding: 0.8rem 2rem; border-radius: 30px; text-decoration: none; font-weight: bold; margin-top: 3rem; }
+        .alert-box { background: #fdedec; border: 1px solid #f5b7b1; padding: 1.5rem; border-radius: 10px; margin: 2rem 0; }
+        .related-section { margin-top: 5rem; border-top: 2px solid #eee; padding-top: 2rem; }
+        .related-title { font-weight: bold; font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--secondary-color); text-align: center; }
+        .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .related-card { background: var(--bg-light); padding: 1rem; border-radius: 12px; text-decoration: none; color: var(--text-color); font-size: 0.85rem; font-weight: bold; text-align: center; display: flex; flex-direction: column; justify-content: center; min-height: 100px; transition: 0.3s; }
+        .related-card:hover { border-color: var(--primary-color); transform: translateY(-3px); background: #fff; }
+        .related-card i { font-size: 1.5rem; color: var(--primary-color); margin-bottom: 0.5rem; }
+        .btn-back-category { display: inline-block; background: var(--secondary-color); color: #fff; padding: 0.8rem 2rem; border-radius: 30px; text-decoration: none; font-weight: bold; transition: 0.3s; margin-top: 3rem; }
+        .btn-back-category:hover { background: var(--primary-color); transform: scale(1.05); }
+        @media (max-width: 480px) { .related-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 <header><a href="../biting-habits.html"><i class="fas fa-chevron-left"></i> 噛み癖ガイドに戻る</a></header>
 <div class="article-body">
-    <h1>噛みたい欲求を解消！<br>ストレスを逃がすおもちゃの選び方</h1>
-    <p>「噛むこと」は犬にとって大切な本能であり、ストレス発散でもあります。ダメと禁止するだけでなく、「これを噛んでいいよ！」という代わりの物を用意してあげましょう。</p>
-    <h2>1. 噛み応えのある天然素材</h2>
-    <p>鹿の角やヒマラヤチーズなどは、長時間集中して噛むことができます。ただし、歯が欠けないよう硬すぎないものを選び、必ず飼い主の目の届く範囲で与えてください。</p>
-    <h2>2. 遊びの延長でルールを教える</h2>
-    <p>ロープ遊びの最中に手が当たりそうになったら「アウト」の指示で離させるなど、遊びを通して興奮をコントロールする練習を行いましょう。噛んでいい物と悪い物の区別を明確にします。</p>
-
-    <div class="related-grid">
-        <a href="puppy-mouthing.html" class="related-card"><i class="fas fa-baby"></i>子犬期の<br>甘噛み対策</a>
-        <a href="fear-aggression.html" class="related-card"><i class="fas fa-shield-dog"></i>本気噛みを防ぐ<br>信頼関係</a>
+    <h1>噛みたい欲求を解消！<br>ストレスを逃がすおもちゃ選び</h1>
+    <p>「噛む」ことは犬にとってストレス発散です。禁止するだけでなく代わりの物を与えましょう。</p>
+    <div class="alert-box"><strong>⚠️ 硬すぎる素材に注意</strong><br>鹿の角や蹄は硬すぎて歯が欠けるリスクもあります。飼い主の目の届く範囲で短時間使いましょう。</div>
+    <h2>1. 噛み応えのある天然素材を選ぶ</h2>
+    <p>コング（知育玩具）にフードを詰めたり、天然素材のおもちゃを与え、噛みたい本能を満たします。</p>
+    <h2>2. 家具を噛む時の「スプレー」活用</h2>
+    <p>噛んで欲しくない場所には、苦味のあるしつけスプレーを使い「ここは嫌な味がする」と学習させます。</p>
+    <h2>3. ロープ遊びでルールを学ぶ</h2>
+    <p>「アウト（離せ）」の指示を遊びの中で教え、興奮をコントロールする練習をします。</p>
+    <div class="related-section">
+        <div class="related-title">噛み癖の悩みをあわせて解決</div>
+        <div class="related-grid">
+            <a href="puppy-mouthing.html" class="related-card"><i class="fas fa-baby"></i>子犬期の<br>甘噛み対策</a>
+            <a href="fear-aggression.html" class="related-card"><i class="fas fa-shield-dog"></i>本気噛みを防ぐ<br>信頼関係</a>
+        </div>
     </div>
     <div style="text-align: center;"><a href="../index.html" class="btn-back-category"><i class="fas fa-graduation-cap"></i> しつけガイドの基本に戻る</a></div>
 </div>
+<footer><p style="text-align:center; padding:3rem; color:#888;">&copy; 2026 ワンライフ・ナビ</p></footer>
 </body>
 </html>
