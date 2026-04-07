@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ワンライフ・ナビ | 愛犬の悩み解決と健康を守る総合ガイド</title>
-    
-    <meta name="google-site-verification" content="mX7N64dCjMcZOG9D_h6eSa4m2yR1p5ApB6xp8iO3xZE" />
-
+    <title>ワンライフ・ナビ | 犬のしつけと健康ガイド</title>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CV6GN80DZ2"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -14,139 +11,45 @@
       gtag('js', new Date());
       gtag('config', 'G-CV6GN80DZ2');
     </script>
-
-    <meta name="description" content="元野犬・雑種を愛する飼い主のための、AIと経験が融合した専門メディア。しつけ、食事、健康から年齢診断まで。">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --primary-color: #f39c12; --secondary-color: #2c3e50; --bg-color: #f9f9f9; --text-color: #333; }
-        body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', sans-serif; margin: 0; padding: 0; line-height: 1.6; color: var(--text-color); background-color: var(--bg-color); }
-        header { background: #fff; padding: 1rem; text-align: center; border-bottom: 3px solid var(--primary-color); position: sticky; top: 0; z-index: 1000; }
-        header h1 { margin: 0; font-size: 1.5rem; color: var(--primary-color); }
-        .hero { 
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('IMG_0645.png'); 
-            background-size: cover; 
-            background-position: center; 
-            color: #fff; 
-            padding: 7rem 1rem; 
-            text-align: center; 
-        }
-        .hero h2 { font-size: 2.2rem; margin-bottom: 0.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        .hero p { font-size: 1.1rem; opacity: 0.9; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
-
-        .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
-        
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(4, 1fr); 
-            gap: 1rem; 
-            margin-bottom: 3rem; 
-        }
-        .card { 
-            background: #fff; 
-            padding: 1.5rem 0.5rem; 
-            border-radius: 15px; 
-            text-align: center; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
-            text-decoration: none; 
-            color: var(--secondary-color); 
-            transition: all 0.3s ease; 
-            border: 1px solid #eee; 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .card:hover { transform: translateY(-5px); border-color: var(--primary-color); box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
-        .card i { font-size: 2rem; color: var(--primary-color); margin-bottom: 0.7rem; }
-        .card span { font-weight: bold; font-size: 0.9rem; }
-        
-        .section-title { text-align: center; margin: 3rem 0 1.5rem; }
-        .section-title::after { content: ''; display: block; width: 40px; height: 3px; background: var(--primary-color); margin: 10px auto; }
-        
-        .featured-article { 
-            background: #fff; 
-            margin: 1.5rem 0; 
-            padding: 2rem; 
-            border-radius: 20px; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
-            display: flex; 
-            align-items: center; 
-            gap: 2rem; 
-            border-left: 8px solid var(--primary-color); 
-        }
-        .btn-main { display: inline-block; background: var(--primary-color); color: #fff; padding: 0.8rem 2rem; border-radius: 30px; text-decoration: none; font-weight: bold; }
-        
-        footer { text-align: center; padding: 3rem; background: var(--secondary-color); color: #fff; margin-top: 5rem; }
-        
-        @media (max-width: 768px) { 
-            .grid { grid-template-columns: repeat(2, 1fr); } 
-            .featured-article { flex-direction: column; text-align: center; }
-            .hero h2 { font-size: 1.8rem; }
-        }
+        :root { --primary-color: #f39c12; --secondary-color: #2c3e50; --bg-color: #f9f9f9; }
+        body { font-family: sans-serif; margin: 0; padding: 0; background: var(--bg-color); line-height: 1.6; }
+        header { background: #fff; padding: 2rem 1rem; text-align: center; border-bottom: 5px solid var(--primary-color); }
+        .container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+        .main-menu { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .menu-card { background: #fff; padding: 2rem; border-radius: 20px; text-align: center; text-decoration: none; color: var(--secondary-color); box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; border: 1px solid #eee; }
+        .menu-card:hover { transform: translateY(-5px); border-color: var(--primary-color); }
+        .menu-card i { font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem; }
+        .menu-card h2 { margin: 0.5rem 0; font-size: 1.2rem; }
+        @media (max-width: 480px) { .main-menu { grid-template-columns: 1fr 1fr; } .menu-card { padding: 1.5rem 0.5rem; } }
     </style>
 </head>
 <body>
-
 <header>
     <h1><i class="fas fa-dog"></i> ワンライフ・ナビ</h1>
+    <p>元野犬・保護犬と歩む、新しい家族のカタチ</p>
 </header>
-
-<section class="hero">
-    <h2>愛犬との時間を、もっと最高に。</h2>
-    <p>元野犬・雑種の個性を尊重し、共に歩む飼い主さんのための専門ガイド</p>
-</section>
-
 <div class="container">
-    <h2 class="section-title">カテゴリーから探す</h2>
-    <div class="grid">
-        <a href="training/index.html" class="card">
+    <div class="main-menu">
+        <a href="training/index.html" class="menu-card">
             <i class="fas fa-graduation-cap"></i>
-            <span>しつけ</span>
+            <h2>しつけ</h2>
         </a>
-        <a href="health/diet.html" class="card">
+        <a href="health/diet.html" class="menu-card">
             <i class="fas fa-utensils"></i>
-            <span>食事</span>
+            <h2>食事</h2>
         </a>
-        <a href="health/medical.html" class="card">
-            <i class="fas fa-stethoscope"></i>
-            <span>健康と医療</span>
+        <a href="health/medical.html" class="menu-card">
+            <i class="fas fa-hospital-alt"></i>
+            <h2>健康・医療</h2>
         </a>
-        <a href="care/daily.html" class="card">
-            <i class="fas fa-shower"></i>
-            <span>日々のお手入れ</span>
+        <a href="care/index.html" class="menu-card">
+            <i class="fas fa-magic"></i>
+            <h2>お手入れ</h2>
         </a>
-        <a href="lifestyle/travel-tips.html" class="card">
-            <i class="fas fa-paw"></i>
-            <span>お出かけ</span>
-        </a>
-        <a href="others/index.html" class="card">
-            <i class="fas fa-plus-circle"></i>
-            <span>その他</span>
-        </a>
-        <a href="faq.html" class="card">
-            <i class="fas fa-comments"></i>
-            <span>FAQ</span>
-        </a>
-        <a href="tools/age-calculator.html" class="card">
-            <i class="fas fa-hourglass-half"></i>
-            <span>年齢診断</span>
-        </a>
-    </div>
-
-    <h2 class="section-title">注目の独自ガイド</h2>
-    <div class="featured-article">
-        <div style="flex:1;">
-            <span style="color:var(--primary-color); font-weight:bold; font-size:0.8rem;">PICK UP</span>
-            <h3>元野犬・雑種と心を通わせるために</h3>
-            <p>「懐かない」という誤解を解き、彼ら特有の絆の深さを知る。実体験に基づく、最初の一歩の踏み出し方について詳しく解説します。</p>
-            <a href="lifestyle/former-stray-guide.html" class="btn-main">記事を詳しく読む</a>
-        </div>
-        <img src="IMG_0645.png" style="width:200px; height:200px; object-fit:cover; border-radius:15px;" alt="ナビゲーター犬">
     </div>
 </div>
-
-<footer>
-    <p>&copy; 2026 ワンライフ・ナビ - 星 友和 プロデュース</p>
-</footer>
-
+<footer><p style="text-align:center; padding:4rem; color:#888;">&copy; 2026 ワンライフ・ナビ</p></footer>
 </body>
 </html>
