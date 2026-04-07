@@ -13,114 +13,112 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --main-color: #f39c12; --accent-color: #e67e22; --text-dark: #2c3e50; --bg-gray: #f8f9fa; }
-        body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; margin: 0; padding: 0; background: var(--bg-gray); color: var(--text-dark); line-height: 1.6; }
+        :root { --main-color: #f39c12; --secondary-color: #2c3e50; --bg-gray: #f9f9f9; }
+        body { font-family: sans-serif; margin: 0; padding: 0; background: var(--bg-gray); color: var(--secondary-color); line-height: 1.6; }
         
-        /* ヒーローセクション（メイン写真） */
-        .hero { position: relative; height: 60vh; min-height: 400px; background: url('https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&q=80&w=1200') center/cover no-repeat; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; }
-        .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); }
-        .hero-content { position: relative; z-index: 1; padding: 0 1rem; }
-        .hero h1 { font-size: 2.5rem; margin: 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
-        .hero p { font-size: 1.1rem; margin-top: 1rem; text-shadow: 1px 1px 5px rgba(0,0,0,0.5); }
+        /* ヒーローセクション：星さんのワンちゃん2匹の写真を表示する場所 */
+        /* background-imageのパスはご自身のファイル名に合わせて修正してください */
+        .hero { 
+            position: relative; 
+            height: 50vh; 
+            min-height: 350px; 
+            background: url('img/top-dogs.jpg') center/cover no-repeat; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: #fff; 
+            text-align: center;
+        }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.2); }
+        .hero-content { position: relative; z-index: 1; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+        .hero h1 { font-size: 2.2rem; margin: 0; }
+        .hero p { font-size: 1rem; margin-top: 0.5rem; }
 
-        .container { max-width: 1000px; margin: -50px auto 4rem; padding: 0 1rem; position: relative; z-index: 2; }
+        .container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
 
-        /* 8カテゴリーのグリッド */
-        .category-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+        /* 8カテゴリーを常に2×2（あるいはスマホで2列）で表示するグリッド */
+        .menu-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 1rem; 
+            margin-top: 1rem; 
+        }
         
-        .category-card { background: #fff; border-radius: 15px; overflow: hidden; text-decoration: none; color: var(--text-dark); box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: 0.3s; display: flex; flex-direction: column; }
-        .category-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
-        
-        /* 各カテゴリーの写真（仮のイメージURLを入れています） */
-        .card-img { height: 120px; background-size: cover; background-position: center; position: relative; }
-        .card-img i { position: absolute; bottom: 10px; right: 10px; background: #fff; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--main-color); box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .menu-card { 
+            background: #fff; 
+            padding: 1.5rem 0.5rem; 
+            border-radius: 20px; 
+            text-align: center; 
+            text-decoration: none; 
+            color: var(--secondary-color); 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+            border: 1px solid #eee; 
+            transition: 0.3s; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .menu-card:hover { transform: translateY(-5px); border-color: var(--main-color); }
+        .menu-card i { font-size: 2.5rem; color: var(--main-color); margin-bottom: 0.8rem; }
+        .menu-card h2 { margin: 0; font-size: 1.1rem; }
 
-        .card-body { padding: 1rem; text-align: center; }
-        .card-body h2 { margin: 0; font-size: 1.1rem; color: var(--text-dark); }
-        .card-body p { margin: 5px 0 0; font-size: 0.75rem; color: #777; }
+        footer { text-align: center; padding: 4rem 1rem; color: #888; font-size: 0.8rem; }
 
-        footer { background: var(--text-dark); color: #fff; text-align: center; padding: 3rem 1rem; font-size: 0.8rem; }
-        
-        /* PC用レイアウト（4x2） */
-        @media (min-width: 768px) {
-            .category-grid { grid-template-columns: repeat(4, 1fr); }
-            .hero h1 { font-size: 3.5rem; }
-            .card-img { height: 150px; }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.8rem; }
+            .menu-card { padding: 1.2rem 0.5rem; }
+            .menu-card i { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
-<section class="hero">
+<header class="hero">
     <div class="hero-content">
-        <h1><i class="fas fa-dog"></i> ワンライフ・ナビ</h1>
-        <p>元野犬・保護犬と歩む、新しい家族のカタチを提案する専門ガイド</p>
+        <h1>ワンライフ・ナビ</h1>
+        <p>元野犬・保護犬と歩む、新しい家族のカタチ</p>
     </div>
-</section>
+</header>
 
 <div class="container">
-    <div class="category-grid">
-        <a href="training/index.html" class="category-card">
-            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=60&w=400');">
-                <i class="fas fa-graduation-cap"></i>
-            </div>
-            <div class="card-body"><h2>しつけ</h2><p>信頼を築く一歩</p></div>
+    <div class="menu-grid">
+        <a href="training/index.html" class="menu-card">
+            <i class="fas fa-graduation-cap"></i>
+            <h2>しつけ</h2>
         </a>
-
-        <a href="health/diet.html" class="category-card">
-            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1589924691106-073b19f56582?auto=format&fit=crop&q=60&w=400');">
-                <i class="fas fa-utensils"></i>
-            </div>
-            <div class="card-body"><h2>食事</h2><p>健康を作る栄養学</p></div>
+        <a href="health/diet.html" class="menu-card">
+            <i class="fas fa-utensils"></i>
+            <h2>食事</h2>
         </a>
-
-        <a href="health/medical.html" class="category-card">
-            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&q=60&w=400');">
-                <i class="fas fa-hospital-alt"></i>
-            </div>
-            <div class="card-body"><h2>健康と医療</h2><p>愛犬を守る知識</p></div>
+        <a href="health/medical.html" class="menu-card">
+            <i class="fas fa-hospital-alt"></i>
+            <h2>健康と医療</h2>
         </a>
-
-        <a href="care/index.html" class="category-card">
-            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=60&w=400');">
-                <i class="fas fa-magic"></i>
-            </div>
-            <div class="card-body"><h2>日々のお手入れ</h2><p>清潔とスキンシップ</p></div>
+        <a href="care/index.html" class="menu-card">
+            <i class="fas fa-magic"></i>
+            <h2>日々のお手入れ</h2>
         </a>
-
-        <a href="outing/index.html" class="category-card">
-            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1530281739861-6422e4d58fc0?auto=format&fit=crop&q=60&w=400');">
-                <i class="fas fa-car-side"></i>
-            </div>
-            <div class="card-body"><h2>お出かけ</h2><p>一緒に楽しむ外の世界</p></div>
+        <a href="outing/index.html" class="menu-card">
+            <i class="fas fa-car-side"></i>
+            <h2>お出かけ</h2>
         </a>
-
-        <a href="faq/index.html" class="category-card">
-            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1554734867-bf3c00a49371?auto=format&fit=crop&q=60&w=400');">
-                <i class="fas fa-question-circle"></i>
-            </div>
-            <div class="card-body"><h2>FAQ</h2><p>よくある質問と回答</p></div>
+        <a href="faq/index.html" class="menu-card">
+            <i class="fas fa-question-circle"></i>
+            <h2>FAQ</h2>
         </a>
-
-        <a href="tools/age-check.html" class="category-card">
-            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1444212477490-ca40a9254275?auto=format&fit=crop&q=60&w=400');">
-                <i class="fas fa-hourglass-half"></i>
-            </div>
-            <div class="card-body"><h2>年齢診断</h2><p>人間に換算すると何歳？</p></div>
+        <a href="tools/age-check.html" class="menu-card">
+            <i class="fas fa-hourglass-half"></i>
+            <h2>年齢診断</h2>
         </a>
-
-        <a href="others/index.html" class="category-card">
-            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&q=60&w=400');">
-                <i class="fas fa-ellipsis-h"></i>
-            </div>
-            <div class="card-body"><h2>その他</h2><p>暮らしに役立つ情報</p></div>
+        <a href="others/index.html" class="menu-card">
+            <i class="fas fa-ellipsis-h"></i>
+            <h2>その他</h2>
         </a>
     </div>
 </div>
 
-<footer>
-    <p>&copy; 2026 ワンライフ・ナビ<br>元野犬・保護犬との暮らしをサポートする情報サイト</p>
-</footer>
+<footer>&copy; 2026 ワンライフ・ナビ</footer>
 
 </body>
 </html>
