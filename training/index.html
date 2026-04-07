@@ -17,43 +17,66 @@
         body { font-family: sans-serif; margin: 0; padding: 0; background: var(--bg-color); line-height: 1.6; }
         header { background: #fff; padding: 1rem; border-bottom: 3px solid var(--primary-color); display: flex; align-items: center; }
         header a { text-decoration: none; color: var(--primary-color); font-weight: bold; }
-        .container { max-width: 800px; margin: 2rem auto; padding: 0 1.2rem; }
-        h1 { color: var(--secondary-color); text-align: center; }
-        .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
-        .menu-card { background: #fff; padding: 2rem; border-radius: 15px; text-align: center; text-decoration: none; color: var(--secondary-color); box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #eee; transition: 0.3s; }
-        .menu-card:hover { transform: translateY(-5px); border-color: var(--primary-color); }
-        .menu-card i { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem; }
-        .menu-card h3 { margin: 0.5rem 0; }
-        footer { text-align: center; padding: 3rem; color: #888; }
-        @media (max-width: 480px) { .menu-grid { grid-template-columns: 1fr; } }
+        .container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        h1 { color: var(--secondary-color); text-align: center; font-size: 1.5rem; }
+        
+        /* 常に2×2を維持するための設定 */
+        .menu-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; /* 常に2列 */
+            gap: 1rem; 
+            margin-top: 2rem; 
+        }
+        
+        .menu-card { 
+            background: #fff; 
+            padding: 1.5rem 0.5rem; 
+            border-radius: 15px; 
+            text-align: center; 
+            text-decoration: none; 
+            color: var(--secondary-color); 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+            border: 1px solid #eee; 
+            transition: 0.3s; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .menu-card:hover { transform: translateY(-3px); border-color: var(--primary-color); }
+        .menu-card i { font-size: 2rem; color: var(--primary-color); margin-bottom: 0.8rem; }
+        .menu-card h3 { margin: 0; font-size: 1rem; }
+        .menu-card p { font-size: 0.75rem; margin: 0.5rem 0 0; color: #666; display: block; }
+
+        footer { text-align: center; padding: 3rem; color: #888; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 <header><a href="../index.html"><i class="fas fa-chevron-left"></i> HOME</a></header>
 <div class="container">
     <h1>🐕 犬のしつけガイド</h1>
-    <p style="text-align:center;">愛犬との絆を深めるための「しつけ」の知識。各カテゴリーから詳細な解決策を見つけることができます。</p>
+    <p style="text-align:center; font-size: 0.9rem;">愛犬との絆を深める「しつけ」の知識。<br>解決したい悩みを選んでください。</p>
     
     <div class="menu-grid">
         <a href="potty-training.html" class="menu-card">
             <i class="fas fa-toilet"></i>
             <h3>トイレ</h3>
-            <p>失敗への対策と基本手順。</p>
+            <p>失敗と基本手順</p>
         </a>
         <a href="barking-solutions.html" class="menu-card">
             <i class="fas fa-bullhorn"></i>
             <h3>無駄吠え</h3>
-            <p>吠える理由と安心の与え方。</p>
+            <p>理由と安心の与え方</p>
         </a>
         <a href="biting-habits.html" class="menu-card">
             <i class="fas fa-tooth"></i>
             <h3>噛み癖</h3>
-            <p>甘噛みから本気噛みの予防。</p>
+            <p>甘噛みから本気噛み</p>
         </a>
         <a href="socialization.html" class="menu-card">
             <i class="fas fa-walking"></i>
             <h3>社会化</h3>
-            <p>外の世界に慣れるための方法。</p>
+            <p>外の世界に慣れる</p>
         </a>
     </div>
 </div>
