@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日々のお手入れガイド | ワンライフ・ナビ</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CV6GN80DZ2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CV6GN80DZ2');
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary-color: #1abc9c; --secondary-color: #2c3e50; --bg-color: #f4fcf9; }
+        body { font-family: sans-serif; margin: 0; padding: 0; background: var(--bg-color); line-height: 1.6; }
+        header { background: #fff; padding: 1rem; border-bottom: 3px solid var(--primary-color); display: flex; align-items: center; }
+        header a { text-decoration: none; color: var(--primary-color); font-weight: bold; }
+        .container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        h1 { color: var(--secondary-color); text-align: center; font-size: 1.5rem; }
+        
+        /* 常に2×2のグリッドを維持 */
+        .menu-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 1rem; 
+            margin-top: 2rem; 
+        }
+        
+        .menu-card { 
+            background: #fff; 
+            padding: 1.5rem 0.5rem; 
+            border-radius: 15px; 
+            text-align: center; 
+            text-decoration: none; 
+            color: var(--secondary-color); 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+            border: 1px solid #eee; 
+            transition: 0.3s; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 150px;
+        }
+        .menu-card:hover { transform: translateY(-3px); border-color: var(--primary-color); }
+        .menu-card i { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 0.8rem; }
+        .menu-card h3 { margin: 0; font-size: 1rem; }
+        .menu-card p { font-size: 0.75rem; margin: 0.5rem 0 0; color: #666; display: block; }
+
+        footer { text-align: center; padding: 3rem; color: #888; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+<header><a href="index.html"><i class="fas fa-chevron-left"></i> HOME</a></header>
+<div class="container">
+    <h1>✨ 日々のお手入れ</h1>
+    <p style="text-align:center; font-size: 0.9rem;">お手入れは最高のスキンシップ。<br>愛犬の「心地よい」を作る基本のケアをまとめました。</p>
+    
+    <div class="menu-grid">
+        <a href="care/brushing.html" class="menu-card">
+            <i class="fas fa-sparkles"></i>
+            <h3>ブラッシング</h3>
+            <p>皮膚ケアと毛並み</p>
+        </a>
+        <a href="care/shampoo.html" class="menu-card">
+            <i class="fas fa-bath"></i>
+            <h3>衛生ケア</h3>
+            <p>シャンプー・爪・耳</p>
+        </a>
+        <a href="care/dental.html" class="menu-card">
+            <i class="fas fa-tooth"></i>
+            <h3>歯磨き</h3>
+            <p>お口の健康習慣</p>
+        </a>
+        <a href="care/cleaning.html" class="menu-card">
+            <i class="fas fa-broom"></i>
+            <h3>抜け毛と掃除</h3>
+            <p>お部屋を清潔に保つ</p>
+        </a>
+    </div>
+</div>
+<footer>&copy; 2026 ワンライフ・ナビ</footer>
+</body>
+</html>
