@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お出かけガイド | ワンライフ・ナビ</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CV6GN80DZ2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CV6GN80DZ2');
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary-color: #e67e22; --secondary-color: #2c3e50; --bg-color: #fef9f5; }
+        body { font-family: sans-serif; margin: 0; padding: 0; background: var(--bg-color); line-height: 1.6; }
+        header { background: #fff; padding: 1rem; border-bottom: 3px solid var(--primary-color); display: flex; align-items: center; }
+        header a { text-decoration: none; color: var(--primary-color); font-weight: bold; }
+        .container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        h1 { color: var(--secondary-color); text-align: center; font-size: 1.5rem; }
+        
+        .menu-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 1rem; 
+            margin-top: 2rem; 
+        }
+        
+        .menu-card { 
+            background: #fff; 
+            padding: 1.5rem 0.5rem; 
+            border-radius: 15px; 
+            text-align: center; 
+            text-decoration: none; 
+            color: var(--secondary-color); 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+            border: 1px solid #eee; 
+            transition: 0.3s; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 150px;
+        }
+        .menu-card:hover { transform: translateY(-3px); border-color: var(--primary-color); }
+        .menu-card i { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 0.8rem; }
+        .menu-card h3 { margin: 0; font-size: 1rem; }
+        .menu-card p { font-size: 0.75rem; margin: 0.5rem 0 0; color: #666; display: block; }
+
+        footer { text-align: center; padding: 3rem; color: #888; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+<header><a href="../index.html"><i class="fas fa-chevron-left"></i> HOME</a></header>
+<div class="container">
+    <h1>🚗 お出かけガイド</h1>
+    <p style="text-align:center; font-size: 0.9rem;">新しい景色を、一緒に見に行こう。<br>愛犬との冒険を安全に楽しむためのヒント集です。</p>
+    
+    <div class="menu-grid">
+        <a href="dog-run-cafe.html" class="menu-card">
+            <i class="fas fa-coffee"></i>
+            <h3>ラン・カフェ</h3>
+            <p>施設利用の心得</p>
+        </a>
+        <a href="travel-prep.html" class="menu-card">
+            <i class="fas fa-suitcase-rolling"></i>
+            <h3>旅行・ドライブ</h3>
+            <p>準備と楽しみ方</p>
+        </a>
+        <a href="disaster-prep.html" class="menu-card">
+            <i class="fas fa-first-aid"></i>
+            <h3>防災・避難</h3>
+            <p>もしもの備え</p>
+        </a>
+        <a href="etiquette.html" class="menu-card">
+            <i class="fas fa-handshake"></i>
+            <h3>公共マナー</h3>
+            <p>振る舞いの基本</p>
+        </a>
+    </div>
+</div>
+<footer>&copy; 2026 ワンライフ・ナビ</footer>
+</body>
+</html>
