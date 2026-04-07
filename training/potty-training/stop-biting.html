@@ -13,7 +13,7 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --primary-color: #e67e22; --text-color: #333; }
+        :root { --primary-color: #e67e22; --text-color: #333; --bg-light: #fdf2e9; }
         body { font-family: sans-serif; line-height: 1.8; color: var(--text-color); margin: 0; background: #fff; }
         header { padding: 1rem; border-bottom: 1px solid #eee; }
         header a { text-decoration: none; color: var(--primary-color); }
@@ -23,6 +23,16 @@
         .alert-box { background: #fdedec; border: 1px solid #f5b7b1; padding: 1.5rem; border-radius: 10px; margin: 2rem 0; }
         .check-list { background: #f4f6f7; padding: 1.5rem; border-radius: 10px; list-style: none; }
         .check-list li::before { content: "✅"; margin-right: 10px; }
+
+        /* 関連記事セクション */
+        .related-section { margin-top: 5rem; border-top: 2px solid #eee; padding-top: 2rem; }
+        .related-title { font-weight: bold; font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--secondary-color); text-align: center; }
+        .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .related-card { background: var(--bg-light); padding: 1rem; border-radius: 12px; text-decoration: none; color: var(--text-color); font-size: 0.9rem; font-weight: bold; transition: 0.3s; border: 1px solid transparent; text-align: center; }
+        .related-card:hover { border-color: var(--primary-color); background: #fff; }
+        .related-card i { display: block; font-size: 1.5rem; color: var(--primary-color); margin-bottom: 0.5rem; }
+
+        @media (max-width: 480px) { .related-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -54,9 +64,18 @@
     <h2>3. 苦味成分で「嫌な思い出」にする</h2>
     <p>しつけ用のビターアップルスプレーなどをシートの端に少量吹き付けておくのも有効です。「シートを噛む＝苦くて不快」という学習を一撃で植え付けます。</p>
 
-    <div style="margin-top:4rem; text-align:center; padding:2rem; background:var(--bg-color); border-radius:20px;">
-        <p><strong>解決しない場合は、星 友和にご相談ください</strong></p>
-        <a href="../../contact.html" style="background:var(--primary-color); color:#fff; padding:1rem 2.5rem; border-radius:30px; text-decoration:none; font-weight:bold;">無料お悩み相談へ</a>
+    <div class="related-section">
+        <div class="related-title">あわせて読みたい関連記事</div>
+        <div class="related-grid">
+            <a href="../../lifestyle/former-stray-guide.html" class="related-card">
+                <i class="fas fa-paw"></i>
+                元野犬・雑種と心を通わせる<br>最初のステップ
+            </a>
+            <a href="../../tools/age-calculator.html" class="related-card">
+                <i class="fas fa-calculator"></i>
+                愛犬は人間なら何歳？<br>年齢診断シミュレーター
+            </a>
+        </div>
     </div>
 </div>
 <footer><p style="text-align:center; padding:3rem; color:#888;">&copy; 2026 ワンライフ・ナビ</p></footer>
