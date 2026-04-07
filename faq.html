@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>愛犬のよくある質問（FAQ）｜お悩み解決ガイド - ワンライフ・ナビ</title>
-    <meta name="description" content="犬のしつけ、食事、健康、保険など、飼い主さんが直面する切実な悩みをAI専門家が解説。最適なケア用品やサービスもご紹介します。">
+    <meta name="description" content="犬のしつけ、食事、健康、保険など、飼い主さんが直面する切実な悩みをAI専門家が解説します。">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <script type="application/ld+json">
@@ -17,7 +17,7 @@
           "name": "留守番中の無駄吠えやイタズラがひどいです。分離不安でしょうか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "一人の不安から来る『分離不安』の可能性があります。環境整備と並行して、プロのしつけや見守りカメラの活用を検討しましょう。"
+            "text": "一人の不安から来る『分離不安』の可能性があります。正しい知識を身につけることが解決への近道です。"
           }
         },
         {
@@ -25,15 +25,7 @@
           "name": "涙やけが治りません。フードで改善できますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "添加物の少ない『プレミアムフード』への切り替えで、老廃物が減り改善するケースが多く報告されています。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "急な病気や怪我の治療費が心配です。保険は必要ですか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "一度の入院で数十万円かかることもあります。『ペット保険』で万が一の備えをしておくと安心です。"
+            "text": "添加物の少ない『プレミアムフード』への切り替えで、改善が期待できる場合があります。"
           }
         }
       ]
@@ -51,18 +43,22 @@
         .q { font-weight: bold; color: #d35400; font-size: 1.05rem; display: block; margin-bottom: 10px; }
         .a { padding-left: 12px; border-left: 3px solid var(--primary-color); font-size: 0.95rem; margin-bottom: 10px; }
         
+        /* 用語解説リンク（クリックを促す） */
         .term-link { color: var(--link-color); text-decoration: underline; cursor: pointer; font-weight: bold; }
+        
         .btn-inner-link { display: inline-block; background: #eee; color: #666; padding: 6px 15px; border-radius: 20px; text-decoration: none; font-size: 0.85rem; font-weight: bold; transition: 0.3s; margin-top: 5px; }
         .btn-inner-link:hover { background: #ddd; }
 
-        /* モーダル */
-        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.75); align-items: center; justify-content: center; }
-        .modal-content { background-color: #fff; padding: 25px; border-radius: 15px; width: 85%; max-width: 450px; position: relative; text-align: center; }
-        .close-btn { position: absolute; top: 10px; right: 15px; font-size: 24px; cursor: pointer; color: #999; }
-        .modal-title { color: var(--accent-color); font-size: 1.2rem; margin-bottom: 15px; font-weight: bold; }
-        .modal-body { margin-bottom: 20px; text-align: left; font-size: 0.9rem; color: #444; line-height: 1.6; }
-        .affiliate-btn { display: block; background: #ff4757; color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s; }
-        .affiliate-btn:hover { background: #ff6b81; transform: scale(1.02); }
+        /* モーダル（広告色を消したシンプルデザイン） */
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); align-items: center; justify-content: center; }
+        .modal-content { background-color: #fff; padding: 30px; border-radius: 15px; width: 85%; max-width: 450px; position: relative; text-align: left; }
+        .close-btn { position: absolute; top: 10px; right: 15px; font-size: 24px; cursor: pointer; color: #bbb; }
+        .modal-title { color: var(--secondary-color); font-size: 1.2rem; margin-bottom: 15px; font-weight: bold; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .modal-body { margin-bottom: 25px; font-size: 0.95rem; color: #555; line-height: 1.7; }
+        
+        /* 次のステップへ導くボタン */
+        .guide-btn { display: block; background: var(--secondary-color); color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; text-align: center; transition: 0.3s; }
+        .guide-btn:hover { background: #34495e; transform: translateY(-2px); }
 
         footer { text-align: center; padding: 2rem; color: #888; font-size: 0.8rem; }
     </style>
@@ -77,51 +73,35 @@
 <div class="faq-item">
     <span class="q">Q. 留守番中の無駄吠えやイタズラがひどいです。</span>
     <div class="a">
-        A. 飼い主さんと離れる強い不安を感じる<span class="term-link" onclick="openModal('separation')">「分離不安」</span>かもしれません。見守りと正しいしつけが鍵です。
+        A. 飼い主さんと離れる強い不安を感じる<span class="term-link" onclick="openModal('separation')">「分離不安」</span>の症状が出ている可能性があります。
     </div>
-    <a href="training/separation-anxiety.html" class="btn-inner-link">詳細記事を読む</a>
+    <a href="training/separation-anxiety.html" class="btn-inner-link">解決ガイドを見る</a>
 </div>
 
 <div class="faq-item">
-    <span class="q">Q. 散歩で他の犬に吠えたり、リードを強く引っ張ります。</span>
+    <span class="q">Q. 散歩で他の犬に吠えたり、強く引っ張ります。</span>
     <div class="a">
-        A. 興奮を抑えるトレーニングと、首への負担を減らす<span class="term-link" onclick="openModal('harness')">「専用ハーネス」</span>の導入を検討してください。
+        A. 興奮のコントロール不足や、散歩用具が合っていない可能性があります。まずは<span class="term-link" onclick="openModal('harness')">「適切な道具選び」</span>から見直しましょう。
     </div>
-    <a href="training/walk-manners.html" class="btn-inner-link">詳細記事を読む</a>
+    <a href="training/walk-manners.html" class="btn-inner-link">解決ガイドを見る</a>
 </div>
 
 <h2>食事・栄養のお悩み</h2>
 <div class="faq-item">
     <span class="q">Q. 涙やけが治りません。フードで改善できますか？</span>
     <div class="a">
-        A. 添加物を避け、消化の良いタンパク質を主原料とした<span class="term-link" onclick="openModal('premium_food')">「高品質フード」</span>への変更が効果的です。
+        A. はい、可能性があります。消化に負担をかけない<span class="term-link" onclick="openModal('premium_food')">「プレミアムフード」</span>の基準を知ることが大切です。
     </div>
-    <a href="food/allergy-care.html" class="btn-inner-link">詳細記事を読む</a>
-</div>
-
-<div class="faq-item">
-    <span class="q">Q. 歯磨きを嫌がってさせてくれません。</span>
-    <div class="a">
-        A. 無理強いは禁物です。舐めるだけの<span class="term-link" onclick="openModal('dental')">「デンタルジェル」</span>や噛むガムから始めてみましょう。
-    </div>
-    <a href="grooming/dental-care.html" class="btn-inner-link">詳細記事を読む</a>
+    <a href="food/allergy-care.html" class="btn-inner-link">解決ガイドを見る</a>
 </div>
 
 <h2>健康・将来の備え</h2>
 <div class="faq-item">
     <span class="q">Q. もしもの時、治療費がいくらかかるか不安です。</span>
     <div class="a">
-        A. 手術や入院は高額になりがちです。若いうちに<span class="term-link" onclick="openModal('insurance')">「ペット保険」</span>を比較検討しておくのが賢明です。
+        A. 一度の入院で高額な費用が発生する場合もあります。<span class="term-link" onclick="openModal('insurance')">「ペット保険」</span>の仕組みを正しく理解しておきましょう。
     </div>
-    <a href="others/insurance-compare.html" class="btn-inner-link">詳細記事を読む</a>
-</div>
-
-<div class="faq-item">
-    <span class="q">Q. 元野犬・保護犬を迎えたばかりで心を開いてくれません。</span>
-    <div class="a">
-        A. 焦らず待つことが大切です。まずは<span class="term-link" onclick="openModal('rescue_dog')">「脱走防止」</span>を徹底し、安全な環境を整えてください。
-    </div>
-    <a href="others/rescue-dog-care.html" class="btn-inner-link">詳細記事を読む</a>
+    <a href="others/insurance-compare.html" class="btn-inner-link">解決ガイドを見る</a>
 </div>
 
 <div id="myModal" class="modal" onclick="closeModalOutside(event)">
@@ -134,40 +114,28 @@
 <script>
     const modalData = {
         'separation': {
-            title: '分離不安の対策',
-            body: '留守番中の不安を解消するには、外出先から声をかけられる「ペットカメラ」が有効です。愛犬の行動をAIが検知し、スマホへ通知してくれる機能で安心を手に入れましょう。',
-            link: '#', // アフィリエイトURLへ
-            btnText: '【公式】Furboで見守る'
+            title: '分離不安（ぶんりふあん）とは？',
+            body: '飼い主がいなくなると、破壊行動や不適切な排泄、吠え続けなどの問題行動を起こす精神的な状態です。しつけだけでなく、環境の改善が非常に重要になります。',
+            detailLink: 'training/separation-anxiety.html',
+            btnText: '分離不安の克服ガイドへ'
         },
         'harness': {
-            title: '引っ張り防止ハーネス',
-            body: '首輪は気管に負担をかけます。引っ張り癖がある子には、胸の前で制御できる特殊なハーネスを使うと、驚くほど楽に散歩ができるようになります。',
-            link: '#',
-            btnText: '推奨ハーネスをAmazonで見る'
+            title: '散歩道具の見直し',
+            body: '首輪は気管への負担が大きく、興奮を高める原因になることも。引っ張り癖がある場合は、前胸で制御するタイプのハーネスが有効です。',
+            detailLink: 'training/walk-manners.html',
+            btnText: '道具選びのポイント解説へ'
         },
         'premium_food': {
-            title: '高品質プレミアムフード',
-            body: '市販の安価なフードに含まれる着色料や香料が涙やけの原因になることも。ヒューマングレード（人間用と同等）の新鮮な食材を使ったフードを試してみませんか？',
-            link: '#',
-            btnText: 'おすすめフードの公式サイトへ'
-        },
-        'dental': {
-            title: '魔法のデンタルケア',
-            body: '歯ブラシ不要！歯茎に塗るだけ、あるいは飲み水に混ぜるだけで歯垢を分解する最新のケア用品が人気です。口臭が気になる子にも最適。',
-            link: '#',
-            btnText: '人気のデンタルケア用品を見る'
+            title: 'プレミアムフードの基準',
+            body: '一般的に、人工添加物を使わず、人間が食べられる品質（ヒューマングレード）の食材を主原料としたフードを指します。涙やけ改善の第一歩です。',
+            detailLink: 'food/allergy-care.html',
+            btnText: 'フード選びの教科書へ'
         },
         'insurance': {
-            title: 'ペット保険の賢い選び方',
-            body: '保険会社によって、窓口精算ができるか、ガンの補償が手厚いかなど特徴が異なります。まずは無料で一括資料請求をして、最適なプランを見つけましょう。',
-            link: '#',
-            btnText: '無料で保険の資料請求をする'
-        },
-        'rescue_dog': {
-            title: '元野犬・保護犬の脱走防止',
-            body: '驚くとパニックになりがちな元野犬には、ダブルリード（首輪＋ハーネス）やGPSタグの装着が必須です。万が一に備えた最強の防衛策を。',
-            link: '#',
-            btnText: 'GPS搭載の首輪をチェック'
+            title: 'ペット保険の仕組み',
+            body: '人間の健康保険とは異なり、全額自己負担となる動物の治療費を一定割合（50〜70%など）補償する制度です。若いうちの加入が一般的です。',
+            detailLink: 'others/insurance-compare.html',
+            btnText: '保険の基礎知識ガイドへ'
         }
     };
 
@@ -177,7 +145,7 @@
         container.innerHTML = `
             <div class="modal-title">${data.title}</div>
             <div class="modal-body">${data.body}</div>
-            <a href="${data.link}" class="affiliate-btn" target="_blank">${data.btnText} <i class="fas fa-chevron-right"></i></a>
+            <a href="${data.detailLink}" class="guide-btn">${data.btnText} <i class="fas fa-arrow-right"></i></a>
         `;
         document.getElementById('myModal').style.display = 'flex';
     }
