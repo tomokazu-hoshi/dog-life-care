@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>詳細記事｜犬種図鑑</title>
+    <style>
+        :root { --primary-color: #f39c12; --secondary-color: #2c3e50; }
+        body { font-family: sans-serif; line-height: 1.8; max-width: 800px; margin: auto; padding: 20px; }
+        .check-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #fef5e7; }
+        .check-table th, .check-table td { border: 1px solid #ddd; padding: 10px; }
+        .affiliate-box { border: 3px double #ddd; padding: 20px; text-align: center; margin-top: 50px; }
+        .btn { background: var(--secondary-color); color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div id="content">読み込み中...</div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get('id');
+
+        fetch('dog-data.json')
+            .then(res => res.json())
+            .then(data => {
+                const dog = data.find(d => d.id === id);
+                if(!dog) {
+                    document.getElementById('content').innerHTML = "記事が見つかりませんでした。";
+                    return;
+                }
+
+                document.title = `${dog.name}の性格・飼い方｜犬種図鑑`;
+                document.getElementById('content').innerHTML = `
+                    <h1>${dog.name}</h1>
+                    <table class="check-table">
+                        <tr><th>しつけ難易度</th><td>${dog.check.difficulty}</td></tr>
+                        <tr><th>抜け毛</th><td>${dog.check.shedding}</td></tr>
+                        <tr><th>寿命</th><td>${dog.check.lifespan}</td></tr>
+                    </table>
+                    <h2>性格・特徴</h2>
+                    <p>${dog.description}</p>
+                    
+                    <div class="affiliate-box">
+                        <h3>${dog.affiliate.title}</h3>
+                        <p>${dog.affiliate.text}</p>
+                        <a href="${dog.affiliate.url}" class="btn" target="_blank">商品を詳しく見る</a>
+                    </div>
+                    <hr>
+                    <a href="index-zukan.html">図鑑トップへ戻る</a>
+                `;
+            });
+    </script>
+</body>
+</html>
