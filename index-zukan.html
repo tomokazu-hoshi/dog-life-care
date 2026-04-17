@@ -1,13 +1,12 @@
 ---
-layout: default
-title: "犬種図鑑｜ワンライフ・ナビ"
+layout: null
 ---
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>犬種図鑑｜ワンライフ・ナビ</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { --primary-color: #f39c12; --secondary-color: #2c3e50; --bg-color: #fffcf5; --text-main: #333; }
@@ -55,10 +54,16 @@ title: "犬種図鑑｜ワンライフ・ナビ"
 
 <h2>50音から探す</h2>
 <div class="syuon-grid">
-    {% assign kanas = "あ,か,さ,た,な,は,ま,や,ら,わ" | split: "," %}
-    {% for kana in kanas %}
-    <a href="{{ site.baseurl }}/search.html?tag={{ kana }}" class="syuon-item">{{ kana }}</a>
-    {% endfor %}
+    <a href="{{ site.baseurl }}/search.html?tag=あ" class="syuon-item">あ</a>
+    <a href="{{ site.baseurl }}/search.html?tag=か" class="syuon-item">か</a>
+    <a href="{{ site.baseurl }}/search.html?tag=さ" class="syuon-item">さ</a>
+    <a href="{{ site.baseurl }}/search.html?tag=た" class="syuon-item">た</a>
+    <a href="{{ site.baseurl }}/search.html?tag=な" class="syuon-item">な</a>
+    <a href="{{ site.baseurl }}/search.html?tag=は" class="syuon-item">は</a>
+    <a href="{{ site.baseurl }}/search.html?tag=ま" class="syuon-item">ま</a>
+    <a href="{{ site.baseurl }}/search.html?tag=や" class="syuon-item">や</a>
+    <a href="{{ site.baseurl }}/search.html?tag=ら" class="syuon-item">ら</a>
+    <a href="{{ site.baseurl }}/search.html?tag=わ" class="syuon-item">わ</a>
 </div>
 
 <h2>JKCグループ別で探す</h2>
@@ -75,11 +80,13 @@ title: "犬種図鑑｜ワンライフ・ナビ"
         <span class="group-num">第9グループ</span>
         <span class="group-name">愛玩犬</span>
     </a>
-    </div>
+</div>
 
 <div style="text-align: center; margin-top: 50px;">
     <a href="{{ site.baseurl }}/index.html" style="color:var(--primary-color); font-weight:bold; text-decoration:none;"><i class="fas fa-home"></i> HOMEへ戻る</a>
 </div>
+
+<footer><p>&copy; 2026 ワンライフ・ナビ</p></footer>
 
 </body>
 </html>
