@@ -1,0 +1,21 @@
+[
+  {
+    "id": "corgi-pembroke",
+    "name": "ウェルシュ・コーギー・ペンブローク",
+    "kana": "う",
+    "group": "1",
+    "tags": ["indoor", "single", "family"],
+    "check": {
+        "difficulty": "★★★★☆",
+        "shedding": "★★★★★",
+        "exercise": "30-60分×2回",
+        "lifespan": "12-15年"
+    },
+    "description": "短い足と大きな耳、食パンのようなお尻が特徴...",
+    "affiliate": {
+        "title": "コーギーにおすすめの関節ケア",
+        "url": "https://example.com/corgi-care",
+        "text": "腰の負担を考えた専用グッズはこちら"
+    }
+  }
+]
