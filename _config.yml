@@ -1,2 +1,23 @@
-url: "https://tomokazu-hoshi.github.io"
-baseurl: "/dog-life-care"  # リポジトリ名に合わせて調整してください
+# サイトの基本情報
+title: ワンライフ・ナビ
+description: 愛犬の悩み解決と健康を守る総合ガイド
+url: "https://tomokazu-hoshi.github.io" # あなたのGitHub PagesのURL
+
+# 【重要】ここを自分のリポジトリ名に合わせて書き換えてください
+# URLが https://...github.io/ の直下なら空 "" にします
+baseurl: "" 
+
+# 投稿の設定
+permalink: /:categories/:title/
+markdown: kramdown
+highlighter: rouge
+
+# 除外するファイル
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
