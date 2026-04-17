@@ -2,26 +2,22 @@
 # ワンライフ・ナビ 公式設定ファイル (_config.yml)
 # ---------------------------------------------------------
 
-# 公開URLの設定
 url: "https://tomokazu-hoshi.github.io"
 baseurl: "/dog-life-care"
 
-# サイト基本情報
 title: "ワンライフ・ナビ"
 description: "愛犬の悩み解決と健康を守る総合ガイド"
 
-# 記事のURL構造 (Jekyllの規則に従い、カテゴリとタイトルで構成)
+# 花のサイト（咲くナビ）と同じURL構造に設定
 permalink: /:categories/:title/
 
-# 技術設定
 markdown: kramdown
 highlighter: rouge
 
-# サイトマップ生成などの拡張機能
+# Google通知用プラグイン
 plugins:
   - jekyll-sitemap
 
-# ビルド対象外のファイル
 exclude:
   - Gemfile
   - Gemfile.lock
