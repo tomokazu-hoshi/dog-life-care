@@ -35,9 +35,10 @@
 
         .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
         
+        /* カテゴリーグリッド */
         .grid { 
             display: grid; 
-            grid-template-columns: repeat(3, 1fr); /* 9個になったので3列に調整 */
+            grid-template-columns: repeat(3, 1fr); 
             gap: 1rem; 
             margin-bottom: 3rem; 
         }
@@ -62,23 +63,56 @@
         .section-title { text-align: center; margin: 3rem 0 1.5rem; }
         .section-title::after { content: ''; display: block; width: 40px; height: 3px; background: var(--primary-color); margin: 10px auto; }
         
-        /* 犬種図鑑への特大バナー */
-        .zukan-banner {
-            background: var(--secondary-color);
-            color: #fff;
-            padding: 3rem 2rem;
+        /* 改良版：犬種図鑑セクション */
+        .zukan-cta {
+            background: #fff;
+            border: 2px solid var(--primary-color);
             border-radius: 20px;
+            padding: 2.5rem 1.5rem;
             text-align: center;
             margin-bottom: 3rem;
-            position: relative;
-            overflow: hidden;
             text-decoration: none;
+            color: var(--secondary-color);
+            display: block;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(243, 156, 18, 0.1);
+            position: relative;
+        }
+        .zukan-cta:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 30px rgba(243, 156, 18, 0.2);
+        }
+        .zukan-cta i.main-icon {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
             display: block;
         }
-        .zukan-banner:hover { opacity: 0.95; transform: scale(0.99); transition: 0.3s; }
-        .zukan-banner h3 { font-size: 1.5rem; margin-top: 0; }
-        .zukan-banner p { font-size: 0.9rem; opacity: 0.8; }
-        .zukan-banner i { font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem; }
+        .zukan-cta h3 {
+            font-size: 1.6rem;
+            margin: 0.5rem 0;
+            color: var(--secondary-color);
+        }
+        .zukan-cta p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        /* ひと目でボタンとわかるパーツ */
+        .cta-button-ui {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 12px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+            transition: 0.3s;
+        }
+        .zukan-cta:hover .cta-button-ui {
+            background: var(--secondary-color);
+        }
 
         .featured-article { 
             background: #fff; 
@@ -96,11 +130,12 @@
         footer { text-align: center; padding: 3rem; background: var(--secondary-color); color: #fff; margin-top: 5rem; }
         
         @media (max-width: 768px) { 
-            .grid { grid-template-columns: repeat(3, 1fr); } /* モバイルでも3列で見やすく */
+            .grid { grid-template-columns: repeat(3, 1fr); } 
             .card i { font-size: 1.5rem; }
             .card span { font-size: 0.75rem; }
             .featured-article { flex-direction: column; text-align: center; }
             .hero h2 { font-size: 1.8rem; }
+            .zukan-cta h3 { font-size: 1.3rem; }
         }
     </style>
 </head>
@@ -156,10 +191,12 @@
         </a>
     </div>
 
-    <a href="index-zukan.html" class="zukan-banner">
-        <i class="fas fa-search"></i>
-        <h3>愛犬のルーツと性格を知る「犬種図鑑」</h3>
-        <p>性格・飼いやすさ・健康・価格相場まで詳しく解説</p>
+    <h2 class="section-title">愛犬をもっと知る</h2>
+    <a href="index-zukan.html" class="zukan-cta">
+        <i class="fas fa-book-open main-icon"></i>
+        <h3>あなたにぴったりの愛犬を探す「犬種図鑑」</h3>
+        <p>性格、飼育環境、健康、価格相場などを徹底解説。<br>ルーツを知ることで、愛犬との絆はもっと深まります。</p>
+        <span class="cta-button-ui">犬種図鑑を見てみる <i class="fas fa-chevron-right"></i></span>
     </a>
 
     <h2 class="section-title">注目の独自ガイド</h2>
