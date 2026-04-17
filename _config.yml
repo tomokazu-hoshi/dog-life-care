@@ -1,23 +1,29 @@
-# サイトの基本情報
-title: ワンライフ・ナビ
-description: 愛犬の悩み解決と健康を守る総合ガイド
-url: "https://tomokazu-hoshi.github.io" # あなたのGitHub PagesのURL
+# ---------------------------------------------------------
+# ワンライフ・ナビ 公式設定ファイル (_config.yml)
+# ---------------------------------------------------------
 
-# 【重要】ここを自分のリポジトリ名に合わせて書き換えてください
-# URLが https://...github.io/ の直下なら空 "" にします
-baseurl: "" 
+# 公開URLの設定
+url: "https://tomokazu-hoshi.github.io"
+baseurl: "/dog-life-care"
 
-# 投稿の設定
+# サイト基本情報
+title: "ワンライフ・ナビ"
+description: "愛犬の悩み解決と健康を守る総合ガイド"
+
+# 記事のURL構造 (Jekyllの規則に従い、カテゴリとタイトルで構成)
 permalink: /:categories/:title/
+
+# 技術設定
 markdown: kramdown
 highlighter: rouge
 
-# 除外するファイル
+# サイトマップ生成などの拡張機能
+plugins:
+  - jekyll-sitemap
+
+# ビルド対象外のファイル
 exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+  - vendor/
