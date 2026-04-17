@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>犬種図鑑｜あなたにぴったりの愛犬探し - ワンライフ・ナビ</title>
+    <meta name="description" content="50音、JKCグループ、飼育環境や悩み別から探せる犬種図鑑。性格や飼いやすさ、寿命、価格相場などプロが詳しく解説。">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary-color: #f39c12; --secondary-color: #2c3e50; --bg-color: #fffcf5; --text-main: #333; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.8; max-width: 1000px; margin: auto; padding: 20px; background: var(--bg-color); color: var(--text-main); }
+        
+        /* パンくずリスト */
+        .breadcrumb { font-size: 0.85rem; color: #888; margin-bottom: 20px; }
+        .breadcrumb a { color: var(--primary-color); text-decoration: none; }
+        .breadcrumb i { margin: 0 8px; font-size: 0.7rem; }
+
+        h1 { border-bottom: 3px solid var(--primary-color); padding-bottom: 10px; color: var(--secondary-color); font-size: 1.5rem; text-align: center; margin-bottom: 40px; }
+        h2 { font-size: 1.2rem; color: var(--secondary-color); border-left: 5px solid var(--primary-color); padding-left: 15px; margin-top: 50px; margin-bottom: 20px; }
+
+        /* 目的・環境別タグ（サイドまたは上部） */
+        .tag-container { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
+        .purpose-tag { background: #fff; border: 1px solid var(--primary-color); color: var(--primary-color); padding: 8px 15px; border-radius: 25px; text-decoration: none; font-size: 0.9rem; font-weight: bold; transition: 0.3s; }
+        .purpose-tag:hover { background: var(--primary-color); color: #fff; }
+
+        /* 50音検索 */
+        .syuon-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)); gap: 5px; background: #fff; padding: 15px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .syuon-item { text-align: center; padding: 10px 0; border: 1px solid #eee; text-decoration: none; color: #555; font-weight: bold; border-radius: 5px; }
+        .syuon-item:hover { background: #fef5e7; border-color: var(--primary-color); }
+        .syuon-disabled { color: #ccc; background: #fafafa; }
+
+        /* JKCグループ検索 */
+        .group-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
+        .group-card { background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-decoration: none; color: inherit; transition: 0.3s; border: 1px solid transparent; }
+        .group-card:hover { border-color: var(--primary-color); transform: translateY(-5px); }
+        .group-num { font-size: 0.8rem; color: var(--primary-color); font-weight: bold; display: block; }
+        .group-name { font-size: 1.1rem; font-weight: bold; color: var(--secondary-color); display: block; margin: 5px 0; }
+        .group-desc { font-size: 0.85rem; color: #777; line-height: 1.5; }
+
+        footer { text-align: center; padding: 5rem 0; color: #aaa; font-size: 0.8rem; border-top: 1px solid #eee; margin-top: 60px; }
+    </style>
+</head>
+<body>
+
+<nav class="breadcrumb">
+    <a href="index.html">HOME</a> <i class="fas fa-chevron-right"></i> <span>犬種図鑑</span>
+</nav>
+
+<h1>🐾 犬種図鑑（全100犬種）</h1>
+
+<h2>お悩み・環境から探す</h2>
+<div class="tag-container">
+    <a href="search-result.html?tag=indoor" class="purpose-tag">室内で飼いやすい（小型犬）</a>
+    <a href="search-result.html?tag=no-shedding" class="purpose-tag">抜け毛が少ない（お手入れ楽）</a>
+    <a href="search-result.html?tag=single" class="purpose-tag">一人暮らし・共働き向け</a>
+    <a href="search-result.html?tag=family" class="purpose-tag">子供がいる家庭向け（温厚）</a>
+</div>
+
+<h2>50音から探す</h2>
+<div class="syuon-grid">
+    <a href="search-result.html?kana=a" class="syuon-item">あ</a>
+    <a href="search-result.html?kana=ka" class="syuon-item">か</a>
+    <a href="search-result.html?kana=sa" class="syuon-item">さ</a>
+    <a href="search-result.html?kana=ta" class="syuon-item">た</a>
+    <a href="search-result.html?kana=na" class="syuon-item">な</a>
+    <a href="search-result.html?kana=ha" class="syuon-item">は</a>
+    <a href="search-result.html?kana=ma" class="syuon-item">ま</a>
+    <a href="search-result.html?kana=ya" class="syuon-item">や</a>
+    <a href="search-result.html?kana=ra" class="syuon-item">ら</a>
+    <a href="search-result.html?kana=wa" class="syuon-item">わ</a>
+</div>
+
+<h2>JKCグループ別で探す</h2>
+<div class="group-grid">
+    <a href="group-01.html" class="group-card">
+        <span class="group-num">第1グループ</span>
+        <span class="group-name">牧羊犬・牧畜犬</span>
+        <p class="group-desc">家畜の群れを誘導・保護する犬種。非常に賢く、訓練性能が高いのが特徴です。</p>
+    </a>
+    <a href="group-02.html" class="group-card">
+        <span class="group-num">第2グループ</span>
+        <span class="group-name">使役犬</span>
+        <p class="group-desc">番犬、警護、作業などで活躍する犬種。頼もしく、強い忠誠心を持っています。</p>
+    </a>
+    <a href="group-03.html" class="group-card">
+        <span class="group-num">第3グループ</span>
+        <span class="group-name">テリア</span>
+        <p class="group-desc">穴の中に住む獲物を捕らえる猟犬。気が強く、活発で勇気にあふれています。</p>
+    </a>
+    <a href="group-04.html" class="group-card">
+        <span class="group-num">第4グループ</span>
+        <span class="group-name">ダックスフンド</span>
+        <p class="group-desc">地面の穴に住むアナグマ猟に特化した犬種。サイズや毛質のバリエーションが豊富です。</p>
+    </a>
+    <a href="group-05.html" class="group-card">
+        <span class="group-num">第5グループ</span>
+        <span class="group-name">原始的な犬・スピッツ</span>
+        <p class="group-desc">日本犬を含む、狼に近い外見を持つ犬種。自立心が高く、素朴な魅力があります。</p>
+    </a>
+    <a href="group-06.html" class="group-card">
+        <span class="group-num">第6グループ</span>
+        <span class="group-name">嗅覚ハウンド</span>
+        <p class="group-desc">優れた嗅覚で獲物を追う猟犬。スタミナがあり、遠くまで響く声が特徴です。</p>
+    </a>
+    <a href="group-07.html" class="group-card">
+        <span class="group-num">第7グループ</span>
+        <span class="group-name">ポインター・セター</span>
+        <p class="group-desc">獲物の居場所を指し示して教える猟犬。優雅な立ち振る舞いと高い知能を持ちます。</p>
+    </a>
+    <a href="group-08.html" class="group-card">
+        <span class="group-num">第8グループ</span>
+        <span class="group-name">鳥猟犬（回収・追い出し）</span>
+        <p class="group-desc">仕留めた獲物を回収する役割の犬種。レトリバーなど、温厚で従順な性格が多いです。</p>
+    </a>
+    <a href="group-09.html" class="group-card">
+        <span class="group-num">第9グループ</span>
+        <span class="group-name">愛玩犬</span>
+        <p class="group-desc">家庭犬として愛されるために改良された犬種。小型で飼いやすく、都会向きです。</p>
+    </a>
+    <a href="group-10.html" class="group-card">
+        <span class="group-num">第10グループ</span>
+        <span class="group-name">視覚ハウンド</span>
+        <p class="group-desc">優れた視力と速さで獲物を追う犬種。スリムで美しい肢体が特徴的です。</p>
+    </a>
+    <a href="group-others.html" class="group-card">
+        <span class="group-num">Others</span>
+        <span class="group-name">その他の犬</span>
+        <p class="group-desc">特定のグループに分類されない珍しい犬種や、ミックス犬など。</p>
+    </a>
+</div>
+
+<div style="text-align: center; margin-top: 50px;">
+    <a href="faq.html" style="color:var(--primary-color); font-weight:bold; text-decoration:none;"><i class="fas fa-question-circle"></i> よくある質問（FAQ）へ戻る</a>
+</div>
+
+<footer><p>&copy; 2026 ワンライフ・ナビ</p></footer>
+
+</body>
+</html>
