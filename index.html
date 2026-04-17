@@ -7,20 +7,110 @@ layout: null
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ワンライフ・ナビ | 愛犬の悩み解決と健康を守る総合ガイド</title>
+    
+    <meta name="google-site-verification" content="mX7N64dCjMcZOG9D_h6eSa4m2yR1p5ApB6xp8iO3xZE" />
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CV6GN80DZ2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CV6GN80DZ2');
+    </script>
+
+    <meta name="description" content="元野犬・雑種を愛する飼い主のための、AIと経験が融合した専門メディア。しつけ、食事、健康から年齢診断まで。">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { --primary-color: #f39c12; --secondary-color: #2c3e50; --bg-color: #f9f9f9; --text-color: #333; }
-        body { font-family: sans-serif; margin: 0; padding: 0; line-height: 1.6; color: var(--text-color); background-color: var(--bg-color); }
-        header { background: #fff; padding: 1rem; text-align: center; border-bottom: 3px solid var(--primary-color); }
-        .hero { background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('{{ site.baseurl }}/IMG_0645.png'); background-size: cover; padding: 7rem 1rem; text-align: center; color: #fff; }
+        body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', sans-serif; margin: 0; padding: 0; line-height: 1.6; color: var(--text-color); background-color: var(--bg-color); }
+        header { background: #fff; padding: 1rem; text-align: center; border-bottom: 3px solid var(--primary-color); position: sticky; top: 0; z-index: 1000; }
+        header h1 { margin: 0; font-size: 1.5rem; color: var(--primary-color); }
+        
+        /* 背景画像のパスに {{ site.baseurl }} を適用 */
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('{{ site.baseurl }}/IMG_0645.png'); 
+            background-size: cover; 
+            background-position: center; 
+            color: #fff; 
+            padding: 7rem 1rem; 
+            text-align: center; 
+        }
+        .hero h2 { font-size: 2.2rem; margin-bottom: 0.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.1rem; opacity: 0.9; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+
         .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
-        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-        .card { background: #fff; padding: 1.5rem 0.5rem; border-radius: 15px; text-align: center; text-decoration: none; color: var(--secondary-color); border: 1px solid #eee; transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); border-color: var(--primary-color); }
+        
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 1rem; 
+            margin-bottom: 3rem; 
+        }
+        .card { 
+            background: #fff; 
+            padding: 1.5rem 0.5rem; 
+            border-radius: 15px; 
+            text-align: center; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+            text-decoration: none; 
+            color: var(--secondary-color); 
+            transition: all 0.3s ease; 
+            border: 1px solid #eee; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .card:hover { transform: translateY(-5px); border-color: var(--primary-color); box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
         .card i { font-size: 2rem; color: var(--primary-color); margin-bottom: 0.7rem; }
+        .card span { font-weight: bold; font-size: 0.9rem; }
+        
         .section-title { text-align: center; margin: 3rem 0 1.5rem; }
-        .zukan-cta { background: #fff; border: 2px solid var(--primary-color); border-radius: 20px; padding: 2.5rem 1.5rem; text-align: center; text-decoration: none; color: var(--secondary-color); display: block; transition: 0.3s; }
-        .cta-button-ui { display: inline-block; background: var(--primary-color); color: #fff; padding: 12px 40px; border-radius: 50px; font-weight: bold; margin-top: 15px; }
+        .section-title::after { content: ''; display: block; width: 40px; height: 3px; background: var(--primary-color); margin: 10px auto; }
+        
+        .zukan-cta {
+            background: #fff;
+            border: 2px solid var(--primary-color);
+            border-radius: 20px;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            text-decoration: none;
+            color: var(--secondary-color);
+            display: block;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(243, 156, 18, 0.1);
+        }
+        .zukan-cta i.main-icon { font-size: 3.5rem; color: var(--primary-color); margin-bottom: 1rem; display: block; }
+        .cta-button-ui {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 12px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 15px;
+        }
+
+        .featured-article { 
+            background: #fff; 
+            margin: 1.5rem 0; 
+            padding: 2rem; 
+            border-radius: 20px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+            display: flex; 
+            align-items: center; 
+            gap: 2rem; 
+            border-left: 8px solid var(--primary-color); 
+        }
+        .btn-main { display: inline-block; background: var(--primary-color); color: #fff; padding: 0.8rem 2rem; border-radius: 30px; text-decoration: none; font-weight: bold; }
+        
+        footer { text-align: center; padding: 3rem; background: var(--secondary-color); color: #fff; margin-top: 5rem; }
+        
+        @media (max-width: 768px) { 
+            .grid { grid-template-columns: repeat(3, 1fr); } 
+            .featured-article { flex-direction: column; text-align: center; }
+        }
     </style>
 </head>
 <body>
@@ -40,21 +130,35 @@ layout: null
         <a href="{{ site.baseurl }}/training/index.html" class="card"><i class="fas fa-graduation-cap"></i><span>しつけ</span></a>
         <a href="{{ site.baseurl }}/health/diet.html" class="card"><i class="fas fa-utensils"></i><span>食事</span></a>
         <a href="{{ site.baseurl }}/health/medical.html" class="card"><i class="fas fa-stethoscope"></i><span>健康・医療</span></a>
+        <a href="{{ site.baseurl }}/care/index.html" class="card"><i class="fas fa-shower"></i><span>お手入れ</span></a>
         <a href="{{ site.baseurl }}/index-zukan.html" class="card"><i class="fas fa-book-open"></i><span>犬種図鑑</span></a>
         <a href="{{ site.baseurl }}/faq.html" class="card"><i class="fas fa-comments"></i><span>FAQ</span></a>
+        <a href="{{ site.baseurl }}/outing/index.html" class="card"><i class="fas fa-paw"></i><span>お出かけ</span></a>
         <a href="{{ site.baseurl }}/tools/age-calculator.html" class="card"><i class="fas fa-hourglass-half"></i><span>年齢診断</span></a>
+        <a href="{{ site.baseurl }}/others/index.html" class="card"><i class="fas fa-plus-circle"></i><span>その他</span></a>
     </div>
 
     <h2 class="section-title">愛犬をもっと知る</h2>
     <a href="{{ site.baseurl }}/index-zukan.html" class="zukan-cta">
-        <i class="fas fa-book-open" style="font-size:3rem; color:var(--primary-color);"></i>
+        <i class="fas fa-book-open main-icon"></i>
         <h3>あなたにぴったりの愛犬を探す「犬種図鑑」</h3>
         <span class="cta-button-ui">犬種図鑑を見てみる <i class="fas fa-chevron-right"></i></span>
     </a>
+
+    <h2 class="section-title">注目の独自ガイド</h2>
+    <div class="featured-article">
+        <div style="flex:1;">
+            <span style="color:var(--primary-color); font-weight:bold; font-size:0.8rem;">PICK UP</span>
+            <h3>元野犬・雑種と心を通わせるために</h3>
+            <p>実体験に基づく、最初の一歩の踏み出し方について詳しく解説します。</p>
+            <a href="{{ site.baseurl }}/lifestyle/former-stray-guide.html" class="btn-main">記事を詳しく読む</a>
+        </div>
+        <img src="{{ site.baseurl }}/IMG_0645.png" style="width:200px; height:200px; object-fit:cover; border-radius:15px;" alt="ナビゲーター犬">
+    </div>
 </div>
 
 <footer>
-    <p style="text-align:center; padding:3rem; background:var(--secondary-color); color:#fff;">&copy; 2026 ワンライフ・ナビ</p>
+    <p>&copy; 2026 ワンライフ・ナビ</p>
 </footer>
 
 </body>
