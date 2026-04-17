@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>検索結果｜犬種図鑑 - ワンライフ・ナビ</title>
+    <style>
+        :root { --primary-color: #f39c12; --secondary-color: #2c3e50; --bg-color: #fffcf5; }
+        body { font-family: sans-serif; max-width: 800px; margin: auto; padding: 20px; background: var(--bg-color); }
+        .list-item { background: #fff; padding: 20px; border-radius: 10px; margin-bottom: 15px; display: block; text-decoration: none; color: inherit; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .list-item:hover { border: 1px solid var(--primary-color); }
+        .badge { background: var(--primary-color); color: #fff; padding: 2px 8px; border-radius: 5px; font-size: 0.8rem; margin-right: 5px; }
+    </style>
+</head>
+<body>
+    <h1 id="result-title">検索中...</h1>
+    <div id="result-list"></div>
+
+    <script>
+        // URLからパラメータを取得 (?tag=indoor など)
+        const params = new URLSearchParams(window.location.search);
+        const tag = params.get('tag');
+        const group = params.get('group');
+        const kana = params.get('kana');
+
+        fetch('dog-data.json')
+            .then(res => res.json())
+            .then(data => {
+                let filtered = data;
+                let title = "犬種一覧";
+
+                if(tag) {
+                    filtered = data.filter(d => d.tags.includes(tag));
+                    title = `条件: ${tag} の犬種`;
+                } else if(group) {
+                    filtered = data.filter(d => d.group === group);
+                    title = `第${group}グループ 一覧`;
+                } else if(kana) {
+                    filtered = data.filter(d => d.kana === kana);
+                    title = `${kana}行の犬種`;
+                }
+
+                document.getElementById('result-title').innerText = title;
+                const list = document.getElementById('result-list');
+                
+                if(filtered.length === 0) {
+                    list.innerHTML = "<p>該当する犬種がまだ登録されていません。</p>";
+                } else {
+                    filtered.forEach(dog => {
+                        list.innerHTML += `
+                            <a href="detail.html?id=${dog.id}" class="list-item">
+                                <strong>${dog.name}</strong><br>
+                                <span class="badge">第${dog.group}グループ</span>
+                            </a>
+                        `;
+                    });
+                }
+            });
+    </script>
+</body>
+</html>
