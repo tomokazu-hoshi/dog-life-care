@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | ワンライフ・ナビ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary-color: #f39c12; --secondary-color: #2c3e50; }
+        body { font-family: sans-serif; line-height: 1.8; color: #333; max-width: 900px; margin: auto; padding: 20px; background: #f9f9f9; }
+        .content-box { background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        header { text-align: center; margin-bottom: 30px; }
+        header a { text-decoration: none; color: var(--primary-color); font-size: 1.5rem; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="{{ site.baseurl }}/index.html">🐾 ワンライフ・ナビ</a>
+    </header>
+    <main class="content-box">
+        {{ content }}
+    </main>
+    <footer style="text-align:center; margin-top:50px; color:#888; font-size:0.8rem;">
+        &copy; 2026 ワンライフ・ナビ
+    </footer>
+</body>
+</html>
