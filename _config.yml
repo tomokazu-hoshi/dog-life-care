@@ -1,5 +1,5 @@
 # ---------------------------------------------------------
-# ワンライフ・ナビ 公式設定ファイル (_config.yml)
+# ワンライフ・ナビ 設定ファイル (_config.yml)
 # ---------------------------------------------------------
 
 url: "https://tomokazu-hoshi.github.io"
@@ -8,16 +8,14 @@ baseurl: "/dog-life-care"
 title: "ワンライフ・ナビ"
 description: "愛犬の悩み解決と健康を守る総合ガイド"
 
-# 花のサイト（咲くナビ）と同じURL構造に設定
-permalink: /:categories/:title/
+# 花のサイトと同じシンプルなURL構造
+permalink: /:categories/:title.html
 
-markdown: kramdown
-highlighter: rouge
-
-# Google通知用プラグイン
+# 拡張機能
 plugins:
   - jekyll-sitemap
 
+# 除外設定
 exclude:
   - Gemfile
   - Gemfile.lock
