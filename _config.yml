@@ -1,23 +1,12 @@
-# ---------------------------------------------------------
-# ワンライフ・ナビ 設定ファイル (_config.yml)
-# ---------------------------------------------------------
+title: "ワンライフナビ"
+description: "愛犬との生活をトータルでサポートする、国内最大級の犬種図鑑＆お悩み解決サイト。"
+baseurl: ""
+url: "https://your-username.github.io"
 
-url: "https://tomokazu-hoshi.github.io"
-baseurl: "/dog-life-care"
+collections:
+  category:
+    output: true
 
-title: "ワンライフ・ナビ"
-description: "愛犬の悩み解決と健康を守る総合ガイド"
-
-# 花のサイトと同じシンプルなURL構造
-permalink: /:categories/:title.html
-
-# 拡張機能
-plugins:
-  - jekyll-sitemap
-
-# 除外設定
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/
+kramdown:
+  input: GFM
+  hard_wrap: true
