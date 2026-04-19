@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /docs/
-Allow: /
-
-Sitemap: https://tomokazu-hoshi.github.io/dog-life-care/sitemap.xml
