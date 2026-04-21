@@ -1,12 +1,5 @@
-title: "ワンライフナビ"
-description: "愛犬との生活をトータルでサポートする、国内最大級の犬種図鑑＆お悩み解決サイト。"
-baseurl: ""
-url: "https://your-username.github.io"
 
-collections:
-  category:
-    output: true
-
-kramdown:
-  input: GFM
-  hard_wrap: true
+title: 咲くナビ・ドッグ
+remote_theme: pages-themes/minima@v2.5.1
+plugins:
+  - jekyll-remote-theme
