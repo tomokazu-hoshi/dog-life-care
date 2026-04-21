@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>掲載犬種一覧 | ワンライフ・ナビ</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; color: #333; margin: 0; display: flex; flex-direction: column; min-height: 100vh; background: #fdfdfd; }
+        header { background: #ff9800; color: white; padding: 25px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .main-container { display: flex; max-width: 1200px; margin: 20px auto; width: 100%; flex-grow: 1; flex-wrap: wrap; }
+        main { flex: 3; padding: 20px; min-width: 300px; }
+        aside { flex: 1; padding: 20px; background: #fff; border-left: 1px solid #eee; min-width: 250px; }
+        .breadcrumb { font-size: 0.85rem; margin-bottom: 20px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .breadcrumb a { color: #007aff; text-decoration: none; }
+        .section-card { background: white; border: 1px solid #ddd; padding: 25px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
+        .quick-check { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .quick-check th, .quick-check td { border: 1px solid #eee; padding: 12px; text-align: left; }
+        .quick-check th { background: #fff9f0; color: #ff9800; width: 35%; }
+        .tag-btn { display: block; background: #fff; border: 2px solid #ff9800; color: #ff9800; padding: 10px; margin-bottom: 12px; text-decoration: none; border-radius: 25px; font-weight: bold; text-align: center; transition: 0.3s; }
+        .tag-btn:hover { background: #ff9800; color: white; }
+        .affiliate-area { background: #fffde7; border: 2px dashed #fbc02d; padding: 25px; margin-top: 40px; border-radius: 10px; }
+        h2 { border-left: 6px solid #ff9800; padding-left: 15px; color: #333; margin-top: 40px; font-size: 1.4rem; }
+        footer { background: #333; color: white; text-align: center; padding: 30px; margin-top: auto; }
+        .dog-list { list-style: none; padding: 0; }
+        .dog-list li { margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .dog-list a { text-decoration: none; color: #333; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <header><h1>ワンライフ・ナビ</h1><p>愛犬との一生を支える専門図鑑</p></header>
+    <div class="main-container">
+        <main>
+            <div class="breadcrumb">HOME ＞ 犬種図鑑</div>
+            
+        <div class="section-card">
+            <h1>掲載犬種一覧</h1>
+            <ul class="dog-list">
+                <li><a href="/dog-life-care/dogs/pembroke.html">ウェルシュ・コーギー・ペンブローク</a></li>
+                <li><a href="/dog-life-care/dogs/cardigan.html">ウェルシュ・コーギー・カーディガン</a></li>
+                <li><a href="/dog-life-care/dogs/border-collie.html">ボーダー・コリー</a></li>
+                <li><a href="/dog-life-care/dogs/shelty.html">シェットランド・シープドッグ（シェルティ）</a></li>
+                <li><a href="/dog-life-care/dogs/german-shepherd.html">ジャーマン・シェパード・ドッグ</a></li>
+            </ul>
+        </div>
+    
+        </main>
+        <aside>
+            <h3 style="border-bottom: 2px solid #ff9800; padding-bottom: 10px;">🔍 悩み・目的別</h3>
+            <a href="#" class="tag-btn">🏠 室内で飼いやすい</a>
+            <a href="#" class="tag-btn">✨ 抜け毛が少ない</a>
+            <a href="#" class="tag-btn">⏰ 一人暮らし・共働き</a>
+            <a href="#" class="tag-btn">👶 子供がいる家庭向け</a>
+        </aside>
+    </div>
+    <footer>&copy; 2026 One Life Navi | Tomokazu Hoshi</footer>
+</body></html>
