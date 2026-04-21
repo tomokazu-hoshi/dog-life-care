@@ -5,63 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ボーダー・コリー | ワンライフ・ナビ</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; color: #333; margin: 0; display: flex; flex-direction: column; min-height: 100vh; background: #fdfdfd; }
-        header { background: #ff9800; color: white; padding: 25px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .main-container { display: flex; max-width: 1200px; margin: 20px auto; width: 100%; flex-grow: 1; flex-wrap: wrap; }
-        main { flex: 3; padding: 20px; min-width: 300px; }
-        aside { flex: 1; padding: 20px; background: #fff; border-left: 1px solid #eee; min-width: 250px; }
-        .breadcrumb { font-size: 0.85rem; margin-bottom: 20px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        .breadcrumb a { color: #007aff; text-decoration: none; }
-        .section-card { background: white; border: 1px solid #ddd; padding: 25px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
-        .quick-check { width: 100%; border-collapse: collapse; margin: 20px 0; }
-        .quick-check th, .quick-check td { border: 1px solid #eee; padding: 12px; text-align: left; }
-        .quick-check th { background: #fff9f0; color: #ff9800; width: 35%; }
-        .tag-btn { display: block; background: #fff; border: 2px solid #ff9800; color: #ff9800; padding: 10px; margin-bottom: 12px; text-decoration: none; border-radius: 25px; font-weight: bold; text-align: center; transition: 0.3s; }
+        body { font-family: sans-serif; line-height: 1.6; color: #333; margin: 0; background: #fdfdfd; }
+        header { background: #ff9800; color: white; padding: 25px; text-align: center; border-bottom: 5px solid #e68a00; }
+        .container { display: flex; max-width: 1100px; margin: 20px auto; padding: 0 15px; }
+        main { flex: 3; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        aside { flex: 1; margin-left: 20px; }
+        .breadcrumb { font-size: 0.85rem; margin-bottom: 25px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .breadcrumb a { color: #007aff; text-decoration: none; font-weight: bold; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .side-card { background: white; border: 1px solid #eee; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
+        .tag-btn { display: block; border: 2px solid #ff9800; color: #ff9800; padding: 10px; margin-bottom: 10px; text-decoration: none; border-radius: 8px; font-weight: bold; text-align: center; font-size: 0.85rem; transition: 0.2s; }
         .tag-btn:hover { background: #ff9800; color: white; }
-        .affiliate-area { background: #fffde7; border: 2px dashed #fbc02d; padding: 25px; margin-top: 40px; border-radius: 10px; }
-        h2 { border-left: 6px solid #ff9800; padding-left: 15px; color: #333; margin-top: 40px; font-size: 1.4rem; }
-        footer { background: #333; color: white; text-align: center; padding: 30px; margin-top: auto; }
-        .dog-list { list-style: none; padding: 0; }
-        .dog-list li { margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        .dog-list a { text-decoration: none; color: #333; font-weight: bold; }
+        table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.95rem; }
+        table th, table td { border: 1px solid #ffe0b2; padding: 12px; text-align: left; }
+        table th { background: #fff3e0; color: #e65100; width: 35%; }
+        .affiliate-box { background: #fffde7; border: 2px dashed #fbc02d; padding: 20px; margin-top: 40px; border-radius: 10px; }
+        footer { background: #333; color: white; text-align: center; padding: 30px; margin-top: 50px; }
     </style>
 </head>
 <body>
-    <header><h1>ワンライフ・ナビ</h1><p>愛犬との一生を支える専門図鑑</p></header>
-    <div class="main-container">
+    <header><h1>🐶 ワンライフ・ナビ</h1></header>
+    <div class="container">
         <main>
-            <div class="breadcrumb">HOME ＞ 犬種図鑑 ＞ 第1グループ ＞ ボーダー・コリー</div>
-            
-    <div class="section-card">
-        <h1>ボーダー・コリー</h1>
-        <table class="quick-check">
-            <tr><th>項目</th><th>評価 / 数値</th></tr>
-            <tr><td>しつけ難易度</td><td>★★★★★（上級者向き）</td></tr>
-            <tr><td>抜け毛の多さ</td><td>★★★★☆（多い）</td></tr>
-            <tr><td>運動</td><td>60分×2回 / 日</td></tr>
-            <tr><td>寿命</td><td>12〜15年</td></tr>
-        </table>
-        <p style="font-size: 1.1rem; color: #555;">全犬種NO.1の知能を持つと言われる万能選手。アジリティなどのドッグスポーツの主役です。</p>
-        <h2>● 性格・特徴</h2><p>作業欲が非常に強く活発。飼い主の意図を瞬時に読み取ります。体重14〜20kg。寿命12〜15年。</p>
-        <h2>● 飼育環境</h2><p>飼いやすさ：低。上級者向き。運動不足はストレスの元。多忙な一人暮らしには不向き。アクティブな家庭へ。</p>
-        <h2>● 入手・価格</h2><p>子犬価格相場：25〜45万円。スポーツラインを扱うブリーダーや里親情報を確認しましょう。</p>
-        <h2>● 健康・手入れ</h2><p>かかりやすい病気：股関節形成不全、CL症。抜け毛：ダブルコートで多いです。定期的な手入れを。</p>
-        <h2>● しつけ・日常</h2><p>しつけ難易度：最高。散歩：運動量は非常に多い。無駄吠え：退屈させない工夫を。フード：高タンパクな食事を。</p>
-        <div class="affiliate-area">
-            <h3>🛒 ボーダー・コリーにおすすめの厳選アイテム</h3>
-            <p>・競技用フリスビー<br>・難易度高めの知育パズル玩具</p>
-        </div>
-        <hr style="margin-top:40px; border:0; border-top:1px solid #eee;">
-        <p><a href="/dog-life-care/category/names.html">※ 他の犬種を探す</a> / <a href="#">※ FAQへ戻る</a></p>
-    </div>
-    
+            <nav class="breadcrumb"><a href="/dog-life-care/index.html">HOME</a> ＞ <a href="/dog-life-care/category/names.html">犬種図鑑</a> ＞ <a href="/dog-life-care/category/groups/第1グループ.html">第1グループ（牧羊犬）</a> ＞ <span>ボーダー・コリー</span></nav>
+            <h1>ボーダー・コリー</h1><table class="quick-check"><tr><th>項目</th><th>評価 / 数値</th></tr><tr><td><strong>しつけ難易度</strong></td><td>★★★★★（最高クラス）</td></tr><tr><td><strong>抜け毛の多さ</strong></td><td>★★★★☆（多い）</td></tr><tr><td><strong>運動</strong></td><td>1時間×2回 / 日</td></tr><tr><td><strong>寿命</strong></td><td>12〜15年</td></tr></table><h2>● 性格・特徴</h2><p>知能NO.1。作業欲が非常に強い。体重14-20kg。</p><h2>● 飼育環境</h2><p>上級者向き。広いスペースと大量の運動が必要。多忙な一人暮らしには不向き。</p><h2>● 入手・価格</h2><p>相場25〜45万円。スポーツラインのブリーダーを推奨。</p><h2>● 健康・手入れ</h2><p>股関節形成不全に注意。定期的なブラッシングが必要。</p><h2>● しつけ・日常</h2><p>悪いこともすぐ覚える。フリスビーなどのドッグスポーツが最適。</p><div class="affiliate-box"><h3>🛒 ボーダー・コリーにおすすめの厳選アイテム</h3>・競技用フリスビー<br>・難易度高めの知育パズル</div><div style="margin-top:40px;"><a href="/dog-life-care/category/names.html">※ 他の犬種を探す</a> / <a href="/dog-life-care/faq.html">※ FAQへ戻る</a></div>
         </main>
         <aside>
-            <h3 style="border-bottom: 2px solid #ff9800; padding-bottom: 10px;">🔍 悩み・目的別</h3>
-            <a href="#" class="tag-btn">🏠 室内で飼いやすい</a>
-            <a href="#" class="tag-btn">✨ 抜け毛が少ない</a>
-            <a href="#" class="tag-btn">⏰ 一人暮らし・共働き</a>
-            <a href="#" class="tag-btn">👶 子供がいる家庭向け</a>
+            <div class="side-card">
+                <h3>🔍 目的別タグ</h3>
+                <a href="/dog-life-care/category/tags/室内飼い向き.html" class="tag-btn">🏠 室内で飼いやすい</a>
+                <a href="/dog-life-care/category/tags/抜け毛が少ない.html" class="tag-btn">✨ 抜け毛が少ない</a>
+                <a href="/dog-life-care/category/tags/一人暮らし向け.html" class="tag-btn">⏰ 一人暮らし・共働き</a>
+                <a href="/dog-life-care/category/tags/子供がいる家庭向け.html" class="tag-btn">👶 子供がいる家庭向け</a>
+            </div>
         </aside>
     </div>
     <footer>&copy; 2026 One Life Navi | Tomokazu Hoshi</footer>
