@@ -4,6 +4,8 @@ date: 2024-05-20
 description: "賢さNO.1！抜け毛が少なく飼いやすいトイ・プードルの徹底解説図鑑。"
 categories: ["第9グループ"]
 tags: ["室内飼い向き", "抜け毛が少ない", "初心者向け", "子供がいる家庭向き"]
+# 記事のメイン画像を追加
+featured_image: "https://images.unsplash.com/photo-1591768575198-88dac53fbd0a?auto=format&fit=crop&w=1200&q=80"
 ---
 
 ## 📝 クイックチェック表
