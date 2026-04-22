@@ -1,7 +1,7 @@
 baseURL = 'https://tomokazu-hoshi.github.io/dog-life-care/'
 languageCode = 'ja-jp'
 title = 'ワンライフナビ'
-# theme = 'ananke'  # 頭に#を付けて、一時的にデザインをオフにします
+theme = 'ananke'
 hasCJKLanguage = true
 
 [taxonomies]
