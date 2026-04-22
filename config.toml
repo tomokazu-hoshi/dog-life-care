@@ -1,9 +1,23 @@
 baseURL = 'https://tomokazu-hoshi.github.io/dog-life-care/'
 languageCode = 'ja-jp'
-hasCJKLanguage = true  # この行を追加（日本語などのアジア圏言語を有効にする）
 title = 'ワンライフナビ'
 theme = 'ananke'
 
+# 日本語のURL（カテゴリー名など）を正しく処理するための設定
+hasCJKLanguage = true
+
+# カテゴリーとタグの自動分類機能を定義
 [taxonomies]
   category = 'categories'
   tag = 'tags'
+
+# 大規模化を見据えたメニュー設定（今後ここに追加していけます）
+[[menu.main]]
+  name = '犬種図鑑'
+  url = '/breeds/'
+  weight = 10
+
+[[menu.main]]
+  name = 'しつけ'
+  url = '/training/'
+  weight = 20
