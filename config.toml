@@ -1,0 +1,4 @@
+baseURL = 'https://tomokazu-hoshi.github.io/one-life-nav/'
+languageCode = 'ja-jp'
+title = 'ワンライフナビ'
+theme = 'ananke' # 後でテーマを追加します
