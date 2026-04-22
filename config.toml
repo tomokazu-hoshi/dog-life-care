@@ -1,21 +1,84 @@
-baseURL = 'https://tomokazu-hoshi.github.io/dog-life-care/'
-languageCode = 'ja-jp'
-title = 'ワンライフナビ'
-theme = 'ananke'
-hasCJKLanguage = true
+---
+title: "トイ・プードル"
+date: 2024-05-20
+description: "賢さNO.1！抜け毛が少なく飼いやすいトイ・プードルの徹底解説図鑑。"
+categories: ["第9グループ"]
+tags: ["室内飼い向き", "抜け毛が少ない", "初心者向け", "子供がいる家庭向き"]
+# メイン画像（外部URL）
+featured_image: "https://images.unsplash.com/photo-1591768575198-88dac53fbd0a?auto=format&fit=crop&w=1200&q=80"
+---
 
-[taxonomies]
-  category = 'categories'
-  tag = 'tags'
+<div style="
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 15px; 
+  margin-top: 30px; 
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', sans-serif;
+">
 
-[params]
-  # ヘッダーの色を「ピンク（pink）」に変更して可愛らしく
-  background_color_class = "bg-pink"
-  read_more_copy = "詳しく見る"
-  description = "愛犬との暮らしを豊かにする、犬種別の性格・飼い方・健康管理の総合ガイド。"
+  <div style="
+    flex: 1 1 calc(50% - 15px); 
+    background-color: #fff0f5; 
+    border: 2px solid #ffb6c1; 
+    border-radius: 15px; 
+    padding: 20px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-sizing: border-radius;
+  ">
+    <div style="font-size: 1.2em; font-weight: bold; color: #ff69b4; margin-bottom: 10px;">🐶 しつけ難易度</div>
+    <div style="font-size: 1.1em; color: #333; line-height: 1.5;">★★★★★<br><span style="font-size: 0.9em; color: #666;">（非常に賢く容易）</span></div>
+  </div>
 
-# Markdown内でHTMLを許可する設定
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+  <div style="
+    flex: 1 1 calc(50% - 15px); 
+    background-color: #fff0f5; 
+    border: 2px solid #ffb6c1; 
+    border-radius: 15px; 
+    padding: 20px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-sizing: border-radius;
+  ">
+    <div style="font-size: 1.2em; font-weight: bold; color: #ff69b4; margin-bottom: 10px;">🧶 抜け毛の多さ</div>
+    <div style="font-size: 1.1em; color: #333; line-height: 1.5;">★☆☆☆☆<br><span style="font-size: 0.9em; color: #666;">（非常に少ない）</span></div>
+  </div>
+
+  <div style="
+    flex: 1 1 calc(50% - 15px); 
+    background-color: #fff0f5; 
+    border: 2px solid #ffb6c1; 
+    border-radius: 15px; 
+    padding: 20px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-sizing: border-radius;
+  ">
+    <div style="font-size: 1.2em; font-weight: bold; color: #ff69b4; margin-bottom: 10px;">🏃 運動量</div>
+    <div style="font-size: 1.1em; color: #333; line-height: 1.5;">30分×2回 / 日<br><span style="font-size: 0.9em; color: #666;">（散歩は毎日必須）</span></div>
+  </div>
+
+  <div style="
+    flex: 1 1 calc(50% - 15px); 
+    background-color: #fff0f5; 
+    border: 2px solid #ffb6c1; 
+    border-radius: 15px; 
+    padding: 20px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-sizing: border-radius;
+  ">
+    <div style="font-size: 1.2em; font-weight: bold; color: #ff69b4; margin-bottom: 10px;">🎂 寿命</div>
+    <div style="font-size: 1.1em; color: #333; line-height: 1.5;">12〜15年<br><span style="font-size: 0.9em; color: #666;">（健康管理が大切）</span></div>
+  </div>
+
+</div>
+
+---
+
+## 1. 性格・特徴
+
+- **性格**: 非常に聡明で好奇心旺盛。家族に対して愛情深く、他の犬や人間とも友好的に接することができます。
+- **大きさ（体重）**: 体高24〜28cm、体重3〜4kg前後。
+- **寿命**: 12〜15年（18年近く生きる個体も増えています）。
+- **色の種類**: レッド、アプリコット、ブラック、ホワイト、シルバーなど非常に多彩。
+- **賢さ**: 全犬種の中で第2位と言われるほど知能が高く、言葉の理解力が非常に優れています。
+
+## 2. 飼育環境
+... (以下、これまでの本文が続く)
