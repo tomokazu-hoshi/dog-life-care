@@ -9,9 +9,13 @@ hasCJKLanguage = true
   tag = 'tags'
 
 [params]
-  # ヘッダーの背景色を紺色（navy）に変更
-  background_color_class = "bg-navy"
-  # 記事一覧のボタン文字
+  # ヘッダーの色を「ピンク（pink）」に変更して可愛らしく
+  background_color_class = "bg-pink"
   read_more_copy = "詳しく見る"
-  # サイトの説明（SEO対策）
   description = "愛犬との暮らしを豊かにする、犬種別の性格・飼い方・健康管理の総合ガイド。"
+
+# Markdown内でHTMLを許可する設定
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
