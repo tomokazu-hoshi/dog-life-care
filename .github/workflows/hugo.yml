@@ -1,46 +1,67 @@
-name: Deploy Hugo site to Pages
+baseURL = 'https://tomokazu-hoshi.github.io/dog-life-care/'
+languageCode = 'ja-jp'
+title = 'ワンライフ・ナビ'
+theme = 'ananke'
+hasCJKLanguage = true
 
-on:
-  push:
-    branches: ["main"]
-  workflow_dispatch:
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+[params]
+  # ヘッダーの背景色設定
+  background_color_class = "bg-gold"
+  read_more_copy = "詳しく見る"
+  description = "愛犬との暮らしを豊かにする、犬種別の性格・飼い方・健康管理の総合ガイド。"
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v3
-        with:
-          hugo-version: 'latest'
-          extended: true
-      - name: Install Theme (Ananke)
-        run: |
-          mkdir -p themes
-          git clone --depth 1 https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
-      - name: Build with Hugo
-        run: hugo --minify
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./public
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      # HTML記述を許可（表やカスタムデザイン用）
+      unsafe = true
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+# メニュー設定：トップページのカテゴリーボックスと連動
+[[menu.main]]
+  name = "犬種図鑑"
+  url = "posts/"
+  weight = 10
+
+[[menu.main]]
+  name = "しつけ"
+  url = "discipline/"
+  weight = 20
+
+[[menu.main]]
+  name = "食事"
+  url = "food/"
+  weight = 30
+
+[[menu.main]]
+  name = "健康・医療"
+  url = "health/"
+  weight = 40
+
+[[menu.main]]
+  name = "お手入れ"
+  url = "care/"
+  weight = 50
+
+[[menu.main]]
+  name = "お出かけ"
+  url = "outings/"
+  weight = 60
+
+[[menu.main]]
+  name = "年齢診断"
+  url = "age-check/"
+  weight = 70
+
+[[menu.main]]
+  name = "その他"
+  url = "others/"
+  weight = 80
+
+[[menu.main]]
+  name = "FAQ"
+  url = "faq/"
+  weight = 90
