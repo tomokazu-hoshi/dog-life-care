@@ -1,34 +1,52 @@
 {{ define "main" }}
-<article style="padding: 20px; max-width: 800px; margin: 0 auto; line-height: 1.8;">
-  <nav style="font-size: 0.8rem; color: #999; margin-bottom: 20px;">
-    <a href="{{ "" | relURL }}" style="color:#999; text-decoration:none;">HOME</a> ＞ 
-    <a href="{{ "posts/" | relURL }}" style="color:#999; text-decoration:none;">犬種図鑑</a> ＞ 
-    {{ with .Params.categories }}{{ range . }}<span>{{ . }}</span> ＞ {{ end }}{{ end }}
-    <span style="font-weight: bold; color: #333;">{{ .Title }}</span>
+<style>
+  .article-container { padding: 15px; max-width: 800px; margin: 0 auto; color: #333; font-family: -apple-system, sans-serif; }
+  /* パンくずリスト */
+  .breadcrumb { font-size: 0.8rem; color: #888; margin-bottom: 15px; }
+  .breadcrumb a { color: #888; text-decoration: none; }
+  /* タイトルと表 */
+  h1.entry-title { font-size: 1.6rem; border-bottom: 2px solid #dfbb00; padding-bottom: 5px; margin-bottom: 20px; }
+  .quick-check { background: #fff; border: 2px solid #dfbb00; border-radius: 8px; padding: 15px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .quick-check h2 { font-size: 1rem; margin-top: 0; text-align: center; color: #dfbb00; }
+  .check-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .check-table tr { border-bottom: 1px solid #eee; }
+  .check-table td { padding: 10px 5px; }
+  .check-table td.label { font-weight: bold; width: 40%; }
+  /* 本文見出し */
+  .content h2 { font-size: 1.2rem; border-left: 5px solid #dfbb00; padding-left: 10px; margin: 30px 0 15px; }
+  /* アフィリエイト */
+  .affiliate-box { background: #fffbe6; border: 2px dashed #dfbb00; border-radius: 10px; padding: 20px; margin-top: 40px; text-align: center; }
+</style>
+
+<article class="article-container">
+  <nav class="breadcrumb">
+    <a href="{{ "" | relURL }}">HOME</a> ＞ <a href="{{ "posts/" | relURL }}">犬種図鑑</a> ＞ 
+    {{ with .Params.categories }}{{ range . }}{{ . }}{{ end }}{{ end }} ＞ {{ .Title }}
   </nav>
 
-  <h1 style="font-size: 1.8rem; margin: 0 0 20px 0;">{{ .Title }}</h1>
+  <h1 class="entry-title">{{ .Title }}</h1>
 
-  <div style="background: #fdfdfd; border: 2px solid #dfbb00; border-radius: 12px; padding: 15px; margin-bottom: 30px;">
-    <h2 style="font-size: 1rem; margin: 0 0 10px 0; text-align: center;">📊 クイックチェック表</h2>
-    <table style="width: 100%; font-size: 0.9rem; border-collapse: collapse;">
-      <tr style="border-bottom: 1px solid #eee;"><td style="padding: 8px; font-weight: bold;">しつけ難易度</td><td style="padding: 8px; text-align: right;">記事内参照</td></tr>
-      <tr style="border-bottom: 1px solid #eee;"><td style="padding: 8px; font-weight: bold;">抜け毛の多さ</td><td style="padding: 8px; text-align: right;">記事内参照</td></tr>
-      <tr><td style="padding: 8px; font-weight: bold;">寿命</td><td style="padding: 8px; text-align: right;">記事内参照</td></tr>
+  <div class="quick-check">
+    <h2>📊 クイックチェック表</h2>
+    <table class="check-table">
+      <tr><td class="label">しつけ難易度</td><td>{{ default "★★★★☆" .Params.check_shitsuke }}</td></tr>
+      <tr><td class="label">抜け毛の多さ</td><td>{{ default "★★★☆☆" .Params.check_nukege }}</td></tr>
+      <tr><td class="label">運動</td><td>{{ default "1日2回" .Params.check_undo }}</td></tr>
+      <tr><td class="label">寿命</td><td>{{ default "12〜15年" .Params.check_jumyo }}</td></tr>
     </table>
   </div>
 
-  <div class="article-content">
+  <div class="content">
     {{ .Content }}
   </div>
 
-  <section style="margin-top: 50px; padding: 20px; background: #fff9e6; border: 2px dashed #dfbb00; border-radius: 15px; text-align: center;">
-    <h2 style="font-size: 1.1rem; margin-top: 0;">🛍️ {{ .Title }} におすすめの厳選アイテム</h2>
-    <p style="color: #888; font-size: 0.9rem;">[ おすすめアイテムの広告をここに配置 ]</p>
-  </section>
+  <div class="affiliate-box">
+    <h3 style="font-size:1rem; margin-top:0;">🛍️ {{ .Title }} おすすめアイテム</h3>
+    <p style="font-size:0.8rem; color:#666;">[ おすすめの商品を表示 ]</p>
+  </div>
 
-  <nav style="margin-top: 40px; text-align: center;">
-    <a href="{{ "posts/" | relURL }}" style="color: #dfbb00; font-weight: bold; text-decoration: none;">他の犬種を探す →</a>
-  </nav>
+  <div style="text-align:center; margin-top:30px;">
+    <a href="{{ "posts/" | relURL }}" style="color:#dfbb00; font-weight:bold; text-decoration:none;">← 他の犬種を探す</a>
+  </div>
 </article>
 {{ end }}
