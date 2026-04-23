@@ -1,0 +1,12 @@
+title: ワンライフナビ
+description: 愛犬との生活を豊かにする情報サイト
+baseurl: ""
+url: "https://yourdomain.com"
+
+# 記事のURL設定
+permalink: /dog-breeds/:title/
+
+# 除外設定
+exclude:
+  - Gemfile
+  - Gemfile.lock
