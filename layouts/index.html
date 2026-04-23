@@ -1,6 +1,6 @@
 {{ define "main" }}
 <style>
-  /* ① サブカテゴリー（ボックスタイプ）のスタイル */
+  /* カテゴリーボックス（スマホで押しやすいサイズ） */
   .category-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -9,18 +9,17 @@
   }
   .cat-btn {
     background: #fff;
-    border: 2px solid #ffd700; /* ゴールド系 */
+    border: 2px solid #dfbb00;
     border-radius: 10px;
     padding: 15px 5px;
     font-size: 0.85rem;
     font-weight: bold;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    cursor: pointer;
   }
-
-  /* ② 犬種名（横長ボックス一覧）のスタイル */
+  /* 横スクロールする犬種リスト */
   .breed-container {
-    display: none; /* 最初は隠す */
+    display: none;
     background: #f9f9f9;
     padding: 15px;
     border-radius: 10px;
@@ -35,13 +34,13 @@
   }
   .breed-item {
     flex: 0 0 auto;
-    background: #dfbb00; /* ゴールド系 */
+    background: #dfbb00;
     color: #fff;
     padding: 10px 15px;
     border-radius: 20px;
     text-decoration: none;
-    font-weight: bold;
     font-size: 0.9rem;
+    font-weight: bold;
   }
 </style>
 
@@ -49,58 +48,49 @@
   <h2 class="f3 fw1 mt0 lh-title">犬種検索</h2>
 
   <div class="category-grid">
-    <div class="cat-btn" onclick="showGroup('50on')">50音検索</div>
-    <div class="cat-btn" onclick="showGroup('g1')">第1：牧羊・牧畜犬</div>
-    <div class="cat-btn" onclick="showGroup('g2')">第2：使役犬</div>
-    <div class="cat-btn" onclick="showGroup('g3')">第3：テリア</div>
-    <div class="cat-btn" onclick="showGroup('g4')">第4：ダックス</div>
-    <div class="cat-btn" onclick="showGroup('g5')">第5：原始・スピッツ</div>
-    <div class="cat-btn" onclick="showGroup('g6')">第6：嗅覚ハウンド</div>
-    <div class="cat-btn" onclick="showGroup('g7')">第7：ポインター</div>
-    <div class="cat-btn" onclick="showGroup('g8')">第8：鳥猟犬</div>
-    <div class="cat-btn" onclick="showGroup('g9')">第9：愛玩犬</div>
-    <div class="cat-btn" onclick="showGroup('g10')">第10：視覚ハウンド</div>
-    <div class="cat-btn" onclick="showGroup('other')">その他</div>
+    <div class="cat-btn" onclick="showGroup('all')">全犬種一覧</div>
+    <div class="cat-btn" onclick="showGroup('group1')">第1：牧羊・牧畜</div>
+    <div class="cat-btn" onclick="showGroup('group2')">第2：使役犬</div>
+    <div class="cat-btn" onclick="showGroup('group3')">第3：テリア</div>
+    <div class="cat-btn" onclick="showGroup('group4')">第4：ダックス</div>
+    <div class="cat-btn" onclick="showGroup('group5')">第5：原始的・スピッツ</div>
+    <div class="cat-btn" onclick="showGroup('group6')">第6：嗅覚ハウンド</div>
+    <div class="cat-btn" onclick="showGroup('group7')">第7：ポインター</div>
+    <div class="cat-btn" onclick="showGroup('group8')">第8：鳥猟犬</div>
+    <div class="cat-btn" onclick="showGroup('group9')">第9：愛玩犬</div>
+    <div class="cat-btn" onclick="showGroup('group10')">第10：視覚ハウンド</div>
   </div>
 
-  <hr>
-
   <div id="breed-lists">
-    
-    <div id="g1" class="breed-container">
-      <h3>第1グループ 一覧</h3>
+    <div id="all" class="breed-container">
+      <h3>全犬種</h3>
       <div class="breed-scroll-list">
-        {{ range where .Site.RegularPages "Params.fci_group" "1" }}
+        {{ range (where .Site.RegularPages "Section" "posts").ByTitle }}
           <a href="{{ .Permalink }}" class="breed-item">{{ .Title }}</a>
         {{ end }}
       </div>
     </div>
 
-    <div id="g9" class="breed-container">
-      <h3>第9グループ 一覧</h3>
+    <div id="group5" class="breed-container">
+      <h3>第5グループ 一覧</h3>
       <div class="breed-scroll-list">
-        {{ range where .Site.RegularPages "Params.fci_group" "9" }}
-          <a href="{{ .Permalink }}" class="breed-item">{{ .Title }}</a>
+        {{ range (index .Site.Taxonomies.categories "第5グループ") }}
+          <a href="{{ .Permalink }}" class="breed-item">{{ .Page.Title }}</a>
         {{ end }}
       </div>
     </div>
-    
+
     </div>
 </div>
 
 <script>
   function showGroup(groupId) {
-    // 全て一旦隠す
     const containers = document.querySelectorAll('.breed-container');
     containers.forEach(c => c.style.display = 'none');
-    
-    // 選んだものだけ表示
     const target = document.getElementById(groupId);
     if(target) {
       target.style.display = 'block';
       target.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      alert("このグループの犬種はまだ登録されていません。");
     }
   }
 </script>
