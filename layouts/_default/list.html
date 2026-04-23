@@ -5,7 +5,7 @@
     
     <header class="tc pv4">
       <h1 class="f2 fw9 black">犬種図鑑 検索</h1>
-      <p class="f5 gray">あなたにぴったりのワンちゃんを見つけましょう</p>
+      <p class="f5 gray">名前や特徴から、ぴったりのワンちゃんを探せます</p>
     </header>
 
     <div class="mb4">
@@ -29,7 +29,7 @@
         (dict "name" "室内で飼いやすい" "sub" "小型犬・初心者向け" "icon" "🏠" "link" "/tags/室内飼い/")
         (dict "name" "抜け毛が少ない" "sub" "お手入れを楽にしたい" "icon" "✨" "link" "/tags/抜け毛が少ない/")
         (dict "name" "一人暮らし・共働き向け" "sub" "お留守番が得意な犬種" "icon" "👤" "link" "/tags/自立心/")
-        (dict "name" "子供がいる家庭向け" "sub" "温厚でフレンドリーな性格" "icon" "👶" "link" "/tags/温厚/")
+        (dict "name" "子供がいる家庭向け" "sub" "温厚でフレンドリー" "icon" "👶" "link" "/tags/温厚/")
       }}
 
       {{ range $tags }}
@@ -49,6 +49,10 @@
 
 <style>
   .transition-all { transition: all 0.2s ease-in-out; }
-  .hover-bg-gold:hover { transform: translateY(-3px); background-color: #FFD700; border-color: transparent; }
+  .hover-bg-gold:active, .hover-bg-gold:hover { 
+    transform: translateY(-3px); 
+    background-color: #FFD700; 
+    border-color: transparent;
+  }
 </style>
 {{ end }}
