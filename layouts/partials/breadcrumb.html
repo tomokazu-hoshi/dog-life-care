@@ -1,15 +1,10 @@
-<nav class="f7 gray pv3 ph2" aria-label="Breadcrumb">
-  <a href="{{ "/" | relURL }}" class="no-underline gray hover-black">Home</a>
-  
-  <span class="ph2">＞</span>
-  
-  {{ if eq .Section "posts" }}
-    {{ if .IsPage }}
-      <a href="{{ "/posts/" | relURL }}" class="no-underline gray hover-black">犬種図鑑</a>
-      <span class="ph2">＞</span>
-      <span class="black fw6">{{ .Title }}</span>
-    {{ else }}
-      <span class="black fw6">犬種図鑑</span>
+<nav class="breadcrumb f6 gray mb3">
+  <a href="/" class="link silver">HOME</a> ＞
+  <a href="/" class="link silver">犬種図鑑</a> ＞
+  {{ with .Params.categories }}
+    {{ range . }}
+    <span class="link silver">{{ . }}</span> ＞
     {{ end }}
   {{ end }}
+  <span class="b">{{ .Title }}</span>
 </nav>
