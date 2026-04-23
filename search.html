@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>犬種図鑑 検索 - ワンライフ・ナビ</title>
+    <style>
+        /* 全体のスタイル設定 */
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* ヘッダー：Postsを削除しタイトルのみに */
+        header {
+            background-color: #f4c542; /* 画像に近い黄色 */
+            padding: 40px 20px;
+            color: white;
+        }
+
+        .site-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        /* パンくずリスト */
+        .breadcrumb {
+            padding: 15px 20px;
+            background-color: #fff;
+            font-size: 14px;
+            color: #888;
+        }
+
+        .breadcrumb a {
+            text-decoration: none;
+            color: #888;
+        }
+
+        .breadcrumb span {
+            margin: 0 8px;
+        }
+
+        /* メインコンテンツ */
+        .container {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        /* カテゴリーカードのスタイル */
+        .search-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .category-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.2s;
+        }
+
+        .category-card:active {
+            transform: scale(0.98);
+        }
+
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            background-color: #7a8ba3; /* 画像のアイコン色に近い青灰色 */
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            margin-right: 15px;
+        }
+
+        .card-content {
+            text-align: left;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            display: block;
+        }
+
+        .card-desc {
+            font-size: 12px;
+            color: #888;
+        }
+
+        /* iPhone向けの調整 */
+        @media (max-width: 480px) {
+            h1 { font-size: 24px; }
+            .site-title { font-size: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="site-title">ワンライフ・ナビ</div>
+    </header>
+
+    <nav class="breadcrumb">
+        <a href="https://tomokazu-hoshi.github.io">HOME</a>
+        <span>＞</span>
+        犬種図鑑
+    </nav>
+
+    <div class="container">
+        <h1>犬種図鑑 検索</h1>
+        <p class="subtitle">あなたにぴったりのワンちゃんを見つけましょう</p>
+
+        <div class="search-menu">
+            <a href="#" class="category-card">
+                <div class="icon-box">abc</div>
+                <div class="card-content">
+                    <span class="card-title">名前から探す</span>
+                    <span class="card-desc">あいうえお順（50音検索）で探せます</span>
+                </div>
+            </a>
+
+            <a href="#" class="category-card">
+                <div class="icon-box">1</div>
+                <div class="card-content">
+                    <span class="card-title">牧羊犬・牧畜犬</span>
+                    <span class="card-desc">家畜の群れを誘導・保護する犬種</span>
+                </div>
+            </a>
+
+            <a href="#" class="category-card">
+                <div class="icon-box">2</div>
+                <div class="card-content">
+                    <span class="card-title">使役犬</span>
+                    <span class="card-desc">番犬、警備、救助などで活躍する犬種</span>
+                </div>
+            </a>
+
+            <a href="#" class="category-card">
+                <div class="icon-box">3</div>
+                <div class="card-content">
+                    <span class="card-title">テリア</span>
+                    <span class="card-desc">穴に潜る獲物を追う活発な犬種</span>
+                </div>
+            </a>
+
+            <a href="#" class="category-card">
+                <div class="icon-box">4</div>
+                <div class="card-content">
+                    <span class="card-title">ダックスフンド</span>
+                    <span class="card-desc">独特の体型を持つ狩猟犬</span>
+                </div>
+            </a>
+
+            <a href="#" class="category-card">
+                <div class="icon-box">5</div>
+                <div class="card-content">
+                    <span class="card-title">原始的な犬・スピッツ</span>
+                    <span class="card-desc">日本犬を含む、野生に近い特徴を持つ犬種</span>
+                </div>
+            </a>
+
+            <a href="#" class="category-card">
+                <div class="icon-box">6</div>
+                <div class="card-content">
+                    <span class="card-title">嗅覚ハウンド</span>
+                    <span class="card-desc">優れた嗅覚で獲物を追う犬種</span>
+                </div>
+            </a>
+
+            <a href="#" class="category-card">
+                <div class="icon-box">7</div>
+                <div class="card-content">
+                    <span class="card-title">ポインター・セター</span>
+                    <span class="card-desc">獲物の居場所を指し示す鳥猟犬</span>
+                </div>
+            </a>
+
+            <a href="#" class="category-card">
+                <div class="icon-box">8</div>
+                <div class="card-content">
+                    <span class="card-title">鳥猟犬（回収・追出し）</span>
+                    <span class="card-desc">獲物を回収したり追い出したりする犬種</span>
+                </div>
+            </a>
+
+            <a href="#" class="category-card">
+                <div class="icon-box">9</div>
+                <div class="card-content">
+                    <span class="card-title">愛玩犬</span>
+                    <span class="card-desc">家庭での生活に適した小型の犬種</span>
+                </div>
+            </a>
+
+            <a href="#" class="category-card">
+                <div class="icon-box">10</div>
+                <div class="card-content">
+                    <span class="card-title">視覚ハウンド</span>
+                    <span class="card-desc">優れた視力と走力で獲物を追う犬種</span>
+                </div>
+            </a>
+
+            <a href="#" class="category-card">
+                <div class="icon-box">他</div>
+                <div class="card-content">
+                    <span class="card-title">その他</span>
+                    <span class="card-desc">未分類や特定の用途を持つ犬種</span>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+</body>
+</html>
