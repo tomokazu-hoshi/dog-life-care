@@ -1,13 +1,40 @@
 {{ define "main" }}
-<div style="padding: 20px; max-width: 800px; margin: 0 auto; text-align: center;">
-  <h1 style="font-size: 2rem; margin: 40px 0 10px;">ワンライフ・ナビ</h1>
-  <p style="color: #666; margin-bottom: 40px;">愛犬との暮らしをサポートする総合ガイド</p>
+<style>
+  .top-wrapper { padding: 40px 20px; max-width: 1000px; margin: 0 auto; background: #fffcf5; }
+  .site-header { text-align: center; margin-bottom: 50px; }
+  .site-header h1 { font-size: 2.4rem; color: #d97706; margin-bottom: 10px; letter-spacing: 2px; }
+  .site-header p { color: #b45309; font-weight: 500; font-size: 1rem; }
   
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-    <a href="{{ "posts/" | relURL }}" style="text-decoration:none; background:#dfbb00; color:#fff; padding:35px 10px; border-radius:15px; font-weight:bold; font-size:1.2rem; box-shadow: 0 4px 10px rgba(223,187,0,0.3);">📖 犬種図鑑</a>
-    <a href="{{ "training/" | relURL }}" style="text-decoration:none; border:2px solid #dfbb00; color:#333; padding:35px 10px; border-radius:15px; font-weight:bold; font-size:1.1rem;">🎓 しつけ</a>
-    <a href="{{ "food/" | relURL }}" style="text-decoration:none; border:2px solid #dfbb00; color:#333; padding:35px 10px; border-radius:15px; font-weight:bold; font-size:1.1rem;">🍖 食事</a>
-    <a href="{{ "health/" | relURL }}" style="text-decoration:none; border:2px solid #dfbb00; color:#333; padding:35px 10px; border-radius:15px; font-weight:bold; font-size:1.1rem;">🏥 健康・医療</a>
+  .main-nav-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .nav-card { 
+    text-decoration: none; background: #fff; padding: 45px 20px; border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(217, 119, 6, 0.1); display: flex; flex-direction: column; align-items: center;
+    border: 1px solid #fef3c7; transition: all 0.3s ease;
+  }
+  .nav-card:active { transform: translateY(4px); box-shadow: 0 5px 15px rgba(217, 119, 6, 0.1); }
+  .icon-wrap { font-size: 35px; margin-bottom: 15px; }
+  .card-title { color: #333; font-weight: 800; font-size: 1.2rem; }
+</style>
+
+<div class="top-wrapper">
+  <header class="site-header">
+    <h1>ワンライフ・ナビ</h1>
+    <p>〜愛犬との最高の出会いと暮らしを〜</p>
+  </header>
+
+  <div class="main-nav-grid">
+    <a href="{{ "posts/" | relURL }}" class="nav-card">
+      <div class="icon-wrap">📖</div><span class="card-title">犬種図鑑</span>
+    </a>
+    <a href="{{ "training/" | relURL }}" class="nav-card">
+      <div class="icon-wrap">🎓</div><span class="card-title">しつけ</span>
+    </a>
+    <a href="{{ "food/" | relURL }}" class="nav-card">
+      <div class="icon-wrap">🍖</div><span class="card-title">食事</span>
+    </a>
+    <a href="{{ "health/" | relURL }}" class="nav-card">
+      <div class="icon-wrap">🏥</div><span class="card-title">健康管理</span>
+    </a>
   </div>
 </div>
 {{ end }}
