@@ -1,43 +1,107 @@
 {{ define "main" }}
-<div class="pa3 pa4-ns bg-near-white min-vh-100">
-  
-  <div class="mw9 center ph3 pt3">
-    <h2 class="f3 fw6 mb3 bb b--black-10 pb2">カテゴリー</h2>
-  </div>
-
-  <div class="flex flex-wrap justify-center mw9 center">
-    {{ $categories := slice 
-      (dict "name" "犬種図鑑" "icon" "📖" "link" "posts/")
-      (dict "name" "しつけ" "icon" "🎾" "link" "discipline/")
-      (dict "name" "食事" "icon" "🍖" "link" "food/")
-      (dict "name" "健康・医療" "icon" "🏥" "link" "health/")
-      (dict "name" "お手入れ" "icon" "🚿" "link" "care/")
-      (dict "name" "お出かけ" "icon" "🚗" "link" "outings/")
-      (dict "name" "年齢診断" "icon" "🐕" "link" "age-check/")
-      (dict "name" "その他" "icon" "✨" "link" "others/")
-      (dict "name" "FAQ" "icon" "❓" "link" "faq/")
-    }}
-
-    {{ range $categories }}
-    <div class="w-50 w-33-ns pa2">
-      <a href="{{ .link | relURL }}" class="db ba br3 b--black-10 pa3 pa4-ns bg-white hover-bg-gold no-underline h-100 shadow-4 transition-all flex flex-column justify-center tc">
-        <span class="f2 f1-ns mb2">{{ .icon }}</span>
-        <h2 class="f6 f5-ns black ma0">{{ .name }}</h2>
-      </a>
-    </div>
-    {{ end }}
-  </div>
-</div>
-
 <style>
-  .transition-all { transition: all 0.2s ease-in-out; }
-  .hover-bg-gold:active, .hover-bg-gold:hover { 
-    transform: translateY(-3px); 
-    background-color: #FFD700; 
-    border-color: transparent;
+  /* ① サブカテゴリー（ボックスタイプ）のスタイル */
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 20px 0;
   }
-  @media screen and (max-width: 30em) {
-    .w-50 { width: 50%; }
+  .cat-btn {
+    background: #fff;
+    border: 2px solid #ffd700; /* ゴールド系 */
+    border-radius: 10px;
+    padding: 15px 5px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  /* ② 犬種名（横長ボックス一覧）のスタイル */
+  .breed-container {
+    display: none; /* 最初は隠す */
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  .breed-scroll-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .breed-item {
+    flex: 0 0 auto;
+    background: #dfbb00; /* ゴールド系 */
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
   }
 </style>
+
+<div class="pa3 pa4-ns w-100 w-70-l center">
+  <h2 class="f3 fw1 mt0 lh-title">犬種検索</h2>
+
+  <div class="category-grid">
+    <div class="cat-btn" onclick="showGroup('50on')">50音検索</div>
+    <div class="cat-btn" onclick="showGroup('g1')">第1：牧羊・牧畜犬</div>
+    <div class="cat-btn" onclick="showGroup('g2')">第2：使役犬</div>
+    <div class="cat-btn" onclick="showGroup('g3')">第3：テリア</div>
+    <div class="cat-btn" onclick="showGroup('g4')">第4：ダックス</div>
+    <div class="cat-btn" onclick="showGroup('g5')">第5：原始・スピッツ</div>
+    <div class="cat-btn" onclick="showGroup('g6')">第6：嗅覚ハウンド</div>
+    <div class="cat-btn" onclick="showGroup('g7')">第7：ポインター</div>
+    <div class="cat-btn" onclick="showGroup('g8')">第8：鳥猟犬</div>
+    <div class="cat-btn" onclick="showGroup('g9')">第9：愛玩犬</div>
+    <div class="cat-btn" onclick="showGroup('g10')">第10：視覚ハウンド</div>
+    <div class="cat-btn" onclick="showGroup('other')">その他</div>
+  </div>
+
+  <hr>
+
+  <div id="breed-lists">
+    
+    <div id="g1" class="breed-container">
+      <h3>第1グループ 一覧</h3>
+      <div class="breed-scroll-list">
+        {{ range where .Site.RegularPages "Params.fci_group" "1" }}
+          <a href="{{ .Permalink }}" class="breed-item">{{ .Title }}</a>
+        {{ end }}
+      </div>
+    </div>
+
+    <div id="g9" class="breed-container">
+      <h3>第9グループ 一覧</h3>
+      <div class="breed-scroll-list">
+        {{ range where .Site.RegularPages "Params.fci_group" "9" }}
+          <a href="{{ .Permalink }}" class="breed-item">{{ .Title }}</a>
+        {{ end }}
+      </div>
+    </div>
+    
+    </div>
+</div>
+
+<script>
+  function showGroup(groupId) {
+    // 全て一旦隠す
+    const containers = document.querySelectorAll('.breed-container');
+    containers.forEach(c => c.style.display = 'none');
+    
+    // 選んだものだけ表示
+    const target = document.getElementById(groupId);
+    if(target) {
+      target.style.display = 'block';
+      target.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      alert("このグループの犬種はまだ登録されていません。");
+    }
+  }
+</script>
 {{ end }}
