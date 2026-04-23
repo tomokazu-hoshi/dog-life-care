@@ -1,59 +1,33 @@
 {{ define "main" }}
 <div class="pa3 pa4-ns w-100 w-70-l center">
-  <h2 class="f3 b border-left-gold pl2">犬種をカテゴリーから探す</h2>
-
-  <div class="category-grid">
-    <div class="cat-btn" onclick="showGroup('all')">すべての犬種</div>
-    <div class="cat-btn" onclick="showGroup('g1')">牧羊・牧畜犬</div>
-    <div class="cat-btn" onclick="showGroup('g2')">使役犬</div>
-    <div class="cat-btn" onclick="showGroup('g3')">テリア</div>
-    <div class="cat-btn" onclick="showGroup('g4')">ダックスフンド</div>
-    <div class="cat-btn" onclick="showGroup('g5')">原始的な犬・スピッツ</div>
-    <div class="cat-btn" onclick="showGroup('g6')">嗅覚ハウンド</div>
-    <div class="cat-btn" onclick="showGroup('g7')">ポインター・セター</div>
-    <div class="cat-btn" onclick="showGroup('g8')">鳥猟犬</div>
-    <div class="cat-btn" onclick="showGroup('g9')">愛玩犬</div>
-    <div class="cat-btn" onclick="showGroup('g10')">視覚ハウンド</div>
+  <div class="tc pv5">
+    <h1 class="f1 b mb2">ワンライフ・ナビ</h1>
+    <p class="f4 silver">愛犬との最高の出会いと暮らしをサポート</p>
   </div>
 
-  <div id="results">
-    <div id="all" class="breed-container">
-      <h3 class="f5 b">全犬種一覧</h3>
-      <div class="breed-scroll-list">
-        {{ range (where .Site.RegularPages "Section" "posts").ByTitle }}
-          <a href="{{ .RelPermalink }}" class="breed-item">{{ .Title }}</a>
-        {{ end }}
-      </div>
-    </div>
-
-    {{ $groups := dict "g1" "第1グループ" "g2" "第2グループ" "g3" "第3グループ" "g4" "第4グループ" "g5" "第5グループ" "g6" "第6グループ" "g7" "第7グループ" "g8" "第8グループ" "g9" "第9グループ" "g10" "第10グループ" }}
-    {{ range $id, $searchKey := $groups }}
-    <div id="{{ $id }}" class="breed-container">
-      <h3 class="f5 b">{{ $searchKey }} 一覧</h3>
-      <div class="breed-scroll-list">
-        {{ range (where $.Site.RegularPages "Params.categories" "intersect" (slice $searchKey)) }}
-          <a href="{{ .RelPermalink }}" class="breed-item">{{ .Title }}</a>
-        {{ end }}
-      </div>
-    </div>
-    {{ end }}
+  <div class="tc mb5">
+    <a href="{{ "posts/" | relURL }}" class="f4 link dim br-pill ph5 pv3 mb2 dib white bg-gold b">
+      📖 犬種図鑑を見る
+    </a>
   </div>
+
+  <section class="mw7 center">
+    <h2 class="f4 b mb3 border-left-gold pl2">目的・悩みから探す</h2>
+    <div class="flex flex-wrap gap-10">
+      <a href="{{ "tags/室内で飼いやすい/" | relURL }}" class="concern-tag">🏠 室内で飼いやすい</a>
+      <a href="{{ "tags/抜け毛が少ない/" | relURL }}" class="concern-tag">✨ 抜け毛が少ない</a>
+      <a href="{{ "tags/一人暮らし向け/" | relURL }}" class="concern-tag">👤 一人暮らし・共働き向け</a>
+      <a href="{{ "tags/子供がいる家庭向け/" | relURL }}" class="concern-tag">👶 子供がいる家庭向け</a>
+    </div>
+  </section>
 </div>
 
 <style>
   .border-left-gold { border-left: 5px solid #dfbb00; }
-  .category-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0; }
-  .cat-btn { background: #fff; border: 2px solid #dfbb00; border-radius: 10px; padding: 15px 5px; font-size: 0.85rem; font-weight: bold; text-align: center; cursor: pointer; }
-  .breed-container { display: none; background: #f9f9f9; padding: 15px; margin-top: 15px; border-radius: 10px; }
-  .breed-scroll-list { display: flex; overflow-x: auto; gap: 10px; padding: 10px 0; }
-  .breed-item { flex: 0 0 auto; background: #dfbb00; color: #fff; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-weight: bold; }
-</style>
-
-<script>
-  function showGroup(id) {
-    document.querySelectorAll('.breed-container').forEach(el => el.style.display = 'none');
-    const target = document.getElementById(id);
-    if(target) { target.style.display = 'block'; target.scrollIntoView({ behavior: 'smooth' }); }
+  .gap-10 { gap: 10px; }
+  .concern-tag { 
+    text-decoration: none; padding: 12px 20px; border: 2px solid #dfbb00; 
+    border-radius: 30px; color: #333; font-weight: bold; background: #fff;
   }
-</script>
+</style>
 {{ end }}
