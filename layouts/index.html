@@ -1,21 +1,13 @@
 {{ define "main" }}
-<div style="padding: 20px; max-width: 800px; margin: 0 auto; font-family: sans-serif;">
-  <div style="text-align: center; padding: 40px 0;">
-    <h1 style="font-size: 1.8rem; margin: 0;">ワンライフ・ナビ</h1>
-    <p style="color: #666; font-size: 0.9rem;">愛犬との暮らしをサポートする総合ガイド</p>
-  </div>
-
+<div style="padding: 20px; max-width: 800px; margin: 0 auto; text-align: center;">
+  <h1 style="font-size: 2rem; margin-bottom: 40px;">ワンライフ・ナビ</h1>
+  
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-    <a href="{{ "posts/" | relURL }}" style="text-decoration:none; background:#dfbb00; color:#fff; padding:30px 10px; border-radius:15px; text-align:center; font-weight:bold; font-size:1.1rem;">📖 犬種図鑑</a>
-    <a href="{{ "training/" | relURL }}" style="text-decoration:none; background:#fff; border:2px solid #dfbb00; color:#333; padding:30px 10px; border-radius:15px; text-align:center; font-weight:bold; font-size:1.1rem;">🎓 しつけ</a>
-    <a href="{{ "food/" | relURL }}" style="text-decoration:none; background:#fff; border:2px solid #dfbb00; color:#333; padding:30px 10px; border-radius:15px; text-align:center; font-weight:bold; font-size:1.1rem;">🍖 食事</a>
-    <a href="{{ "health/" | relURL }}" style="text-decoration:none; background:#fff; border:2px solid #dfbb00; color:#333; padding:30px 10px; border-radius:15px; text-align:center; font-weight:bold; font-size:1.1rem;">🏥 健康・医療</a>
-  </div>
-
-  <div style="margin-top: 30px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
-    <a href="{{ "faq/" | relURL }}" style="text-decoration:none; background:#f5f5f5; color:#666; padding:15px 5px; border-radius:10px; text-align:center; font-size:0.8rem;">FAQ</a>
-    <a href="{{ "diagnosis/" | relURL }}" style="text-decoration:none; background:#f5f5f5; color:#666; padding:15px 5px; border-radius:10px; text-align:center; font-size:0.8rem;">年齢診断</a>
-    <a href="{{ "other/" | relURL }}" style="text-decoration:none; background:#f5f5f5; color:#666; padding:15px 5px; border-radius:10px; text-align:center; font-size:0.8rem;">その他</a>
+    <a href="{{ "posts/" | relURL }}" style="text-decoration:none; background:#dfbb00; color:#fff; padding:30px 10px; border-radius:15px; font-weight:bold; font-size:1.1rem;">📖 犬種図鑑</a>
+    
+    <a href="{{ "training/" | relURL }}" style="text-decoration:none; border:2px solid #dfbb00; color:#333; padding:30px 10px; border-radius:15px; font-weight:bold;">🎓 しつけ</a>
+    <a href="{{ "food/" | relURL }}" style="text-decoration:none; border:2px solid #dfbb00; color:#333; padding:30px 10px; border-radius:15px; font-weight:bold;">🍖 食事</a>
+    <a href="{{ "health/" | relURL }}" style="text-decoration:none; border:2px solid #dfbb00; color:#333; padding:30px 10px; border-radius:15px; font-weight:bold;">🏥 健康・医療</a>
   </div>
 </div>
 {{ end }}
