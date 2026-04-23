@@ -1,9 +1,12 @@
 baseURL = 'https://tomokazu-hoshi.github.io/dog-life-care/'
 languageCode = 'ja-jp'
 title = 'ワンライフ・ナビ'
-# テーマを直接ネットから読み込む設定
 theme = ["github.com/theNewDynamic/gohugo-theme-ananke/v2"]
 hasCJKLanguage = true
+
+# リンクを常に正しいパス（/dog-life-care/...）に自動調整する設定
+canonifyURLs = true
+relativeURLs = true
 
 [taxonomies]
   category = 'categories'
