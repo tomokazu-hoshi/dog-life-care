@@ -1,23 +1,20 @@
 {{ define "main" }}
 <style>
-  :root { --gold: #dfbb00; --light-gold: #fff9e6; }
+  :root { --gold: #dfbb00; }
   body { background-color: #fcfcf9; font-family: sans-serif; margin: 0; padding: 0; }
   .top-container { max-width: 800px; margin: 0 auto; padding: 20px; text-align: center; }
-  /* タイトルを1つだけに */
-  .site-title { font-size: 2rem; color: var(--gold); font-weight: bold; margin: 40px 0; }
+  .site-title { font-size: 2rem; color: var(--gold); font-weight: bold; margin: 40px 0 30px; }
   
-  /* 2×4のグリッド（8項目） */
   .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
   .menu-item { 
     background: #fff; border: 2px solid var(--gold); border-radius: 12px; 
     padding: 25px 10px; text-decoration: none; color: #333; font-weight: bold; font-size: 1rem;
-    box-shadow: 0 4px 10px rgba(223, 187, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(223, 187, 0, 0.1); display: flex; align-items: center; justify-content: center;
   }
-  /* 1番下の横長ボックス（犬種図鑑） */
   .wide-item { 
     display: block; background: var(--gold); color: #fff !important; border-radius: 12px; 
     padding: 30px 10px; text-decoration: none; font-weight: bold; font-size: 1.2rem;
-    box-shadow: 0 4px 15px rgba(223, 187, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(223, 187, 0, 0.3); margin-top: 5px;
   }
 </style>
 
