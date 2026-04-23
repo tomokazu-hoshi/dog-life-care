@@ -1,7 +1,9 @@
 {{ define "main" }}
-{{ partial "header.html" . }}
+<div style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: sans-serif;">
+  <nav style="font-size: 0.8rem; color: #888; margin-bottom: 20px;">
+    <a href="{{ "" | relURL }}" style="color:#888; text-decoration:none;">HOME</a> ＞ 犬種図鑑
+  </nav>
 
-<div style="max-width: 800px; margin: 0 auto; padding: 20px;">
   <h2 style="border-left: 6px solid #dfbb00; padding-left: 15px; font-size: 1.4rem; margin-bottom: 25px; color: #333;">犬種図鑑 検索</h2>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
