@@ -1,4 +1,6 @@
 {{ define "main" }}
+{{ partial "header.html" . }}
+
 <div style="max-width: 800px; margin: 0 auto; padding: 20px; text-align: center;">
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px;">
     <a href="{{ "training/" | relURL }}" class="menu-item">しつけ</a>
@@ -11,10 +13,14 @@
     <a href="{{ "faq/" | relURL }}" class="menu-item">FAQ</a>
   </div>
   
-  <a href="{{ "posts/" | relURL }}" style="display: block; background: #dfbb00; color: #fff; border-radius: 12px; padding: 30px 10px; text-decoration: none; font-weight: bold; font-size: 1.2rem; margin-top: 20px; box-shadow: 0 4px 15px rgba(223,187,0,0.3);">📖 犬種図鑑</a>
+  <a href="{{ "posts/" | relURL }}" style="display: block; background: #dfbb00; color: #fff; border-radius: 12px; padding: 30px 10px; text-decoration: none; font-weight: bold; font-size: 1.2rem; margin-top: 20px; box-shadow: 0 4px 15px rgba(223, 187, 0, 0.3);">📖 犬種図鑑</a>
 </div>
 
 <style>
-  .menu-item { background: #fff; border: 2px solid #dfbb00; border-radius: 12px; padding: 25px 10px; text-decoration: none; color: #333; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: center; }
+  .menu-item { 
+    background: #fff; border: 2px solid #dfbb00; border-radius: 12px; 
+    padding: 25px 10px; text-decoration: none; color: #333; font-weight: bold; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: center;
+  }
 </style>
 {{ end }}
