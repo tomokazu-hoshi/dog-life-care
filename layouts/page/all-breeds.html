@@ -1,0 +1,13 @@
+{{ define "main" }}
+{{ partial "header.html" . }}
+<div style="max-width: 800px; margin: 0 auto; padding: 20px;">
+  <h2 style="border-left: 6px solid #dfbb00; padding-left: 15px; font-size: 1.4rem; margin-bottom: 25px;">五十音から探す</h2>
+  <div style="display: flex; flex-direction: column; gap: 10px;">
+    {{ range (where .Site.RegularPages "Section" "posts").ByTitle }}
+    <a href="{{ .RelPermalink }}" style="display: block; background: #fff; border: 2px solid #dfbb00; border-radius: 12px; padding: 20px; text-decoration: none; color: #333; font-weight: bold; text-align: center;">
+      {{ .Title }}
+    </a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
