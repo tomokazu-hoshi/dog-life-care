@@ -4,27 +4,51 @@
     {{ partial "breadcrumb.html" . }}
     
     <header class="tc pv4">
-      <h1 class="f2 fw9 black">犬種図鑑</h1>
-      <p class="f5 gray">JKC分類に基づいたグループ別検索</p>
+      <h1 class="f2 fw9 black">犬種図鑑 検索</h1>
+      <p class="f5 gray">あなたにぴったりのワンちゃんを見つけましょう</p>
     </header>
 
+    <div class="mb4">
+      <div class="w-100 pa2">
+        <a href="{{ "/search-50on/" | relURL }}" class="db ba br3 b--black-10 pa4 bg-white hover-bg-gold no-underline shadow-4 transition-all flex items-center justify-center">
+          <span class="f2 mr3">🔤</span>
+          <div class="tl">
+            <h2 class="f3 black ma0">名前から探す</h2>
+            <p class="f7 gray ma0 mt1">あいうえお順（50音検索）で探せます</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="tc pv3">
+      <h3 class="f4 fw6 gray mb3">特徴・ライフスタイルから探す</h3>
+    </div>
+    
     <div class="flex flex-wrap justify-center">
-      {{ $groups := slice 
-        "第1グループ：牧羊犬・牧畜犬" "第2グループ：使役犬" "第3グループ：テリア"
-        "第4グループ：ダックスフンド" "第5グループ：原始的な犬・スピッツ" "第6グループ：嗅覚ハウンド"
-        "第7グループ：ポインター・セター" "第8グループ：鳥猟犬" "第9グループ：愛玩犬"
-        "第10グループ：視覚ハウンド" "その他"
+      {{ $tags := slice 
+        (dict "name" "室内で飼いやすい" "sub" "小型犬・初心者向け" "icon" "🏠" "link" "/tags/室内飼い/")
+        (dict "name" "抜け毛が少ない" "sub" "お手入れを楽にしたい" "icon" "✨" "link" "/tags/抜け毛が少ない/")
+        (dict "name" "一人暮らし・共働き向け" "sub" "お留守番が得意な犬種" "icon" "👤" "link" "/tags/自立心/")
+        (dict "name" "子供がいる家庭向け" "sub" "温厚でフレンドリーな性格" "icon" "👶" "link" "/tags/温厚/")
       }}
 
-      {{ range $groups }}
+      {{ range $tags }}
       <div class="w-100 w-50-m pa2">
-        <a href="{{ (printf "/categories/%s/" .) | relURL }}" class="db ba br3 b--black-10 pa3 bg-white hover-bg-gold no-underline shadow-4 flex items-center">
-          <span class="f3 mr3">🐾</span>
-          <h2 class="f5 black ma0">{{ . }}</h2>
+        <a href="{{ .link | relURL }}" class="db ba br3 b--black-10 pa3 bg-white hover-bg-gold no-underline shadow-4 flex items-center transition-all">
+          <span class="f3 mr3">{{ .icon }}</span>
+          <div class="tl">
+            <h2 class="f5 black ma0">{{ .name }}</h2>
+            <p class="f7 gray ma0 mt1">{{ .sub }}</p>
+          </div>
         </a>
       </div>
       {{ end }}
     </div>
   </div>
 </div>
+
+<style>
+  .transition-all { transition: all 0.2s ease-in-out; }
+  .hover-bg-gold:hover { transform: translateY(-3px); background-color: #FFD700; border-color: transparent; }
+</style>
 {{ end }}
