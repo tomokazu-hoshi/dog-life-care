@@ -1,0 +1,59 @@
+{{ define "main" }}
+<div class="pa3 pa4-ns bg-near-white min-vh-100">
+  <header class="tc pv4">
+    <h1 class="f2 f1-l fw9 mb2 black">ワンライフ・ナビ</h1>
+    <p class="f5 gray i">愛犬との暮らしを豊かにする、総合ガイドへようこそ</p>
+  </header>
+
+  <div class="flex flex-wrap justify-center mw8 center">
+    
+    <div class="w-100 w-50-m w-33-l pa2">
+      <a href="./posts/" class="db ba br3 b--black-10 pa4 bg-white hover-bg-gold no-underline h-100 shadow-4 transition-all flex flex-column justify-center tc">
+        <span class="f1 mb2">📖</span>
+        <h2 class="f4 black mb2">犬種図鑑</h2>
+        <p class="f7 gray lh-copy">全116種の性格や飼い方を徹底解説。あなたの愛犬のことがもっとわかります。</p>
+      </a>
+    </div>
+
+    <div class="w-100 w-50-m w-33-l pa2">
+      <a href="./discipline/" class="db ba br3 b--black-10 pa4 bg-white hover-bg-gold no-underline h-100 shadow-4 transition-all flex flex-column justify-center tc">
+        <span class="f1 mb2">🎾</span>
+        <h2 class="f4 black mb2">しつけの悩み</h2>
+        <p class="f7 gray lh-copy">噛み癖や無駄吠えなど、専門的な視点から解決策を提案します。（準備中）</p>
+      </a>
+    </div>
+
+    <div class="w-100 w-50-m w-33-l pa2">
+      <a href="./health/" class="db ba br3 b--black-10 pa4 bg-white hover-bg-gold no-underline h-100 shadow-4 transition-all flex flex-column justify-center tc">
+        <span class="f1 mb2">🏥</span>
+        <h2 class="f4 black mb2">健康・ケア</h2>
+        <p class="f7 gray lh-copy">食事管理から病気予防まで、愛犬の健康を守るための総合知識。（準備中）</p>
+      </a>
+    </div>
+
+    <div class="w-100 w-50-m w-33-l pa2">
+      <a href="./goods/" class="db ba br3 b--black-10 pa4 bg-white hover-bg-gold no-underline h-100 shadow-4 transition-all flex flex-column justify-center tc">
+        <span class="f1 mb2">🦴</span>
+        <h2 class="f4 black mb2">グッズ紹介</h2>
+        <p class="f6 black mb2">おすすめグッズ</h2>
+        <p class="f7 gray lh-copy">おもちゃ、首輪、フードなど、実際に使って良かった厳選アイテムをご紹介。（準備中）</p>
+      </a>
+    </div>
+
+    <div class="w-100 w-50-m w-33-l pa2">
+      <a href="./contact/" class="db ba br3 b--black-10 pa4 bg-white hover-bg-gold no-underline h-100 shadow-4 transition-all flex flex-column justify-center tc">
+        <span class="f1 mb2">✉️</span>
+        <h2 class="f4 black mb2">相談・お問い合わせ</h2>
+        <p class="f7 gray lh-copy">サイトへのご意見や、愛犬に関するお悩み相談はこちらから。（準備中）</p>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .transition-all { transition: all 0.2s ease-in-out; }
+  .hover-bg-gold:hover { transform: translateY(-5px); }
+  .hover-bg-gold:hover h2, .hover-bg-gold:hover p { color: #000; }
+</style>
+{{ end }}
