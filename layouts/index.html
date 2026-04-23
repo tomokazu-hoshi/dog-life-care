@@ -1,30 +1,8 @@
 {{ define "main" }}
-<style>
-  :root { --gold: #dfbb00; }
-  body { background-color: #fcfcf9; font-family: sans-serif; margin: 0; padding: 0; }
-  .top-container { max-width: 800px; margin: 0 auto; padding: 20px; text-align: center; }
-  /* タイトルは1つだけ */
-  .site-title { font-size: 2.2rem; color: var(--gold); font-weight: bold; margin: 50px 0 30px; }
-  
-  /* 2×4のグリッド（8項目） */
-  .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
-  .menu-item { 
-    background: #fff; border: 2px solid var(--gold); border-radius: 12px; 
-    padding: 30px 10px; text-decoration: none; color: #333; font-weight: bold; font-size: 1.1rem;
-    box-shadow: 0 4px 10px rgba(223, 187, 0, 0.1); display: flex; align-items: center; justify-content: center;
-  }
-  /* 最下部の横長ボックス */
-  .wide-item { 
-    display: block; background: var(--gold); color: #fff !important; border-radius: 12px; 
-    padding: 35px 10px; text-decoration: none; font-weight: bold; font-size: 1.3rem;
-    box-shadow: 0 4px 15px rgba(223, 187, 0, 0.3); margin-top: 10px;
-  }
-</style>
+{{ partial "header.html" . }}
 
-<div class="top-container">
-  <div class="site-title">ワンライフナビ</div>
-
-  <div class="menu-grid">
+<div style="max-width: 800px; margin: 0 auto; padding: 20px; text-align: center;">
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px;">
     <a href="{{ "training/" | relURL }}" class="menu-item">しつけ</a>
     <a href="{{ "food/" | relURL }}" class="menu-item">食事</a>
     <a href="{{ "health/" | relURL }}" class="menu-item">健康・医療</a>
@@ -35,6 +13,10 @@
     <a href="{{ "faq/" | relURL }}" class="menu-item">FAQ</a>
   </div>
   
-  <a href="{{ "posts/" | relURL }}" class="wide-item">📖 犬種図鑑</a>
+  <a href="{{ "posts/" | relURL }}" style="display: block; background: #dfbb00; color: #fff; border-radius: 12px; padding: 30px 10px; text-decoration: none; font-weight: bold; font-size: 1.2rem; margin-top: 20px; box-shadow: 0 4px 15px rgba(223, 187, 0, 0.3);">📖 犬種図鑑</a>
 </div>
+
+<style>
+  .menu-item { background: #fff; border: 2px solid #dfbb00; border-radius: 12px; padding: 25px 10px; text-decoration: none; color: #333; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: center; }
+</style>
 {{ end }}
