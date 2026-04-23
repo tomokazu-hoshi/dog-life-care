@@ -1,34 +1,31 @@
 {{ define "main" }}
-<article class="pa3 pa4-ns w-100 w-70-l center">
-  <nav class="f6 gray mb3">
-    <a href="{{ "" | relURL }}" class="link silver">HOME</a> ＞ 
-    <a href="{{ "posts/" | relURL }}" class="link silver">犬種図鑑</a> ＞ 
-    {{ with .Params.categories }}{{ range . }}<span>{{ . }}</span> ＞ {{ end }}{{ end }}
-    <span class="b">{{ .Title }}</span>
-  </nav>
+<article style="padding: 20px; max-width: 800px; margin: 0 auto; line-height: 1.8;">
+  {{ partial "breadcrumb.html" . }}
 
-  <h1 class="f2 mt0">{{ .Title }}</h1>
+  <h1 style="font-size: 1.8rem; margin: 0 0 20px 0;">{{ .Title }}</h1>
 
-  <div class="bg-near-white pa3 br3 mb4">
-    <h2 class="f5 b mt0">📊 クイックチェック表</h2>
-    <table class="w-100 f6">
-      <tr class="bb b--black-10"><td class="pv2 b">運動量</td><td class="pv2 tc">記事内参照</td></tr>
-      <tr class="bb b--black-10"><td class="pv2 b">抜け毛</td><td class="pv2 tc">記事内参照</td></tr>
-      <tr><td class="pv2 b">寿命</td><td class="pv2 tc">記事内参照</td></tr>
+  <div style="background: #fdfdfd; border: 2px solid #dfbb00; border-radius: 12px; padding: 15px; margin-bottom: 30px;">
+    <h2 style="font-size: 1rem; margin-top: 0; text-align: center;">📊 クイックチェック表</h2>
+    <table style="width: 100%; font-size: 0.9rem; border-collapse: collapse;">
+      <tr style="border-bottom: 1px solid #eee;"><td style="padding: 8px; font-weight: bold;">しつけ難易度</td><td style="padding: 8px; text-align: right;">{{ default "★★★★☆" .Params.check_shitsuke }}</td></tr>
+      <tr style="border-bottom: 1px solid #eee;"><td style="padding: 8px; font-weight: bold;">抜け毛の多さ</td><td style="padding: 8px; text-align: right;">{{ default "★★★☆☆" .Params.check_nukege }}</td></tr>
+      <tr style="border-bottom: 1px solid #eee;"><td style="padding: 8px; font-weight: bold;">運動量</td><td style="padding: 8px; text-align: right;">{{ default "1日2回" .Params.check_undo }}</td></tr>
+      <tr><td style="padding: 8px; font-weight: bold;">寿命</td><td style="padding: 8px; text-align: right;">{{ default "12〜15年" .Params.check_jumyo }}</td></tr>
     </table>
   </div>
 
-  <div class="lh-copy">{{ .Content }}</div>
+  <div class="article-content">
+    {{ .Content }}
+  </div>
 
-  <section class="mt5 pa4 bg-washed-yellow br3 tc">
-    <h2 class="f4 b mb3">🛍️ {{ .Title }}におすすめの厳選アイテム</h2>
-    <div class="ba b--dashed b--gold pa3 bg-white">
-      <p class="f6">[ ここに各犬種専用のアイテム広告が表示されます ]</p>
-    </div>
+  <section style="margin-top: 50px; padding: 20px; background: #fffbe6; border: 2px dashed #dfbb00; border-radius: 15px;">
+    <h2 style="font-size: 1.1rem; margin-top: 0;">🛍️ {{ .Title }}におすすめの厳選アイテム</h2>
+    <div style="text-align: center; color: #888;">[ アイテム広告エリア ]</div>
   </section>
 
-  <nav class="mt4 tc">
-    <a href="{{ "posts/" | relURL }}" class="link gold b">他の犬種を探す（図鑑トップへ）</a>
+  <nav style="margin-top: 40px; display: flex; justify-content: space-between;">
+    <a href="{{ "faq/" | relURL }}" style="color: #dfbb00; text-decoration: none; font-size: 0.9rem;">← FAQへ戻る</a>
+    <a href="{{ "posts/" | relURL }}" style="color: #dfbb00; text-decoration: none; font-size: 0.9rem;">他の犬種を探す →</a>
   </nav>
 </article>
 {{ end }}
