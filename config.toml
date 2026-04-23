@@ -1,8 +1,0 @@
-baseURL = 'https://tomokazu-hoshi.github.io/dog-life-care/'
-languageCode = 'ja-jp'
-title = '' # ここを空に！これで重複ヘッダーが消えます
-theme = ["github.com/theNewDynamic/gohugo-theme-ananke/v2"]
-hasCJKLanguage = true
-
-[taxonomies]
-  category = 'categories'
