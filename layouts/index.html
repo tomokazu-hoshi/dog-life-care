@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{ partial "header.html" . }}
 
-<div style="max-width: 800px; margin: 0 auto; padding: 20px; text-align: center;">
+<div style="max-width: 800px; margin: 0 auto; padding: 0 20px 40px; text-align: center;">
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px;">
     <a href="{{ "training/" | relURL }}" class="menu-item">しつけ</a>
     <a href="{{ "food/" | relURL }}" class="menu-item">食事</a>
@@ -17,10 +17,6 @@
 </div>
 
 <style>
-  .menu-item { 
-    background: #fff; border: 2px solid #dfbb00; border-radius: 12px; 
-    padding: 25px 10px; text-decoration: none; color: #333; font-weight: bold; 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: center;
-  }
+  .menu-item { background: #fff; border: 2px solid #dfbb00; border-radius: 12px; padding: 25px 10px; text-decoration: none; color: #333; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: center; }
 </style>
 {{ end }}
