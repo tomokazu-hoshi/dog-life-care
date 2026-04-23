@@ -1,9 +1,8 @@
 {{ define "main" }}
 <article class="pa3 pa4-ns w-100 w-70-l center">
-  
   <nav class="f6 gray mb3">
-    <a href="{{ "" | relURL }}" class="link gold">HOME</a> ＞ 
-    <span>犬種図鑑</span> ＞ 
+    <a href="{{ "" | relURL }}" class="link silver">HOME</a> ＞ 
+    <a href="{{ "posts/" | relURL }}" class="link silver">犬種図鑑</a> ＞ 
     {{ with .Params.categories }}{{ range . }}<span>{{ . }}</span> ＞ {{ end }}{{ end }}
     <span class="b">{{ .Title }}</span>
   </nav>
@@ -13,24 +12,23 @@
   <div class="bg-near-white pa3 br3 mb4">
     <h2 class="f5 b mt0">📊 クイックチェック表</h2>
     <table class="w-100 f6">
-      <tr class="bb b--black-10"><td class="pv2 b">しつけ難易度</td><td class="pv2 tc">記事内参照</td></tr>
-      <tr class="bb b--black-10"><td class="pv2 b">抜け毛の多さ</td><td class="pv2 tc">記事内参照</td></tr>
+      <tr class="bb b--black-10"><td class="pv2 b">運動量</td><td class="pv2 tc">記事内参照</td></tr>
+      <tr class="bb b--black-10"><td class="pv2 b">抜け毛</td><td class="pv2 tc">記事内参照</td></tr>
       <tr><td class="pv2 b">寿命</td><td class="pv2 tc">記事内参照</td></tr>
     </table>
   </div>
 
-  <div class="lh-copy">
-    {{ .Content }}
-  </div>
+  <div class="lh-copy">{{ .Content }}</div>
 
-  <section class="mt5 pa3 bg-washed-yellow br3">
-    <h2 class="f4 b">🛍️ {{ .Title }}におすすめの厳選アイテム</h2>
-    <p class="f6 gray">※この犬種の特性に合わせたアイテムを準備中です。</p>
+  <section class="mt5 pa4 bg-washed-yellow br3 tc">
+    <h2 class="f4 b mb3">🛍️ {{ .Title }}におすすめの厳選アイテム</h2>
+    <div class="ba b--dashed b--gold pa3 bg-white">
+      <p class="f6">[ ここに各犬種専用のアイテム広告が表示されます ]</p>
+    </div>
   </section>
 
   <nav class="mt4 tc">
-    <a href="{{ "" | relURL }}" class="f6 link dim br-pill ph3 pv2 mb2 dib white bg-gold">← 他の犬種を探す（図鑑トップへ）</a>
+    <a href="{{ "posts/" | relURL }}" class="link gold b">他の犬種を探す（図鑑トップへ）</a>
   </nav>
-
 </article>
 {{ end }}
