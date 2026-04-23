@@ -9,9 +9,9 @@
 
   <h2 style="font-size: 1.4rem; border-left: 6px solid #dfbb00; padding-left: 15px; margin-bottom: 25px;">{{ .Title }} 一覧</h2>
 
-  <div style="display: flex; flex-direction: column; gap: 10px;">
+  <div style="display: flex; flex-direction: column; gap: 12px;">
     {{ range .Pages.ByTitle }}
-    <a href="{{ .RelPermalink }}" style="display: block; background: #fff; border: 2px solid #dfbb00; border-radius: 12px; padding: 20px; text-decoration: none; color: #333; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center;">
+    <a href="{{ .RelPermalink }}" style="display: block; background: #fff; border: 2px solid #dfbb00; border-radius: 12px; padding: 25px; text-decoration: none; color: #333; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center;">
       {{ .Title }}
     </a>
     {{ end }}
