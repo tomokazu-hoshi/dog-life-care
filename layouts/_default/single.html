@@ -1,27 +1,31 @@
 {{ define "main" }}
-<div class="container" style="max-width: 800px; margin: 0 auto; padding: 20px; background-color: #fff; min-height: 100vh;">
-  <nav style="font-size: 0.8rem; color: #888; margin-bottom: 20px;">
-    <a href="{{ "" | relURL }}" style="color: #888;">HOME</a> ＞ <a href="{{ "posts/" | relURL }}" style="color: #888;">犬種図鑑</a> ＞ 
-    {{ with .Params.categories }}{{ range . }}{{ . }}{{ end }}{{ end }} ＞ {{ .Title }}
+<article style="max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.9; color: #333;">
+  <nav style="font-size: 0.85rem; color: #888; margin-bottom: 20px;">
+    <a href="{{ "" | relURL }}" style="color:#888; text-decoration:none;">HOME</a> ＞ 
+    <a href="{{ "posts/" | relURL }}" style="color:#888; text-decoration:none;">犬種図鑑</a> ＞ 
+    {{ with .Params.categories }}{{ range . }}{{ . }}{{ end }}{{ end }} ＞ 
+    <span style="font-weight:bold; color:#333;">{{ .Title }}</span>
   </nav>
 
-  <h1 style="font-size: 1.8rem; border-bottom: 2px solid #dfbb00; padding-bottom: 10px; margin-bottom: 25px;">{{ .Title }}</h1>
+  <h1 style="font-size: 1.8rem; border-bottom: 3px solid #dfbb00; padding-bottom: 10px; margin-bottom: 30px;">{{ .Title }}</h1>
 
-  <div style="background-color: #f9f9f9; border: 1px solid #ddd; border-radius: 10px; padding: 15px; margin-bottom: 30px;">
-    <h2 style="font-size: 1rem; margin-top: 0; text-align: center; color: #dfbb00;">📊 クイックチェック表</h2>
-    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
-      <tr style="border-bottom: 1px solid #eee;"><td style="padding: 10px; font-weight: bold;">寿命</td><td style="text-align: right;">12〜15年</td></tr>
-      <tr style="border-bottom: 1px solid #eee;"><td style="padding: 10px; font-weight: bold;">抜け毛</td><td style="text-align: right;">少ない</td></tr>
-      <tr><td style="padding: 10px; font-weight: bold;">しつけ</td><td style="text-align: right;">初心者向き</td></tr>
+  <div style="background:#fff; border:2px solid #dfbb00; border-radius:15px; padding:20px; margin-bottom: 40px; box-shadow: 0 5px 15px rgba(223,187,0,0.1);">
+    <h2 style="font-size:1.1rem; text-align:center; color:#dfbb00; margin-top:0;">📊 クイックチェック表</h2>
+    <table style="width:100%; border-collapse:collapse; font-size:0.95rem;">
+      <tr style="border-bottom:1px solid #eee;"><td style="padding:12px 5px; font-weight:bold; color:#92400e;">しつけ難易度</td><td style="text-align:right;">★★★★☆（初心者向き）</td></tr>
+      <tr style="border-bottom:1px solid #eee;"><td style="padding:12px 5px; font-weight:bold; color:#92400e;">抜け毛の多さ</td><td style="text-align:right;">★☆☆☆☆（少ない）</td></tr>
+      <tr style="border-bottom:1px solid #eee;"><td style="padding:12px 5px; font-weight:bold; color:#92400e;">運動</td><td style="text-align:right;">30分×2回 / 日</td></tr>
+      <tr><td style="padding:12px 5px; font-weight:bold; color:#92400e;">寿命</td><td style="text-align:right;">12〜15年</td></tr>
     </table>
   </div>
 
-  <div style="line-height: 1.8;">
+  <div class="entry-content">
     {{ .Content }}
   </div>
 
-  <div style="margin-top: 50px; padding: 20px; background-color: #fdfdfd; border: 1px dashed #dfbb00; border-radius: 10px; text-align: center;">
-    <p style="font-size: 0.8rem; color: #888;">[ 商品リンクエリア ]</p>
+  <div style="margin-top:50px; padding:25px; background:#fff9e6; border:2px dashed #dfbb00; border-radius:15px; text-align:center;">
+    <h3 style="color:#dfbb00; margin-top:0;">🛍️ {{ .Title }} おすすめアイテム</h3>
+    <p style="font-size:0.9rem; color:#666;">この犬種にぴったりの厳選グッズをご紹介</p>
   </div>
-</div>
+</article>
 {{ end }}
