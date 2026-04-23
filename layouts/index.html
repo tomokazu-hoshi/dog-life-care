@@ -1,33 +1,22 @@
 {{ define "main" }}
-<div class="pa3 pa4-ns w-100 w-70-l center">
-  <div class="tc pv5">
-    <h1 class="f1 b mb2">ワンライフ・ナビ</h1>
-    <p class="f4 silver">愛犬との最高の出会いと暮らしをサポート</p>
+<div style="padding: 20px; max-width: 800px; margin: 0 auto;">
+  <div style="text-align: center; padding: 40px 0;">
+    <h1 style="font-size: 2rem; margin-bottom: 10px;">ワンライフ・ナビ</h1>
+    <p style="color: #666;">愛犬との暮らしをサポートする総合ガイド</p>
   </div>
 
-  <div class="tc mb5">
-    <a href="{{ "posts/" | relURL }}" class="f4 link dim br-pill ph5 pv3 mb2 dib white bg-gold b">
-      📖 犬種図鑑を見る
-    </a>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+    <a href="{{ "posts/" | relURL }}" style="text-decoration:none; background:#dfbb00; color:#fff; padding:25px 10px; border-radius:15px; text-align:center; font-weight:bold; font-size:1.1rem;">📖 犬種図鑑</a>
+    <a href="{{ "training/" | relURL }}" style="text-decoration:none; background:#fff; border:2px solid #dfbb00; color:#333; padding:25px 10px; border-radius:15px; text-align:center; font-weight:bold; font-size:1.1rem;">🎓 しつけ</a>
+    <a href="{{ "food/" | relURL }}" style="text-decoration:none; background:#fff; border:2px solid #dfbb00; color:#333; padding:25px 10px; border-radius:15px; text-align:center; font-weight:bold; font-size:1.1rem;">🍖 食事</a>
+    <a href="{{ "health/" | relURL }}" style="text-decoration:none; background:#fff; border:2px solid #dfbb00; color:#333; padding:25px 10px; border-radius:15px; text-align:center; font-weight:bold; font-size:1.1rem;">🏥 健康・医療</a>
+    <a href="{{ "grooming/" | relURL }}" style="text-decoration:none; background:#fff; border:2px solid #dfbb00; color:#333; padding:25px 10px; border-radius:15px; text-align:center; font-weight:bold; font-size:1.1rem;">✂️ お手入れ</a>
+    <a href="{{ "outing/" | relURL }}" style="text-decoration:none; background:#fff; border:2px solid #dfbb00; color:#333; padding:25px 10px; border-radius:15px; text-align:center; font-weight:bold; font-size:1.1rem;">🚗 お出かけ</a>
   </div>
 
-  <section class="mw7 center">
-    <h2 class="f4 b mb3 border-left-gold pl2">目的・悩みから探す</h2>
-    <div class="flex flex-wrap gap-10">
-      <a href="{{ "tags/室内で飼いやすい/" | relURL }}" class="concern-tag">🏠 室内で飼いやすい</a>
-      <a href="{{ "tags/抜け毛が少ない/" | relURL }}" class="concern-tag">✨ 抜け毛が少ない</a>
-      <a href="{{ "tags/一人暮らし向け/" | relURL }}" class="concern-tag">👤 一人暮らし・共働き向け</a>
-      <a href="{{ "tags/子供がいる家庭向け/" | relURL }}" class="concern-tag">👶 子供がいる家庭向け</a>
-    </div>
-  </section>
+  <div style="margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+    <a href="{{ "diagnosis/" | relURL }}" style="text-decoration:none; background:#eee; color:#333; padding:15px; border-radius:10px; text-align:center; font-size:0.9rem;">年齢診断</a>
+    <a href="{{ "faq/" | relURL }}" style="text-decoration:none; background:#eee; color:#333; padding:15px; border-radius:10px; text-align:center; font-size:0.9rem;">FAQ</a>
+  </div>
 </div>
-
-<style>
-  .border-left-gold { border-left: 5px solid #dfbb00; }
-  .gap-10 { gap: 10px; }
-  .concern-tag { 
-    text-decoration: none; padding: 12px 20px; border: 2px solid #dfbb00; 
-    border-radius: 30px; color: #333; font-weight: bold; background: #fff;
-  }
-</style>
 {{ end }}
