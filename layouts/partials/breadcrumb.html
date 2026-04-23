@@ -1,13 +1,13 @@
 <nav class="f7 gray pv3" aria-label="Breadcrumb">
   <a href="https://tomokazu-hoshi.github.io" class="no-underline gray hover-black">Home</a>
-  
   <span class="ph2">＞</span>
   
+  {{ if eq .Section "posts" }}
+    <a href="{{ "/posts/" | relURL }}" class="no-underline gray hover-black">犬種図鑑</a>
+  {{ end }}
+
   {{ if .IsPage }}
-    <a href="{{ "posts/" | relURL }}" class="no-underline gray hover-black">犬種図鑑</a>
     <span class="ph2">＞</span>
     <span class="black fw6">{{ .Title }}</span>
-  {{ else }}
-    <span class="black fw6">犬種図鑑</span>
   {{ end }}
 </nav>
