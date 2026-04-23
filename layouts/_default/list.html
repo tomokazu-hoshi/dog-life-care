@@ -1,44 +1,21 @@
 {{ define "main" }}
-{{ partial "header.html" . }}
+<h2 style="text-align: center; font-size: 1.2rem; color: #333; margin-bottom: 30px; letter-spacing: 1px;">{{ .Title }} 一覧</h2>
 
-<div style="max-width: 800px; margin: 0 auto; padding: 20px;">
-  <nav style="font-size: 0.75rem; color: #bbb; text-align: center; margin-bottom: 20px;">
-    <a href="{{ "" | relURL }}" style="color:#bbb; text-decoration:none;">HOME</a> ＞ {{ .Title }}
-  </nav>
-
-  <h2 style="text-align: center; font-size: 1.2rem; color: #333; margin-bottom: 30px; letter-spacing: 1px;">{{ .Title }} 一覧</h2>
-
-  <div style="display: flex; flex-direction: column; gap: 15px;">
-    {{ range .Pages.ByTitle }}
-    <a href="{{ .RelPermalink }}" class="breed-card">
-      {{ .Title }}
-    </a>
-    {{ end }}
-  </div>
+<div style="display: flex; flex-direction: column; gap: 15px;">
+  {{ range .Pages.ByTitle }}
+  <a href="{{ .RelPermalink }}" class="breed-card">
+    {{ .Title }}
+  </a>
+  {{ end }}
 </div>
 
 <style>
   .breed-card {
-    display: block;
-    background: #fff;
-    /* イエローゴールドの細い線でおしゃれに */
-    border: 1px solid #dfbb00;
-    /* 角を少し大きめに丸くして柔らかい印象に */
-    border-radius: 20px;
-    padding: 22px;
-    text-decoration: none;
-    color: #444;
-    font-weight: bold;
-    font-size: 1.05rem;
-    text-align: center;
-    /* ほんのり浮き上がるような影 */
-    box-shadow: 0 6px 15px rgba(223, 187, 0, 0.08);
-    transition: all 0.2s ease;
+    display: block; background: #fff; border: 1.5px solid var(--gold);
+    border-radius: 20px; padding: 22px; text-decoration: none; color: #444;
+    font-weight: bold; font-size: 1.05rem; text-align: center;
+    box-shadow: 0 6px 15px rgba(223, 187, 0, 0.08); transition: 0.2s;
   }
-  .breed-card:active {
-    transform: translateY(2px);
-    box-shadow: 0 2px 5px rgba(223, 187, 0, 0.1);
-    background: #fff9e6;
-  }
+  .breed-card:active { background: #fff9e6; transform: translateY(2px); }
 </style>
 {{ end }}
