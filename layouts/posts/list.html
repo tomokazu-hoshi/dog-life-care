@@ -1,17 +1,22 @@
 {{ define "main" }}
 <div style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: sans-serif;">
-  <h2 style="border-left: 6px solid #dfbb00; padding-left: 15px; font-size: 1.5rem; margin-bottom: 30px;">犬種図鑑 検索</h2>
+  <nav style="font-size: 0.8rem; color: #888; margin-bottom: 20px;">
+    <a href="{{ "" | relURL }}" style="color:#888; text-decoration:none;">HOME</a> ＞ 犬種図鑑
+  </nav>
+
+  <h2 style="border-left: 6px solid #dfbb00; padding-left: 15px; font-size: 1.4rem; margin-bottom: 25px;">犬種図鑑 検索</h2>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-    <a href="{{ "posts/" | relURL }}" style="grid-column: 1 / 3; background:#fff; border:2px solid #dfbb00; border-radius:10px; padding:20px; text-align:center; text-decoration:none; color:#333; font-weight:bold;">50音検索</a>
+    <a href="{{ "categories/50音検索/" | relURL }}" style="grid-column: 1 / 3; background:#fff; border:2px solid #dfbb00; border-radius:10px; padding:20px; text-align:center; text-decoration:none; color:#333; font-weight:bold; margin-bottom: 5px;">五十音から探す</a>
     
-    {{ $groups := dict "第1グループ" "牧羊犬・牧畜犬" "第2グループ" "使役犬" "第3グループ" "テリア" "第4グループ" "ダックスフンド" "第5グループ" "原始的な犬・スピッツ" "第6グループ" "嗅覚ハウンド" "第7グループ" "ポインター・セター" "第8グループ" "鳥猟犬（回収・追い出し）" "第9グループ" "愛玩犬" "第10グループ" "視覚ハウンド" "その他" "その他" }}
-    
-    {{ range $slug, $name := $groups }}
-    <a href="{{ "categories/" | relURL }}{{ $slug | urlize }}/" style="background:#fff; border:2px solid #dfbb00; border-radius:10px; padding:20px 10px; text-align:center; text-decoration:none; color:#333; font-weight:bold; font-size:0.85rem; display:flex; align-items:center; justify-content:center;">
-      {{ $name }}
+    {{ $groups := slice "第1グループ" "第2グループ" "第3グループ" "第4グループ" "第5グループ" "第6グループ" "第7グループ" "第8グループ" "第9グループ" }}
+    {{ range $group := $groups }}
+    <a href="{{ "categories/" | relURL }}{{ $group | urlize }}/" style="background:#fff; border:2px solid #dfbb00; border-radius:10px; padding:18px 5px; text-align:center; text-decoration:none; color:#333; font-weight:bold; font-size:0.9rem; display:flex; align-items:center; justify-content:center;">
+      {{ $group }}
     </a>
     {{ end }}
+
+    <a href="{{ "categories/その他/" | relURL }}" style="background:#fff; border:2px solid #dfbb00; border-radius:10px; padding:18px 5px; text-align:center; text-decoration:none; color:#333; font-weight:bold; font-size:0.9rem; display:flex; align-items:center; justify-content:center;">その他</a>
   </div>
 </div>
 {{ end }}
