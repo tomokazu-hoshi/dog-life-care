@@ -1,13 +1,13 @@
 {{ define "main" }}
 <div style="padding: 20px; max-width: 800px; margin: 0 auto; text-align: center;">
-  <h1 style="font-size: 2rem; margin-bottom: 40px;">ワンライフ・ナビ</h1>
+  <h1 style="font-size: 2rem; margin: 40px 0 20px;">ワンライフ・ナビ</h1>
   
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-    <a href="{{ "posts/" | relURL }}" style="text-decoration:none; background:#dfbb00; color:#fff; padding:30px 10px; border-radius:15px; font-weight:bold; font-size:1.1rem;">📖 犬種図鑑</a>
+    <a href="{{ "posts/" | relURL }}" style="text-decoration:none; background:#dfbb00; color:#fff; padding:30px 10px; border-radius:15px; font-weight:bold; font-size:1.1rem; display: flex; align-items: center; justify-content: center;">📖 犬種図鑑</a>
     
-    <a href="{{ "training/" | relURL }}" style="text-decoration:none; border:2px solid #dfbb00; color:#333; padding:30px 10px; border-radius:15px; font-weight:bold;">🎓 しつけ</a>
-    <a href="{{ "food/" | relURL }}" style="text-decoration:none; border:2px solid #dfbb00; color:#333; padding:30px 10px; border-radius:15px; font-weight:bold;">🍖 食事</a>
-    <a href="{{ "health/" | relURL }}" style="text-decoration:none; border:2px solid #dfbb00; color:#333; padding:30px 10px; border-radius:15px; font-weight:bold;">🏥 健康・医療</a>
+    <a href="{{ "training/" | relURL }}" style="text-decoration:none; border:2px solid #dfbb00; color:#333; padding:30px 10px; border-radius:15px; font-weight:bold; display: flex; align-items: center; justify-content: center;">🎓 しつけ</a>
+    <a href="{{ "food/" | relURL }}" style="text-decoration:none; border:2px solid #dfbb00; color:#333; padding:30px 10px; border-radius:15px; font-weight:bold; display: flex; align-items: center; justify-content: center;">🍖 食事</a>
+    <a href="{{ "health/" | relURL }}" style="text-decoration:none; border:2px solid #dfbb00; color:#333; padding:30px 10px; border-radius:15px; font-weight:bold; display: flex; align-items: center; justify-content: center;">🏥 健康・医療</a>
   </div>
 </div>
 {{ end }}
