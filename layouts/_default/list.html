@@ -1,30 +1,26 @@
 {{ define "main" }}
 <div style="padding: 20px; max-width: 800px; margin: 0 auto;">
-  {{ partial "breadcrumb.html" . }}
+  <nav style="font-size: 0.8rem; color: #999; margin-bottom: 20px;">
+    <a href="{{ "" | relURL }}" style="color: #999; text-decoration: none;">HOME</a> ＞ 犬種図鑑
+  </nav>
 
-  <h2 style="border-left: 5px solid #dfbb00; padding-left: 10px; font-size: 1.4rem;">犬種図鑑 検索</h2>
-
-  <div style="display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0;">
-    <a href="{{ "tags/室内で飼いやすい/" | relURL }}" style="font-size: 0.8rem; background: #fff9e6; border: 1px solid #dfbb00; padding: 5px 10px; border-radius: 15px; text-decoration: none; color: #333;">🏠 室内向け</a>
-    <a href="{{ "tags/抜け毛が少ない/" | relURL }}" style="font-size: 0.8rem; background: #fff9e6; border: 1px solid #dfbb00; padding: 5px 10px; border-radius: 15px; text-decoration: none; color: #333;">✨ 抜け毛少</a>
-    <a href="{{ "tags/一人暮らし向け/" | relURL }}" style="font-size: 0.8rem; background: #fff9e6; border: 1px solid #dfbb00; padding: 5px 10px; border-radius: 15px; text-decoration: none; color: #333;">👤 一人暮らし</a>
-  </div>
+  <h2 style="border-left: 5px solid #dfbb00; padding-left: 10px; font-size: 1.4rem; margin-bottom: 20px;">犬種図鑑 検索</h2>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-    <button onclick="showG('all')" style="padding:15px 5px; border:1px solid #dfbb00; background:#fff; border-radius:8px; font-weight:bold;">50音検索</button>
+    <button onclick="showG('all')" style="padding:15px 5px; border:1px solid #dfbb00; background:#fff; border-radius:8px; font-weight:bold; cursor:pointer;">50音検索</button>
     {{ range $i := seq 1 10 }}
-    <button onclick="showG('g{{$i}}')" style="padding:15px 5px; border:1px solid #dfbb00; background:#fff; border-radius:8px; font-size:0.8rem;">第{{$i}}グループ</button>
+    <button onclick="showG('g{{$i}}')" style="padding:15px 5px; border:1px solid #dfbb00; background:#fff; border-radius:8px; font-size:0.85rem; cursor:pointer;">第{{$i}}グループ</button>
     {{ end }}
   </div>
 
   <div id="results" style="margin-top: 30px;">
     {{ range $i := seq 1 10 }}
-    <div id="g{{$i}}" class="b-box" style="display:none; background:#fff; padding:15px; border-radius:10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-      <h3 style="font-size:1rem; margin-top:0;">第{{$i}}グループ 犬種一覧</h3>
-      <div style="display:flex; overflow-x:auto; gap:10px; padding:10px 0;">
+    <div id="g{{$i}}" class="b-box" style="display:none;">
+      <h3 style="font-size:1rem; color:#333; margin-bottom:10px;">第{{$i}}グループ 犬種一覧</h3>
+      <div style="display:flex; overflow-x:auto; gap:10px; padding:10px 0; -webkit-overflow-scrolling:touch;">
         {{ $key := printf "第%dグループ" $i }}
         {{ range (where $.Pages "Params.categories" "intersect" (slice $key)) }}
-        <a href="{{ .RelPermalink }}" style="flex:0 0 auto; background:#dfbb00; color:#fff; padding:10px 15px; border-radius:20px; text-decoration:none; font-weight:bold;">{{ .Title }}</a>
+        <a href="{{ .RelPermalink }}" style="flex:0 0 auto; background:#dfbb00; color:#fff; padding:12px 20px; border-radius:10px; text-decoration:none; font-weight:bold; font-size:0.9rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">{{ .Title }}</a>
         {{ end }}
       </div>
     </div>
@@ -35,7 +31,11 @@
 <script>
   function showG(id) {
     document.querySelectorAll('.b-box').forEach(el => el.style.display = 'none');
-    document.getElementById(id).style.display = 'block';
+    const target = document.getElementById(id);
+    if(target) {
+      target.style.display = 'block';
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 </script>
 {{ end }}
