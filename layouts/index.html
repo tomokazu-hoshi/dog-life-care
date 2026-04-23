@@ -1,35 +1,40 @@
 {{ define "main" }}
 <style>
-  body { background-color: #f5f5f5; color: #333; font-family: sans-serif; margin: 0; padding: 0; }
-  .home-header { background-color: #e0e0e0; padding: 30px 20px; text-align: center; border-bottom: 1px solid #ccc; margin-bottom: 30px; }
-  .container { max-width: 800px; margin: 0 auto; padding: 0 15px; }
-  .category-grid { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
-  .category-grid a { 
-    background-color: #ffffff; border: 1px solid #ddd; border-radius: 10px; 
-    padding: 25px 10px; width: calc(50% - 20px); text-align: center; 
-    text-decoration: none; color: #333; font-weight: bold; font-size: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  :root { --gold: #dfbb00; --light-gold: #fff9e6; }
+  body { background-color: #fcfcf9; font-family: sans-serif; margin: 0; padding: 0; }
+  .top-container { max-width: 800px; margin: 0 auto; padding: 20px; text-align: center; }
+  /* タイトルを1つだけに */
+  .site-title { font-size: 2rem; color: var(--gold); font-weight: bold; margin: 40px 0; }
+  
+  /* 2×4のグリッド（8項目） */
+  .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+  .menu-item { 
+    background: #fff; border: 2px solid var(--gold); border-radius: 12px; 
+    padding: 25px 10px; text-decoration: none; color: #333; font-weight: bold; font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(223, 187, 0, 0.1);
+  }
+  /* 1番下の横長ボックス（犬種図鑑） */
+  .wide-item { 
+    display: block; background: var(--gold); color: #fff !important; border-radius: 12px; 
+    padding: 30px 10px; text-decoration: none; font-weight: bold; font-size: 1.2rem;
+    box-shadow: 0 4px 15px rgba(223, 187, 0, 0.3);
   }
 </style>
 
-<div class="home-header">
-  <h1 style="margin:0; font-size: 1.8rem;">ワンライフ・ナビ</h1>
-  <p style="margin:10px 0 0; font-size: 0.9rem;">〜 初心者でも迷わず理想の犬種が見つかる図鑑 〜</p>
-</div>
+<div class="top-container">
+  <div class="site-title">ワンライフナビ</div>
 
-<div class="container">
-  <div class="category-grid">
-    <a href="{{ "posts/" | relURL }}">🐶 犬種図鑑</a>
-    <a href="{{ "training/" | relURL }}">🎓 しつけ</a>
-    <a href="{{ "food/" | relURL }}">🍖 食事</a>
-    <a href="{{ "health/" | relURL }}">🏥 健康・医療</a>
-    <a href="{{ "grooming/" | relURL }}">✂️ お手入れ</a>
-    <a href="{{ "outing/" | relURL }}">🚗 お出かけ</a>
-    <a href="{{ "faq/" | relURL }}">❓ FAQ</a>
-    <a href="{{ "diagnosis/" | relURL }}">🐕 年齢診断</a>
+  <div class="menu-grid">
+    <a href="{{ "training/" | relURL }}" class="menu-item">しつけ</a>
+    <a href="{{ "food/" | relURL }}" class="menu-item">食事</a>
+    <a href="{{ "health/" | relURL }}" class="menu-item">健康・医療</a>
+    <a href="{{ "grooming/" | relURL }}" class="menu-item">お手入れ</a>
+    <a href="{{ "outing/" | relURL }}" class="menu-item">お出かけ</a>
+    <a href="{{ "diagnosis/" | relURL }}" class="menu-item">年齢診断</a>
+    <a href="{{ "other/" | relURL }}" class="menu-item">その他</a>
+    <a href="{{ "faq/" | relURL }}" class="menu-item">FAQ</a>
   </div>
-  <div style="margin-top: 50px; text-align: center; color: #777; font-size: 0.9rem;">
-    <p>理想の犬種を、あなたのライフスタイルに合わせて見つけてください。</p>
-  </div>
+  
+  <a href="{{ "posts/" | relURL }}" class="wide-item">📖 犬種図鑑</a>
 </div>
 {{ end }}
