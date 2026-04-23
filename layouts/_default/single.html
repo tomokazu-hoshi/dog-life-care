@@ -1,49 +1,35 @@
 {{ define "main" }}
 <article class="pa3 pa4-ns w-100 w-70-l center">
   
-  {{ partial "breadcrumb.html" . }}
+  <nav class="f6 gray mb3">
+    <a href="{{ "" | relURL }}" class="link gold">HOME</a> ＞ 
+    <span>犬種図鑑</span> ＞ 
+    {{ with .Params.categories }}{{ range . }}<span>{{ . }}</span> ＞ {{ end }}{{ end }}
+    <span class="b">{{ .Title }}</span>
+  </nav>
 
-  <h1 class="f2">{{ .Title }}</h1>
+  <h1 class="f2 mt0">{{ .Title }}</h1>
 
   <div class="bg-near-white pa3 br3 mb4">
     <h2 class="f5 b mt0">📊 クイックチェック表</h2>
-    <table class="w-100 f6" cellspacing="0">
-      <tr class="bb b--black-10">
-        <td class="pv2 b">しつけ難易度</td>
-        <td class="pv2 tc">★★★★☆（初心者向き）</td>
-      </tr>
-      <tr class="bb b--black-10">
-        <td class="pv2 b">抜け毛の多さ</td>
-        <td class="pv2 tc">★☆☆☆☆（少ない）</td>
-      </tr>
-      <tr>
-        <td class="pv2 b">運動</td>
-        <td class="pv2 tc">30分×2回 / 日</td>
-      </tr>
+    <table class="w-100 f6">
+      <tr class="bb b--black-10"><td class="pv2 b">しつけ難易度</td><td class="pv2 tc">記事内参照</td></tr>
+      <tr class="bb b--black-10"><td class="pv2 b">抜け毛の多さ</td><td class="pv2 tc">記事内参照</td></tr>
+      <tr><td class="pv2 b">寿命</td><td class="pv2 tc">記事内参照</td></tr>
     </table>
   </div>
 
-  <div class="lh-copy mt4">
+  <div class="lh-copy">
     {{ .Content }}
   </div>
 
   <section class="mt5 pa3 bg-washed-yellow br3">
     <h2 class="f4 b">🛍️ {{ .Title }}におすすめの厳選アイテム</h2>
-    <div class="flex gap-10">
-      <div class="w-50 ba b--black-10 pa2 bg-white">
-        <p class="f7 gray mb1">おすすめフード</p>
-        <p class="f6 b mb0">[商品リンク（準備中）]</p>
-      </div>
-      <div class="w-50 ba b--black-10 pa2 bg-white">
-        <p class="f7 gray mb1">お手入れ用品</p>
-        <p class="f6 b mb0">[商品リンク（準備中）]</p>
-      </div>
-    </div>
+    <p class="f6 gray">※この犬種の特性に合わせたアイテムを準備中です。</p>
   </section>
 
-  <nav class="mt4 flex justify-between f6">
-    <a href="/faq/" class="link gold">← FAQへ戻る</a>
-    <a href="/" class="link gold">他の犬種を探す →</a>
+  <nav class="mt4 tc">
+    <a href="{{ "" | relURL }}" class="f6 link dim br-pill ph3 pv2 mb2 dib white bg-gold">← 他の犬種を探す（図鑑トップへ）</a>
   </nav>
 
 </article>
