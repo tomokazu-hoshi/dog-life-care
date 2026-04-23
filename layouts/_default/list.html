@@ -1,13 +1,21 @@
 {{ define "main" }}
-<div style="padding: 15px; max-width: 800px; margin: 0 auto;">
-  <nav style="font-size: 0.8rem; color: #888; margin-bottom: 15px;"><a href="{{ "" | relURL }}" style="color:#888;">HOME</a> ＞ 犬種図鑑</nav>
-  <h2 style="font-size: 1.3rem; border-left: 5px solid #dfbb00; padding-left: 10px; margin-bottom: 20px;">犬種図鑑 検索</h2>
+<style>
+  .list-container { padding: 25px; max-width: 800px; margin: 0 auto; }
+  .breed-tags { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .breed-tag { 
+    text-decoration: none; background: #fff; border: 1.5px solid #e5e7eb; color: #374151; 
+    padding: 15px 25px; border-radius: 40px; font-weight: bold; font-size: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  }
+</style>
 
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-    {{ range $name, $items := .Site.Taxonomies.categories }}
-    <a href="{{ "categories/" | relURL }}{{ $name | urlize }}/" style="text-decoration:none; background:#fff; border:2px solid #dfbb00; color:#333; padding:18px 5px; border-radius:10px; text-align:center; font-weight:bold; font-size:0.9rem;">
-      {{ $name }}
-    </a>
+<div class="list-container">
+  <nav class="breadcrumb"><a href="{{ "" | relURL }}">HOME</a> ＞ <a href="{{ "posts/" | relURL }}">犬種図鑑</a> ＞ {{ .Title }}</nav>
+  <h2 class="section-title">{{ .Title }} 一覧</h2>
+
+  <div class="breed-tags">
+    {{ range .Pages.ByTitle }}
+    <a href="{{ .RelPermalink }}" class="breed-tag">{{ .Title }}</a>
     {{ end }}
   </div>
 </div>
