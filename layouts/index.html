@@ -5,25 +5,28 @@
     <p class="f5 gray i">愛犬との暮らしを豊かにする総合ガイド</p>
   </header>
 
+  <div class="mw9 center ph3">
+    <h2 class="f3 fw6 mb3 bb b--black-10 pb2">カテゴリー</h2>
+  </div>
+
   <div class="flex flex-wrap justify-center mw9 center">
     {{ $categories := slice 
-      (dict "name" "犬種図鑑" "icon" "📖" "link" "/posts/" "desc" "全116種の性格や飼い方を網羅")
-      (dict "name" "しつけ" "icon" "🎾" "link" "/discipline/" "desc" "噛み癖や無駄吠えの解決法")
-      (dict "name" "食事" "icon" "🍖" "link" "/food/" "desc" "栄養バランスとおすすめフード")
-      (dict "name" "健康・医療" "icon" "🏥" "link" "/health/" "desc" "病気予防と日々の体調管理")
-      (dict "name" "お手入れ" "icon" "🚿" "link" "/care/" "desc" "ブラッシングやシャンプーのコツ")
-      (dict "name" "お出かけ" "icon" "🚗" "link" "/outings/" "desc" "ドッグランや旅行スポット情報")
-      (dict "name" "年齢診断" "icon" "🐕" "link" "/age-check/" "desc" "愛犬の人間換算年齢をチェック")
-      (dict "name" "その他" "icon" "✨" "link" "/others/" "desc" "犬との暮らしに役立つ豆知識")
-      (dict "name" "FAQ" "icon" "❓" "link" "/faq/" "desc" "よくある質問と回答")
+      (dict "name" "犬種図鑑" "icon" "📖" "link" "/posts/")
+      (dict "name" "しつけ" "icon" "🎾" "link" "/discipline/")
+      (dict "name" "食事" "icon" "🍖" "link" "/food/")
+      (dict "name" "健康・医療" "icon" "🏥" "link" "/health/")
+      (dict "name" "お手入れ" "icon" "🚿" "link" "/care/")
+      (dict "name" "お出かけ" "icon" "🚗" "link" "/outings/")
+      (dict "name" "年齢診断" "icon" "🐕" "link" "/age-check/")
+      (dict "name" "その他" "icon" "✨" "link" "/others/")
+      (dict "name" "FAQ" "icon" "❓" "link" "/faq/")
     }}
 
     {{ range $categories }}
-    <div class="w-100 w-50-m w-33-l pa2">
-      <a href="{{ .link | relURL }}" class="db ba br3 b--black-10 pa4 bg-white hover-bg-gold no-underline h-100 shadow-4 transition-all flex flex-column justify-center tc">
-        <span class="f1 mb2">{{ .icon }}</span>
-        <h2 class="f4 black mb2">{{ .name }}</h2>
-        <p class="f7 gray lh-copy">{{ .desc }}</p>
+    <div class="w-50 w-33-ns pa2">
+      <a href="{{ .link | relURL }}" class="db ba br3 b--black-10 pa3 pa4-ns bg-white hover-bg-gold no-underline h-100 shadow-4 transition-all flex flex-column justify-center tc">
+        <span class="f2 f1-ns mb2">{{ .icon }}</span>
+        <h2 class="f6 f5-ns black ma0">{{ .name }}</h2>
       </a>
     </div>
     {{ end }}
@@ -31,8 +34,16 @@
 </div>
 
 <style>
+  /* iPhoneでのタップ時の反応とホバー効果 */
   .transition-all { transition: all 0.2s ease-in-out; }
-  .hover-bg-gold:hover { transform: translateY(-5px); background-color: #FFD700; }
-  .hover-bg-gold:hover h2, .hover-bg-gold:hover p { color: #000; }
+  .hover-bg-gold:active, .hover-bg-gold:hover { 
+    transform: translateY(-3px); 
+    background-color: #FFD700; /* ゴールド/オレンジ系 */
+    border-color: transparent;
+  }
+  /* スマホで横に2つ並ぶように調整 */
+  @media screen and (max-width: 30em) {
+    .w-50 { width: 50%; }
+  }
 </style>
 {{ end }}
