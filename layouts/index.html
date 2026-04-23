@@ -1,69 +1,42 @@
 {{ define "main" }}
 <style>
-  /* カテゴリーボックス（スマホで押しやすいサイズ） */
-  .category-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin: 20px 0;
+  .search-container { padding: 20px; max-width: 800px; margin: 0 auto; font-family: sans-serif; }
+  .category-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0; }
+  .cat-btn { 
+    background: #fff; border: 2px solid #dfbb00; border-radius: 12px; padding: 15px 5px;
+    font-size: 0.85rem; font-weight: bold; text-align: center; cursor: pointer; color: #333;
+    display: flex; align-items: center; justify-content: center; min-height: 50px;
   }
-  .cat-btn {
-    background: #fff;
-    border: 2px solid #dfbb00;
-    border-radius: 10px;
-    padding: 15px 5px;
-    font-size: 0.85rem;
-    font-weight: bold;
-    text-align: center;
-    cursor: pointer;
+  .cat-btn:active { background: #dfbb00; color: #fff; }
+  .breed-container { display: none; background: #fff; border-radius: 15px; padding: 15px; margin-top: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+  .breed-scroll-list { display: flex; overflow-x: auto; gap: 10px; padding: 10px 0; -webkit-overflow-scrolling: touch; }
+  .breed-item { 
+    flex: 0 0 auto; background: #dfbb00; color: #fff; padding: 10px 20px; 
+    border-radius: 25px; text-decoration: none; font-size: 0.9rem; font-weight: bold;
   }
-  /* 横スクロールする犬種リスト */
-  .breed-container {
-    display: none;
-    background: #f9f9f9;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-  }
-  .breed-scroll-list {
-    display: flex;
-    overflow-x: auto;
-    gap: 10px;
-    padding-bottom: 10px;
-    -webkit-overflow-scrolling: touch;
-  }
-  .breed-item {
-    flex: 0 0 auto;
-    background: #dfbb00;
-    color: #fff;
-    padding: 10px 15px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: bold;
-  }
+  h2.section-title { font-size: 1.1rem; border-left: 5px solid #dfbb00; padding-left: 10px; margin-bottom: 15px; color: #333; }
 </style>
 
-<div class="pa3 pa4-ns w-100 w-70-l center">
-  <h2 class="f3 fw1 mt0 lh-title">犬種検索</h2>
+<div class="search-container">
+  <h2 class="f3 fw1 mt0 lh-title">犬種をカテゴリーから探す</h2>
 
   <div class="category-grid">
-    <div class="cat-btn" onclick="showGroup('all')">全犬種一覧</div>
-    <div class="cat-btn" onclick="showGroup('group1')">第1：牧羊・牧畜</div>
-    <div class="cat-btn" onclick="showGroup('group2')">第2：使役犬</div>
-    <div class="cat-btn" onclick="showGroup('group3')">第3：テリア</div>
-    <div class="cat-btn" onclick="showGroup('group4')">第4：ダックス</div>
-    <div class="cat-btn" onclick="showGroup('group5')">第5：原始的・スピッツ</div>
-    <div class="cat-btn" onclick="showGroup('group6')">第6：嗅覚ハウンド</div>
-    <div class="cat-btn" onclick="showGroup('group7')">第7：ポインター</div>
-    <div class="cat-btn" onclick="showGroup('group8')">第8：鳥猟犬</div>
-    <div class="cat-btn" onclick="showGroup('group9')">第9：愛玩犬</div>
-    <div class="cat-btn" onclick="showGroup('group10')">第10：視覚ハウンド</div>
+    <div class="cat-btn" onclick="showGroup('all')">すべての犬種</div>
+    <div class="cat-btn" onclick="showGroup('g1')">牧羊・牧畜犬</div>
+    <div class="cat-btn" onclick="showGroup('g2')">使役犬</div>
+    <div class="cat-btn" onclick="showGroup('g3')">テリア</div>
+    <div class="cat-btn" onclick="showGroup('g4')">ダックスフンド</div>
+    <div class="cat-btn" onclick="showGroup('g5')">原始的な犬・スピッツ</div>
+    <div class="cat-btn" onclick="showGroup('g6')">嗅覚ハウンド</div>
+    <div class="cat-btn" onclick="showGroup('g7')">ポインター・セター</div>
+    <div class="cat-btn" onclick="showGroup('g8')">鳥猟犬</div>
+    <div class="cat-btn" onclick="showGroup('g9')">愛玩犬</div>
+    <div class="cat-btn" onclick="showGroup('g10')">視覚ハウンド</div>
   </div>
 
-  <div id="breed-lists">
+  <div id="results">
     <div id="all" class="breed-container">
-      <h3>全犬種</h3>
+      <h2 class="section-title">全犬種一覧</h2>
       <div class="breed-scroll-list">
         {{ range (where .Site.RegularPages "Section" "posts").ByTitle }}
           <a href="{{ .Permalink }}" class="breed-item">{{ .Title }}</a>
@@ -71,26 +44,31 @@
       </div>
     </div>
 
-    <div id="group5" class="breed-container">
-      <h3>第5グループ 一覧</h3>
+    {{ $groups := dict "g1" "牧羊・牧畜犬" "g2" "使役犬" "g3" "テリア" "g4" "ダックスフンド" "g5" "原始的な犬・スピッツ" "g6" "嗅覚ハウンド" "g7" "ポインター・セター" "g8" "鳥猟犬" "g9" "愛玩犬" "g10" "視覚ハウンド" }}
+    
+    {{ range $id, $label := $groups }}
+    <div id="{{ $id }}" class="breed-container">
+      <h2 class="section-title">{{ $label }} 一覧</h2>
       <div class="breed-scroll-list">
-        {{ range (index .Site.Taxonomies.categories "第5グループ") }}
-          <a href="{{ .Permalink }}" class="breed-item">{{ .Page.Title }}</a>
+        {{/* 内部的には「第1グループ」などの文字列で検索します */}}
+        {{ $num := (delimit (findRE "[0-9]+" $id) "") }}
+        {{ $searchKey := printf "第%sグループ" $num }}
+        {{ range (where $.Site.RegularPages "Params.categories" "intersect" (slice $searchKey)) }}
+          <a href="{{ .Permalink }}" class="breed-item">{{ .Title }}</a>
         {{ end }}
       </div>
     </div>
-
-    </div>
+    {{ end }}
+  </div>
 </div>
 
 <script>
-  function showGroup(groupId) {
-    const containers = document.querySelectorAll('.breed-container');
-    containers.forEach(c => c.style.display = 'none');
-    const target = document.getElementById(groupId);
+  function showGroup(id) {
+    document.querySelectorAll('.breed-container').forEach(el => el.style.display = 'none');
+    const target = document.getElementById(id);
     if(target) {
       target.style.display = 'block';
-      target.scrollIntoView({ behavior: 'smooth' });
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 </script>
