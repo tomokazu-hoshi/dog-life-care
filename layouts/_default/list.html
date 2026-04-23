@@ -1,0 +1,30 @@
+{{ define "main" }}
+<div class="pa3 pa4-ns bg-near-white min-vh-100">
+  <div class="mw8 center">
+    {{ partial "breadcrumb.html" . }}
+    
+    <header class="tc pv4">
+      <h1 class="f2 fw9 black">犬種図鑑</h1>
+      <p class="f5 gray">JKC分類に基づいたグループ別検索</p>
+    </header>
+
+    <div class="flex flex-wrap justify-center">
+      {{ $groups := slice 
+        "第1グループ：牧羊犬・牧畜犬" "第2グループ：使役犬" "第3グループ：テリア"
+        "第4グループ：ダックスフンド" "第5グループ：原始的な犬・スピッツ" "第6グループ：嗅覚ハウンド"
+        "第7グループ：ポインター・セター" "第8グループ：鳥猟犬" "第9グループ：愛玩犬"
+        "第10グループ：視覚ハウンド" "その他"
+      }}
+
+      {{ range $groups }}
+      <div class="w-100 w-50-m pa2">
+        <a href="{{ (printf "/categories/%s/" .) | relURL }}" class="db ba br3 b--black-10 pa3 bg-white hover-bg-gold no-underline shadow-4 flex items-center">
+          <span class="f3 mr3">🐾</span>
+          <h2 class="f5 black ma0">{{ . }}</h2>
+        </a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}
