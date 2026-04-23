@@ -1,23 +1,8 @@
 baseURL = 'https://tomokazu-hoshi.github.io/dog-life-care/'
 languageCode = 'ja-jp'
-title = 'ワンライフ・ナビ'
+title = '' # ここを空に！これで重複ヘッダーが消えます
 theme = ["github.com/theNewDynamic/gohugo-theme-ananke/v2"]
 hasCJKLanguage = true
 
-# リンクを常に正しいパス（/dog-life-care/...）に自動調整する設定
-canonifyURLs = true
-relativeURLs = true
-
 [taxonomies]
   category = 'categories'
-  tag = 'tags'
-
-[params]
-  background_color_class = "bg-gold"
-  read_more_copy = "詳しく見る"
-  description = "愛犬との暮らしを豊かにする、犬種別の性格・飼い方・健康管理の総合ガイド。"
-
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
