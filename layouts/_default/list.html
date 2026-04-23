@@ -1,16 +1,14 @@
 {{ define "main" }}
-<div class="category-header" style="background-color: #e0e0e0; padding: 20px; text-align: center; border-bottom: 1px solid #ccc;">
-  <h2 style="margin:0; font-size: 1.4rem;">{{ .Title }} 一覧</h2>
-</div>
-
-<div class="container" style="max-width: 800px; margin: 0 auto; padding: 20px;">
+<div style="max-width: 800px; margin: 0 auto; padding: 20px;">
   <nav style="font-size: 0.8rem; color: #888; margin-bottom: 20px;">
-    <a href="{{ "" | relURL }}" style="color: #888;">HOME</a> ＞ <a href="{{ "posts/" | relURL }}" style="color: #888;">犬種図鑑</a> ＞ {{ .Title }}
+    <a href="{{ "" | relURL }}">HOME</a> ＞ <a href="{{ "posts/" | relURL }}">犬種図鑑</a> ＞ {{ .Title }}
   </nav>
 
-  <div class="category-grid" style="display: flex; flex-wrap: wrap; gap: 10px;">
+  <h2 style="font-size: 1.4rem; border-left: 6px solid #dfbb00; padding-left: 15px; margin-bottom: 25px;">{{ .Title }} 一覧</h2>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 10px;">
     {{ range .Pages.ByTitle }}
-    <a href="{{ .RelPermalink }}" style="background-color: #fff; border: 1px solid #ddd; border-radius: 10px; padding: 15px; width: calc(50% - 15px); text-align: center; text-decoration: none; color: #333; font-weight: bold; font-size: 0.9rem;">
+    <a href="{{ .RelPermalink }}" style="background:#fff; border:1.5px solid #dfbb00; color:#333; padding:15px 20px; border-radius:10px; text-decoration:none; font-weight:bold; font-size:0.95rem; flex-grow:1; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
       {{ .Title }}
     </a>
     {{ end }}
