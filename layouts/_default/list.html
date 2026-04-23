@@ -2,19 +2,43 @@
 {{ partial "header.html" . }}
 
 <div style="max-width: 800px; margin: 0 auto; padding: 20px;">
-  <nav style="font-size: 0.8rem; color: #888; margin-bottom: 20px;">
-    <a href="{{ "" | relURL }}" style="color:#888; text-decoration:none;">HOME</a> ＞ 
-    <a href="{{ "posts/" | relURL }}" style="color:#888; text-decoration:none;">犬種図鑑</a> ＞ {{ .Title }}
+  <nav style="font-size: 0.75rem; color: #bbb; text-align: center; margin-bottom: 20px;">
+    <a href="{{ "" | relURL }}" style="color:#bbb; text-decoration:none;">HOME</a> ＞ {{ .Title }}
   </nav>
 
-  <h2 style="font-size: 1.4rem; border-left: 6px solid #dfbb00; padding-left: 15px; margin-bottom: 25px;">{{ .Title }} 一覧</h2>
+  <h2 style="text-align: center; font-size: 1.2rem; color: #333; margin-bottom: 30px; letter-spacing: 1px;">{{ .Title }} 一覧</h2>
 
-  <div style="display: flex; flex-direction: column; gap: 12px;">
+  <div style="display: flex; flex-direction: column; gap: 15px;">
     {{ range .Pages.ByTitle }}
-    <a href="{{ .RelPermalink }}" style="display: block; background: #fff; border: 2px solid #dfbb00; border-radius: 12px; padding: 25px; text-decoration: none; color: #333; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center;">
+    <a href="{{ .RelPermalink }}" class="breed-card">
       {{ .Title }}
     </a>
     {{ end }}
   </div>
 </div>
+
+<style>
+  .breed-card {
+    display: block;
+    background: #fff;
+    /* イエローゴールドの細い線でおしゃれに */
+    border: 1px solid #dfbb00;
+    /* 角を少し大きめに丸くして柔らかい印象に */
+    border-radius: 20px;
+    padding: 22px;
+    text-decoration: none;
+    color: #444;
+    font-weight: bold;
+    font-size: 1.05rem;
+    text-align: center;
+    /* ほんのり浮き上がるような影 */
+    box-shadow: 0 6px 15px rgba(223, 187, 0, 0.08);
+    transition: all 0.2s ease;
+  }
+  .breed-card:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 5px rgba(223, 187, 0, 0.1);
+    background: #fff9e6;
+  }
+</style>
 {{ end }}
