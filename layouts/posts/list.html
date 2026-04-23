@@ -1,13 +1,11 @@
 {{ define "main" }}
-<div style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: sans-serif;">
-  <nav style="font-size: 0.8rem; color: #888; margin-bottom: 20px;">
-    <a href="{{ "" | relURL }}" style="color:#888; text-decoration:none;">HOME</a> ＞ 犬種図鑑
-  </nav>
+{{ partial "header.html" . }}
 
+<div style="max-width: 800px; margin: 0 auto; padding: 20px;">
   <h2 style="border-left: 6px solid #dfbb00; padding-left: 15px; font-size: 1.4rem; margin-bottom: 25px; color: #333;">犬種図鑑 検索</h2>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-    <a href="{{ "categories/50音検索/" | relURL }}" style="grid-column: 1 / 3; background:#fff; border:2px solid #dfbb00; border-radius:10px; padding:20px; text-align:center; text-decoration:none; color:#333; font-weight:bold; margin-bottom: 10px;">五十音から探す</a>
+    <a href="{{ "posts/all/" | relURL }}" style="grid-column: 1 / 3; background:#fff; border:2px solid #dfbb00; border-radius:10px; padding:20px; text-align:center; text-decoration:none; color:#333; font-weight:bold; margin-bottom: 10px;">五十音から探す</a>
     
     <a href="{{ "categories/第1グループ/" | relURL }}" class="cat-btn">牧羊犬・牧畜犬</a>
     <a href="{{ "categories/第2グループ/" | relURL }}" class="cat-btn">使役犬</a>
