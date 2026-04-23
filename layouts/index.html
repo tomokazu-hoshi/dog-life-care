@@ -1,25 +1,21 @@
 {{ define "main" }}
 <div class="pa3 pa4-ns bg-near-white min-vh-100">
-  <header class="tc pv4">
-    <h1 class="f2 f1-l fw9 mb2 black">ワンライフ・ナビ</h1>
-    <p class="f5 gray i">愛犬との暮らしを豊かにする総合ガイド</p>
-  </header>
-
-  <div class="mw9 center ph3">
+  
+  <div class="mw9 center ph3 pt4">
     <h2 class="f3 fw6 mb3 bb b--black-10 pb2">カテゴリー</h2>
   </div>
 
   <div class="flex flex-wrap justify-center mw9 center">
     {{ $categories := slice 
-      (dict "name" "犬種図鑑" "icon" "📖" "link" "/posts/")
-      (dict "name" "しつけ" "icon" "🎾" "link" "/discipline/")
-      (dict "name" "食事" "icon" "🍖" "link" "/food/")
-      (dict "name" "健康・医療" "icon" "🏥" "link" "/health/")
-      (dict "name" "お手入れ" "icon" "🚿" "link" "/care/")
-      (dict "name" "お出かけ" "icon" "🚗" "link" "/outings/")
-      (dict "name" "年齢診断" "icon" "🐕" "link" "/age-check/")
-      (dict "name" "その他" "icon" "✨" "link" "/others/")
-      (dict "name" "FAQ" "icon" "❓" "link" "/faq/")
+      (dict "name" "犬種図鑑" "icon" "📖" "link" "posts/")
+      (dict "name" "しつけ" "icon" "🎾" "link" "discipline/")
+      (dict "name" "食事" "icon" "🍖" "link" "food/")
+      (dict "name" "健康・医療" "icon" "🏥" "link" "health/")
+      (dict "name" "お手入れ" "icon" "🚿" "link" "care/")
+      (dict "name" "お出かけ" "icon" "🚗" "link" "outings/")
+      (dict "name" "年齢診断" "icon" "🐕" "link" "age-check/")
+      (dict "name" "その他" "icon" "✨" "link" "others/")
+      (dict "name" "FAQ" "icon" "❓" "link" "faq/")
     }}
 
     {{ range $categories }}
@@ -34,14 +30,12 @@
 </div>
 
 <style>
-  /* iPhoneでのタップ時の反応とホバー効果 */
   .transition-all { transition: all 0.2s ease-in-out; }
   .hover-bg-gold:active, .hover-bg-gold:hover { 
     transform: translateY(-3px); 
-    background-color: #FFD700; /* ゴールド/オレンジ系 */
+    background-color: #FFD700; 
     border-color: transparent;
   }
-  /* スマホで横に2つ並ぶように調整 */
   @media screen and (max-width: 30em) {
     .w-50 { width: 50%; }
   }
