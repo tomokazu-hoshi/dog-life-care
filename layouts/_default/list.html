@@ -1,24 +1,30 @@
 {{ define "main" }}
-<div class="pa3 pa4-ns w-100 w-70-l center">
-  <nav class="f6 gray mb3"><a href="{{ "" | relURL }}" class="link gold">HOME</a> ＞ 犬種図鑑</nav>
+<div style="padding: 20px; max-width: 800px; margin: 0 auto;">
+  {{ partial "breadcrumb.html" . }}
 
-  <h1 class="f3 b border-left-gold pl2">犬種図鑑 検索</h1>
+  <h2 style="border-left: 5px solid #dfbb00; padding-left: 10px; font-size: 1.4rem;">犬種図鑑 検索</h2>
 
-  <div class="category-grid">
-    <div class="cat-btn" onclick="showGroup('50on')">50音検索</div>
+  <div style="display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0;">
+    <a href="{{ "tags/室内で飼いやすい/" | relURL }}" style="font-size: 0.8rem; background: #fff9e6; border: 1px solid #dfbb00; padding: 5px 10px; border-radius: 15px; text-decoration: none; color: #333;">🏠 室内向け</a>
+    <a href="{{ "tags/抜け毛が少ない/" | relURL }}" style="font-size: 0.8rem; background: #fff9e6; border: 1px solid #dfbb00; padding: 5px 10px; border-radius: 15px; text-decoration: none; color: #333;">✨ 抜け毛少</a>
+    <a href="{{ "tags/一人暮らし向け/" | relURL }}" style="font-size: 0.8rem; background: #fff9e6; border: 1px solid #dfbb00; padding: 5px 10px; border-radius: 15px; text-decoration: none; color: #333;">👤 一人暮らし</a>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+    <button onclick="showG('all')" style="padding:15px 5px; border:1px solid #dfbb00; background:#fff; border-radius:8px; font-weight:bold;">50音検索</button>
     {{ range $i := seq 1 10 }}
-    <div class="cat-btn" onclick="showGroup('g{{ $i }}')">第{{ $i }}グループ</div>
+    <button onclick="showG('g{{$i}}')" style="padding:15px 5px; border:1px solid #dfbb00; background:#fff; border-radius:8px; font-size:0.8rem;">第{{$i}}グループ</button>
     {{ end }}
   </div>
 
-  <div id="breed-results" class="mt4">
+  <div id="results" style="margin-top: 30px;">
     {{ range $i := seq 1 10 }}
-    <div id="g{{ $i }}" class="breed-container">
-      <h3 class="f5 b">第{{ $i }}グループ 一覧</h3>
-      <div class="breed-scroll-list">
-        {{ $searchKey := printf "第%dグループ" $i }}
-        {{ range (where .Pages "Params.categories" "intersect" (slice $searchKey)) }}
-          <a href="{{ .RelPermalink }}" class="breed-item">{{ .Title }}</a>
+    <div id="g{{$i}}" class="b-box" style="display:none; background:#fff; padding:15px; border-radius:10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+      <h3 style="font-size:1rem; margin-top:0;">第{{$i}}グループ 犬種一覧</h3>
+      <div style="display:flex; overflow-x:auto; gap:10px; padding:10px 0;">
+        {{ $key := printf "第%dグループ" $i }}
+        {{ range (where $.Pages "Params.categories" "intersect" (slice $key)) }}
+        <a href="{{ .RelPermalink }}" style="flex:0 0 auto; background:#dfbb00; color:#fff; padding:10px 15px; border-radius:20px; text-decoration:none; font-weight:bold;">{{ .Title }}</a>
         {{ end }}
       </div>
     </div>
@@ -26,18 +32,9 @@
   </div>
 </div>
 
-<style>
-  .border-left-gold { border-left: 5px solid #dfbb00; }
-  .category-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .cat-btn { background: #fff; border: 2px solid #dfbb00; border-radius: 10px; padding: 15px 5px; font-weight: bold; text-align: center; cursor: pointer; }
-  .breed-container { display: none; background: #fff; padding: 15px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-  .breed-scroll-list { display: flex; overflow-x: auto; gap: 10px; padding: 10px 0; }
-  .breed-item { flex: 0 0 auto; background: #dfbb00; color: #fff; padding: 10px 20px; border-radius: 20px; text-decoration: none; font-weight: bold; }
-</style>
-
 <script>
-  function showGroup(id) {
-    document.querySelectorAll('.breed-container').forEach(el => el.style.display = 'none');
+  function showG(id) {
+    document.querySelectorAll('.b-box').forEach(el => el.style.display = 'none');
     document.getElementById(id).style.display = 'block';
   }
 </script>
