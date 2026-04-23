@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div style="padding: 20px; max-width: 800px; margin: 0 auto;">
+  <nav style="font-size: 0.8rem; margin-bottom: 20px;"><a href="{{ "" | relURL }}">HOME</a> ＞ 犬種図鑑</nav>
+  <h2 style="border-left: 5px solid #dfbb00; padding-left: 10px;">犬種図鑑 検索</h2>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+    {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+    <a href="{{ "categories/" | relURL }}{{ $name | urlize }}/" style="text-decoration:none; background:#fff; border:2px solid #dfbb00; color:#333; padding:20px 10px; border-radius:10px; text-align:center; font-weight:bold;">
+      {{ $name }}
+    </a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
