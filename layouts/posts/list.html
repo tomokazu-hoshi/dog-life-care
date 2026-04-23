@@ -2,10 +2,10 @@
 {{ partial "header.html" . }}
 
 <div style="max-width: 800px; margin: 0 auto; padding: 20px;">
-  <h2 style="border-left: 6px solid #dfbb00; padding-left: 15px; font-size: 1.4rem; margin-bottom: 25px; color: #333;">犬種図鑑 検索</h2>
+  <p style="text-align: center; color: #888; font-size: 0.9rem; margin-bottom: 30px;">犬種図鑑 検索</p>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-    <a href="{{ "all-breeds/" | relURL }}" style="grid-column: 1 / 3; background:#fff; border:2px solid #dfbb00; border-radius:10px; padding:25px; text-align:center; text-decoration:none; color:#333; font-weight:bold; margin-bottom: 10px;">五十音から探す</a>
+    <a href="{{ "all-breeds/" | relURL }}" style="grid-column: 1 / 3; background:#fff; border:2px solid #dfbb00; border-radius:15px; padding:25px; text-align:center; text-decoration:none; color:#333; font-weight:bold; margin-bottom: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">五十音から探す</a>
     
     <a href="{{ "categories/第1グループ/" | relURL }}" class="cat-btn">牧羊犬・牧畜犬</a>
     <a href="{{ "categories/第2グループ/" | relURL }}" class="cat-btn">使役犬</a>
@@ -18,11 +18,11 @@
     <a href="{{ "categories/第9グループ/" | relURL }}" class="cat-btn">愛玩犬</a>
     <a href="{{ "categories/第10グループ/" | relURL }}" class="cat-btn">視覚ハウンド</a>
 
-    <a href="{{ "categories/その他/" | relURL }}" style="grid-column: 1 / 3; background:#fff; border:2px solid #dfbb00; border-radius:10px; padding:20px; text-align:center; text-decoration:none; color:#333; font-weight:bold; margin-top: 5px;">その他</a>
+    <a href="{{ "categories/その他/" | relURL }}" style="grid-column: 1 / 3; background:#fff; border:2px solid #dfbb00; border-radius:15px; padding:20px; text-align:center; text-decoration:none; color:#333; font-weight:bold; margin-top: 5px;">その他</a>
   </div>
 </div>
 
 <style>
-  .cat-btn { background:#fff; border:2px solid #dfbb00; border-radius:10px; padding:18px 5px; text-align:center; text-decoration:none; color:#333; font-weight:bold; font-size:0.85rem; display:flex; align-items:center; justify-content:center; }
+  .cat-btn { background:#fff; border:2px solid #dfbb00; border-radius:15px; padding:18px 5px; text-align:center; text-decoration:none; color:#333; font-weight:bold; font-size:0.85rem; display:flex; align-items:center; justify-content:center; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
 </style>
 {{ end }}
