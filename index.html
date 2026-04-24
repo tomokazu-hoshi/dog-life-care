@@ -1,37 +1,55 @@
 ---
 layout: default
+title: "ワンライフナビ"
 ---
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ site.title }}</title>
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f5f5f7; padding: 20px; color: #1d1d1f; }
-        .main-card { background: white; padding: 25px; border-radius: 18px; box-shadow: 0 8px 30px rgba(0,0,0,0.05); max-width: 600px; margin: 0 auto; }
-        h1 { text-align: center; font-size: 24px; margin-bottom: 20px; }
-        ul { list-style: none; padding: 0; }
-        li { margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #f2f2f2; }
-        li:last-child { border-bottom: none; }
-        a { text-decoration: none; color: #0066cc; font-weight: 600; font-size: 18px; display: block; }
-        .date { font-size: 12px; color: #86868b; margin-top: 4px; }
-        .no-post { text-align: center; color: #ff3b30; }
-    </style>
-</head>
-<body>
-    <div class="main-card">
-        <h1>🐶 犬種図鑑</h1>
-        <ul>
-            {% for post in site.posts %}
-            <li>
-                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                <div class="date">{{ post.date | date: "%Y-%m-%d" }} - {{ post.description }}</div>
-            </li>
-            {% else %}
-            <li class="no-post">記事がまだ見つかりません。ファイル名が「2026-04-25-名前.md」になっているか確認してください。</li>
-            {% endfor %}
-        </ul>
+
+<style>
+    .menu-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 15px;
+        padding: 20px;
+    }
+    .menu-box {
+        background: #ffffff;
+        border: 2px solid #007aff;
+        border-radius: 12px;
+        aspect-ratio: 1 / 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        transition: transform 0.2s;
+        text-align: center;
+        padding: 10px;
+    }
+    .menu-box:active {
+        transform: scale(0.95);
+        background: #f0f7ff;
+    }
+    .icon { font-size: 2em; margin-bottom: 8px; }
+    .category-title { font-size: 0.9em; line-height: 1.2; }
+</style>
+
+<div class="main-card">
+    <h1 style="text-align:center;">ワンライフナビ</h1>
+    <div class="menu-container">
+        <a href="/dog-breeds/" class="menu-box">
+            <span class="icon">📖</span>
+            <span class="category-title">犬種図鑑</span>
+        </a>
+        
+        <div class="menu-box" style="border-color:#ccc; color:#999;">
+            <span class="icon">🏠</span>
+            <span class="category-title">しつけ</span>
+        </div>
+        <div class="menu-box" style="border-color:#ccc; color:#999;">
+            <span class="icon">🏥</span>
+            <span class="category-title">健康</span>
+        </div>
     </div>
-</body>
-</html>
+</div>
