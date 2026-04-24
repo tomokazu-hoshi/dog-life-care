@@ -1,28 +1,13 @@
-# サイト基本設定
 title: "犬種図鑑"
 description: "Jekyllで運営する新しい犬種図鑑サイト"
-url: "https://your-username.github.io" # 自分のGitHub PagesのURLに書き換えてください
+url: "https://your-username.github.io" # 自分のURLに書き換えてください
 
-# パーマリンク設定（Hugo時代のリンクと合わせる場合に便利）
+# 未来の日付の記事も表示する（重要！）
+future: true
+
+# カテゴリーごとのURL設定
 permalink: /:categories/:title/
-
-# カテゴリーとタグの管理
-common-list:
-  - カテゴリー
-  - タグ
 
 # ビルド設定
 markdown: kramdown
 highlighter: rouge
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-
-# 読み込み除外（Hugo時代のフォルダを無視させる）
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/
-  - public/
-  - content/
