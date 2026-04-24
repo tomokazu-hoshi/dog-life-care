@@ -4,50 +4,60 @@ title: "犬種図鑑 カテゴリー検索"
 ---
 
 <style>
+    .breed-container { padding: 15px; }
     .category-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* iPhoneで見やすい2列配置 */
-        gap: 10px;
-        padding: 10px;
+        grid-template-columns: repeat(2, 1fr); /* 2列のボックス型 */
+        gap: 12px;
+        margin-top: 20px;
     }
-    .category-box {
-        background: #fff;
-        border: 1px solid #ddd;
-        border-radius: 8px;
+    .cat-box {
+        background: #ffffff;
+        border: 1px solid #d2d2d7;
+        border-radius: 12px;
         padding: 20px 10px;
         text-align: center;
         text-decoration: none;
         color: #1d1d1f;
         font-weight: 600;
-        font-size: 0.85em;
+        font-size: 14px;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        min-height: 80px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.02);
     }
-    .category-box:active { background: #007aff; color: #fff; }
+    .cat-box:active { background: #007aff; color: #ffffff; border-color: #007aff; }
+    .back-btn {
+        display: inline-block;
+        margin-top: 30px;
+        color: #007aff;
+        text-decoration: none;
+        font-size: 14px;
+    }
 </style>
 
-<div class="main-card">
-    <h2 style="text-align:center;">犬種図鑑</h2>
-    <p style="text-align:center; font-size:0.8em; color:#666;">カテゴリーから探す</p>
-    
+<div class="breed-container">
+    <h1 style="text-align:center;">犬種図鑑</h1>
+    <p style="text-align:center; color:#666; font-size:14px;">カテゴリーを選択してください</p>
+
     <div class="category-grid">
-        <a href="/tags/50音検索.html" class="category-box">50音検索</a>
-        <a href="/categories/牧羊犬・牧畜犬.html" class="category-box">牧羊犬・牧畜犬</a>
-        <a href="/categories/使役犬.html" class="category-box">使役犬</a>
-        <a href="/categories/テリア.html" class="category-box">テリア</a>
-        <a href="/categories/ダックスフンド.html" class="category-box">ダックスフンド</a>
-        <a href="/categories/原始的な犬・スピッツ.html" class="category-box">原始的な犬・スピッツ</a>
-        <a href="/categories/嗅覚ハウンド.html" class="category-box">嗅覚ハウンド</a>
-        <a href="/categories/ポインター・セター.html" class="category-box">ポインター・セター</a>
-        <a href="/categories/鳥猟犬.html" class="category-box">鳥猟犬<br>(回収・追出し)</a>
-        <a href="/categories/愛玩犬.html" class="category-box">愛玩犬</a>
-        <a href="/categories/視覚ハウンド.html" class="category-box">視覚ハウンド</a>
-        <a href="/categories/その他.html" class="category-box">その他</a>
+        <a href="/50音検索.html" class="cat-box"><span>🔤</span>50音検索</a>
+        <a href="/牧羊犬・牧畜犬.html" class="cat-box"><span>🐑</span>牧羊犬・牧畜犬</a>
+        <a href="/使役犬.html" class="cat-box"><span>🛠️</span>使役犬</a>
+        <a href="/テリア.html" class="cat-box"><span>🦊</span>テリア</a>
+        <a href="/ダックスフンド.html" class="cat-box"><span>🌭</span>ダックスフンド</a>
+        <a href="/原始的な犬・スピッツ.html" class="cat-box"><span>🐕</span>原始的な犬・スピッツ</a>
+        <a href="/嗅覚ハウンド.html" class="cat-box"><span>👃</span>嗅覚ハウンド</a>
+        <a href="/ポインター・セター.html" class="cat-box"><span>🏹</span>ポインター・セター</a>
+        <a href="/鳥猟犬.html" class="cat-box"><span>🦆</span>鳥猟犬<br>(回収・追出し)</a>
+        <a href="/愛玩犬.html" class="cat-box"><span>🎀</span>愛玩犬</a>
+        <a href="/視覚ハウンド.html" class="cat-box"><span>🏃</span>視覚ハウンド</a>
+        <a href="/その他.html" class="cat-box"><span>🐾</span>その他</a>
     </div>
-    
-    <div style="margin-top:20px; text-align:center;">
-        <a href="/" style="color:#007aff; text-decoration:none; font-size:0.9em;">← トップへ戻る</a>
+
+    <div style="text-align:center;">
+        <a href="/" class="back-btn">← トップページへ戻る</a>
     </div>
 </div>
