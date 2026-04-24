@@ -6,41 +6,50 @@ layout: default
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>犬種図鑑 カテゴリー検索</title>
+    <title>カテゴリー検索 | 犬種図鑑</title>
     <style>
-        body { font-family: -apple-system, sans-serif; background: #f5f5f7; margin: 0; padding: 20px; }
-        .container { max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 20px; }
-        h1 { text-align: center; font-size: 20px; margin-bottom: 20px; }
-        .cat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-        .cat-box { 
-            background: #fff; border: 1px solid #ddd; border-radius: 10px; 
-            padding: 20px 10px; text-align: center; text-decoration: none; 
-            color: #1d1d1f; font-size: 14px; font-weight: 600;
-            display: flex; align-items: center; justify-content: center; min-height: 60px;
+        body { font-family: -apple-system, sans-serif; background: #f5f5f7; padding: 15px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        h2 { text-align: center; font-size: 20px; margin-bottom: 20px; }
+        .category-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .cat-box {
+            background: white;
+            padding: 15px 5px;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: #1d1d1f;
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 60px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
         }
-        .cat-box:active { background: #007aff; color: #fff; }
+        .cat-box:active { background: #007aff; color: white; border-color: #007aff; }
+        .back-btn { display: block; text-align: center; margin-top: 30px; color: #007aff; text-decoration: none; font-size: 14px; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>犬種図鑑<br><small style="color:#666; font-weight:normal;">カテゴリーから探す</small></h1>
-        <div class="cat-grid">
-            <a href="/tags/50音検索/" class="cat-box">50音検索</a>
-            <a href="/categories/牧羊犬・牧畜犬/" class="cat-box">牧羊犬・牧畜犬</a>
-            <a href="/categories/使役犬/" class="cat-box">使役犬</a>
-            <a href="/categories/テリア/" class="cat-box">テリア</a>
-            <a href="/categories/ダックスフンド/" class="cat-box">ダックスフンド</a>
-            <a href="/categories/原始的な犬・スピッツ/" class="cat-box">原始的な犬・スピッツ</a>
-            <a href="/categories/嗅覚ハウンド/" class="cat-box">嗅覚ハウンド</a>
-            <a href="/categories/ポインター・セター/" class="cat-box">ポインター・セター</a>
-            <a href="/categories/鳥猟犬/" class="cat-box">鳥猟犬<br>(回収・追出し)</a>
-            <a href="/categories/愛玩犬/" class="cat-box">愛玩犬</a>
-            <a href="/categories/視覚ハウンド/" class="cat-box">視覚ハウンド</a>
-            <a href="/categories/その他/" class="cat-box">その他</a>
+        <h2>犬種図鑑 カテゴリー検索</h2>
+        <div class="category-grid">
+            <a href="/search-by-name.html" class="cat-box">50音検索</a>
+            <a href="/category-herding.html" class="cat-box">牧羊犬・牧畜犬</a>
+            <a href="/category-working.html" class="cat-box">使役犬</a>
+            <a href="/category-terrier.html" class="cat-box">テリア</a>
+            <a href="/category-dachshund.html" class="cat-box">ダックスフンド</a>
+            <a href="/category-spitz.html" class="cat-box">原始的な犬<br>スピッツ</a>
+            <a href="/category-scenthound.html" class="cat-box">嗅覚ハウンド</a>
+            <a href="/category-pointer.html" class="cat-box">ポインター<br>セター</a>
+            <a href="/category-retriever.html" class="cat-box">鳥猟犬<br>(回収・追出し)</a>
+            <a href="/category-toy.html" class="cat-box">愛玩犬</a>
+            <a href="/category-sighthound.html" class="cat-box">視覚ハウンド</a>
+            <a href="/category-other.html" class="cat-box">その他</a>
         </div>
-        <p style="text-align:center; margin-top:30px;">
-            <a href="/index.html" style="color:#007aff; text-decoration:none;">← トップページへ</a>
-        </p>
+        <a href="/" class="back-btn">← トップへ戻る</a>
     </div>
 </body>
 </html>
