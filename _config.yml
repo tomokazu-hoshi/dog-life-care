@@ -1,21 +1,14 @@
-# サイト設定
 title: "ワンライフナビ"
-description: "愛犬との暮らしをサポートする総合ガイド"
+description: "iPhoneで作る犬種図鑑"
 url: "https://your-username.github.io" # 自分のURLに書き換えてください
 
-# URL形式の設定
-permalink: /:categories/:title/
+# 記事URLの設定
+permalink: /:title.html
 
-# 記事の検索を有効にする設定
+# 未来の記事を表示
 future: true
 timezone: Asia/Tokyo
 
 # ビルド設定
 markdown: kramdown
 highlighter: rouge
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/
-  - .github/
