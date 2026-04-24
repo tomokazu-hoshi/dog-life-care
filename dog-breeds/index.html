@@ -1,0 +1,53 @@
+---
+layout: default
+title: "犬種図鑑 カテゴリー検索"
+---
+
+<style>
+    .category-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* iPhoneで見やすい2列配置 */
+        gap: 10px;
+        padding: 10px;
+    }
+    .category-box {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px 10px;
+        text-align: center;
+        text-decoration: none;
+        color: #1d1d1f;
+        font-weight: 600;
+        font-size: 0.85em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .category-box:active { background: #007aff; color: #fff; }
+</style>
+
+<div class="main-card">
+    <h2 style="text-align:center;">犬種図鑑</h2>
+    <p style="text-align:center; font-size:0.8em; color:#666;">カテゴリーから探す</p>
+    
+    <div class="category-grid">
+        <a href="/tags/50音検索.html" class="category-box">50音検索</a>
+        <a href="/categories/牧羊犬・牧畜犬.html" class="category-box">牧羊犬・牧畜犬</a>
+        <a href="/categories/使役犬.html" class="category-box">使役犬</a>
+        <a href="/categories/テリア.html" class="category-box">テリア</a>
+        <a href="/categories/ダックスフンド.html" class="category-box">ダックスフンド</a>
+        <a href="/categories/原始的な犬・スピッツ.html" class="category-box">原始的な犬・スピッツ</a>
+        <a href="/categories/嗅覚ハウンド.html" class="category-box">嗅覚ハウンド</a>
+        <a href="/categories/ポインター・セター.html" class="category-box">ポインター・セター</a>
+        <a href="/categories/鳥猟犬.html" class="category-box">鳥猟犬<br>(回収・追出し)</a>
+        <a href="/categories/愛玩犬.html" class="category-box">愛玩犬</a>
+        <a href="/categories/視覚ハウンド.html" class="category-box">視覚ハウンド</a>
+        <a href="/categories/その他.html" class="category-box">その他</a>
+    </div>
+    
+    <div style="margin-top:20px; text-align:center;">
+        <a href="/" style="color:#007aff; text-decoration:none; font-size:0.9em;">← トップへ戻る</a>
+    </div>
+</div>
