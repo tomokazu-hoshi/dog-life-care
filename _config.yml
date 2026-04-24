@@ -1,13 +1,21 @@
-title: "犬種図鑑"
+# サイト設定
+title: "iPhoneで作る犬種図鑑"
 description: "Jekyllで運営する新しい犬種図鑑サイト"
-url: "https://your-username.github.io" # 自分のURLに書き換えてください
+url: "https://your-username.github.io" # ご自身のURLに書き換えてください
 
-# 未来の日付の記事も表示する（重要！）
+# 記事のURL形式（シンプルに設定）
+permalink: /:title.html
+
+# 未来の日付の記事も表示する
 future: true
-
-# カテゴリーごとのURL設定
-permalink: /:categories/:title/
+timezone: Asia/Tokyo
 
 # ビルド設定
 markdown: kramdown
 highlighter: rouge
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/
+  - .github/
