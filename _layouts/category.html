@@ -1,0 +1,27 @@
+---
+layout: default
+---
+{% include breadcrumb.html %}
+
+<header class="tc pv3">
+  <h1 class="f3 fw9 black">{{ page.title }} 一覧</h1>
+</header>
+
+<div class="mw7 center ph3">
+  <ul class="list pl0">
+    {% for post in site.categories[page.category_name] %}
+    <li class="mb3 pb3 bb b--black-10">
+      <a href="{{ post.url | relative_url }}" class="db no-underline black hover-gold">
+        <h2 class="f5 ma0">{{ post.title }}</h2>
+        <p class="f7 gray ma0 mt1">{{ post.date | date: "%Y.%m.%d" }} 更新</p>
+      </a>
+    </li>
+    {% else %}
+    <li class="tc gray f6">まだ記事がありません。</li>
+    {% endfor %}
+  </ul>
+</div>
+
+<div class="tc pv4">
+  <a href="{{ '/posts/' | relative_url }}" class="f6 link dim br2 ph3 pv2 mb2 dib white bg-black">検索ページに戻る</a>
+</div>
