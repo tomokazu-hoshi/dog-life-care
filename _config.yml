@@ -1,6 +1,9 @@
-# プロジェクト名がある場合は、その名前をここに入れる（例: /onelifenavi）
-# 独自ドメインやルートで動かしているなら "" のままでOKです
-baseurl: "" 
+# GitHubのリポジトリ名を必ず指定します
+baseurl: "/dog-life-care"
+url: "https://tomokazu-hoshi.github.io"
 
-# リンクの形式を指定
-permalink: /:categories/:title:output_ext
+# リンクの形式を「カテゴリー/タイトル」に固定
+permalink: /categories/:title/
+
+# 50音ファイルを読み込むための設定
+include: [".nojekyll"]
