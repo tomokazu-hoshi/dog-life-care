@@ -47,17 +47,17 @@ permalink: /dog-search/
     <span>＞</span>
   </a>
 
-  <a href="{{ '/categories/愛玩犬/' | relative_url }}" class="sub-card"><span>愛玩犬</span><span>＞</span></a>
-  <a href="{{ '/categories/嗅覚ハウンド/' | relative_url }}" class="sub-card"><span>嗅覚ハウンド</span><span>＞</span></a>
-  <a href="{{ '/categories/原始的な犬・スピッツ/' | relative_url }}" class="sub-card"><span>原始的な犬・スピッツ</span><span>＞</span></a>
-  <a href="{{ '/categories/視覚ハウンド/' | relative_url }}" class="sub-card"><span>視覚ハウンド</span><span>＞</span></a>
-  <a href="{{ '/categories/使役犬/' | relative_url }}" class="sub-card"><span>使役犬</span><span>＞</span></a>
-  <a href="{{ '/categories/その他/' | relative_url }}" class="sub-card"><span>その他</span><span>＞</span></a>
-  <a href="{{ '/categories/ダックスフンド/' | relative_url }}" class="sub-card"><span>ダックスフンド</span><span>＞</span></a>
-  <a href="{{ '/categories/鳥猟犬/' | relative_url }}" class="sub-card"><span>鳥猟犬（回収・追い出し）</span><span>＞</span></a>
-  <a href="{{ '/categories/テリア/' | relative_url }}" class="sub-card"><span>テリア</span><span>＞</span></a>
-  <a href="{{ '/categories/牧羊犬・牧畜犬/' | relative_url }}" class="sub-card"><span>牧羊犬・牧畜犬</span><span>＞</span></a>
-  <a href="{{ '/categories/ポインター・セター/' | relative_url }}" class="sub-card"><span>ポインター・セター</span><span>＞</span></a>
+  <a href="{{ '/categories/愛玩犬/' | relative_url }}" class="sub-card"><span>愛玩犬（あ）</span><span>＞</span></a>
+  <a href="{{ '/categories/嗅覚ハウンド/' | relative_url }}" class="sub-card"><span>嗅覚ハウンド（き）</span><span>＞</span></a>
+  <a href="{{ '/categories/原始的な犬・スピッツ/' | relative_url }}" class="sub-card"><span>原始的な犬・スピッツ（げ）</span><span>＞</span></a>
+  <a href="{{ '/categories/使役犬/' | relative_url }}" class="sub-card"><span>使役犬（しえ）</span><span>＞</span></a>
+  <a href="{{ '/categories/視覚ハウンド/' | relative_url }}" class="sub-card"><span>視覚ハウンド（しか）</span><span>＞</span></a>
+  <a href="{{ '/categories/その他/' | relative_url }}" class="sub-card"><span>その他（そ）</span><span>＞</span></a>
+  <a href="{{ '/categories/ダックスフンド/' | relative_url }}" class="sub-card"><span>ダックスフンド（だ）</span><span>＞</span></a>
+  <a href="{{ '/categories/鳥猟犬/' | relative_url }}" class="sub-card"><span>鳥猟犬（回収・追い出し）（ち）</span><span>＞</span></a>
+  <a href="{{ '/categories/テリア/' | relative_url }}" class="sub-card"><span>テリア（て）</span><span>＞</span></a>
+  <a href="{{ '/categories/牧羊犬・牧畜犬/' | relative_url }}" class="sub-card"><span>牧羊犬・牧畜犬（ぼ）</span><span>＞</span></a>
+  <a href="{{ '/categories/ポインター・セター/' | relative_url }}" class="sub-card"><span>ポインター・セター（ぽ）</span><span>＞</span></a>
 </div>
 
 <div style="text-align: center; margin-top: 20px; padding-bottom: 40px;">
