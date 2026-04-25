@@ -8,18 +8,22 @@ layout: default
 </header>
 
 <div class="ph2">
+  {% assign posts = site.categories[page.category_name] | sort: "title" %}
+  
   <div class="flex flex-wrap">
-    {% for post in site.categories[page.category_name] %}
+    {% for post in posts %}
     <div class="w-100 mb2">
-      <a href="{{ post.url | relative_url }}" class="db ba br2 b--black-10 pa3 bg-white shadow-4 no-underline black hover-bg-gold flex items-center justify-between">
+      <a href="{{ post.url | relative_url }}" class="db ba br2 b--black-10 pa3 bg-white shadow-4 no-underline black flex items-center justify-between hover-bg-gold">
         <span class="fw6">{{ post.title }}</span>
         <span class="gray f7">＞</span>
       </a>
     </div>
+    {% else %}
+    <p class="tc gray">該当する犬種はまだ登録されていません。</p>
     {% endfor %}
   </div>
 </div>
 
 <div class="tc pv4">
-  <a href="{{ '/posts/' | relative_url }}" class="f7 link dim gray">← 検索ページに戻る</a>
+  <a href="{{ '/posts/' | relative_url }}" class="f7 gray">← 検索ページに戻る</a>
 </div>
