@@ -15,7 +15,7 @@ title: ホーム
     {% for cat in cats %}
     <div class="w-50 w-33-ns pa2">
       {% if cat == "犬種図鑑" %}
-        {% assign link = '/posts/' %}
+        {% assign link = '/dog-search/' %}
       {% elsif cat == "年齢診断" or cat == "食事" or cat == "健康・医療" %}
         {% assign link = '/health-check/' %}
       {% elsif cat == "しつけ" %}
