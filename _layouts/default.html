@@ -11,21 +11,21 @@
       color: #333;
       background-color: #f8f9fa;
       margin: 0;
-      padding: 20px;
+      padding: 0; /* index.md側のheroデザインを活かすため0に */
     }
     .container {
-      max-width: 500px; /* iPhoneで読みやすい幅 */
+      max-width: 500px;
       margin: 0 auto;
+      padding: 20px;
     }
-    a { color: #ff922b; }
-    img { max-width: 100%; border-radius: 10px; }
+    a { color: #ff922b; text-decoration: none; }
   </style>
 </head>
 <body>
   <div class="container">
     {{ content }}
     
-    <footer style="margin-top: 50px; text-align: center; font-size: 0.8em; color: #888;">
+    <footer style="margin-top: 50px; text-align: center; font-size: 0.8em; color: #888; padding-bottom: 20px;">
       <p>&copy; 2026 ワンライフ・ナビ</p>
     </footer>
   </div>
