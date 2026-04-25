@@ -1,10 +1,9 @@
 title: ワンライフ・ナビ
 description: 愛犬との暮らしを豊かにする総合ガイド
-baseurl: "/dog-life-care" # あなたのGitHubリポジトリ名
+baseurl: "/dog-life-care"
 url: "https://tomokazu-hoshi.github.io"
 
-# 記事のURLをスッキリさせる設定
+# 記事のURL設定
 permalink: /posts/:title/
 
-# テーマを使わず自作デザインにする設定
-theme: none
+# テーマの設定を削除しました。これで _layouts フォルダの中身が使われるようになります。
