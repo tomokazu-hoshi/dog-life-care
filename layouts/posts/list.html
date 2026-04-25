@@ -1,0 +1,54 @@
+{{ define "main" }}
+<div class="pa3 pa4-ns bg-near-white min-vh-100">
+  <div class="mw8 center">
+    {{ partial "breadcrumb.html" . }}
+    
+    <header class="tc pv3">
+      <h1 class="f3 fw9 black">犬種図鑑 検索</h1>
+    </header>
+
+    <div class="mb4 ph2">
+      <a href="{{ "/search-50on/" | relURL }}" class="db ba br3 b--black-10 pa4 bg-white hover-bg-gold no-underline shadow-4 transition-all flex items-center justify-center">
+        <span class="f2 mr3">🔤</span>
+        <div class="tl">
+          <h2 class="f4 black ma0">50音検索</h2>
+          <p class="f7 gray ma0 mt1">名前から探す</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="flex flex-wrap justify-center ph1">
+      {{ $groups := slice 
+        (dict "name" "牧羊犬・牧畜犬" "icon" "🐑")
+        (dict "name" "使役犬" "icon" "💼")
+        (dict "name" "テリア" "icon" "🦊")
+        (dict "name" "ダックスフンド" "icon" "🌭")
+        (dict "name" "原始的な犬・スピッツ" "icon" "🐕")
+        (dict "name" "嗅覚ハウンド" "icon" "👃")
+        (dict "name" "ポインター・セター" "icon" "🏹")
+        (dict "name" "鳥猟犬（回収・追出し）" "icon" "🦆")
+        (dict "name" "愛玩犬" "icon" "🎀")
+        (dict "name" "視覚ハウンド" "icon" "👁️")
+        (dict "name" "その他" "icon" "✨")
+      }}
+
+      {{ range $groups }}
+      <div class="w-50 w-33-ns pa2">
+        <a href="{{ (printf "/categories/%s/" .name) | relURL }}" class="db ba br3 b--black-10 pa3 bg-white hover-bg-gold no-underline shadow-4 flex flex-column items-center transition-all tc h-100 justify-center">
+          <span class="f3 mb2">{{ .icon }}</span>
+          <h2 class="f7 black ma0 fw6">{{ .name }}</h2>
+        </a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+<style>
+  .transition-all { transition: all 0.2s ease-in-out; }
+  .hover-bg-gold:active { 
+    transform: scale(0.98);
+    background-color: #FFD700; 
+  }
+</style>
+{{ end }}
