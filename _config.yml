@@ -6,4 +6,4 @@ url: "https://tomokazu-hoshi.github.io"
 # 記事のURL設定
 permalink: /posts/:title/
 
-# テーマの設定を削除しました。これで _layouts フォルダの中身が使われるようになります。
+# 注意：ここにあった「theme: none」は絶対に書かないでください！
