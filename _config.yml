@@ -3,7 +3,8 @@ description: 愛犬との暮らしを豊かにする総合ガイド
 baseurl: "/dog-life-care"
 url: "https://tomokazu-hoshi.github.io"
 
-# 記事のURL設定
+# 記事のURLをスッキリさせる設定
 permalink: /posts/:title/
 
-# 注意：ここにあった「theme: none」は絶対に書かないでください！
+# テーマを指定せず、完全に自作デザインにするための設定（空欄にするのが正解です）
+remote_theme: []
