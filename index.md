@@ -4,6 +4,7 @@ title: ワンライフ・ナビ | 愛犬との一生を豊かにするガイド
 ---
 
 <style>
+/* iPhoneでの操作性を重視したスタイル */
 .hero {
   background: linear-gradient(135deg, #ff922b, #fab005);
   color: white;
@@ -81,45 +82,45 @@ title: ワンライフ・ナビ | 愛犬との一生を豊かにするガイド
 <div class="section-title">カテゴリーから探す</div>
 
 <div class="category-grid">
-  <a href="/category/diet/" class="card">
+  <a href="/categories/diet/" class="card">
     <span class="card-icon">🍖</span>
     <span class="card-label">食事</span>
   </a>
-  <a href="/category/health/" class="card">
+  <a href="/categories/health/" class="card">
     <span class="card-icon">🏥</span>
     <span class="card-label">健康</span>
   </a>
-  <a href="/category/care/" class="card">
+  <a href="/categories/care/" class="card">
     <span class="card-icon">✂️</span>
     <span class="card-label">お手入れ</span>
   </a>
-  <a href="/category/training/" class="card">
+  <a href="/categories/training/" class="card">
     <span class="card-icon">🎓</span>
     <span class="card-label">しつけ</span>
   </a>
-  <a href="/category/outing/" class="card">
+  <a href="/categories/outing/" class="card">
     <span class="card-icon">🚗</span>
     <span class="card-label">お出かけ</span>
   </a>
-  <a href="/category/living/" class="card">
+  <a href="/categories/living/" class="card">
     <span class="card-icon">🏠</span>
     <span class="card-label">住まい</span>
   </a>
-  <a href="/search/" class="card" style="grid-column: span 2; background: #fff9db;">
+  <a href="/search-50on/" class="card" style="grid-column: span 2; background: #fff9db;">
     <span class="card-icon">🐕</span>
-    <span class="card-label">犬種図鑑で検索する</span>
+    <span class="card-label">犬種図鑑（50音順）で検索する</span>
   </a>
 </div>
 
 <div class="section-title">最新のアドバイス</div>
 
-<div class="post-list">
+<ul class="post-list">
   {% for post in site.posts limit:5 %}
     <li class="post-item">
       <div class="post-date">{{ post.date | date: "%Y.%m.%d" }}</div>
       <a href="{{ post.url }}" class="post-link">{{ post.title }}</a>
     </li>
   {% endfor %}
-</div>
+</ul>
 
-<a href="/archive/" class="btn-archive">すべての記事を見る</a>
+<a href="/search-50on/" class="btn-archive">すべての記事・犬種を見る</a>
