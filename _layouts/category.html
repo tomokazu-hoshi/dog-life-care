@@ -19,11 +19,15 @@ layout: default
       </a>
     </div>
     {% else %}
-    <p class="tc gray">該当する犬種はまだ登録されていません。</p>
+    <p class="tc gray">該当する記事はまだ登録されていません。</p>
     {% endfor %}
   </div>
 </div>
 
 <div class="tc pv4">
-  <a href="{{ '/posts/' | relative_url }}" class="f7 gray">← 検索ページに戻る</a>
+  {% if page.category_name == "しつけ" or page.category_name == "食事" or page.category_name == "健康・医療" %}
+    <a href="{{ '/' | relative_url }}" class="f7 gray">← ホームに戻る</a>
+  {% else %}
+    <a href="{{ '/posts/' | relative_url }}" class="f7 gray">← 検索ページに戻る</a>
+  {% endif %}
 </div>
