@@ -1,22 +1,10 @@
-# サイト設定
-title: "ワンライフナビ"
-description: "iPhoneで作る犬種図鑑"
-url: "https://tomokazu-hoshi.github.io"
+title: ワンライフ・ナビ
+description: 愛犬との暮らしを豊かにする総合ガイド
 baseurl: "/dog-life-care"
+url: "https://tomokazu-hoshi.github.io"
 
-# 記事URLの設定（日付を含まないシンプルな形に変更）
-permalink: /:title/
+# リンクを相対パスで扱いやすくする設定
+relative_url: true
 
-# 未来の日付の記事も表示する
-future: true
-timezone: Asia/Tokyo
-
-# ビルド設定
-markdown: kramdown
-highlighter: rouge
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/
-  - .github/
+# 投稿のURL形式（シンプルにする）
+permalink: /posts/:title/
