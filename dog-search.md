@@ -6,36 +6,12 @@ permalink: /dog-search/
 {% include breadcrumb.html %}
 
 <style>
-/* iPhone向けの清潔感あるデザイン */
-.sub-header {
-  text-align: center;
-  padding: 20px 0;
-  background: #fff;
-}
+.sub-header { text-align: center; padding: 20px 0; background: #fff; }
 .sub-header h1 { font-size: 1.4rem; color: #333; margin: 0; }
-
-.sub-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-  padding: 15px;
-}
-.sub-card {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 12px;
-  padding: 16px 20px;
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
+.sub-grid { display: grid; grid-template-columns: 1fr; gap: 10px; padding: 15px; }
+.sub-card { background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 16px 20px; text-decoration: none; color: #333; font-weight: bold; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
 .sub-card:active { background: #f0f0f0; }
 .search-50-card { background: #fff9db; border-color: #fab005; margin-bottom: 5px; }
-.group-num { font-size: 0.75rem; color: #888; margin-right: 8px; }
 </style>
 
 <div class="sub-header">
@@ -44,43 +20,20 @@ permalink: /dog-search/
 
 <div class="sub-grid">
   <a href="{{ '/search-50on/' | relative_url }}" class="sub-card search-50-card">
-    <span>🔍 50音検索（名前から探す）</span>
-    <span>＞</span>
+    <span>🔍 50音検索（名前から探す）</span><span>＞</span>
   </a>
 
-  <a href="{{ '/categories/牧羊犬・牧畜犬/' | relative_url }}" class="sub-card">
-    <span><span class="group-num">第1G</span>牧羊犬・牧畜犬</span><span>＞</span>
-  </a>
-  <a href="{{ '/categories/使役犬/' | relative_url }}" class="sub-card">
-    <span><span class="group-num">第2G</span>使役犬</span><span>＞</span>
-  </a>
-  <a href="{{ '/categories/テリア/' | relative_url }}" class="sub-card">
-    <span><span class="group-num">第3G</span>テリア</span><span>＞</span>
-  </a>
-  <a href="{{ '/categories/ダックスフンド/' | relative_url }}" class="sub-card">
-    <span><span class="group-num">第4G</span>ダックスフンド</span><span>＞</span>
-  </a>
-  <a href="{{ '/categories/原始的な犬・スピッツ/' | relative_url }}" class="sub-card">
-    <span><span class="group-num">第5G</span>原始的な犬・スピッツ</span><span>＞</span>
-  </a>
-  <a href="{{ '/categories/嗅覚ハウンド/' | relative_url }}" class="sub-card">
-    <span><span class="group-num">第6G</span>嗅覚ハウンド</span><span>＞</span>
-  </a>
-  <a href="{{ '/categories/ポインター・セター/' | relative_url }}" class="sub-card">
-    <span><span class="group-num">第7G</span>ポインター・セター</span><span>＞</span>
-  </a>
-  <a href="{{ '/categories/鳥猟犬/' | relative_url }}" class="sub-card">
-    <span><span class="group-num">第8G</span>鳥猟犬（回収・追い出し）</span><span>＞</span>
-  </a>
-  <a href="{{ '/categories/愛玩犬/' | relative_url }}" class="sub-card">
-    <span><span class="group-num">第9G</span>愛玩犬</span><span>＞</span>
-  </a>
-  <a href="{{ '/categories/視覚ハウンド/' | relative_url }}" class="sub-card">
-    <span><span class="group-num">第10G</span>視覚ハウンド</span><span>＞</span>
-  </a>
-  <a href="{{ '/categories/その他/' | relative_url }}" class="sub-card">
-    <span><span class="group-num">他</span>その他</span><span>＞</span>
-  </a>
+  <a href="{{ '/categories/牧羊犬・牧畜犬/' | relative_url }}" class="sub-card"><span>牧羊犬・牧畜犬</span><span>＞</span></a>
+  <a href="{{ '/categories/使役犬/' | relative_url }}" class="sub-card"><span>使役犬</span><span>＞</span></a>
+  <a href="{{ '/categories/テリア/' | relative_url }}" class="sub-card"><span>テリア</span><span>＞</span></a>
+  <a href="{{ '/categories/ダックスフンド/' | relative_url }}" class="sub-card"><span>ダックスフンド</span><span>＞</span></a>
+  <a href="{{ '/categories/原始的な犬・スピッツ/' | relative_url }}" class="sub-card"><span>原始的な犬・スピッツ</span><span>＞</span></a>
+  <a href="{{ '/categories/嗅覚ハウンド/' | relative_url }}" class="sub-card"><span>嗅覚ハウンド</span><span>＞</span></a>
+  <a href="{{ '/categories/ポインター・セター/' | relative_url }}" class="sub-card"><span>ポインター・セター</span><span>＞</span></a>
+  <a href="{{ '/categories/鳥猟犬/' | relative_url }}" class="sub-card"><span>鳥猟犬（回収・追い出し）</span><span>＞</span></a>
+  <a href="{{ '/categories/愛玩犬/' | relative_url }}" class="sub-card"><span>愛玩犬</span><span>＞</span></a>
+  <a href="{{ '/categories/視覚ハウンド/' | relative_url }}" class="sub-card"><span>視覚ハウンド</span><span>＞</span></a>
+  <a href="{{ '/categories/その他/' | relative_url }}" class="sub-card"><span>その他</span><span>＞</span></a>
 </div>
 
 <div style="text-align: center; margin-top: 20px; padding-bottom: 40px;">
