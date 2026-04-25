@@ -1,10 +1,10 @@
 title: ワンライフ・ナビ
 description: 愛犬との暮らしを豊かにする総合ガイド
-baseurl: "/dog-life-care"
+baseurl: "/dog-life-care" # あなたのGitHubリポジトリ名
 url: "https://tomokazu-hoshi.github.io"
 
-# リンクを相対パスで扱いやすくする設定
-relative_url: true
-
-# 投稿のURL形式（シンプルにする）
+# 記事のURLをスッキリさせる設定
 permalink: /posts/:title/
+
+# テーマを使わず自作デザインにする設定
+theme: none
