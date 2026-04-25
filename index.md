@@ -1,15 +1,27 @@
 ---
 layout: default
-title: ワンライフ・ナビ
+title: ホーム
 ---
-<div class="pa3 bg-near-white">
-  <h2 class="f3 fw6 mb3 bb b--black-10 pb2">カテゴリーから探す</h2>
+<header class="tc pv4 bg-white shadow-4 mb3 br3">
+  <h1 class="f2 fw9 black">ワンライフ・ナビ</h1>
+</header>
+
+<div class="ph2">
+  <h2 class="f4 fw6 mb3 bb b--black-10 pb2">カテゴリーから探す</h2>
   <div class="flex flex-wrap">
-    <div class="w-50 pa2">
-      <a href="{{ '/posts/' | relative_url }}" class="db ba br3 b--black-10 pa4 bg-white shadow-4 tc no-underline">
-        <span class="f2 db mb2">📖</span>
-        <h2 class="f6 black ma0">犬種図鑑</h2>
-      </a>
+    {% assign cats = "犬種図鑑,しつけ,食事,健康・医療,お手入れ,お出かけ,年齢診断,その他,FAQ" | split: "," %}
+    {% assign icons = "📖,🎾,🍖,🏥,🚿,🚗,🐕,✨,❓" | split: "," %}
+    {% for cat in cats %}
+    <div class="w-50 w-33-ns pa2">
+      {% if cat == "犬種図鑑" %}
+        <a href="{{ '/posts/' | relative_url }}" class="db ba br3 b--black-10 pa3 bg-white shadow-4 tc no-underline h-100 flex flex-column justify-center">
+      {% else %}
+        <a href="#" class="db ba br3 b--black-10 pa3 bg-white shadow-4 tc no-underline h-100 flex flex-column justify-center">
+      {% endif %}
+          <span class="f2 db mb2">{{ icons[forloop.index0] }}</span>
+          <h2 class="f7 black ma0 fw6">{{ cat }}</h2>
+        </a>
     </div>
-    </div>
+    {% endfor %}
+  </div>
 </div>
