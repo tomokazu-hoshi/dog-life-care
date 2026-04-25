@@ -10,12 +10,14 @@ title: ワンライフ・ナビ | 愛犬との一生を豊かにするナビゲ�
 
 ## 🔍 カテゴリーから探す
 
-<div class="category-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px;">
-  <a href="/category/diet/" style="padding: 20px; background: #fff4e6; text-align: center; border-radius: 10px; text-decoration: none; color: #d9480f; font-weight: bold;">🍖 食事</a>
-  <a href="/category/health/" style="padding: 20px; background: #e7f5ff; text-align: center; border-radius: 10px; text-decoration: none; color: #1971c2; font-weight: bold;">🏥 健康・医療</a>
-  <a href="/category/care/" style="padding: 20px; background: #f3f0ff; text-align: center; border-radius: 10px; text-decoration: none; color: #6741d9; font-weight: bold;">✂️ お手入れ</a>
-  <a href="/category/outing/" style="padding: 20px; background: #ebfbee; text-align: center; border-radius: 10px; text-decoration: none; color: #2b8a3e; font-weight: bold;">🚗 お出かけ</a>
-  <a href="/search/" style="padding: 20px; background: #fff9db; text-align: center; border-radius: 10px; text-decoration: none; color: #f08c00; font-weight: bold;">🐕 犬種図鑑</a>
+<div class="category-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px;">
+  <a href="/category/diet/" style="padding: 15px; background: #fff4e6; text-align: center; border-radius: 10px; text-decoration: none; color: #d9480f; font-weight: bold; font-size: 0.9em;">🍖 食事</a>
+  <a href="/category/health/" style="padding: 15px; background: #e7f5ff; text-align: center; border-radius: 10px; text-decoration: none; color: #1971c2; font-weight: bold; font-size: 0.9em;">🏥 健康</a>
+  <a href="/category/care/" style="padding: 15px; background: #f3f0ff; text-align: center; border-radius: 10px; text-decoration: none; color: #6741d9; font-weight: bold; font-size: 0.9em;">✂️ お手入れ</a>
+  <a href="/category/training/" style="padding: 15px; background: #fff5f5; text-align: center; border-radius: 10px; text-decoration: none; color: #c2255c; font-weight: bold; font-size: 0.9em;">🎓 しつけ</a>
+  <a href="/category/outing/" style="padding: 15px; background: #ebfbee; text-align: center; border-radius: 10px; text-decoration: none; color: #2b8a3e; font-weight: bold; font-size: 0.9em;">🚗 外出</a>
+  <a href="/category/living/" style="padding: 15px; background: #fff0f6; text-align: center; border-radius: 10px; text-decoration: none; color: #d6336c; font-weight: bold; font-size: 0.9em;">🏠 住まい</a>
+  <a href="/search/" style="padding: 15px; background: #fff9db; text-align: center; border-radius: 10px; text-decoration: none; color: #f08c00; font-weight: bold; font-size: 0.9em;">🐕 犬種図鑑</a>
 </div>
 
 ---
