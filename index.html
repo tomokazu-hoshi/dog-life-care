@@ -1,43 +1,21 @@
 ---
 layout: default
+title: ホーム
 ---
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ワンライフナビ</title>
-    <style>
-        body { font-family: -apple-system, sans-serif; background: #f5f5f7; margin: 0; padding: 20px; color: #1d1d1f; }
-        .container { max-width: 500px; margin: 0 auto; }
-        h1 { text-align: center; font-size: 24px; margin-bottom: 30px; }
-        .menu-grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
-        .menu-box {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border: 2px solid #007aff;
-        }
-        .menu-box .icon { font-size: 30px; margin-right: 15px; }
-        .menu-box .text { font-size: 18px; }
-        .menu-box:active { transform: scale(0.98); background: #f0f7ff; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>ワンライフナビ</h1>
-        <div class="menu-grid">
-            <a href="{{ site.baseurl }}/dog-breeds.html" class="menu-box">
-                <span class="icon">📖</span>
-                <span class="text">犬種図鑑（カテゴリー検索）</span>
-            </a>
-        </div>
+
+<div class="pv4">
+  <h2 class="f3 fw6 mb3 bb b--black-10 pb2">カテゴリー</h2>
+
+  <div class="flex flex-wrap">
+    <div class="w-50 w-33-ns pa2">
+      <a href="{{ '/posts/' | relative_url }}" class="db ba br3 b--black-10 pa4 bg-white hover-bg-gold no-underline h-100 shadow-4 tc">
+        <span class="f2 mb2 db">📖</span>
+        <h2 class="f6 black ma0">犬種図鑑</h2>
+      </a>
     </div>
-</body>
-</html>
+    </div>
+</div>
+
+<style>
+  .hover-bg-gold:active { background-color: #FFD700; transform: translateY(-2px); }
+</style>
