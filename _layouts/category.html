@@ -3,31 +3,83 @@ layout: default
 ---
 {% include breadcrumb.html %}
 
-<header class="tc pv3">
-  <h1 class="f3 fw9 black">{{ page.title }} 一覧</h1>
-</header>
+<style>
+/* iPhone向けにデザインを統一 */
+.category-header {
+  text-align: center;
+  padding: 30px 10px;
+  background: #f8f9fa;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+.category-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+.post-list {
+  list-style: none;
+  padding: 0;
+}
+.post-item {
+  background: #fff;
+  margin-bottom: 12px;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  border: 1px solid #eee;
+}
+.post-title {
+  color: #333;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.arrow { color: #ccc; }
+.no-post {
+  text-align: center;
+  padding: 50px 20px;
+  color: #999;
+}
+.back-nav {
+  text-align: center;
+  padding: 30px 0;
+}
+.btn-back {
+  color: #888;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+</style>
+
+<div class="category-header">
+  <h1>{{ page.title }} 一覧</h1>
+</div>
 
 <div class="ph2">
   {% assign posts = site.categories[page.category_name] | sort: "title" %}
   
-  <div class="flex flex-wrap">
+  <div class="post-list">
     {% for post in posts %}
-    <div class="w-100 mb2">
-      <a href="{{ post.url | relative_url }}" class="db ba br2 b--black-10 pa3 bg-white shadow-4 no-underline black flex items-center justify-between hover-bg-gold">
-        <span class="fw6">{{ post.title }}</span>
-        <span class="gray f7">＞</span>
-      </a>
-    </div>
+    <a href="{{ post.url | relative_url }}" class="post-item">
+      <span class="post-title">{{ post.title }}</span>
+      <span class="arrow">＞</span>
+    </a>
     {% else %}
-    <p class="tc gray">該当する記事はまだ登録されていません。</p>
+    <div class="no-post">
+      <p>「{{ page.category_name }}」の記事は準備中です。</p>
+    </div>
     {% endfor %}
   </div>
 </div>
 
-<div class="tc pv4">
+<div class="back-nav">
   {% if page.category_name == "しつけ" or page.category_name == "食事" or page.category_name == "健康・医療" %}
-    <a href="{{ '/' | relative_url }}" class="f7 gray">← ホームに戻る</a>
+    <a href="/" class="btn-back">← ホームに戻る</a>
   {% else %}
-    <a href="{{ '/posts/' | relative_url }}" class="f7 gray">← 検索ページに戻る</a>
+    <a href="/search-50on/" class="btn-back">← 50音検索に戻る</a>
   {% endif %}
 </div>
