@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 50音検索
+permalink: /search-50on/
 ---
 {% include breadcrumb.html %}
 
@@ -9,15 +10,12 @@ title: 50音検索
 </header>
 
 <div class="ph2">
-  <p class="tc gray f7">準備中：あいうえお順で犬種を表示します</p>
-  
-  <div class="mw7 center">
-    {% assign all_posts = site.posts | sort: "title" %}
-    {% for post in all_posts %}
-    <div class="w-100 mb2">
-      <a href="{{ post.url | relative_url }}" class="db ba br2 b--black-10 pa3 bg-white shadow-4 no-underline black flex items-center justify-between">
-        <span class="fw6">{{ post.title }}</span>
-        <span class="gray f7">＞</span>
+  <div class="flex flex-wrap ph1">
+    {% assign rows = "あ行,か行,さ行,た行,な行,は行,ま行,や行,ら行,わ行" | split: "," %}
+    {% for row in rows %}
+    <div class="w-50 pa2">
+      <a href="{{ '/categories/' | append: row | append: '/' | relative_url }}" class="db ba br3 b--black-10 pa4 bg-white shadow-4 tc no-underline h-100 flex items-center justify-center hover-bg-gold">
+        <h2 class="f3 black ma0 fw6">{{ row }}</h2>
       </a>
     </div>
     {% endfor %}
