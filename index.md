@@ -18,6 +18,8 @@ title: ホーム
         {% assign link = '/posts/' %}
       {% elsif cat == "年齢診断" or cat == "食事" or cat == "健康・医療" %}
         {% assign link = '/health-check/' %}
+      {% elsif cat == "しつけ" %}
+        {% assign link = '/categories/しつけ/' %}
       {% else %}
         {% assign link = '#' %}
       {% endif %}
