@@ -6,7 +6,6 @@ permalink: /dog-search/
 {% include breadcrumb.html %}
 
 <style>
-/* iPhone向けの清潔感あるデザイン */
 .sub-header {
   text-align: center;
   padding: 20px 0;
@@ -24,7 +23,7 @@ permalink: /dog-search/
   background: #fff;
   border: 1px solid #eee;
   border-radius: 12px;
-  padding: 15px 20px;
+  padding: 16px 20px;
   text-decoration: none;
   color: #333;
   font-weight: bold;
@@ -34,7 +33,12 @@ permalink: /dog-search/
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 .sub-card:active { background: #f0f0f0; }
-.search-50-card { background: #fff9db; border-color: #fab005; }
+/* 50音検索を目立たせる */
+.search-50-card {
+  background: #e7f5ff;
+  border-color: #a5d8ff;
+  margin-bottom: 5px;
+}
 </style>
 
 <div class="sub-header">
