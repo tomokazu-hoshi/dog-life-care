@@ -1,15 +1,16 @@
 # サイトの基本設定
 title: "犬種図鑑"
 description: "iPhoneで作成中の犬種サイト"
-remote_theme: pages-themes/primer@v0.2.0
+# バージョン指定を外して最新版を使うように修正しました
+remote_theme: pages-themes/primer
 
-# ビルド設定（処理を安定させます）
+# ビルド設定
 encoding: "utf-8"
 markdown: kramdown
 highlighter: rouge
 incremental: false
 
-# 除外設定（不要なファイルを読み込まないようにしてエラーを防ぐ）
+# 除外設定
 exclude:
   - Gemfile
   - Gemfile.lock
