@@ -10,24 +10,17 @@ permalink: /Search-50on/
     display: none !important; 
   }
 
+  /* 2. 全体デザイン */
   body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background-color: #f6f8fa; margin: 0; padding: 0; }
-
-  /* 2. ヘッダー（トップページと共通のデザイン） */
-  .custom-header { 
-    background: white; 
-    padding: 15px 0; 
-    text-align: center; 
-    border-bottom: 3px solid orange; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-  }
-  .custom-logo { font-size: 24px; margin-right: 10px; }
+  
+  /* オレンジのヘッダー */
+  .custom-header { background: white; padding: 15px 0; text-align: center; border-bottom: 3px solid orange; display: flex; align-items: center; justify-content: center; }
+  .custom-logo { font-size: 22px; margin-right: 8px; }
   .custom-title { font-size: 20px; font-weight: bold; color: orange; margin: 0; }
 
-  .section-title { text-align: center; font-size: 18px; font-weight: bold; margin: 25px 0 15px; color: #333 !important; }
+  .section-title { text-align: center; font-size: 18px; font-weight: bold; margin: 25px 0 15px; color: #333; }
 
-  /* 3. 横長カード（文字の色を強制的に黒にする） */
+  /* 横長ボタン（カード） */
   .container { padding: 0 15px 40px; }
   .list-card { 
     display: flex; 
@@ -35,24 +28,18 @@ permalink: /Search-50on/
     background: white; 
     border-radius: 15px; 
     box-shadow: 0 4px 10px rgba(0,0,0,0.08); 
-    margin-bottom: 12px; 
-    padding: 18px 20px; 
+    margin-bottom: 10px; 
+    padding: 15px 20px; 
     text-decoration: none; 
-    color: #333 !important; /* 文字の色を強制的に黒に */
+    color: #333; 
   }
-  .card-text { 
-    font-size: 16px; 
-    font-weight: bold; 
-    flex: 1; 
-    text-align: center; 
-    color: #333 !important; /* ここも念のため強制 */
-  }
-  .card-arrow { color: orange !important; font-weight: bold; }
+  .card-text { font-size: 16px; font-weight: bold; flex: 1; text-align: center; }
+  .card-arrow { color: orange; font-weight: bold; }
 </style>
 
 <div class="custom-header">
-  <span class="custom-logo">🐶</span>
-  <div class="custom-title">ワンライフ・ナビ</div>
+  <span class="custom-logo">🔤</span>
+  <div class="custom-title">50音検索</div>
 </div>
 
 <div class="section-title">行を選んでください</div>
