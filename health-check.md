@@ -3,7 +3,6 @@ layout: default
 title: 健康チェックツール
 permalink: /health-check/
 ---
-{% include breadcrumb.html %}
 
 <header class="tc pv3 bg-white br3 shadow-4 mb3">
   <h1 class="f3 fw9 black">健康チェックツール</h1>
@@ -72,12 +71,11 @@ permalink: /health-check/
         <p class="f8 gray mt2 lh-copy">※おやつをあげた分、主食（フード）の量を減らして調整してください。</p>
       </div>
     </div>
-    <p class="f8 gray mt3 tc">計算式: $70 \times (\text{体重})^{0.75} \times \text{係数}$</p>
+    <p class="f8 gray mt3 tc">計算式: 70 × (体重)^0.75 × 係数</p>
   </section>
 </div>
 
 <script>
-// 1. 年齢診断
 function calcAge() {
   const size = document.getElementById('dogSize').value;
   const age = parseFloat(document.getElementById('dogAge').value);
@@ -86,26 +84,19 @@ function calcAge() {
   document.getElementById('ageResult').innerText = "人間なら約 " + humanAge + " 歳です";
 }
 
-// 2. 肥満度
 function checkObesity() {
   const bcs = document.getElementById('bcsSelect').value;
-  const msgs = ["", "【痩せすぎ】至急、食事改善や健康診断を検討してください。", "【やや痩せ型】もう少しお肉がついても大丈夫です。", "【理想的】素晴らしい！この体型を維持しましょう。", "【太り気味】おやつを減らし、適度な運動を心がけてください。", "【肥満】関節への負担が大きいです。獣医師とダイエット計画を！"];
+  const msgs = ["", "【痩せすぎ】至急、食事改善や健康診断を検討してください。", "【やや痩せ型】もう少しお肉がついても大丈夫です。", "【理想的】素晴らしい！この体型を維持しましょう。", "【太り気味】おやつを減らし、適度な運動を心がけてください。", "【肥満】関節への負担が大きいです。"];
   document.getElementById('bcsResult').innerText = msgs[bcs];
 }
 
-// 3. カロリー ＆ おやつ一括計算
 function calcAll() {
   const w = parseFloat(document.getElementById('weight').value);
   const factor = parseFloat(document.getElementById('status').value);
   if(!w) return;
-  
-  // 必要カロリー (DER)
   const rer = 70 * Math.pow(w, 0.75);
   const der = Math.round(rer * factor);
-  
-  // おやつ上限 (10%)
   const snackLimit = Math.round(der * 0.1);
-  
   document.getElementById('calResult').innerText = der + " kcal";
   document.getElementById('snackResult').innerText = snackLimit + " kcal";
 }
