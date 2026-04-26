@@ -1,26 +1,24 @@
 ---
 layout: default
 title: 50音検索
-permalink: /search-50on/
+permalink: /Search-50on/
 ---
-<style>
-.search-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 15px; }
-.search-card { background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 20px 10px; text-align: center; text-decoration: none; color: #333; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-</style>
 
-<div class="search-grid">
-  <a href="{{ '/あ行/' | relative_url }}" class="search-card">あ行</a>
-  <a href="{{ '/か行/' | relative_url }}" class="search-card">か行</a>
-  <a href="{{ '/さ行/' | relative_url }}" class="search-card">さ行</a>
-  <a href="{{ '/た行/' | relative_url }}" class="search-card">た行</a>
-  <a href="{{ '/な行/' | relative_url }}" class="search-card">な行</a>
-  <a href="{{ '/は行/' | relative_url }}" class="search-card">は行</a>
-  <a href="{{ '/ま行/' | relative_url }}" class="search-card">ま行</a>
-  <a href="{{ '/や行/' | relative_url }}" class="search-card">や行</a>
-  <a href="{{ '/ら行/' | relative_url }}" class="search-card">ら行</a>
-  <a href="{{ '/わ行/' | relative_url }}" class="search-card">わ行</a>
+<header class="tc pv3">
+  <h1 class="f3 fw9">🔤 50音検索</h1>
+  <p class="f7 gray">行を選んでください</p>
+</header>
+
+<div class="ph2">
+  {% assign lines = "あ行,か行,さ行,た行,な行,は行,ま行,や行,ら行,わ行" | split: "," %}
+  {% for line in lines %}
+    <a href="{{ '/list/?cat=' | append: line | relative_url }}" class="flex items-center no-underline black bg-white br2 pa3 shadow-2 mb2 dim">
+      <span class="f5 fw6 flex-auto tc">{{ line }}</span>
+      <span class="silver">▶</span>
+    </a>
+  {% endfor %}
 </div>
 
-<div style="text-align: center; margin-top: 30px;">
-  <a href="{{ '/dog-search/' | relative_url }}" style="color: #888; text-decoration: none; font-size: 0.9rem;">← 犬種図鑑に戻る</a>
+<div class="tc pv4">
+  <a href="{{ '/dog-search/' | relative_url }}" class="f7 gray">← 検索に戻る</a>
 </div>
