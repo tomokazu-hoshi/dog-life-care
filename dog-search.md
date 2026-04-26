@@ -5,9 +5,8 @@ permalink: /dog-search/
 ---
 
 <style>
-  /* 共通デザイン：ヘッダーと背景 */
   body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background-color: #f6f8fa; margin: 0; padding: 0; }
-  header.site-header, .site-header, .page-title, h1:first-of-type { display: none !important; }
+  header.site-header, .site-header, .page-title, h1:first-of-type, .main-content h1:first-child { display: none !important; }
 
   .custom-header { background: white; padding: 15px 0; text-align: center; border-bottom: 3px solid orange; display: flex; align-items: center; justify-content: center; }
   .custom-logo { font-size: 22px; margin-right: 8px; }
@@ -15,7 +14,6 @@ permalink: /dog-search/
 
   .section-title { text-align: center; font-size: 18px; font-weight: bold; margin: 25px 0 15px; color: #333; }
 
-  /* 横長カードのデザイン */
   .container { padding: 0 15px 40px; }
   .list-card { 
     display: flex; 
@@ -27,9 +25,7 @@ permalink: /dog-search/
     padding: 15px 20px; 
     text-decoration: none; 
     color: #333;
-    transition: 0.2s;
   }
-  .list-card:active { transform: scale(0.98); background-color: #fff9f0; }
   .card-icon { font-size: 24px; margin-right: 15px; width: 30px; text-align: center; }
   .card-text { font-size: 15px; font-weight: bold; flex: 1; }
   .card-arrow { color: orange; font-weight: bold; }
@@ -44,11 +40,8 @@ permalink: /dog-search/
 
 <div class="container">
   <a href="{{ '/Search-50on/' | relative_url }}" class="list-card">
-    <span class="card-icon">🔤</span>
-    <span class="card-text">50音検索</span>
-    <span class="card-arrow">▶</span>
+    <span class="card-icon">🔤</span><span class="card-text">50音検索</span><span class="card-arrow">▶</span>
   </a>
-
   <a href="{{ '/list/?cat=牧羊犬・牧畜犬' | relative_url }}" class="list-card"><span class="card-icon">🐑</span><span class="card-text">牧羊犬・牧畜犬</span><span class="card-arrow">▶</span></a>
   <a href="{{ '/list/?cat=使役犬' | relative_url }}" class="list-card"><span class="card-icon">🛡️</span><span class="card-text">使役犬</span><span class="card-arrow">▶</span></a>
   <a href="{{ '/list/?cat=テリア' | relative_url }}" class="list-card"><span class="card-icon">🐀</span><span class="card-text">テリア</span><span class="card-arrow">▶</span></a>
@@ -63,5 +56,5 @@ permalink: /dog-search/
 </div>
 
 <div style="text-align: center; padding-bottom: 40px;">
-  <a href="{{ '/' | relative_url }}" style="color: #888; font-size: 14px; text-decoration: none;">← ホームに戻る</a>
+  <a href="{{ '/' | relative_url }}" style="color: #888; text-decoration: none;">← ホームに戻る</a>
 </div>
