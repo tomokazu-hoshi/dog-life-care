@@ -1,18 +1,15 @@
 # サイトの基本設定
 title: "犬種図鑑"
-description: "犬種の特徴をまとめた図鑑サイトです"
+description: "iPhoneで作成中の犬種サイト"
 remote_theme: pages-themes/primer@v0.2.0
 
-# ビルド設定
+# ビルド設定（処理を安定させます）
 encoding: "utf-8"
 markdown: kramdown
 highlighter: rouge
 incremental: false
 
-# 記事のURL設定
-permalink: /posts/:title/
-
-# 除外設定（ビルドを軽くし、エラーを防ぐために必須）
+# 除外設定（不要なファイルを読み込まないようにしてエラーを防ぐ）
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -22,7 +19,7 @@ exclude:
   - .jekyll-metadata
   - README.md
 
-# プラグイン（GitHub Pages標準）
+# プラグイン
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
