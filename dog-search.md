@@ -6,67 +6,91 @@ permalink: /dog-search/
 
 # 🐕 犬種図鑑・検索
 
-調べたいカテゴリーをタップすると、該当する犬種が表示されます。
+※記事が表示されない場合は、各記事の冒頭に正しい「タグ」がついているか確認してください。
 
 ## 🔤 50音検索
-{% for post in site.tags["50音検索"] %}
-- [{{ post.title }}]({{ post.url | relative_url }})
-{% endfor %}
+<ul>
+  {% for post in site.tags["50音検索"] %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
 
 ## 🐑 牧羊犬・牧畜犬
-{% for post in site.tags["牧羊犬・牧畜犬"] %}
-- [{{ post.title }}]({{ post.url | relative_url }})
-{% endfor %}
+<ul>
+  {% for post in site.tags["牧羊犬・牧畜犬"] %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
 
 ## 🛡️ 使役犬
-{% for post in site.tags["使役犬"] %}
-- [{{ post.title }}]({{ post.url | relative_url }})
-{% endfor %}
+<ul>
+  {% for post in site.tags["使役犬"] %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
 
 ## 🐀 テリア
-{% for post in site.tags["テリア"] %}
-- [{{ post.title }}]({{ post.url | relative_url }})
-{% endfor %}
+<ul>
+  {% for post in site.tags["テリア"] %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
 
 ## 🌭 ダックスフンド
-{% for post in site.tags["ダックスフンド"] %}
-- [{{ post.title }}]({{ post.url | relative_url }})
-{% endfor %}
+<ul>
+  {% for post in site.tags["ダックスフンド"] %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
 
 ## 🐕 原始的な犬・スピッツ
-{% for post in site.tags["原始的な犬・スピッツ"] %}
-- [{{ post.title }}]({{ post.url | relative_url }})
-{% endfor %}
+<ul>
+  {% for post in site.tags["原始的な犬・スピッツ"] %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
 
 ## 👃 嗅覚ハウンド
-{% for post in site.tags["嗅覚ハウンド"] %}
-- [{{ post.title }}]({{ post.url | relative_url }})
-{% endfor %}
+<ul>
+  {% for post in site.tags["嗅覚ハウンド"] %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
 
 ## 🏹 ポインター・セター
-{% for post in site.tags["ポインター・セター"] %}
-- [{{ post.title }}]({{ post.url | relative_url }})
-{% endfor %}
+<ul>
+  {% for post in site.tags["ポインター・セター"] %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
 
 ## 🦆 鳥猟犬（回収・追い出し）
-{% for post in site.tags["鳥猟犬"] %}
-- [{{ post.title }}]({{ post.url | relative_url }})
-{% endfor %}
+<ul>
+  {% for post in site.tags["鳥猟犬"] %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
 
 ## 🎀 愛玩犬
-{% for post in site.tags["愛玩犬"] %}
-- [{{ post.title }}]({{ post.url | relative_url }})
-{% endfor %}
+<ul>
+  {% for post in site.tags["愛玩犬"] %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
 
 ## 🏎️ 視覚ハウンド
-{% for post in site.tags["視覚ハウンド"] %}
-- [{{ post.title }}]({{ post.url | relative_url }})
-{% endfor %}
+<ul>
+  {% for post in site.tags["視覚ハウンド"] %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
 
 ## 📦 その他
-{% for post in site.tags["その他"] %}
-- [{{ post.title }}]({{ post.url | relative_url }})
-{% endfor %}
+<ul>
+  {% for post in site.tags["その他"] %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
 
 ---
 [🏠 ホームに戻る]({{ '/' | relative_url }})
