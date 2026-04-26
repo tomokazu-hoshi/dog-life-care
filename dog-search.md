@@ -4,85 +4,64 @@ title: 犬種図鑑 検索
 permalink: /dog-search/
 ---
 
-<header class="tc pv3">
-  <h1 class="f3 fw9">🐕 犬種図鑑</h1>
-  <p class="f7 gray">カテゴリーを選んでください</p>
-</header>
+<style>
+  /* 共通デザイン：ヘッダーと背景 */
+  body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background-color: #f6f8fa; margin: 0; padding: 0; }
+  header.site-header, .site-header, .page-title, h1:first-of-type { display: none !important; }
 
-<div class="ph2">
-  <a href="{{ '/Search-50on/' | relative_url }}" class="flex items-center no-underline black bg-white br3 pa3 shadow-4 mb3 dim">
-    <span class="f2 mr3">🔤</span>
-    <span class="f5 fw6 flex-auto">50音検索</span>
-    <span class="silver">▶</span>
-  </a>
+  .custom-header { background: white; padding: 15px 0; text-align: center; border-bottom: 3px solid orange; display: flex; align-items: center; justify-content: center; }
+  .custom-logo { font-size: 22px; margin-right: 8px; }
+  .custom-title { font-size: 20px; font-weight: bold; color: orange; margin: 0; }
 
-  <a href="{{ '/list/?cat=牧羊犬・牧畜犬' | relative_url }}" class="flex items-center no-underline black bg-white br3 pa3 shadow-4 mb3 dim">
-    <span class="f2 mr3">🐑</span>
-    <span class="f5 fw6 flex-auto">牧羊犬・牧畜犬</span>
-    <span class="silver">▶</span>
-  </a>
+  .section-title { text-align: center; font-size: 18px; font-weight: bold; margin: 25px 0 15px; color: #333; }
 
-  <a href="{{ '/list/?cat=使役犬' | relative_url }}" class="flex items-center no-underline black bg-white br3 pa3 shadow-4 mb3 dim">
-    <span class="f2 mr3">🛡️</span>
-    <span class="f5 fw6 flex-auto">使役犬</span>
-    <span class="silver">▶</span>
-  </a>
+  /* 横長カードのデザイン */
+  .container { padding: 0 15px 40px; }
+  .list-card { 
+    display: flex; 
+    align-items: center; 
+    background: white; 
+    border-radius: 15px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08); 
+    margin-bottom: 12px; 
+    padding: 15px 20px; 
+    text-decoration: none; 
+    color: #333;
+    transition: 0.2s;
+  }
+  .list-card:active { transform: scale(0.98); background-color: #fff9f0; }
+  .card-icon { font-size: 24px; margin-right: 15px; width: 30px; text-align: center; }
+  .card-text { font-size: 15px; font-weight: bold; flex: 1; }
+  .card-arrow { color: orange; font-weight: bold; }
+</style>
 
-  <a href="{{ '/list/?cat=テリア' | relative_url }}" class="flex items-center no-underline black bg-white br3 pa3 shadow-4 mb3 dim">
-    <span class="f2 mr3">🐀</span>
-    <span class="f5 fw6 flex-auto">テリア</span>
-    <span class="silver">▶</span>
-  </a>
-
-  <a href="{{ '/list/?cat=ダックスフンド' | relative_url }}" class="flex items-center no-underline black bg-white br3 pa3 shadow-4 mb3 dim">
-    <span class="f2 mr3">🌭</span>
-    <span class="f5 fw6 flex-auto">ダックスフンド</span>
-    <span class="silver">▶</span>
-  </a>
-
-  <a href="{{ '/list/?cat=原始的な犬・スピッツ' | relative_url }}" class="flex items-center no-underline black bg-white br3 pa3 shadow-4 mb3 dim">
-    <span class="f2 mr3">🐕</span>
-    <span class="f5 fw6 flex-auto">原始的な犬・スピッツ</span>
-    <span class="silver">▶</span>
-  </a>
-
-  <a href="{{ '/list/?cat=嗅覚ハウンド' | relative_url }}" class="flex items-center no-underline black bg-white br3 pa3 shadow-4 mb3 dim">
-    <span class="f2 mr3">👃</span>
-    <span class="f5 fw6 flex-auto">嗅覚ハウンド</span>
-    <span class="silver">▶</span>
-  </a>
-
-  <a href="{{ '/list/?cat=ポインター・セター' | relative_url }}" class="flex items-center no-underline black bg-white br3 pa3 shadow-4 mb3 dim">
-    <span class="f2 mr3">🏹</span>
-    <span class="f5 fw6 flex-auto">ポインター・セター</span>
-    <span class="silver">▶</span>
-  </a>
-
-  <a href="{{ '/list/?cat=鳥猟犬' | relative_url }}" class="flex items-center no-underline black bg-white br3 pa3 shadow-4 mb3 dim">
-    <span class="f2 mr3">🦆</span>
-    <span class="f5 fw6 flex-auto">鳥猟犬（回収・追い出し）</span>
-    <span class="silver">▶</span>
-  </a>
-
-  <a href="{{ '/list/?cat=愛玩犬' | relative_url }}" class="flex items-center no-underline black bg-white br3 pa3 shadow-4 mb3 dim">
-    <span class="f2 mr3">🎀</span>
-    <span class="f5 fw6 flex-auto">愛玩犬</span>
-    <span class="silver">▶</span>
-  </a>
-
-  <a href="{{ '/list/?cat=視覚ハウンド' | relative_url }}" class="flex items-center no-underline black bg-white br3 pa3 shadow-4 mb3 dim">
-    <span class="f2 mr3">🏎️</span>
-    <span class="f5 fw6 flex-auto">視覚ハウンド</span>
-    <span class="silver">▶</span>
-  </a>
-
-  <a href="{{ '/list/?cat=その他' | relative_url }}" class="flex items-center no-underline black bg-white br3 pa3 shadow-4 mb3 dim">
-    <span class="f2 mr3">📦</span>
-    <span class="f5 fw6 flex-auto">その他</span>
-    <span class="silver">▶</span>
-  </a>
+<div class="custom-header">
+  <span class="custom-logo">🐶</span>
+  <div class="custom-title">ワンライフ・ナビ</div>
 </div>
 
-<div class="tc pv4">
-  <a href="{{ '/' | relative_url }}" class="f7 gray">← ホームに戻る</a>
+<div class="section-title">犬種図鑑・グループ検索</div>
+
+<div class="container">
+  <a href="{{ '/Search-50on/' | relative_url }}" class="list-card">
+    <span class="card-icon">🔤</span>
+    <span class="card-text">50音検索</span>
+    <span class="card-arrow">▶</span>
+  </a>
+
+  <a href="{{ '/list/?cat=牧羊犬・牧畜犬' | relative_url }}" class="list-card"><span class="card-icon">🐑</span><span class="card-text">牧羊犬・牧畜犬</span><span class="card-arrow">▶</span></a>
+  <a href="{{ '/list/?cat=使役犬' | relative_url }}" class="list-card"><span class="card-icon">🛡️</span><span class="card-text">使役犬</span><span class="card-arrow">▶</span></a>
+  <a href="{{ '/list/?cat=テリア' | relative_url }}" class="list-card"><span class="card-icon">🐀</span><span class="card-text">テリア</span><span class="card-arrow">▶</span></a>
+  <a href="{{ '/list/?cat=ダックスフンド' | relative_url }}" class="list-card"><span class="card-icon">🌭</span><span class="card-text">ダックスフンド</span><span class="card-arrow">▶</span></a>
+  <a href="{{ '/list/?cat=原始的な犬・スピッツ' | relative_url }}" class="list-card"><span class="card-icon">🐕</span><span class="card-text">原始的な犬・スピッツ</span><span class="card-arrow">▶</span></a>
+  <a href="{{ '/list/?cat=嗅覚ハウンド' | relative_url }}" class="list-card"><span class="card-icon">👃</span><span class="card-text">嗅覚ハウンド</span><span class="card-arrow">▶</span></a>
+  <a href="{{ '/list/?cat=ポインター・セター' | relative_url }}" class="list-card"><span class="card-icon">🏹</span><span class="card-text">ポインター・セター</span><span class="card-arrow">▶</span></a>
+  <a href="{{ '/list/?cat=鳥猟犬' | relative_url }}" class="list-card"><span class="card-icon">🦆</span><span class="card-text">鳥猟犬（回収・追い出し）</span><span class="card-arrow">▶</span></a>
+  <a href="{{ '/list/?cat=愛玩犬' | relative_url }}" class="list-card"><span class="card-icon">🎀</span><span class="card-text">愛玩犬</span><span class="card-arrow">▶</span></a>
+  <a href="{{ '/list/?cat=視覚ハウンド' | relative_url }}" class="list-card"><span class="card-icon">🏎️</span><span class="card-text">視覚ハウンド</span><span class="card-arrow">▶</span></a>
+  <a href="{{ '/list/?cat=その他' | relative_url }}" class="list-card"><span class="card-icon">📦</span><span class="card-text">その他</span><span class="card-arrow">▶</span></a>
+</div>
+
+<div style="text-align: center; padding-bottom: 40px;">
+  <a href="{{ '/' | relative_url }}" style="color: #888; font-size: 14px; text-decoration: none;">← ホームに戻る</a>
 </div>
