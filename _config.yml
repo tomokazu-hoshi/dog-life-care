@@ -1,9 +1,39 @@
-# GitHubのリポジトリ名を必ず指定します
-baseurl: "/dog-life-care"
-url: "https://tomokazu-hoshi.github.io"
+# サイト基本情報
+title: "犬種図鑑（仮）"
+description: "世界中の犬種を詳しく解説するサイトです"
+remote_theme: pages-themes/primer@v0.2.0
 
-# リンクの形式を「カテゴリー/タイトル」に固定
-permalink: /categories/:title/
+# ビルド設定
+encoding: "utf-8"
+markdown: kramdown
+highlighter: rouge
+incremental: false
 
-# 50音ファイルを読み込むための設定
-include: [".nojekyll"]
+# プラグイン設定（GitHub Pagesで推奨される最小構成）
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-gist
+
+# 読み込み除外設定（ここが重要です）
+# ビルドに関係ないファイルを除外してメモリ消費を抑えます
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .jekyll-cache
+  - .jekyll-metadata
+  - README.md
+
+# 記事の設定
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
