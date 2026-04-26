@@ -1,31 +1,36 @@
-# サイト基本情報
-title: "犬種図鑑（仮）"
-description: "世界中の犬種を詳しく解説するサイトです"
-
-# テーマ設定（remote_themeではなく、標準のtheme指定に戻します）
-theme: jekyll-theme-primer
+# サイトの基本設定
+title: "犬種図鑑"
+description: "犬種の特徴をまとめた図鑑サイトです"
+remote_theme: pages-themes/primer@v0.2.0
 
 # ビルド設定
 encoding: "utf-8"
 markdown: kramdown
 highlighter: rouge
+incremental: false
 
-# プラグイン設定（GitHub Pagesが標準サポートしているものに絞ります）
-plugins:
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-paginate
-  - jekyll-gist
+# 記事のURL設定
+permalink: /posts/:title/
 
-# 読み込み除外設定（不要なファイルを読み込まないようにします）
+# 除外設定（ビルドを軽くし、エラーを防ぐために必須）
 exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-  - .jekyll-cache
+  - vendor/
+  - .jekyll-cache/
   - .jekyll-metadata
   - README.md
+
+# プラグイン（GitHub Pages標準）
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# 記事のデフォルト設定
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
