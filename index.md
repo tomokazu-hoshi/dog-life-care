@@ -30,8 +30,11 @@ title: ワンライフ・ナビ
 <div class="hero">
   <img src="{{ '/my-dog.PNG' | relative_url }}" class="hero-img" alt="">
   <div class="hero-text">
-    <div class="h-main">愛犬との時間を、<br>もっと最高に。</div>
-    <div class="h-sub">愛犬との生活を、より豊かで健康に。<br>飼い主さんと愛犬の幸せを応援する総合ガイド</div>
+    <div class="h-main">愛犬との時間を、<br>もっと最高に.</div>
+    <div class="h-sub">
+      愛犬との生活を、より豊かで健康に。<br>
+      飼い主さんと愛犬の幸せを応援する総合ガイド
+    </div>
   </div>
 </div>
 
