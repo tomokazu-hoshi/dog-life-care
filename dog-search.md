@@ -5,45 +5,52 @@ permalink: /dog-search/
 ---
 
 <style>
-  /* 1. テーマ独自のタイトルなどを強制的に消す（トップページと同じ設定） */
+  /* 1. 不要なタイトルを強制的に非表示 */
   header.site-header, .site-header, .page-title, h1:first-of-type, .main-content h1:first-child { 
     display: none !important; 
   }
 
-  /* 2. 全体のデザイン設定 */
   body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background-color: #f6f8fa; margin: 0; padding: 0; }
   
-  /* 3. オレンジ色のヘッダー */
+  /* 2. オレンジのヘッダー */
   .custom-header { 
-    background: white; 
-    padding: 18px 0; 
-    text-align: center; 
-    border-bottom: 3px solid orange; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
+    background: white; padding: 18px 0; text-align: center; border-bottom: 3px solid orange; 
+    display: flex; align-items: center; justify-content: center;
   }
   .custom-logo { font-size: 22px; margin-right: 8px; }
   .custom-title { font-size: 20px; font-weight: bold; color: orange; margin: 0; }
 
-  /* 4. 横長カードのデザイン（iPhoneで押しやすい） */
-  .container { padding: 20px 15px 40px; }
-  .list-card { 
-    display: flex; 
-    align-items: center; 
+  .section-title { text-align: center; font-size: 18px; font-weight: bold; margin: 25px 0 15px; color: #333; }
+
+  /* 3. 【2列 × 6行】のグリッドレイアウト */
+  .grid-container { 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); /* 横に2つ並べる */
+    gap: 12px; /* ボタン同士の隙間 */
+    padding: 0 15px 50px; 
+    max-width: 400px; 
+    margin: 0 auto; /* 画面中央に配置 */
+  }
+
+  .grid-card { 
     background: white; 
     border-radius: 15px; 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08); 
-    margin-bottom: 12px; 
-    padding: 16px 20px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+    padding: 20px 5px; 
     text-decoration: none; 
     color: #333; 
-    transition: 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eee;
   }
-  .list-card:active { background-color: #fff9f0; transform: scale(0.98); }
-  .card-icon { font-size: 24px; margin-right: 15px; width: 30px; text-align: center; }
-  .card-text { font-size: 15px; font-weight: bold; flex: 1; }
-  .card-arrow { color: orange; font-weight: bold; font-size: 14px; }
+  
+  .grid-card:active { background-color: #fff9f0; transform: scale(0.95); }
+
+  .card-icon { font-size: 28px; margin-bottom: 8px; }
+  .card-text { font-size: 13px; font-weight: bold; text-align: center; line-height: 1.3; }
+
 </style>
 
 <div class="custom-header">
@@ -51,77 +58,67 @@ permalink: /dog-search/
   <div class="custom-title">ワンライフ・ナビ</div>
 </div>
 
-<div class="container">
-  <a href="{{ '/Search-50on/' | relative_url }}" class="list-card">
+<div class="section-title">カテゴリーから探す</div>
+
+<div class="grid-container">
+  <a href="{{ '/Search-50on/' | relative_url }}" class="grid-card">
     <span class="card-icon">🔤</span>
     <span class="card-text">50音検索</span>
-    <span class="card-arrow">▶</span>
   </a>
 
-  <a href="{{ '/list/?cat=牧羊犬・牧畜犬' | relative_url }}" class="list-card">
+  <a href="{{ '/list/?cat=牧羊犬・牧畜犬' | relative_url }}" class="grid-card">
     <span class="card-icon">🐑</span>
     <span class="card-text">牧羊犬・牧畜犬</span>
-    <span class="card-arrow">▶</span>
   </a>
 
-  <a href="{{ '/list/?cat=使役犬' | relative_url }}" class="list-card">
+  <a href="{{ '/list/?cat=使役犬' | relative_url }}" class="grid-card">
     <span class="card-icon">🛡️</span>
     <span class="card-text">使役犬</span>
-    <span class="card-arrow">▶</span>
   </a>
 
-  <a href="{{ '/list/?cat=テリア' | relative_url }}" class="list-card">
+  <a href="{{ '/list/?cat=テリア' | relative_url }}" class="grid-card">
     <span class="card-icon">🐀</span>
     <span class="card-text">テリア</span>
-    <span class="card-arrow">▶</span>
   </a>
 
-  <a href="{{ '/list/?cat=ダックスフンド' | relative_url }}" class="list-card">
+  <a href="{{ '/list/?cat=ダックスフンド' | relative_url }}" class="grid-card">
     <span class="card-icon">🌭</span>
     <span class="card-text">ダックスフンド</span>
-    <span class="card-arrow">▶</span>
   </a>
 
-  <a href="{{ '/list/?cat=原始的な犬・スピッツ' | relative_url }}" class="list-card">
+  <a href="{{ '/list/?cat=原始的な犬・スピッツ' | relative_url }}" class="grid-card">
     <span class="card-icon">🐕</span>
     <span class="card-text">原始的な犬・スピッツ</span>
-    <span class="card-arrow">▶</span>
   </a>
 
-  <a href="{{ '/list/?cat=嗅覚ハウンド' | relative_url }}" class="list-card">
+  <a href="{{ '/list/?cat=嗅覚ハウンド' | relative_url }}" class="grid-card">
     <span class="card-icon">👃</span>
     <span class="card-text">嗅覚ハウンド</span>
-    <span class="card-arrow">▶</span>
   </a>
 
-  <a href="{{ '/list/?cat=ポインター・セター' | relative_url }}" class="list-card">
+  <a href="{{ '/list/?cat=ポインター・セター' | relative_url }}" class="grid-card">
     <span class="card-icon">🏹</span>
     <span class="card-text">ポインター・セター</span>
-    <span class="card-arrow">▶</span>
   </a>
 
-  <a href="{{ '/list/?cat=鳥猟犬' | relative_url }}" class="list-card">
+  <a href="{{ '/list/?cat=鳥猟犬' | relative_url }}" class="grid-card">
     <span class="card-icon">🦆</span>
-    <span class="card-text">鳥猟犬（回収・追い出し）</span>
-    <span class="card-arrow">▶</span>
+    <span class="card-text">鳥猟犬<br>(回収・追い出し)</span>
   </a>
 
-  <a href="{{ '/list/?cat=愛玩犬' | relative_url }}" class="list-card">
+  <a href="{{ '/list/?cat=愛玩犬' | relative_url }}" class="grid-card">
     <span class="card-icon">🎀</span>
     <span class="card-text">愛玩犬</span>
-    <span class="card-arrow">▶</span>
   </a>
 
-  <a href="{{ '/list/?cat=視覚ハウンド' | relative_url }}" class="list-card">
+  <a href="{{ '/list/?cat=視覚ハウンド' | relative_url }}" class="grid-card">
     <span class="card-icon">🏎️</span>
     <span class="card-text">視覚ハウンド</span>
-    <span class="card-arrow">▶</span>
   </a>
 
-  <a href="{{ '/list/?cat=その他' | relative_url }}" class="list-card">
+  <a href="{{ '/list/?cat=その他' | relative_url }}" class="grid-card">
     <span class="card-icon">📦</span>
     <span class="card-text">その他</span>
-    <span class="card-arrow">▶</span>
   </a>
 </div>
 
