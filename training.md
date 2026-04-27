@@ -18,19 +18,18 @@ permalink: /training/
 
   /* 見出し */
   .section-title { text-align: center; font-size: 22px; font-weight: bold; margin: 30px 0 20px; color: orange; }
-  .article-card { background: white; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); padding: 20px; margin-bottom: 25px; border: 1px solid #eee; }
+  .article-card { background: white; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); padding: 20px; margin-bottom: 30px; border: 1px solid #eee; }
   .article-h2 { font-size: 18px; font-weight: bold; border-left: 5px solid orange; padding-left: 12px; margin-bottom: 15px; color: #333; }
-  .article-text { font-size: 14px; line-height: 1.6; color: #555; margin-bottom: 15px; }
+  
+  /* しつけステップ */
+  .step-box { background: #fdfdfd; border: 1px solid #eee; border-radius: 10px; padding: 15px; margin-top: 10px; }
+  .step-num { color: orange; font-weight: bold; margin-right: 5px; }
+  .point-text { font-size: 14px; line-height: 1.6; color: #444; }
 
-  /* アフィリエイト誘導ボックス */
-  .affiliate-box { background: #fff9f0; border: 1px solid #ffd8a8; border-radius: 10px; padding: 15px; margin-top: 15px; }
-  .aff-label { font-size: 12px; font-weight: bold; color: #d9480f; display: block; margin-bottom: 5px; }
-  .aff-link { display: block; text-align: center; background: linear-gradient(to bottom, #ff9d00, #ff7b00); color: white !important; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: bold; font-size: 14px; box-shadow: 0 4px 0 #d96d00; }
-  .aff-link:active { transform: translateY(2px); box-shadow: 0 2px 0 #d96d00; }
-
-  /* チェックリスト */
-  .check-list { list-style: none; padding: 0; font-size: 14px; margin-bottom: 15px; }
-  .check-list li::before { content: "✅"; margin-right: 8px; }
+  /* アフィリエイト誘導（控えめ） */
+  .support-box { background: #f8f9fa; border: 1px dashed #ced4da; border-radius: 10px; padding: 15px; margin-top: 20px; text-align: center; }
+  .support-title { font-size: 13px; font-weight: bold; color: #666; margin-bottom: 8px; display: block; }
+  .support-link { color: orange; font-size: 14px; font-weight: bold; text-decoration: underline; }
 </style>
 
 <div class="custom-header">
@@ -39,53 +38,57 @@ permalink: /training/
 </div>
 
 <div class="container">
-  <h1 class="section-title">愛犬との絆を深める「しつけ」</h1>
+  <h1 class="section-title">自分でできる！しつけの基本</h1>
 
   <div class="article-card">
-    <h2 class="article-h2">① 失敗しない「トイレ」完全ガイド</h2>
-    <p class="article-text">
-      トイレの失敗は飼い主さんの最大の悩み。ポイントは「叱らないこと」と「成功体験を積み重ねること」です。
-    </p>
-    <ul class="check-list">
-      <li>寝起き・食後のタイミングを見逃さない</li>
-      <li>そわそわし始めたらトイレへ誘導</li>
-      <li>成功したら大げさなくらい褒める！</li>
-    </ul>
-    <div class="affiliate-box">
-      <span class="aff-label">おすすめ：足濡れを防ぐ強力吸収シート</span>
-      <a href="【あなたのアフィリエイトURL】" class="aff-link">人気のトイレ用品をチェック</a>
+    <h2 class="article-h2">① 失敗しない「トイレトレーニング」</h2>
+    <div class="point-text">
+      トイレのしつけは<strong>「失敗させない環境作り」</strong>が9割です。叱っても恐怖心を与えるだけで、隠れてするようになるので逆効果です。
+    </div>
+    
+    <div class="step-box">
+      <p class="point-text"><span class="step-num">Step 1.</span> 寝起きや食後の「そわそわ」を見逃さずトイレへ誘導。</p>
+      <p class="point-text"><span class="step-num">Step 2.</span> トイレの上で成功したら、すかさず「ご褒美」と「最高の褒め」。</p>
+      <p class="point-text"><span class="step-num">Step 3.</span> 失敗しても無言で掃除。ニオイを徹底的に消すのがコツです。</p>
+    </div>
+
+    <div class="support-box">
+      <span class="support-title">どうしても失敗が続く、早く解決したい方へ</span>
+      <a href="【あなたのアフィリエイトURL】" class="support-link">プロが教える最短トイレ成功法を見てみる</a>
     </div>
   </div>
 
   <div class="article-card">
-    <h2 class="article-h2">② 安全を守るための合図</h2>
-    <p class="article-text">
-      「待て」や「おいで」は、単なる芸ではなく、愛犬の命を守るための大切な防衛手段です。
-    </p>
-    <ul class="check-list">
-      <li>「待て」：飛び出しや誤飲を防ぐ</li>
-      <li>「おいで」：脱走や迷子を未然に防ぐ</li>
-      <li>「離せ」：危険なものを飲み込む前に</li>
-    </ul>
-    <div class="affiliate-box">
-      <span class="aff-label">短期間でマスター：プロ推奨のしつけ教材</span>
-      <a href="【あなたのアフィリエイトURL】" class="aff-link">話題のしつけ法を見る</a>
+    <h2 class="article-h2">② 命を守る！安全のための合図</h2>
+    <div class="point-text">
+      「マテ」や「オイデ」は単なる遊びではなく、飛び出しや誤飲から愛犬を守る「命綱」になります。
+    </div>
+
+    <div class="step-box">
+      <p class="point-text"><strong>● マテの練習</strong><br>1秒でも待てたら即褒める！徐々に距離と時間を伸ばしましょう。</p>
+      <p class="point-text"><strong>● オイデの練習</strong><br>「オイデ」と言って来たら、この世で一番楽しいことが起きると思わせるのがコツです。</p>
+    </div>
+
+    <div class="support-box">
+      <span class="support-title">自己流で直らない「吠え」や「噛み癖」にお困りなら</span>
+      <a href="【あなたのアフィリエイトURL】" class="support-link">自宅で学べる専門家のしつけ動画</a>
     </div>
   </div>
 
   <div class="article-card">
     <h2 class="article-h2">③ 社会性と体のケア（ハンドリング）</h2>
-    <p class="article-text">
-      どこを触られても平気な子に育てることは、将来の診察やトリミングでの負担を減らす「最高のプレゼント」です。
-    </p>
-    <ul class="check-list">
-      <li>パピー期からいろんな音や人に慣らす</li>
-      <li>足先や耳、口の中を触る練習（ご褒美を使いながら）</li>
-      <li>ブラッシングを「心地よい時間」にする</li>
-    </ul>
-    <div class="affiliate-box">
-      <span class="aff-label">練習に最適：低カロリーのご褒美おやつ</span>
-      <a href="【あなたのアフィリエイトURL】" class="aff-link">トレーニング用トリーツを探す</a>
+    <div class="point-text">
+      どこを触られても喜ぶ子に育てることで、病気の早期発見や、診察のストレスを減らすことができます。
+    </div>
+
+    <div class="step-box">
+      <p class="point-text"><strong>● 触れ合い練習</strong><br>おやつをあげながら「耳・足先・口・お尻」を1秒ずつ優しく触ります。嫌がる前にやめるのがポイント。</p>
+      <p class="point-text"><strong>● 社会化のコツ</strong><br>パピー期（生後4ヶ月頃まで）に、いろんな音、人、犬と無理のない範囲で出会わせましょう。</p>
+    </div>
+
+    <div class="support-box">
+      <span class="support-title">トレーニングのモチベーション維持に</span>
+      <a href="【あなたのアフィリエイトURL】" class="support-link">しつけに最適な「極小ご褒美おやつ」はこちら</a>
     </div>
   </div>
 
