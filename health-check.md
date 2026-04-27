@@ -5,90 +5,110 @@ permalink: /health-check/
 ---
 
 <style>
-  /* 1. 不要なタイトル（犬種図鑑など）を完全に消す */
+  /* 1. 不要なタイトルを完全に非表示 */
   header.site-header, .site-header, .page-title, h1:first-of-type, .main-content h1:first-child { 
     display: none !important; 
   }
 
-  /* 2. 全体の設定 */
-  body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background-color: #f6f8fa; margin: 0; padding: 0; color: #333; }
+  /* 2. 全機種対応のための基本設定 */
+  * { box-sizing: border-box; } /* パディングが横幅を突き破らないようにする魔法 */
+
+  body { 
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+    background-color: #f6f8fa; 
+    margin: 0; 
+    padding: 0; 
+    color: #333; 
+    overflow-x: hidden; /* 横揺れ防止 */
+  }
   
   /* 3. オレンジのヘッダー */
-  .custom-header { background: white; padding: 20px 0; text-align: center; border-bottom: 3px solid orange; display: flex; align-items: center; justify-content: center; }
-  .custom-logo { font-size: 24px; margin-right: 10px; }
-  .custom-title { font-size: 22px; font-weight: bold; color: orange; margin: 0; }
+  .custom-header { 
+    background: white; 
+    padding: 18px 0; 
+    text-align: center; 
+    border-bottom: 3px solid orange; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    width: 100%;
+  }
+  .custom-logo { font-size: 22px; margin-right: 8px; }
+  .custom-title { font-size: 20px; font-weight: bold; color: orange; margin: 0; }
 
-  /* 4. コンテナとカードのデザイン */
-  .container { padding: 20px 15px 60px; max-width: 500px; margin: 0 auto; }
+  /* 4. 【重要】画面幅に合わせるメインコンテナ */
+  .container { 
+    width: 92%; /* 画面の92%を使う（左右に4%ずつの余裕） */
+    max-width: 400px; /* 大きすぎる画面（iPadなど）でも広がりすぎない */
+    margin: 0 auto; /* 常に真ん中に配置 */
+    padding: 20px 0 60px; 
+  }
   
+  /* 5. カードのデザイン */
   .card { 
     background: white; 
     border-radius: 15px; 
     box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
-    padding: 20px; 
-    margin-bottom: 25px; 
+    padding: 18px; 
+    margin-bottom: 20px; 
     border: 1px solid #eee;
+    width: 100%; /* 親のcontainerに合わせる */
   }
   
   .card-h2 { 
-    font-size: 18px; 
+    font-size: 17px; 
     font-weight: bold; 
     margin-top: 0; 
     margin-bottom: 15px; 
     color: #444; 
     border-left: 4px solid orange; 
     padding-left: 10px;
-    display: flex;
-    align-items: center;
   }
 
-  /* 5. 入力フォーム */
+  /* 6. 入力フォーム（スマホで押しやすい高さ） */
   .form-group { margin-bottom: 15px; }
-  label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 5px; color: #666; }
+  label { display: block; font-size: 12px; font-weight: bold; margin-bottom: 6px; color: #666; }
   
   select, input { 
     width: 100%; 
     padding: 12px; 
     border: 1px solid #ddd; 
-    border-radius: 8px; 
+    border-radius: 10px; 
     font-size: 16px; 
-    box-sizing: border-box; /* iPhoneでの横幅崩れ防止 */
     background: #fafafa;
+    -webkit-appearance: none; /* iPhone独自のスタイルをリセット */
   }
 
-  /* 6. オレンジのボタン */
+  /* 7. ボタン */
   .calc-btn { 
     width: 100%; 
     background: orange; 
     color: white; 
     border: none; 
     padding: 15px; 
-    border-radius: 10px; 
+    border-radius: 12px; 
     font-size: 16px; 
     font-weight: bold; 
     cursor: pointer; 
-    margin-top: 5px;
     box-shadow: 0 4px 0 #e69500;
   }
   .calc-btn:active { transform: translateY(2px); box-shadow: 0 2px 0 #e69500; }
 
-  /* 7. 結果表示エリア */
+  /* 8. 結果表示 */
   .result-area { 
     margin-top: 15px; 
     padding: 15px; 
     background: #fff9f0; 
     border-radius: 10px; 
     text-align: center; 
-    min-height: 20px;
+    display: none; /* 最初は隠す */
   }
-  .result-text { font-size: 18px; font-weight: bold; color: #d9480f; }
+  .result-text { font-size: 17px; font-weight: bold; color: #d9480f; }
   
-  .sub-result { font-size: 13px; color: #666; margin-top: 10px; line-height: 1.5; text-align: left; }
-
-  .kcal-box { display: flex; justify-content: space-around; margin-top: 10px; }
-  .kcal-item { text-align: center; }
-  .kcal-val { display: block; font-size: 22px; font-weight: bold; color: orange; }
-  .kcal-label { font-size: 11px; color: #888; }
+  .kcal-box { display: flex; justify-content: space-around; margin-top: 10px; gap: 10px; }
+  .kcal-item { flex: 1; text-align: center; }
+  .kcal-val { display: block; font-size: 20px; font-weight: bold; color: orange; }
+  .kcal-label { font-size: 10px; color: #888; }
 </style>
 
 <div class="custom-header">
@@ -99,7 +119,7 @@ permalink: /health-check/
 <div class="container">
 
   <section class="card">
-    <h2 class="card-h2">🗓️ 年齢診断（人間換算）</h2>
+    <h2 class="card-h2">🗓️ 年齢診断</h2>
     <div class="form-group">
       <label>犬種サイズ</label>
       <select id="dogSize">
@@ -111,32 +131,32 @@ permalink: /health-check/
       <label>現在の年齢（歳）</label>
       <input type="number" id="dogAge" placeholder="例: 5" inputmode="numeric">
     </div>
-    <button onclick="calcAge()" class="calc-btn">診断結果を見る</button>
-    <div class="result-area" id="ageResultBox" style="display:none;">
+    <button onclick="calcAge()" class="calc-btn">人間なら何歳？</button>
+    <div class="result-area" id="ageResultBox">
       <div id="ageResult" class="result-text"></div>
     </div>
   </section>
 
   <section class="card">
-    <h2 class="card-h2">⚖️ 肥満度チェック（BCS）</h2>
+    <h2 class="card-h2">⚖️ 肥満度チェック</h2>
     <div class="form-group">
-      <label>体型の目安を選択</label>
+      <label>体型の目安</label>
       <select id="bcsSelect">
-        <option value="1">1. 痩せすぎ（肋骨が浮き出ている）</option>
-        <option value="2">2. やや痩せ型（くびれが顕著）</option>
-        <option value="3" selected>3. 理想的（標準的な体型）</option>
-        <option value="4">4. 太り気味（くびれが少ない）</option>
-        <option value="5">5. 肥満（肋骨が全く触れない）</option>
+        <option value="1">1. 痩せすぎ</option>
+        <option value="2">2. やや痩せ型</option>
+        <option value="3" selected>3. 理想的</option>
+        <option value="4">4. 太り気味</option>
+        <option value="5">5. 肥満</option>
       </select>
     </div>
-    <button onclick="checkObesity()" class="calc-btn">判定する</button>
-    <div class="result-area" id="bcsResultBox" style="display:none;">
-      <div id="bcsResult" class="result-text" style="font-size:16px;"></div>
+    <button onclick="checkObesity()" class="calc-btn">体型を判定する</button>
+    <div class="result-area" id="bcsResultBox">
+      <div id="bcsResult" class="result-text" style="font-size:15px;"></div>
     </div>
   </section>
 
   <section class="card">
-    <h2 class="card-h2">🍖 カロリー & おやつ上限</h2>
+    <h2 class="card-h2">🍖 カロリー計算</h2>
     <div class="form-group">
       <label>体重（kg）</label>
       <input type="number" id="weight" placeholder="例: 8.5" step="0.1" inputmode="decimal">
@@ -146,34 +166,30 @@ permalink: /health-check/
       <select id="status">
         <option value="1.6">去勢・避妊済みの成犬</option>
         <option value="1.8">未去勢・未避妊の成犬</option>
-        <option value="1.2">肥満傾向・高齢犬</option>
-        <option value="1.4">ダイエット中の成犬</option>
+        <option value="1.2">高齢・ダイエットが必要</option>
         <option value="3.0">子犬（急成長期）</option>
       </select>
     </div>
-    <button onclick="calcAll()" class="calc-btn">一括計算する</button>
+    <button onclick="calcAll()" class="calc-btn">カロリーを計算する</button>
     
-    <div class="result-area" id="calResultBox" style="display:none;">
+    <div class="result-area" id="calResultBox">
       <div class="kcal-box">
         <div class="kcal-item">
-          <span class="kcal-label">1日の必要カロリー</span>
+          <span class="kcal-label">1日の必要量</span>
           <span id="calResult" class="kcal-val">---</span>
           <span class="kcal-label">kcal</span>
         </div>
-        <div class="kcal-item" style="border-left: 1px solid #ddd; padding-left: 15px;">
-          <span class="kcal-label">おやつの上限(10%)</span>
+        <div class="kcal-item" style="border-left: 1px solid #ddd;">
+          <span class="kcal-label">おやつ上限</span>
           <span id="snackResult" class="kcal-val" style="color: #2f9e44;">---</span>
           <span class="kcal-label">kcal</span>
         </div>
-      </div>
-      <div class="sub-result">
-        ※おやつをあげた分、主食（フード）の量を減らして調整してください。
       </div>
     </div>
   </section>
 
   <div style="text-align: center;">
-    <a href="{{ '/' | relative_url }}" style="color: #888; font-size: 14px; text-decoration: none;">← ホームに戻る</a>
+    <a href="{{ '/' | relative_url }}" style="color: #888; font-size: 13px; text-decoration: none;">← ホームに戻る</a>
   </div>
 </div>
 
@@ -189,7 +205,7 @@ function calcAge() {
 
 function checkObesity() {
   const bcs = document.getElementById('bcsSelect').value;
-  const msgs = ["", "【痩せすぎ】至急、食事改善や病院での相談を検討してください。", "【やや痩せ型】もう少し脂肪がついても大丈夫です。", "【理想的】素晴らしい！この体型を維持しましょう。", "【太り気味】おやつを控え、適度な運動を心がけましょう。", "【肥満】関節への負担が大きいです。減量を検討してください。"];
+  const msgs = ["", "【痩せすぎ】食事改善を検討しましょう。", "【やや痩せ型】理想までもう少し！", "【理想的】素晴らしい！維持しましょう。", "【太り気味】おやつを控えて運動を！", "【肥満】関節への負担に注意。減量を。"];
   document.getElementById('bcsResultBox').style.display = 'block';
   document.getElementById('bcsResult').innerText = msgs[bcs];
 }
