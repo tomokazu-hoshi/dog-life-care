@@ -7,7 +7,7 @@ permalink: /beginners-guide/
 <style>
   /* 全体設定 */
   .guide-body { font-family: -apple-system, sans-serif; color: #333; line-height: 1.8; background: #fff; padding-bottom: 80px; }
-  header.site-header, .site-header, .page-title, h1:first-of-type { display: none !important; }
+  header.site-header, .site-header, .page-title, h1:first-of-type, .main-content h1:first-child { display: none !important; }
 
   /* 記事トップのナビメニュー */
   .guide-menu { background: #fff9f0; border: 2px solid orange; border-radius: 15px; margin: 20px 15px; padding: 15px; }
@@ -34,7 +34,11 @@ permalink: /beginners-guide/
   .schedule-table th { background: #fff4e6; color: #d9480f; }
   
   /* リンクボタン */
-  .link-btn { display: inline-block; background: #555; color: white !important; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-size: 13px; margin-top: 10px; }
+  .link-btn { display: inline-block; background: orange; color: white !important; padding: 12px 20px; border-radius: 25px; text-decoration: none; font-size: 14px; font-weight: bold; margin-top: 10px; box-shadow: 0 3px 0 #e69500; }
+  
+  /* 強調ボックス */
+  .filaria-warning { background: #fff5f5; border: 2px solid #ffc9c9; border-radius: 10px; padding: 15px; margin-top: 20px; }
+  .price-text { font-size: 12px; color: #e03131; font-weight: bold; }
 </style>
 
 <div class="guide-body">
@@ -54,14 +58,16 @@ permalink: /beginners-guide/
 
   <section id="first-steps" class="guide-section">
     <h2 class="guide-h2">1. 迎えてすぐにやること</h2>
-    <p>ワンちゃんを家族に迎えたら、まず最初に行うべき重要な手続きと健康管理です。</p>
+    <p>法律で定められた手続きと、身分証明となるマイクロチップについて解説します。</p>
 
     <h3 class="guide-h3">市町村への登録</h3>
-    <p>生後90日を過ぎた犬を飼い始めたら、30日以内に自治体への登録が必要です。</p>
-    <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000139450.html" class="link-btn">各県の自治体はこちら（厚生労働省サイト）</a>
+    <p>生後90日を過ぎた犬を飼い始めたら、30日以内に自治体への登録が義務付けられています。</p>
+    <a href="{{ '/registration-search/' | relative_url }}" class="link-btn">各自治体の検索はこちら</a>
 
     <h3 class="guide-h3">マイクロチップの装着・登録</h3>
-    <p>現在は装着が義務化（販売時）されています。飼い主情報の変更登録を必ず行いましょう。迷子になった時の大きな助けになります。</p>
+    <p>迷子や災害時の唯一の身分証明です。<br>
+    <span class="price-text">おおよその費用：3,000円〜10,000円程度</span></p>
+    <p><strong>保護犬を迎えた場合：</strong><br>必ず動物病院で装着の有無を確認してもらいましょう。未装着なら装着、装着済みなら「飼い主情報の変更登録」を必ず行ってください。情報の紐付けがないと、万が一の際に見つかりません。</p>
   </section>
 
   <section id="growth-flow" class="guide-section">
@@ -69,57 +75,78 @@ permalink: /beginners-guide/
     <div class="timeline">
       <div class="timeline-item">
         <div class="time-label">迎えてすぐ</div>
-        <p><strong>健康診断と混合ワクチン</strong><br>まずは動物病院へ。便検査や触診を受け、ワクチンの証明書を持参しましょう。</p>
+        <p><strong>健康診断と混合ワクチン</strong><br>
+        まずは動物病院へ。便検査や触診を受け、健康状態を確認しましょう。</p>
+        
+        <div style="background: #f9f9f9; padding: 10px; border-radius: 8px; font-size: 14px; margin-top: 10px;">
+          <strong>混合ワクチンとは？</strong><br>
+          ジステンパーやパルボウイルスなど、命に関わる強力な感染症を防ぐための任意のワクチンです。ドッグランやペットホテル、トリミングサロンを利用する際に「接種証明書」の提示が必須となることが多いため、必ず取得して持参しましょう。<br>
+          <span class="price-text">おおよその費用：5,000円〜10,000円程度</span>
+        </div>
       </div>
+      
       <div class="timeline-item">
         <div class="time-label">生後3〜4ヶ月</div>
-        <p><strong>狂犬病予防接種</strong><br>法律で義務付けられている注射です。市町村から届くハガキを持参しましょう。</p>
+        <p><strong>狂犬病予防接種</strong><br>
+        法律で義務付けられている<strong>年1回</strong>の注射です。自治体から届くハガキを持参しましょう。<br>
+        <strong>※他県の病院で受ける場合：</strong><br>
+        他県のかかりつけ医等で接種した場合は、発行された証明書を自分の住む自治体窓口へ出し、「注射済票」を別途受け取る必要があります。</p>
       </div>
+      
       <div class="timeline-item">
         <div class="time-label">生後6ヶ月〜</div>
-        <p><strong>去勢・避妊手術</strong><br>将来の病気（生殖器疾患）予防や、発情期のストレス軽減のために検討しましょう。<br>費用：3万〜6万円程度（助成金が出る自治体もあります）</p>
+        <p><strong>去勢・避妊手術</strong><br>
+        病気予防やストレス軽減のために検討します。<br>
+        費用：3万〜6万円程度（助成金が出る地域もあります）</p>
       </div>
     </div>
   </section>
 
   <section id="annual-schedule" class="guide-section">
     <h2 class="guide-h2">3. 1年間のスケジュール</h2>
-    <p>健康維持のために毎年繰り返す大切な行事です。</p>
-    
-    
+    <p>健康維持のために、毎年決まった時期に行う予防です。</p>
 
     <table class="schedule-table">
       <thead>
         <tr>
           <th>予防項目</th>
           <th>時期・頻度</th>
-          <th>費用の目安</th>
+          <th>目的</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>狂犬病注射</td>
-          <td>4月〜6月頃（年1回）</td>
-          <td>約3,500円</td>
+          <td style="font-weight:bold;">狂犬病注射</td>
+          <td>4月〜6月（年1回）</td>
+          <td>法律義務</td>
         </tr>
         <tr>
-          <td>フィラリア薬</td>
+          <td style="font-weight:bold; color:#e03131;">フィラリア薬</td>
           <td>5月〜12月（毎月）</td>
-          <td>1,000円〜/月</td>
+          <td>命を守る最重要予防</td>
         </tr>
         <tr>
-          <td>混合ワクチン</td>
-          <td>年1回または3年に1回</td>
-          <td>5,000円〜1万円</td>
+          <td style="font-weight:bold;">混合ワクチン</td>
+          <td>年1回</td>
+          <td>感染症予防</td>
         </tr>
         <tr>
-          <td>ノミ・ダニ予防</td>
+          <td style="font-weight:bold;">ノミ・ダニ予防</td>
           <td>通年（毎月）</td>
-          <td>1,500円〜/月</td>
+          <td>寄生虫の予防</td>
         </tr>
       </tbody>
     </table>
-    <p style="font-size: 12px; color: #666; margin-top: 10px;">※費用は病院やワンちゃんの体重によって異なります。</p>
+
+    <div class="filaria-warning">
+      <p style="color: #e03131; font-weight: bold; margin: 0 0 10px 0;">🔴 フィラリア予防の重要性</p>
+      <p style="font-size: 14px;">フィラリアは、蚊が媒介する恐ろしい寄生虫です。<strong>「外飼いなら2年で約70%が感染する」</strong>とも言われ、予防をしなければ極めて危険です。</p>
+      <p style="font-size: 14px;"><strong>なぜ治療が困難なのか？</strong><br>
+      感染すると心臓や肺の血管に「そうめん」のような虫が居座ります。薬で一気に殺すと、その死骸が血管を塞いで突然死を招くリスクがあるため、簡単には治療できません。手術で一匹ずつ釣り出すのも、ワンちゃんにとって命がけの負担となります。</p>
+      <p style="font-size: 14px; font-weight: bold;">「毎月の薬で100%防げる病気」です。絶対に忘れないでください。</p>
+    </div>
+
+    <p style="font-size: 12px; color: #666; margin-top: 15px;">※各種費用は動物病院やワンちゃんの体重によって異なります。</p>
   </section>
 
   <div style="text-align: center; margin-top: 50px;">
