@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+  <style>
+    /* 全ページ共通のスタイル */
+    header.site-header, .site-header, .page-title, h1:first-of-type, .main-content h1:first-child, .post-header { display: none !important; }
+    html { scroll-behavior: smooth; }
+    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background-color: #f6f8fa; margin: 0; padding: 0; color: #333; }
+    
+    /* 共通ブランドヘッダー */
+    .custom-header { 
+      background: white; padding: 20px 0; text-align: center; border-bottom: 3px solid orange; 
+      display: flex; align-items: center; justify-content: center;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .custom-logo { font-size: 28px; color: orange; margin-right: 12px; }
+    .custom-title { font-size: 26px; font-weight: bold; color: orange; margin: 0; }
+
+    .container { width: 96%; max-width: 500px; margin: 0 auto; padding: 20px 0 80px; }
+    
+    /* 各都道府県ページで使う共通パーツのスタイルもここにまとめておく */
+    .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 30px; background: white; padding: 15px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+    .menu-btn { background: #fff9f0; border: 1px solid #ffd8a8; border-radius: 8px; padding: 12px 0; text-align: center; text-decoration: none; color: orange; font-size: 14px; font-weight: bold; }
+    .row-section { margin-top: 40px; scroll-margin-top: 80px; }
+    .row-title { font-size: 18px; font-weight: bold; color: #444; border-left: 5px solid orange; padding-left: 12px; margin-bottom: 15px; }
+    .city-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+    .city-btn { background: white; border: 1px solid #ddd; border-radius: 8px; padding: 12px 2px; text-align: center; text-decoration: none; color: #333; font-size: 11px; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.05); min-height: 55px; display: flex; align-items: center; justify-content: center; }
+    .city-btn:active { background: #fff9f0; border-color: orange; color: orange; transform: scale(0.95); }
+  </style>
+</head>
+<body>
+
+  <div class="custom-header">
+    <span class="custom-logo">🐶</span>
+    <div class="custom-title">ワンライフ・ナビ</div>
+  </div>
+
+  {{ content }}
+
+</body>
+</html>
