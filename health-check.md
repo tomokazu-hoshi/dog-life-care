@@ -26,7 +26,7 @@ permalink: /health-check/
   .custom-logo { font-size: 22px; margin-right: 8px; }
   .custom-title { font-size: 20px; font-weight: bold; color: orange; margin: 0; }
 
-  /* 4. レスポンシブ・コンテナ（幅調整） */
+  /* 4. レスポンシブ・コンテナ */
   .container { 
     width: 92%; 
     max-width: 400px; 
@@ -41,7 +41,7 @@ permalink: /health-check/
   }
   
   .card-h2 { 
-    font-size: 17px; font-weight: bold; margin-top: 0; margin-bottom: 15px; 
+    font-size: 17px; font-weight: bold; margin: 0 0 15px 0; 
     color: #444; border-left: 4px solid orange; padding-left: 10px;
   }
 
@@ -68,9 +68,8 @@ permalink: /health-check/
     text-align: center; display: none;
   }
   .result-text { font-size: 17px; font-weight: bold; color: #d9480f; }
-  .result-desc { font-size: 12px; color: #777; margin-top: 8px; line-height: 1.4; }
+  .result-desc { font-size: 12px; color: #777; margin-top: 8px; line-height: 1.4; text-align: left; }
 
-  /* 2列表示用 */
   .kcal-box { display: flex; justify-content: space-around; margin-top: 10px; gap: 10px; }
   .kcal-item { flex: 1; text-align: center; }
   .kcal-val { display: block; font-size: 20px; font-weight: bold; color: orange; }
@@ -104,26 +103,19 @@ permalink: /health-check/
   </section>
 
   <section class="card">
-    <h2 class="card-h2">🎯 目標体重シミュレーター</h2>
-    <p style="font-size: 11px; color: #888; margin-bottom: 15px;">今の体重と見た目から「理想の体重」を計算します</p>
+    <h2 class="card-h2">💧 1日の必要水分量</h2>
+    <p style="font-size: 11px; color: #888; margin-bottom: 15px;">体重から1日に必要な「最低限の水分量」を出します</p>
     <div class="form-group">
       <label>現在の体重（kg）</label>
-      <input type="number" id="currWeight" placeholder="例: 10.0" step="0.1" inputmode="decimal">
+      <input type="number" id="waterWeight" placeholder="例: 10.0" step="0.1" inputmode="decimal">
     </div>
-    <div class="form-group">
-      <label>今の見た目は？</label>
-      <select id="bcsLevel">
-        <option value="0.8">1. 痩せすぎ（肋骨が浮き出ている）</option>
-        <option value="0.9">2. やや痩せ型（くびれが深い）</option>
-        <option value="1.0" selected>3. 理想的（ちょうど良い）</option>
-        <option value="1.15">4. 太り気味（くびれが少ない）</option>
-        <option value="1.3">5. 肥満（肋骨が触れない）</option>
-      </select>
-    </div>
-    <button onclick="calcIdealWeight()" class="calc-btn">適正体重を出す</button>
-    <div class="result-area" id="idealResultBox">
-      <div id="idealResult" class="result-text"></div>
-      <div id="idealDiff" class="result-desc"></div>
+    <button onclick="calcWater()" class="calc-btn">必要量を計算する</button>
+    <div class="result-area" id="waterResultBox">
+      <div id="waterResult" class="result-text"></div>
+      <div class="result-desc">
+        ※この数値は「飲み水」と「食事に含まれる水分」の合計です。<br>
+        ※急激に飲む量が増えた場合は、病気のサインの可能性があるため獣医師に相談しましょう。
+      </div>
     </div>
   </section>
 
@@ -165,7 +157,6 @@ permalink: /health-check/
 </div>
 
 <script>
-// 1. 年齢診断
 function calcAge() {
   const size = document.getElementById('dogSize').value;
   const age = parseFloat(document.getElementById('dogAge').value);
@@ -175,30 +166,17 @@ function calcAge() {
   document.getElementById('ageResult').innerText = "人間なら約 " + humanAge + " 歳です";
 }
 
-// 2. 目標体重計算
-function calcIdealWeight() {
-  const w = parseFloat(document.getElementById('currWeight').value);
-  const factor = parseFloat(document.getElementById('bcsLevel').value);
+function calcWater() {
+  const w = parseFloat(document.getElementById('waterWeight').value);
   if(!w) return;
-  
-  const ideal = Math.round((w / factor) * 10) / 10;
-  const diff = Math.round((w - ideal) * 10) / 10;
-  
-  document.getElementById('idealResultBox').style.display = 'block';
-  document.getElementById('idealResult').innerText = "理想体重は " + ideal + "kg です";
-  
-  let msg = "";
-  if (diff > 0) {
-    msg = "現在より -" + diff + "kg の減量が必要です。";
-  } else if (diff < 0) {
-    msg = "現在より +" + Math.abs(diff) + "kg の増量が必要です。";
-  } else {
-    msg = "現在の体重がベストです！キープしましょう。";
-  }
-  document.getElementById('idealDiff').innerText = msg;
+  // 一般的な計算式：体重の0.75乗 × 132、または単純に体重×50〜70ml
+  // ここではより安全な 体重(kg) × 50ml〜 を目安に算出
+  const minWater = Math.round(w * 50);
+  const maxWater = Math.round(w * 70);
+  document.getElementById('waterResultBox').style.display = 'block';
+  document.getElementById('waterResult').innerText = "目安: " + minWater + " 〜 " + maxWater + " ml";
 }
 
-// 3. カロリー計算
 function calcAll() {
   const w = parseFloat(document.getElementById('weight').value);
   const factor = parseFloat(document.getElementById('status').value);
