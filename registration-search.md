@@ -1,85 +1,80 @@
 ---
 layout: default
-title: 自治体検索
+title: 自治体窓口検索
 permalink: /registration-search/
 ---
 
 <style>
-  header.site-header, .site-header, .page-title, h1:first-of-type { display: none !important; }
-  body { font-family: -apple-system, sans-serif; background: #f6f8fa; padding-bottom: 50px; }
+  /* 1. 不要なタイトルを非表示 */
+  header.site-header, .site-header, .page-title, h1:first-of-type, .main-content h1:first-child { 
+    display: none !important; 
+  }
 
-  .search-header { background: white; padding: 20px; text-align: center; border-bottom: 3px solid orange; }
-  .search-title { font-size: 20px; font-weight: bold; color: orange; margin: 0; }
+  /* 2. 全体の基本設定 */
+  body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background-color: #f6f8fa; margin: 0; padding: 0; color: #333; }
   
-  .container { padding: 15px; }
-  .step-title { font-size: 14px; font-weight: bold; color: #666; margin: 15px 0 10px; }
+  /* 3. オレンジのヘッダー */
+  .custom-header { 
+    background: white; padding: 20px 0; text-align: center; border-bottom: 3px solid orange; 
+    display: flex; align-items: center; justify-content: center; 
+  }
+  .custom-logo { font-size: 24px; margin-right: 10px; }
+  .custom-title { font-size: 20px; font-weight: bold; color: orange; margin: 0; }
 
-  /* 都道府県ボタン */
-  .pref-btn { 
-    background: white; border: 1px solid #ddd; border-radius: 10px; padding: 15px; 
-    width: 100%; text-align: left; margin-bottom: 10px; font-weight: bold; 
-    display: flex; justify-content: space-between; align-items: center;
+  /* 4. メインコンテナ */
+  .search-container { 
+    width: 92%; max-width: 400px; margin: 0 auto; padding: 40px 0 60px; text-align: center; 
   }
-  .pref-btn::after { content: "▼"; font-size: 10px; color: orange; }
 
-  /* 市町村リスト（最初は隠す） */
-  .city-list { 
-    display: none; background: #fff9f0; padding: 10px; border-radius: 0 0 10px 10px; 
-    margin-top: -10px; margin-bottom: 15px; border: 1px solid #ffd8a8; border-top: none;
+  /* 5. 説明テキスト */
+  .search-intro { font-size: 15px; line-height: 1.6; color: #666; margin-bottom: 30px; }
+  .search-intro b { color: #333; }
+
+  /* 6. 【1段階目】メインボタン */
+  .step1-button { 
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #ff9d00, #ffbb00);
+    color: white !important; text-decoration: none;
+    padding: 25px 15px; border-radius: 20px;
+    font-size: 19px; font-weight: bold;
+    box-shadow: 0 6px 15px rgba(255,157,0,0.3);
+    transition: 0.2s;
+    border: none; width: 100%; cursor: pointer;
   }
-  .city-link { 
-    display: block; padding: 12px; color: #333; text-decoration: none; 
-    border-bottom: 1px solid #ffe8cc; font-size: 14px; 
+  .step1-button:active { transform: scale(0.98); box-shadow: 0 2px 5px rgba(255,157,0,0.3); }
+  .btn-icon { font-size: 26px; margin-right: 12px; }
+
+  /* 7. 補足情報 */
+  .search-tip { 
+    margin-top: 40px; background: #fff; padding: 20px; border-radius: 15px; 
+    border: 1px dashed #ccc; font-size: 13px; color: #888; text-align: left;
   }
-  .city-link:last-child { border-bottom: none; }
 </style>
 
-<div class="search-header">
-  <div class="search-title">全国自治体 登録窓口検索</div>
+<div class="custom-header">
+  <span class="custom-logo">🔍</span>
+  <div class="custom-title">全国自治体 登録窓口検索</div>
 </div>
 
-<div class="container">
-  <p style="font-size: 13px; color: #888;">お住まいの都道府県を選択してください。</p>
-
-  <button class="pref-btn" onclick="toggleCity('tokyo')">東京都</button>
-  <div id="tokyo" class="city-list">
-    <a href="https://www.city.shinjuku.lg.jp/kenkou/yobo01_001004.html" class="city-link">新宿区</a>
-    <a href="https://www.city.setagaya.lg.jp/mokuji/kurashi/004/003/001/d00005115.html" class="city-link">世田谷区</a>
-    <a href="https://www.google.com/search?q=東京都+各市区町村+犬+登録" class="city-link" style="color:orange;">その他の市区町村（検索）</a>
+<div class="search-container">
+  
+  <div class="search-intro">
+    ワンちゃんを迎えたら30日以内に、<br>
+    <b>お住まいの市区町村</b>への登録が必要です。<br>
+    手続きを行う窓口をここから探せます。
   </div>
 
-  <button class="pref-btn" onclick="toggleCity('kanagawa')">神奈川県</button>
-  <div id="kanagawa" class="city-list">
-    <a href="https://www.city.yokohama.lg.jp/kurashi/sumai-kurashi/pet-dobutsu/dog/toroku.html" class="city-link">横浜市</a>
-    <a href="https://www.city.kawasaki.jp/350/page/0000017409.html" class="city-link">川崎市</a>
-    <a href="https://www.google.com/search?q=神奈川県+各市区町村+犬+登録" class="city-link" style="color:orange;">その他の市区町村（検索）</a>
+  <a href="#step2" class="step1-button">
+    <span class="btn-icon">🗺️</span>各自治体の検索はこちら
+  </a>
+
+  <div class="search-tip">
+    <strong>💡 手続きについて：</strong><br>
+    登録が完了すると「鑑札（かんさつ）」が交付されます。これはワンちゃんの身分証明書として、首輪などに常に付けておくことが法律で義務付けられています。
   </div>
 
-  <button class="pref-btn" onclick="toggleCity('osaka')">大阪府</button>
-  <div id="osaka" class="city-list">
-    <a href="https://www.city.osaka.lg.jp/kenko/page/0000007323.html" class="city-link">大阪市</a>
-    <a href="https://www.city.sakai.lg.jp/kurashi/dobutsu/pet/dog/toroku.html" class="city-link">堺市</a>
-    <a href="https://www.google.com/search?q=大阪府+各市区町村+犬+登録" class="city-link" style="color:orange;">その他の市区町村（検索）</a>
+  <div style="margin-top: 40px;">
+    <a href="javascript:history.back()" style="color: #888; font-size: 14px; text-decoration: none;">← 前の画面に戻る</a>
   </div>
 
-  <div style="margin-top: 30px; background: white; padding: 20px; border-radius: 15px; border: 1px solid orange;">
-    <p style="font-size: 14px; font-weight: bold; margin-top: 0;">🔍 上記以外の地域</p>
-    <p style="font-size: 12px; line-height: 1.5;">全国約1,700の自治体の正確な窓口は、厚生労働省の公式リストから各県ごとに確認できます。</p>
-    <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000139450.html" style="display:block; background:orange; color:white; text-align:center; padding:12px; border-radius:8px; text-decoration:none; font-weight:bold; margin-top:10px;">厚生労働省 全自治体リスト</a>
-  </div>
-
-  <div style="text-align: center; margin-top: 40px;">
-    <a href="javascript:history.back()" style="color: #888; font-size: 14px; text-decoration: none;">← 記事に戻る</a>
-  </div>
 </div>
-
-<script>
-function toggleCity(id) {
-  const list = document.getElementById(id);
-  const allLists = document.querySelectorAll('.city-list');
-  allLists.forEach(l => {
-    if(l.id !== id) l.style.display = 'none';
-  });
-  list.style.display = (list.style.display === 'block') ? 'none' : 'block';
-}
-</script>
