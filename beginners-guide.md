@@ -9,117 +9,148 @@ permalink: /beginners-guide/
   .guide-body { font-family: -apple-system, sans-serif; color: #333; line-height: 1.8; background: #fff; padding-bottom: 80px; }
   header.site-header, .site-header, .page-title, h1:first-of-type { display: none !important; }
 
-  /* 記事トップのナビメニュー */
+  /* ナビメニュー */
   .guide-menu { background: #fff9f0; border: 2px solid orange; border-radius: 15px; margin: 20px 15px; padding: 15px; }
   .guide-menu-title { font-weight: bold; color: orange; text-align: center; margin-bottom: 10px; font-size: 16px; }
-  .guide-menu ul { list-style: none; padding: 0; margin: 0; }
-  .guide-menu li { margin-bottom: 8px; border-bottom: 1px dashed #ffd8a8; padding-bottom: 5px; }
-  .guide-menu a { text-decoration: none; color: #555; font-size: 14px; display: block; }
-  .guide-menu a::before { content: "▶"; color: orange; margin-right: 8px; }
+  .guide-menu ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr; gap: 8px; }
+  .guide-menu a { text-decoration: none; color: #555; font-size: 14px; display: block; padding: 5px; border-bottom: 1px dashed #ffd8a8; }
+  .guide-menu a::before { content: "🐾"; margin-right: 8px; }
 
-  /* コンテンツ設定 */
+  /* コンテンツ */
   .guide-section { padding: 30px 15px 10px; scroll-margin-top: 20px; }
-  .guide-h2 { background: orange; color: white; padding: 10px 15px; border-radius: 5px; font-size: 18px; margin-bottom: 20px; }
-  .guide-h3 { border-left: 5px solid orange; padding-left: 10px; margin: 25px 0 10px; font-size: 16px; font-weight: bold; }
+  .guide-h2 { background: linear-gradient(to right, orange, #ffcc00); color: white; padding: 12px 15px; border-radius: 8px; font-size: 18px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(255,165,0,0.2); }
+  .guide-h3 { border-left: 5px solid orange; padding-left: 10px; margin: 25px 0 10px; font-size: 17px; font-weight: bold; color: #444; }
   
-  /* スケジュールリスト */
-  .timeline { border-left: 2px solid orange; margin-left: 10px; padding-left: 20px; position: relative; }
-  .timeline-item { margin-bottom: 30px; position: relative; }
-  .timeline-item::before { content: ""; width: 12px; height: 12px; background: orange; border-radius: 50%; position: absolute; left: -27px; top: 8px; }
-  .time-label { font-weight: bold; color: orange; font-size: 14px; }
+  /* カード形式の解説 */
+  .info-card { background: #fefefe; border: 1px solid #eee; border-radius: 12px; padding: 15px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .price-tag { display: inline-block; background: #fff5f5; color: #e03131; padding: 2px 10px; border-radius: 5px; font-weight: bold; font-size: 14px; margin-bottom: 10px; }
 
-  /* テーブル（年間スケジュール） */
-  .schedule-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 13px; background: white; }
+  /* 都道府県ボタン */
+  .region-title { background: #eee; padding: 5px 10px; font-size: 14px; font-weight: bold; margin-top: 15px; border-radius: 5px; }
+  .pref-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 10px; }
+  .pref-btn { background: white; border: 1px solid #ddd; padding: 8px; border-radius: 5px; text-align: center; text-decoration: none; color: #333; font-size: 12px; }
+  .pref-btn:active { background: orange; color: white; border-color: orange; }
+
+  /* 年間スケジュール表 */
+  .schedule-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 13px; }
   .schedule-table th, .schedule-table td { border: 1px solid #ddd; padding: 10px 5px; text-align: center; }
   .schedule-table th { background: #fff4e6; color: #d9480f; }
-  
-  /* リンクボタン */
-  .link-btn { display: inline-block; background: #555; color: white !important; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-size: 13px; margin-top: 10px; }
 </style>
 
 <div class="guide-body">
   <div style="text-align:center; padding: 30px 0 10px;">
-    <h1 style="font-size: 22px; color: orange;">🔰 初めての飼い主さんガイド</h1>
-    <p style="font-size: 13px; color: #888;">〜愛犬と幸せに暮らすための全手順〜</p>
+    <h1 style="font-size: 24px; color: orange; margin-bottom: 5px;">🔰 はじめての飼い主さんガイド</h1>
+    <p style="font-size: 13px; color: #888;">愛犬を守るために必要な手続きと健康管理</p>
   </div>
 
   <nav class="guide-menu">
     <div class="guide-menu-title">目次（タップで移動）</div>
     <ul>
-      <li><a href="#first-steps">迎えてすぐにやること（法律・手続き）</a></li>
-      <li><a href="#growth-flow">成長スケジュール（生後〜1年まで）</a></li>
-      <li><a href="#annual-schedule">毎年の恒例行事（年間スケジュール）</a></li>
+      <li><a href="#microchip">マイクロチップの装着・登録</a></li>
+      <li><a href="#vaccine">健康診断と混合ワクチン</a></li>
+      <li><a href="#rabies">狂犬病予防接種とハガキ</a></li>
+      <li><a href="#registration">自治体への登録（日本地図から探す）</a></li>
+      <li><a href="#annual">年間の予防スケジュール</a></li>
     </ul>
   </nav>
 
-  <section id="first-steps" class="guide-section">
-    <h2 class="guide-h2">1. 迎えてすぐにやること</h2>
-    <p>ワンちゃんを家族に迎えたら、まず最初に行うべき重要な手続きと健康管理です。</p>
-
-    <h3 class="guide-h3">市町村への登録</h3>
-    <p>生後90日を過ぎた犬を飼い始めたら、30日以内に自治体への登録が必要です。</p>
-    <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000139450.html" class="link-btn">各県の自治体はこちら（厚生労働省サイト）</a>
-
-    <h3 class="guide-h3">マイクロチップの装着・登録</h3>
-    <p>現在は装着が義務化（販売時）されています。飼い主情報の変更登録を必ず行いましょう。迷子になった時の大きな助けになります。</p>
-  </section>
-
-  <section id="growth-flow" class="guide-section">
-    <h2 class="guide-h2">2. 成長スケジュール</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="time-label">迎えてすぐ</div>
-        <p><strong>健康診断と混合ワクチン</strong><br>まずは動物病院へ。便検査や触診を受け、ワクチンの証明書を持参しましょう。</p>
-      </div>
-      <div class="timeline-item">
-        <div class="time-label">生後3〜4ヶ月</div>
-        <p><strong>狂犬病予防接種</strong><br>法律で義務付けられている注射です。市町村から届くハガキを持参しましょう。</p>
-      </div>
-      <div class="timeline-item">
-        <div class="time-label">生後6ヶ月〜</div>
-        <p><strong>去勢・避妊手術</strong><br>将来の病気（生殖器疾患）予防や、発情期のストレス軽減のために検討しましょう。<br>費用：3万〜6万円程度（助成金が出る自治体もあります）</p>
-      </div>
+  <section id="microchip" class="guide-section">
+    <h2 class="guide-h2">マイクロチップの装着・登録</h2>
+    <p>マイクロチップは、ワンちゃんが迷子になったり、災害ではぐれた際に「誰の犬か」を証明する大切な身分証明書です。</p>
+    <div class="info-card">
+      <div class="price-tag">費用の目安：3,000円〜10,000円程度</div>
+      <p><strong>保護犬を迎えた場合：</strong><br>
+      前の飼い主さんや保護団体から引き継いだ後、速やかに**動物病院での装着（未装着の場合）と、環境省への登録変更**が必要です。</p>
+      <p style="font-size: 13px; color: #666;">※別途、登録手数料（オンラインなら数百円、ハガキなら千円程度）がかかります。</p>
     </div>
   </section>
 
-  <section id="annual-schedule" class="guide-section">
-    <h2 class="guide-h2">3. 1年間のスケジュール</h2>
-    <p>健康維持のために毎年繰り返す大切な行事です。</p>
+  <section id="vaccine" class="guide-section">
+    <h2 class="guide-h2">健康診断と混合ワクチン</h2>
+    <p>家に来て落ち着いたら、まずは動物病院へ。便検査（寄生虫確認）や触診を受けましょう。</p>
     
-    
+    <div class="info-card">
+      <h3 class="guide-h3" style="margin-top:0;">混合ワクチンとは？</h3>
+      <p>狂犬病ワクチン（法律）とは異なり、**「ワンちゃん同士で感染する恐ろしい病気」**を予防する任意のワクチンです。</p>
+      <ul>
+        <li><strong>なぜ必要？</strong>：パルボウイルスやジステンパーなど、致死率の高い病気から命を守るためです。</li>
+        <li><strong>社会のマナー</strong>：ドッグラン、ペットホテル、トリミングサロンなどの利用時に、**「混合ワクチン接種証明書」**の提示が必須となることがほとんどです。</li>
+      </ul>
+      <div class="price-tag">費用の目安：5,000円〜10,000円（5種〜10種など）</div>
+    </div>
+  </section>
 
+  <section id="rabies" class="guide-section">
+    <h2 class="guide-h2">狂犬病予防接種</h2>
+    <p>法律で定められた**「飼い主の義務」**です。毎年1回必ず受けましょう。</p>
+    <div class="info-card">
+      <p>毎年春頃に、市町村から届く**「通知ハガキ」**を動物病院へ持参してください。</p>
+      <p><strong>【重要】他県の病院で受ける場合：</strong><br>
+      他県のかかりつけ医などで接種した場合、病院で発行される「接種証明書」を持って、**自分の住んでいる自治体の窓口で別途「注射済票」の手続き**を行う必要があります。これを忘れると「未接種」扱いになるので注意しましょう。</p>
+    </div>
+  </section>
+
+  <section id="registration" class="guide-section">
+    <h2 class="guide-h2">自治体への登録（地域から探す）</h2>
+    <p>ワンちゃんを飼い始めたら、お住まいの市区町村への登録が必要です。手続き窓口を探すためのガイドです。</p>
+    
+    [attachment_0](attachment)
+    
+    <div class="info-card">
+      <p style="font-size: 13px;">※以下の都道府県名を選択すると、各自治体の登録案内（または検索ページ）へ移動します。</p>
+      
+      <div class="region-title">関東</div>
+      <div class="pref-grid">
+        <a href="https://www.google.com/search?q=東京都+犬+登録" class="pref-btn">東京都</a>
+        <a href="https://www.google.com/search?q=神奈川県+犬+登録" class="pref-btn">神奈川県</a>
+        <a href="https://www.google.com/search?q=埼玉県+犬+登録" class="pref-btn">埼玉県</a>
+        <a href="https://www.google.com/search?q=千葉県+犬+登録" class="pref-btn">千葉県</a>
+        <a href="https://www.google.com/search?q=茨城県+犬+登録" class="pref-btn">茨城県</a>
+        <a href="https://www.google.com/search?q=栃木県+犬+登録" class="pref-btn">栃木県</a>
+        <a href="https://www.google.com/search?q=群馬県+犬+登録" class="pref-btn">群馬県</a>
+      </div>
+
+      <div class="region-title">その他の地域（全国リスト）</div>
+      <p style="font-size: 13px; margin-top:10px;">全国の自治体の窓口や、詳しい手続きの流れは以下の厚生労働省の公式ページから確認できます。</p>
+      <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000139450.html" class="pref-btn" style="width:100%; display:block; background:orange; color:white; border:none; font-weight:bold;">厚生労働省：犬の登録手続き一覧</a>
+    </div>
+  </section>
+
+  <section id="annual" class="guide-section">
+    <h2 class="guide-h2">年間の予防スケジュール</h2>
+    <p>1年を通じて、愛犬を健康トラブルから守るためのスケジュールです。</p>
+    
     <table class="schedule-table">
       <thead>
         <tr>
-          <th>予防項目</th>
-          <th>時期・頻度</th>
-          <th>費用の目安</th>
+          <th>項目</th>
+          <th>時期</th>
+          <th>目的</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>狂犬病注射</td>
-          <td>4月〜6月頃（年1回）</td>
-          <td>約3,500円</td>
+          <td>狂犬病予防</td>
+          <td>4〜6月</td>
+          <td>法律義務の予防</td>
         </tr>
         <tr>
           <td>フィラリア薬</td>
-          <td>5月〜12月（毎月）</td>
-          <td>1,000円〜/月</td>
+          <td>5〜12月</td>
+          <td>蚊が媒介する寄生虫予防</td>
         </tr>
         <tr>
           <td>混合ワクチン</td>
-          <td>年1回または3年に1回</td>
-          <td>5,000円〜1万円</td>
+          <td>年1回</td>
+          <td>感染症の予防（社会マナー）</td>
         </tr>
         <tr>
-          <td>ノミ・ダニ予防</td>
-          <td>通年（毎月）</td>
-          <td>1,500円〜/月</td>
+          <td>ノミ・ダニ薬</td>
+          <td>通年</td>
+          <td>マダニ等の寄生虫予防</td>
         </tr>
       </tbody>
     </table>
-    <p style="font-size: 12px; color: #666; margin-top: 10px;">※費用は病院やワンちゃんの体重によって異なります。</p>
   </section>
 
   <div style="text-align: center; margin-top: 50px;">
