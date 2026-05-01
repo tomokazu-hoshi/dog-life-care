@@ -5,31 +5,34 @@ permalink: /Search-50on/
 ---
 
 <style>
-  /* 1. 不要なタイトルを消す */
-  header.site-header, .site-header, .page-title, h1:first-of-type, .main-content h1:first-child { 
+  /* 1. テーマ独自のヘッダーや枠線を徹底的に消す */
+  header.site-header, .site-header, .page-title, h1:first-of-type, .main-content h1:first-child, .post-header { 
     display: none !important; 
   }
 
   body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background-color: #f6f8fa; margin: 0; padding: 0; }
   
-  /* 2. ヘッダー（オレンジの線を完全に削除） */
+  /* 2. カスタムヘッダー（線や影を完全に無効化） */
   .custom-header { 
-    background: white; 
-    padding: 20px 0; 
-    text-align: center; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
+    background: white !important; 
+    padding: 25px 0 !important; 
+    text-align: center !important; 
+    display: flex !important; 
+    align-items: center !important; 
+    justify-content: center !important;
+    border: none !important;           /* 線を消す */
+    border-bottom: none !important;    /* 下線を消す */
+    box-shadow: none !important;       /* 影を消す */
   }
   .custom-logo { font-size: 22px; margin-right: 8px; }
-  .custom-title { font-size: 20px; font-weight: bold; color: #333; margin: 0; } 
+  .custom-title { font-size: 20px; font-weight: bold; color: #333 !important; margin: 0; } 
 
   /* 3. グリッドレイアウト */
   .grid-container { 
     display: grid; 
     grid-template-columns: repeat(2, 1fr); 
     gap: 15px; 
-    padding: 30px 20px 50px; /* 上部に適度な余白 */
+    padding: 20px 20px 50px; 
     max-width: 400px; 
     margin: 0 auto; 
   }
