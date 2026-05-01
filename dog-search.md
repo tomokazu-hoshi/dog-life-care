@@ -12,17 +12,9 @@ permalink: /dog-search/
 
   body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background-color: #f6f8fa; margin: 0; padding: 0; }
   
-  /* 2. オレンジのヘッダー */
-  .custom-header { 
-    background: white; padding: 18px 0; text-align: center; border-bottom: 3px solid orange; 
-    display: flex; align-items: center; justify-content: center;
-  }
-  .custom-logo { font-size: 22px; margin-right: 8px; }
-  .custom-title { font-size: 20px; font-weight: bold; color: orange; margin: 0; }
-
   .section-title { text-align: center; font-size: 18px; font-weight: bold; margin: 25px 0 15px; color: #333; }
 
-  /* 3. 【2列 × 6行】のグリッドレイアウト */
+  /* 2. 【2列 × 6行】のグリッドレイアウト */
   .grid-container { 
     display: grid; 
     grid-template-columns: repeat(2, 1fr); /* 横に2つ並べる */
@@ -52,11 +44,6 @@ permalink: /dog-search/
   .card-text { font-size: 13px; font-weight: bold; text-align: center; line-height: 1.3; }
 
 </style>
-
-<div class="custom-header">
-  <span class="custom-logo">🐶</span>
-  <div class="custom-title">ワンライフ・ナビ</div>
-</div>
 
 <div class="section-title">カテゴリーから探す</div>
 
