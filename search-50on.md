@@ -5,34 +5,28 @@ permalink: /Search-50on/
 ---
 
 <style>
-  /* 1. テーマ独自のヘッダーや枠線を徹底的に消す */
-  header.site-header, .site-header, .page-title, h1:first-of-type, .main-content h1:first-child, .post-header { 
+  /* 1. 不要なタイトルを強制的に非表示 */
+  header.site-header, .site-header, .page-title, h1:first-of-type, .main-content h1:first-child { 
     display: none !important; 
   }
 
   body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background-color: #f6f8fa; margin: 0; padding: 0; }
   
-  /* 2. カスタムヘッダー（線や影を完全に無効化） */
-  .custom-header { 
-    background: white !important; 
-    padding: 25px 0 !important; 
-    text-align: center !important; 
-    display: flex !important; 
-    align-items: center !important; 
-    justify-content: center !important;
-    border: none !important;           /* 線を消す */
-    border-bottom: none !important;    /* 下線を消す */
-    box-shadow: none !important;       /* 影を消す */
+  /* シンプルなタイトル表示（線は一切なし） */
+  .section-title { 
+    text-align: center; 
+    font-size: 22px; 
+    font-weight: bold; 
+    margin: 40px 0 20px; 
+    color: #333; 
   }
-  .custom-logo { font-size: 22px; margin-right: 8px; }
-  .custom-title { font-size: 20px; font-weight: bold; color: #333 !important; margin: 0; } 
 
-  /* 3. グリッドレイアウト */
+  /* グリッドレイアウト（犬種図鑑のボタンサイズに合わせました） */
   .grid-container { 
     display: grid; 
     grid-template-columns: repeat(2, 1fr); 
-    gap: 15px; 
-    padding: 20px 20px 50px; 
+    gap: 12px; 
+    padding: 0 15px 50px; 
     max-width: 400px; 
     margin: 0 auto; 
   }
@@ -41,23 +35,24 @@ permalink: /Search-50on/
     background: white; 
     border-radius: 15px; 
     box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
-    padding: 25px 10px; 
+    padding: 20px 5px; 
     text-decoration: none; 
     color: #333; 
-    text-align: center; 
-    font-size: 20px; 
-    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 1px solid #eee;
+    font-weight: bold;
+    font-size: 18px;
+    min-height: 80px; /* 押しやすい高さ */
   }
   
   .grid-card:active { background-color: #fff9f0; transform: scale(0.95); }
 
 </style>
 
-<div class="custom-header">
-  <span class="custom-logo">🔤</span>
-  <div class="custom-title">50音検索</div>
-</div>
+<!-- 余計なdivは使わず、ただの文字として配置 -->
+<div class="section-title">🔤 50音検索</div>
 
 <div class="grid-container">
   {% assign lines = "あ行,か行,さ行,た行,な行,は行,ま行,や行,ら行,わ行" | split: "," %}
