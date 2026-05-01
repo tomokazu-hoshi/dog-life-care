@@ -9,15 +9,6 @@ permalink: /beginners-guide/
   header.site-header, .site-header, .page-title, h1:first-of-type, .main-content h1:first-child, .post-header { display: none !important; }
   body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background-color: #f6f8fa; margin: 0; padding: 0; color: #333; }
   
-  /* 共通ブランドヘッダー（トップページと同一設定） */
-  .custom-header { 
-    background: white; padding: 20px 0; text-align: center; border-bottom: 3px solid orange; 
-    display: flex; align-items: center; justify-content: center;
-    position: relative; /* 固定せずに流れる設定 */
-  }
-  .custom-logo { font-size: 28px; color: orange; margin-right: 12px; }
-  .custom-title { font-size: 26px; font-weight: bold; color: orange; margin: 0; }
-
   .guide-body { line-height: 1.8; background: #fff; padding-bottom: 80px; }
 
   /* 記事トップのナビメニュー */
@@ -51,11 +42,6 @@ permalink: /beginners-guide/
   .filaria-warning { background: #fff5f5; border: 2px solid #ffc9c9; border-radius: 10px; padding: 15px; margin-top: 20px; }
   .price-text { font-size: 12px; color: #e03131; font-weight: bold; }
 </style>
-
-<div class="custom-header">
-  <span class="custom-logo">🐶</span>
-  <div class="custom-title">ワンライフ・ナビ</div>
-</div>
 
 <div class="guide-body">
   <div style="text-align:center; padding: 30px 0 10px;">
