@@ -12,22 +12,21 @@ permalink: /Search-50on/
 
   body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background-color: #f6f8fa; margin: 0; padding: 0; }
   
-  /* 2. オレンジのヘッダー */
+  /* 2. ヘッダー（下線を消し、文字を黒に変更） */
   .custom-header { 
-    background: white; padding: 18px 0; text-align: center; border-bottom: 3px solid orange; 
+    background: white; padding: 18px 0; text-align: center; 
     display: flex; align-items: center; justify-content: center;
+    /* border-bottomを削除しました */
   }
   .custom-logo { font-size: 22px; margin-right: 8px; }
-  .custom-title { font-size: 20px; font-weight: bold; color: orange; margin: 0; }
-
-  .section-title { text-align: center; font-size: 18px; font-weight: bold; margin: 30px 0 20px; color: #333; }
+  .custom-title { font-size: 20px; font-weight: bold; color: #333; margin: 0; } /* 色を黒系に変更 */
 
   /* 3. 【2列 × 5行】のグリッドレイアウト */
   .grid-container { 
     display: grid; 
     grid-template-columns: repeat(2, 1fr); /* 2列にする */
     gap: 15px; /* ボタン同士の隙間 */
-    padding: 0 20px 50px; 
+    padding: 30px 20px 50px; /* 上部に余白を追加 */
     max-width: 400px; 
     margin: 0 auto; /* 画面中央に寄せる */
   }
@@ -54,7 +53,7 @@ permalink: /Search-50on/
   <div class="custom-title">50音検索</div>
 </div>
 
-<div class="section-title">行を選んでください</div>
+<!-- 「行を選んでください」のテキストを削除しました -->
 
 <div class="grid-container">
   {% assign lines = "あ行,か行,さ行,た行,な行,は行,ま行,や行,ら行,わ行" | split: "," %}
