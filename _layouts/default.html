@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+  <style>
+    /* 既存のデフォルトヘッダーを非表示 */
+    header.site-header, .site-header, .page-title, h1:first-of-type, .main-content h1:first-child, .post-header { display: none !important; }
+
+    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background-color: #f6f8fa; margin: 0; padding: 0; color: #333; overflow-x: hidden; }
+
+    /* --- 共通ヘッダー --- */
+    .custom-header { 
+      background: white; padding: 15px 0; text-align: center; border-bottom: 3px solid orange; 
+      display: flex; align-items: center; justify-content: center; position: relative;
+    }
+    .custom-logo { font-size: 24px; margin-right: 8px; }
+    .custom-title { font-size: 22px; font-weight: bold; color: orange; margin: 0; }
+
+    /* ハンバーガーボタン（左上） */
+    .menu-trigger {
+      position: absolute; left: 15px; top: 50%; transform: translateY(-50%);
+      background: none; border: none; font-size: 28px; color: orange; cursor: pointer; padding: 5px;
+    }
+
+    /* --- サイドメニュー（引き出し） --- */
+    .side-nav {
+      position: fixed; top: 0; left: -280px; width: 280px; height: 100%;
+      background: white; z-index: 1000; transition: 0.3s;
+      box-shadow: 5px 0 15px rgba(0,0,0,0.1); overflow-y: auto;
+    }
+    .side-nav.open { left: 0; }
+
+    .nav-header { padding: 20px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+    .nav-header span { font-weight: bold; color: orange; }
+    .close-btn { font-size: 30px; border: none; background: none; color: #999; cursor: pointer; }
+
+    .nav-list { list-style: none; padding: 10px 0; margin: 0; }
+    .nav-item a {
+      display: flex; align-items: center; padding: 15px 20px;
+      text-decoration: none; color: #333; border-bottom: 1px solid #f9f9f9; font-size: 15px; font-weight: bold;
+    }
+    .nav-item a:active { background: #fff9f0; color: orange; }
+    .nav-icon { font-size: 20px; margin-right: 15px; width: 25px; text-align: center; }
+
+    /* 背景のオーバーレイ */
+    .overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.4); z-index: 999; display: none;
+    }
+    .overlay.show { display: block; }
+  </style>
+</head>
+<body>
+
+  <!-- ハンバーガーメニュー付きヘッダー -->
+  <div class="custom-header">
+    <button class="menu-trigger" onclick="toggleMenu()">☰</button>
+    <span class="custom-logo">🐶</span>
+    <div class="custom-title">ワンライフ・ナビ</div>
+  </div>
+
+  <!-- サイドナビ本体 -->
+  <div id="sideNav" class="side-nav">
+    <div class="nav-header">
+      <span>メニュー</span>
+      <button class="close-btn" onclick="toggleMenu()">×</button>
+    </div>
+    <nav class="nav-list">
+      <div class="nav-item"><a href="{{ '/' | relative_url }}"><span class="nav-icon">🏠</span>トップページ</a></div>
+      <div class="nav-item"><a href="{{ '/training/' | relative_url }}"><span class="nav-icon">🎓</span>しつけ</a></div>
+      <div class="nav-item"><a href="{{ '/outing/' | relative_url }}"><span class="nav-icon">🐾</span>お出かけ</a></div>
+      <div class="nav-item"><a href="{{ '/health/' | relative_url }}"><span class="nav-icon">🩺</span>健康・医療</a></div>
+      <div class="nav-item"><a href="{{ '/care/' | relative_url }}"><span class="nav-icon">🚿</span>お手入れ</a></div>
+      <div class="nav-item"><a href="{{ '/diet/' | relative_url }}"><span class="nav-icon">🍴</span>食事</a></div>
+      <div class="nav-item"><a href="{{ '/health-check/' | relative_url }}"><span class="nav-icon">⌛</span>年齢シュミレーター</a></div>
+      <div class="nav-item"><a href="{{ '/dog-search/' | relative_url }}"><span class="nav-icon">📖</span>犬種図鑑</a></div>
+      <div class="nav-item"><a href="{{ '/faq/' | relative_url }}"><span class="nav-icon">💬</span>FAQ</a></div>
+      <div class="nav-item" style="background: #fff9f0;">
+        <a href="{{ '/beginners-guide/' | relative_url }}" style="color: #d9480f;">
+          <span class="nav-icon">🔰</span>初めての方へ
+        </a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- 背景暗幕 -->
+  <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+  <!-- 各記事の内容 -->
+  <main>
+    {{ content }}
+  </main>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('sideNav');
+      const overlay = document.getElementById('overlay');
+      nav.classList.toggle('open');
+      overlay.classList.toggle('show');
+    }
+  </script>
+</body>
+</html>
